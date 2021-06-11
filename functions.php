@@ -57,15 +57,15 @@ namespace FrontCore;
 
 // Alias namespaces.
 use
-FrontCore\Classes as General,
-FrontCore\Classes\Activate as Activate,
-FrontCore\Classes\Core as Core,
-FrontCore\Classes\Front as Front,
-FrontCore\Classes\Widgets as Widgets,
-FrontCore\Classes\Media as Media,
-FrontCore\Classes\Admin as Admin,
+FrontCore\Classes           as General,
+FrontCore\Classes\Activate  as Activate,
+FrontCore\Classes\Core      as Core,
+FrontCore\Classes\Front     as Front,
+FrontCore\Classes\Widgets   as Widgets,
+FrontCore\Classes\Media     as Media,
+FrontCore\Classes\Admin     as Admin,
 FrontCore\Classes\Customize as Customize,
-FrontCore\Classes\Vendor as Vendor;
+FrontCore\Classes\Vendor    as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
