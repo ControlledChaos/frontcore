@@ -1,0 +1,11 @@
+///
+/// Set up basic RTL theme styles
+///
+/// These styles are general & miscellaneous both.
+/// Mostly it gets the ball rolling.
+///
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}

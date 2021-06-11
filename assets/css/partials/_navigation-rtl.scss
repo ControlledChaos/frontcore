@@ -1,0 +1,74 @@
+///
+/// Navigation RTL styles
+///
+
+.main-navigation {
+
+	ul {
+		padding-left: unset;
+		padding-right: 0;
+
+		ul {
+			left: unset;
+			right: -999em;
+
+			ul {
+				left: unset;
+				right: -999em;
+			}
+
+			li:hover > ul,
+			li.focus > ul {
+				left: unset;
+				right: 100%;
+			}
+		}
+	}
+
+	li {
+		&:hover > ul,
+		&:focus > ul,
+		&.focus > ul {
+			left: unset;
+			right: 0;
+		}
+	}
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: right;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+// Non-mobile menu.
+@media screen and ( min-width: 37.5em ) {
+
+	.main-navigation {
+
+		ul {
+			li {
+				&:not(:last-of-type) {
+					margin-right: unset;
+					margin-left: 1em;
+				}
+			}
+
+			ul {
+				li {
+					&:not(:last-of-type) {
+						margin-right: unset;
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+}

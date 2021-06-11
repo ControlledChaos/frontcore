@@ -1,0 +1,23 @@
+///
+/// User toolbar styles
+///
+
+@import 'modules/_colors';
+
+#wpadminbar {}
+
+body {
+
+	// Backend styles.
+	&.wp-admin {
+
+		// Admin theme: Fresh (default)
+		&.admin-color-fresh {}
+
+		// Admin theme: Light
+		&.admin-color-light {}
+	}
+
+	// Frontend styles.
+	&:not(.wp-admin) {}
+}

@@ -1,0 +1,30 @@
+///
+/// Styles for right-to-left languages/orientation
+///
+/// By default these styles are enqueued in addition to
+/// the core, left-to-right styles. So this is an incomplete
+/// stylesheet that simply overrides certain default styles.
+/// If the left-to-right stylesheet is dequeued in right-to-left
+/// mode then additional SCSS modules & partials may need to be
+/// imported, as needed for your project.
+///
+/// Also, as this is a starter theme, all of the `-rtl` partials
+/// are imported although some may be blank. So add style to
+/// them, save them for future development, or delete them.
+/// However, it does no harm to leave blank partials since they
+/// are only accessed when the SCSS is compiled; they do not
+/// require HTTP requests.
+///
+
+@import 'modules/_colors';
+@import 'partials/_setup-rtl';
+@import 'partials/_layout-rtl';
+@import 'partials/_forms-rtl';
+@import 'partials/_header-rtl';
+@import 'partials/_navigation-rtl';
+@import 'partials/_content-rtl';
+@import 'partials/_widgets-rtl';
+@import 'partials/_media-rtl';
+@import 'partials/_interactive-rtl';
+@import 'partials/_footer-rtl';
+@import 'partials/_no-js-rtl';

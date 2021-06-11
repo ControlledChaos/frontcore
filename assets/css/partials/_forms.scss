@@ -1,0 +1,256 @@
+///
+/// Form styles
+///
+
+form * + * {
+	margin-top: 1em;
+}
+
+fieldset {
+	margin-top: 1em;
+	padding: 1em 1.5em;
+	border: solid 1px $form_border_color;
+}
+
+legend {
+	padding: 0 0.5em;
+}
+
+label {}
+
+input,
+textarea,
+select,
+button {
+	width: 100%;
+	max-width: 640px;
+	padding: 1rem;
+	font: inherit;
+	background: $form_background_color;
+	border: solid 1px $form_border_color;
+
+	&:focus {
+		border-color: $form_action_border_color;
+	}
+}
+
+label + input:not([type="checkbox"]):not([type="radio"]),
+label ~ input:not([type="checkbox"]):not([type="radio"]),
+label + button,
+label ~ button,
+label + textarea,
+label ~ textarea,
+label + select,
+label ~ select {
+	margin-top: 0;
+	display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="tel"] {}
+
+input[type="search"] {}
+
+input[type="radio"],
+input[type="checkbox"] {
+	width: auto;
+	cursor: pointer;
+}
+
+button,
+.button,
+button[type="submit"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="image"] {
+	width: auto;
+	cursor: pointer;
+	font-weight: bold;
+	background-color: $button_background_color;
+	border-color: $button_border_color;
+	color: $button_text_color;
+
+	svg {
+		width: 24px;
+		height: 24px;
+		vertical-align: middle;
+		fill: currentColor;
+	}
+
+	&:hover,
+	&.hover,
+	&:focus,
+	&.focus {
+		background-color: $button_action_background_color;
+		border-color: $button_action_border_color;
+		color: $button_action_text_color;
+	}
+
+	&.menu-toggle {
+		background: none;
+		border: none;
+		color: inherit;
+
+		svg {
+			width: 1rem;
+			height: 1rem;
+			position: relative;
+			top: 0.05em;
+			vertical-align: baseline;
+			fill: currentColor;
+		}
+	}
+}
+
+input[type="number"] {
+	width: auto;
+	padding: 0.6em 1em;
+}
+
+input[type="range"] {
+	padding: 1.3em 1em;
+	cursor: pointer;
+}
+
+input[type="date"] {}
+
+button:disabled,
+button[disabled],
+input:disabled,
+input[disabled] {
+	opacity: 0.5;
+	cursor: not-allowed !important;
+}
+
+textarea {
+	min-height: 200px;
+	margin-top: 1em;
+	padding: 1em;
+	font: inherit;
+	font-size: 85%;
+}
+
+select {
+	margin-top: 1em;
+	padding: 0.5em 1em;
+	font: inherit;
+}
+
+option {}
+
+*::-webkit-input-placeholder {
+	color: $light_gray;
+}
+
+*::-o-placeholder {
+	color: $light_gray;
+}
+
+*:-moz-placeholder {
+	color: $light_gray;
+}
+
+*::-moz-placeholder {
+	color: $light_gray;
+}
+
+*:-ms-input-placeholder {
+	color: $light_gray;
+}
+
+*::placeholder {
+	color: $light_gray;
+}
+
+/* Search form */
+.search-form {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	margin-top: 1em;
+}
+
+h2 + .search-form {
+	margin-top: 0.5em;
+}
+
+.search-label,
+.search-form input[type="search"],
+.search-form input[type="submit"] {
+	display: inline-block;
+	margin-top: 0;
+}
+
+.search-label {
+	margin-right: 0.3em
+}
+
+.search-submit {}
+
+.dark-mode {
+
+	input,
+	textarea,
+	select,
+	button {
+		background: $form_background_color_dark;
+		border-color: $form_border_color_dark;
+		color: $form_text_color_dark;
+
+		&:focus {
+			border-color: $form_action_text_color_dark;
+		}
+	}
+
+	button,
+	button[type="submit"],
+	input[type="submit"],
+	input[type="button"],
+	input[type="reset"],
+	input[type="image"] {
+		background-color: $button_background_color_dark;
+		border-color: $button_border_color_dark;
+		color: $button_text_color_dark;
+
+		&:hover,
+		&.hover,
+		&:focus,
+		&.focus {
+			background-color: $button_action_background_color_dark;
+			border-color: $button_action_border_color_dark;
+			color: $button_action_text_color_dark;
+		}
+	}
+
+	*::-webkit-input-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*::-o-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*:-moz-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*::-moz-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*:-ms-input-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*::placeholder {
+		color: $form_placeholder_color_dark;
+	}
+}

@@ -1,0 +1,19 @@
+///
+/// Site layout RTL styles
+///
+
+.site-content {
+	.content-area {
+		margin-right: unset;
+		margin-left: 2em;
+	}
+}
+
+@media screen and ( max-width: 768px ) {
+
+	.site-content {
+		.content-area {
+			margin-left: unset;
+		}
+	}
+}

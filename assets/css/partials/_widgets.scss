@@ -1,0 +1,16 @@
+///
+/// Sidebar & widget styles
+///
+
+#secondary ul,
+#secondary ol {
+	padding-left: 1em;
+}
+
+.widget {
+	margin: 0 0 1.5em;
+
+	& select {
+		max-width: 100%;
+	}
+}

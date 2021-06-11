@@ -1,0 +1,89 @@
+///
+/// Color variables
+///
+/// Some variables use colors set by args in the functions file.
+///
+/// @see includes/classes/core/class-setup.php
+///
+
+// General colors.
+$white: #ffffff !default;
+$off_white: #eeeeee !default;
+$black: #000000 !default;
+$dark_gray: #333333 !default;
+$medium_gray: #555555 !default;
+$light_gray: #888888 !default;
+$pale_gray: #cccccc !default;
+$red: #dd0000 !default;
+$orange: #ee6600 !default;
+$yellow: #f8ce30 !default;
+$green: #4b9960 !default;
+$error: $red !default;
+$notify: $orange !default;
+$warning: $yellow !default;
+$success: $green !default;
+
+$body_bg: $white !default;
+$text_color: $dark_gray !default;
+$link_color: #0044aa !default;
+$link_action_color: lighten( $color: $link_color, $amount: 12% ) !default;
+
+// Theme general colors: dark mode.
+$body_bg_dark: #222222 !default;
+$text_color_dark: darken( $color: $white, $amount: 6.5% ) !default;
+$link_color_dark: $text_color_dark !default;
+$link_action_color_dark: darken( $color: $link_color_dark, $amount: 12% ) !default;
+
+/// Box colors: light mode.
+$box_background_color: inherit !default;
+$box_border_color: $pale_gray !default;
+$box_text_color: inherit !default;
+
+/// Box colors: dark mode.
+$box_background_color_dark: lighten( $color: $body_bg_dark, $amount: 2.5% ) !default;
+$box_border_color_dark: lighten( $color: $body_bg_dark, $amount: 12% ) !default;
+$box_text_color_dark: inherit !default;
+
+// Form colors: light mode.
+$form_background_color: inherit !default;
+$form_border_color: $box_border_color !default;
+$form_text_color: $text_color !default;
+$form_action_background_color: $form_background_color !default;
+$form_action_border_color: $link_action_color !default;
+$form_action_text_color: $text_color !default;
+$form_focus: $link_action_color !default;
+$form_checked: $link_action_color !default;
+$form_placeholder_color: $light_gray !default;
+
+// Form colors: dark mode.
+$form_background_color_dark: lighten( $color: $body_bg_dark, $amount: 5% ) !default;
+$form_border_color_dark: lighten( $color: $body_bg_dark, $amount: 25% ) !default;
+$form_text_color_dark: $text_color_dark !default;
+$form_action_background_color_dark: $form_background_color_dark !default;
+$form_action_border_color_dark: $link_action_color_dark !default;
+$form_action_text_color_dark: $text_color_dark !default;
+$form_focus_dark: $link_action_color_dark !default;
+$form_checked_dark: $link_action_color_dark !default;
+$form_placeholder_color_dark: lighten( $color: $form_background_color_dark, $amount: 40% ) !default;
+
+// Button colors: light mode.
+$button_background_color: $white !default;
+$button_border_color: $box_border_color !default;
+$button_text_color: $text_color !default;
+$button_action_background_color: $pale_gray !default;
+$button_action_border_color: $medium_gray !default;
+$button_action_text_color: $text_color !default;
+$button_disabled_background_color: $off_white !default;
+$button_disabled_border_color: $pale_gray !default;
+$button_disabled_text_color: $light_gray !default;
+
+// Button colors: dark mode.
+$button_background_color_dark: $form_background_color_dark !default;
+$button_border_color_dark: $form_border_color_dark !default;
+$button_text_color_dark: $text_color_dark !default;
+$button_action_background_color_dark: $link_action_color_dark !default;
+$button_action_border_color_dark: $button_border_color_dark !default;
+$button_action_text_color_dark: $text_color !default;
+$button_disabled_background_color_dark: lighten( $color: $body_bg_dark, $amount: 5% ) !default !default;
+$button_disabled_border_color_dark: $button_border_color_dark !default;
+$button_disabled_text_color_dark: lighten( $color: $body_bg_dark, $amount: 25% ) !default;
