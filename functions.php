@@ -2,7 +2,7 @@
 /**
  * Front Core functions
  *
- * A basic starter theme for WordPress and ClassicPress.
+ * Develop site-specific themes for ClassicPress, WordPress, and the antibrand system.
  *
  * @package    Front_Core
  * @subpackage Functions
