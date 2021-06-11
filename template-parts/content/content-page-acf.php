@@ -14,7 +14,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use Front_Core\Classes\Front as Front;
+use FrontCore\Classes\Front as Front;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">

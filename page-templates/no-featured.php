@@ -15,7 +15,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use Front_Core\Classes\Front as Front;
+use FrontCore\Classes\Front as Front;
 
 get_header();
 

@@ -39,7 +39,7 @@ class Head {
 		add_action( 'init', [ $this, 'disable_emojis' ] );
 
 		// Load the `<head>` section.
-		add_action( 'Front_Core\head', [ $this, 'head' ] );
+		add_action( 'FrontCore\head', [ $this, 'head' ] );
 	}
 
 	/**

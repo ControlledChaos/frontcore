@@ -11,7 +11,7 @@
 namespace FrontCore\Classes\Core;
 
 // Alias namespaces.
-use  Front_Core\Classes\Core as Core;
+use  FrontCore\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

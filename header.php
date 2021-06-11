@@ -14,7 +14,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use Front_Core\Classes\Front as Front;
+use FrontCore\Classes\Front as Front;
 
 // Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {

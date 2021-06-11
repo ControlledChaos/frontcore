@@ -32,19 +32,19 @@ class Layout {
 	public function __construct() {
 
 		// Add main navigation before header.
-		add_action( 'Front_Core\before_header', [ $this, 'navigation_main' ] );
+		add_action( 'FrontCore\before_header', [ $this, 'navigation_main' ] );
 
 		// Add the default header.
-		add_action( 'Front_Core\header', [ $this, 'page_header' ] );
+		add_action( 'FrontCore\header', [ $this, 'page_header' ] );
 
 		// Add the default sidebar.
-		add_action( 'Front_Core\sidebar', [ $this, 'page_sidebar' ] );
+		add_action( 'FrontCore\sidebar', [ $this, 'page_sidebar' ] );
 
 		// Add the default search form.
-		add_action( 'Front_Core\searchform', [ $this, 'default_searchform' ] );
+		add_action( 'FrontCore\searchform', [ $this, 'default_searchform' ] );
 
 		// Add the default header.
-		add_action( 'Front_Core\footer', [ $this, 'page_footer' ] );
+		add_action( 'FrontCore\footer', [ $this, 'page_footer' ] );
 	}
 
 	/**

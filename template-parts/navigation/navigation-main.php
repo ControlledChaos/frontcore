@@ -11,7 +11,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use Front_Core\Classes\Front as Front;
+use FrontCore\Classes\Front as Front;
 
 ?>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_attr( esc_html_e( 'Skip to content', 'frontcore' ) ); ?></a>

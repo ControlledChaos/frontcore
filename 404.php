@@ -13,7 +13,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use Front_Core\Classes\Front as Front;
+use FrontCore\Classes\Front as Front;
 
 // Access widgets to check if they're registered.
 global $wp_widget_factory;

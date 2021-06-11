@@ -16,7 +16,7 @@
 namespace FrontCore\Classes\Front;
 
 // Alias namespaces.
-use Front_Core\Classes\Vendor as Vendor;
+use FrontCore\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -71,7 +71,7 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function head() {
-		do_action( 'Front_Core\head' );
+		do_action( 'FrontCore\head' );
 	}
 
 	/**
@@ -84,7 +84,7 @@ class Template_Tags {
 	 */
 	public function body_open() {
 		do_action( 'wp_body_open' );
-		do_action( 'Front_Core\body_open' );
+		do_action( 'FrontCore\body_open' );
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function header() {
-		do_action( 'Front_Core\header' );
+		do_action( 'FrontCore\header' );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function sidebar() {
-		do_action( 'Front_Core\sidebar' );
+		do_action( 'FrontCore\sidebar' );
 	}
 
 	/**
@@ -117,7 +117,7 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function searchform() {
-		do_action( 'Front_Core\searchform' );
+		do_action( 'FrontCore\searchform' );
 	}
 
 	/**
@@ -128,7 +128,7 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function footer() {
-		do_action( 'Front_Core\footer' );
+		do_action( 'FrontCore\footer' );
 	}
 
 	/**
@@ -151,52 +151,52 @@ class Template_Tags {
 
 	// Fires after opening `body` and before `#page`.
 	public function before_page() {
-		do_action( 'Front_Core\before_page' );
+		do_action( 'FrontCore\before_page' );
 	}
 
-	// Fires before `Front_Core\header`.
+	// Fires before `FrontCore\header`.
 	public function before_header() {
-		do_action( 'Front_Core\before_header' );
+		do_action( 'FrontCore\before_header' );
 	}
 
-	// Fires after `Front_Core\header`.
+	// Fires after `FrontCore\header`.
 	public function after_header() {
-		do_action( 'Front_Core\after_header' );
+		do_action( 'FrontCore\after_header' );
 	}
 
-	// Fires before `Front_Core\sidebar`.
+	// Fires before `FrontCore\sidebar`.
 	public function before_sidebar() {
-		do_action( 'Front_Core\before_sidebar' );
+		do_action( 'FrontCore\before_sidebar' );
 	}
 
-	// Fires after `Front_Core\sidebar`.
+	// Fires after `FrontCore\sidebar`.
 	public function after_sidebar() {
-		do_action( 'Front_Core\after_sidebar' );
+		do_action( 'FrontCore\after_sidebar' );
 	}
 
-	// Fires before `Front_Core\searchform`.
+	// Fires before `FrontCore\searchform`.
 	public function before_searchform() {
-		do_action( 'Front_Core\before_searchform' );
+		do_action( 'FrontCore\before_searchform' );
 	}
 
-	// Fires after `Front_Core\searchform`.
+	// Fires after `FrontCore\searchform`.
 	public function after_searchform() {
-		do_action( 'Front_Core\after_searchform' );
+		do_action( 'FrontCore\after_searchform' );
 	}
 
-	// Fires before `Front_Core\footer`.
+	// Fires before `FrontCore\footer`.
 	public function before_footer() {
-		do_action( 'Front_Core\before_footer' );
+		do_action( 'FrontCore\before_footer' );
 	}
 
-	// Fires after `Front_Core\footer`.
+	// Fires after `FrontCore\footer`.
 	public function after_footer() {
-		do_action( 'Front_Core\after_footer' );
+		do_action( 'FrontCore\after_footer' );
 	}
 
 	// Fires after `#page` and before `wp_footer`.
 	public function after_page() {
-		do_action( 'Front_Core\after_page' );
+		do_action( 'FrontCore\after_page' );
 	}
 
 	/**

@@ -11,7 +11,7 @@
 namespace FrontCore\Classes\Widgets;
 
 // Alias namespaces.
-use Front_Core\Classes\Front as Front;
+use FrontCore\Classes\Front as Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
