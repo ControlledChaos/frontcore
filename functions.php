@@ -191,6 +191,7 @@ if ( ! is_admin() ) {
 	$fct_tags   = new Front\Template_Tags;
 	$fct_assets = new Front\Assets;
 	$fct_layout = new Front\Layout;
+	$fct_mods   = new Customize\Customizer;
 }
 
 // Backend classes.

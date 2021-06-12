@@ -13,7 +13,8 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Classes\Front     as Front,
+	FrontCore\Classes\Customize as Customize;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -48,17 +49,21 @@ use FrontCore\Classes\Front as Front;
 
 		<?php
 
-		the_content( sprintf(
-			wp_kses(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'frontcore' ),
-				[
-					'span' => [
-						'class' => [],
-					],
-				]
-			),
-			get_the_title()
-		) );
+		if ( 'excerpt' == Customize\mods()->blog_format( get_theme_mod( 'fct_blog_format' ) ) ) {
+			the_excerpt();
+		} else {
+			the_content( sprintf(
+				wp_kses(
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'frontcore' ),
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
+				),
+				get_the_title()
+			) );
+		}
 
 		wp_link_pages( [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'frontcore' ),
