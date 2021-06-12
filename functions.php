@@ -162,6 +162,9 @@ require get_parent_theme_file_path( '/includes/config.php' );
 // Autoload class files.
 require_once FCT_PATH . 'includes/autoloader.php';
 
+// Get compatibility functions.
+require FCT_PATH . 'includes/vendor/compatibility.php';
+
 /**
  * Instantiate theme classes
  *
