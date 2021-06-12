@@ -66,7 +66,7 @@ define( 'FCT_URL', $theme_path );
  * Variables used refer to the companion starter plugin for
  * this starter theme. Change for your plugin.
  *
- * @link https://github.com/ControlledChaos/bs-plugin
+ * @link https://github.com/ControlledChaos/sitecore
  *
  * @example ```if ( FCT_COMPANION ) {
  *     // Execute code.
@@ -74,10 +74,10 @@ define( 'FCT_URL', $theme_path );
  */
 
 // Plugin directory.
-$companion_dir  = 'bs-plugin';
+$companion_dir  = 'sitecore';
 
 // Core plugin filename.
-$companion_file = 'bs-plugin.php';
+$companion_file = 'sitecore.php';
 
 // Return false by default.
 $companion = false;
