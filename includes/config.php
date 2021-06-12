@@ -44,7 +44,7 @@ define( 'FCT_VERSION', $theme_version );
  * @since 1.0.0
  * @var   string File path with trailing slash.
  */
-$theme_path = get_stylesheet_directory();
+$theme_path = get_template_directory();
 define( 'FCT_PATH', $theme_path . '/' );
 
 /**
