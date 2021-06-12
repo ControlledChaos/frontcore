@@ -60,18 +60,8 @@ class Setup {
 	 */
 	public function setup() {
 
-		/**
-		 * Load domain for translation
-		 *
-		 * @since 1.0.0
-		 */
+		// Load domain for translation.
 		load_theme_textdomain( 'frontcore' );
-
-		/**
-		 * Add theme support
-		 *
-		 * @since 1.0.0
-		 */
 
 		// Browser title tag support.
 		add_theme_support( 'title-tag' );
@@ -98,16 +88,31 @@ class Setup {
 		add_theme_support( 'post-thumbnails' );
 
 		/**
-		 * Custom header
+		 * Default header images
+		 *
+		 * These appear in the customizer as "Suggested" images.
+		 * If no header image is set then the `default-header.jpg`
+		 * image in the `assets/images` directory is used.
 		 */
 		$default_image = register_default_headers( [
-			'default_image' => [
-				'url'           => '%s/assets/images/default-header.jpg',
-				'thumbnail_url' => '%s/assets/images/default-header.jpg',
-				'description'   => __( 'Default Header Image', 'frontcore' ),
+			'avocado' => [
+				'url'           => '%s/assets/images/avocado.jpg',
+				'thumbnail_url' => '%s/assets/images/avocado.jpg',
+				'description'   => __( 'Avocado', 'frontcore' ),
 			],
+			'bacon' => [
+				'url'           => '%s/assets/images/bacon.jpg',
+				'thumbnail_url' => '%s/assets/images/bacon.jpg',
+				'description'   => __( 'Bacon', 'frontcore' ),
+			],
+			'toast' => [
+				'url'           => '%s/assets/images/toast.jpg',
+				'thumbnail_url' => '%s/assets/images/toast.jpg',
+				'description'   => __( 'Toast', 'frontcore' ),
+			]
 		] );
 
+		// Add header support.
 		add_theme_support( 'custom-header', apply_filters( 'fct_custom_header_args', [
 			'width'              => 2048,
 			'height'             => 878,
@@ -117,13 +122,7 @@ class Setup {
 			'wp-head-callback'   => [ $this, 'header_style' ]
 		] ) );
 
-		/**
-		 * Custom logo
-		 *
-		 * @since 1.0.0
-		 */
-
-		// Logo arguments.
+		// Custom logo arguments.
 		$logo_args = [
 			'width'       => 160,
 			'height'      => 160,
@@ -137,11 +136,7 @@ class Setup {
 		// Add logo support.
 		add_theme_support( 'custom-logo', $logo );
 
-		 /**
-		 * Set content width.
-		 *
-		 * @since 1.0.0
-		 */
+		 // Set content width.
 		$fct_content_width = apply_filters( 'fct_content_width', 1280 );
 
 		if ( ! isset( $content_width ) ) {
@@ -152,22 +147,14 @@ class Setup {
 		update_option( 'embed_size_w', 1280 );
 		update_option( 'embed_size_h', 720 );
 
-		/**
-		 * Register theme menus.
-		 *
-		 * @since  1.0.0
-		 */
+		// Register theme menus.
 		register_nav_menus( [
 			'main'   => __( 'Main Menu', 'frontcore' ),
 			'footer' => __( 'Footer Menu', 'frontcore' ),
 			'social' => __( 'Social Menu', 'frontcore' )
 		] );
 
-		/**
-		 * Add stylesheet for the content editor.
-		 *
-		 * @since 1.0.0
-		 */
+		// Add stylesheet for the content editor.
 		add_editor_style( '/assets/css/editor.min.css', [ 'fct-admin' ], '', 'screen' );
 	}
 
