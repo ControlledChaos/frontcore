@@ -95,20 +95,20 @@ class Setup {
 		 * image in the `assets/images` directory is used.
 		 */
 		$default_image = register_default_headers( [
-			'avocado' => [
-				'url'           => '%s/assets/images/avocado.jpg',
-				'thumbnail_url' => '%s/assets/images/avocado.jpg',
-				'description'   => __( 'Avocado', 'frontcore' ),
+			'avocado_green' => [
+				'url'           => '%s/assets/images/avocado-green.jpg',
+				'thumbnail_url' => '%s/assets/images/avocado-green.jpg',
+				'description'   => __( 'Green Avocado', 'frontcore' ),
 			],
-			'bacon' => [
-				'url'           => '%s/assets/images/bacon.jpg',
-				'thumbnail_url' => '%s/assets/images/bacon.jpg',
-				'description'   => __( 'Bacon', 'frontcore' ),
+			'avocado_blue' => [
+				'url'           => '%s/assets/images/avocado-blue.jpg',
+				'thumbnail_url' => '%s/assets/images/avocado-blue.jpg',
+				'description'   => __( 'Blue Avocado', 'frontcore' ),
 			],
-			'toast' => [
-				'url'           => '%s/assets/images/toast.jpg',
-				'thumbnail_url' => '%s/assets/images/toast.jpg',
-				'description'   => __( 'Toast', 'frontcore' ),
+			'avocado_violet' => [
+				'url'           => '%s/assets/images/avocado-violet.jpg',
+				'thumbnail_url' => '%s/assets/images/avocado-violet.jpg',
+				'description'   => __( 'Violet Avocado', 'frontcore' ),
 			]
 		] );
 
