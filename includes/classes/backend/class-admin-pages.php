@@ -65,7 +65,7 @@ class Admin_Pages {
 	 * @return void
      */
     public function theme_options_output() {
-        require get_parent_theme_file_path( '/template-parts/admin/theme-options-page.php' );
+        get_template_part( 'template-parts/admin/theme-options-page' );
 	}
 
 	/**
