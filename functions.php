@@ -62,9 +62,8 @@
  *    Find `Front Core` and replace with your theme name
  *
  * 2. Package
- *    Find `Site_Core` and replace with your theme name, include
- *    underscores between words. This will change the package name
- *    in file headers.
+ *    Find `Front_Core` and replace with your theme name. This will
+ *    change the package name in file headers.
  *
  * 3. Namespace
  *    Find `Front_Core` and replace with something unique to your theme.
