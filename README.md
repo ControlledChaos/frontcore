@@ -11,7 +11,7 @@ Develop site-specific themes for ClassicPress, WordPress, and the antibrand syst
 ![No PHP Composer](https://img.shields.io/badge/Composer-nope-f49a36.svg?style=flat-square)
 ![Never AMP](https://img.shields.io/badge/AMP-Hell%20no!-005af0.svg?style=flat-square)
 
-See [Site Core Plugin](https://github.com/ControlledChaos/sitecore) for a site-specific ClassicPress/WordPress starter plugin.
+See [Site Core Plugin](https://github.com/ControlledChaos/sitecore) for a site-specific ClassicPress/WordPress starter plugin designed to work with Front Core.
 
 ![Front Core Screenshot](https://raw.githubusercontent.com/ControlledChaos/frontcore/master/screenshot.jpg)
 
