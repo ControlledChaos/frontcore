@@ -68,7 +68,7 @@ class Customizer {
 	 */
 	public function customize_register( $wp_customize ) {
 
-		// Content panel.
+		// Display options panel.
 		$wp_customize->add_panel( 'fct_options_panel' , [
 			'priority'    => 15,
 			'capability'     => 'edit_theme_options',
@@ -76,6 +76,36 @@ class Customizer {
 			'description' => __( '', 'frontcore' )
 		] );
 
+		// Header options section.
+		$wp_customize->add_section( 'fct_header_section' , [
+			'priority'    => 5,
+			'title'       => __( 'Header Options', 'frontcore' ),
+			'description' => __( '', 'frontcore' ),
+			'panel'       => 'fct_options_panel'
+		] );
+
+		// Main navigation location.
+		$wp_customize->add_setting( 'fct_nav_location', [
+			'default'	        => 'before',
+			'sanitize_callback' => [ $this, 'nav_location' ]
+		] );
+		$wp_customize->add_control( new \WP_Customize_Control(
+			$wp_customize,
+			'fct_nav_location',
+			[
+				'section'     => 'fct_header_section',
+				'settings'    => 'fct_nav_location',
+				'label'       => __( 'Main Navigation Location', 'frontcore' ),
+				'description' => __( 'Display the main navigation menu before or after the header branding and image.', 'frontcore' ),
+				'type'        => 'select',
+				'choices'     => [
+					'before' => __( 'Before Header', 'frontcore' ),
+					'after'  => __( 'After Header', 'frontcore' )
+				]
+			]
+		) );
+
+		// Content options section.
 		$wp_customize->add_section( 'fct_content_section' , [
 			'priority'    => 10,
 			'title'       => __( 'Content Options', 'frontcore' ),
@@ -88,7 +118,6 @@ class Customizer {
 			'default'	        => 'content',
 			'sanitize_callback' => [ $this, 'blog_format' ]
 		] );
-
 		$wp_customize->add_control( new \WP_Customize_Control(
 			$wp_customize,
 			'fct_blog_format',
@@ -104,6 +133,49 @@ class Customizer {
 				]
 			]
 		) );
+
+		// Admin options section.
+		$wp_customize->add_section( 'fct_admin_options_section' , [
+			'priority'    => 135,
+			'capability'     => 'manage_options',
+			'title'       => __( 'Admin Options', 'frontcore' ),
+			'description' => __( '', 'frontcore' )
+		] );
+
+		// Main navigation location.
+		$wp_customize->add_setting( 'fct_admin_theme', [
+			'default'	        => false,
+			'sanitize_callback' => [ $this, 'admin_theme' ]
+		] );
+		$wp_customize->add_control( new \WP_Customize_Control(
+			$wp_customize,
+			'fct_admin_theme',
+			[
+				'section'     => 'fct_admin_options_section',
+				'settings'    => 'fct_admin_theme',
+				'label'       => __( 'Admin Theme', 'frontcore' ),
+				'description' => __( 'Enqueue styles for a custom admin pages theme.', 'frontcore' ),
+				'type'        => 'checkbox'
+			]
+		) );
+	}
+
+	/**
+	 * Main navigation location
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  $input
+	 * @return string Returns the theme mod.
+	 */
+	public function nav_location( $input ) {
+
+		$valid = [ 'before', 'after' ];
+
+		if ( in_array( $input, $valid ) ) {
+			return $input;
+		}
+		return 'before';
 	}
 
 	/**
@@ -112,7 +184,7 @@ class Customizer {
 	 * @since  1.0.0
 	 * @access public
 	 * @param  $input
-	 * @return string Returns the format.
+	 * @return string Returns the theme mod.
 	 */
 	public function blog_format( $input ) {
 
@@ -122,6 +194,22 @@ class Customizer {
 			return $input;
 		}
 		return 'content';
+	}
+
+	/**
+	 * Admin theme
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  $input
+	 * @return string Returns the theme mod.
+	 */
+	public function admin_theme( $input ) {
+
+		if ( true == $input ) {
+			return true;
+		}
+		return false;
 	}
 }
 

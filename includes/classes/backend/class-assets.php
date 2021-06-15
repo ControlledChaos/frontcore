@@ -14,7 +14,8 @@
 namespace FrontCore\Classes\Admin;
 
 // Alias namespaces.
-use  FrontCore\Classes\Core as Core;
+use FrontCore\Classes\Core as Core,
+	FrontCore\Classes\Customize as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,11 +50,7 @@ class Assets {
 	 * @access public
 	 * @return void
 	 */
-	public function admin_scripts() {
-
-		// Instantiate the Assets class.
-		$assets = new Core\Assets;
-	}
+	public function admin_scripts() {}
 
 	/**
 	 * Admin styles
@@ -64,10 +61,14 @@ class Assets {
 	 */
 	public function admin_styles() {
 
-		// Instantiate the Assets class.
-		$assets = new Core\Assets;
+		// Get Customizer settings.
+		new Customize\Customizer;
+		$use_theme = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_theme' ) );
 
-		wp_enqueue_style( 'fct-admin', get_theme_file_uri( '/assets/css/admin' . $this->suffix() . '.css' ), [], FCT_VERSION, 'all' );
+		// Enqueue admin theme styles if set in the Customizer.
+		if ( $use_theme ) {
+			wp_enqueue_style( 'fct-admin', get_theme_file_uri( '/assets/css/admin' . $this->suffix() . '.css' ), [], FCT_VERSION, 'all' );
+		}
 	}
 
 	/**
