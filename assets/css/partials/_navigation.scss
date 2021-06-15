@@ -94,6 +94,23 @@
 		button,
 		.button {
 			display: inline-block;
+			width: auto;
+			padding: 1rem;
+			cursor: pointer;
+			font-weight: bold;
+			text-decoration: none;
+			background-color: $button_background_color;
+			border: solid 1px $button_border_color;
+			color: $button_text_color;
+
+			&:hover,
+			&.hover,
+			&:focus,
+			&.focus {
+				background-color: $button_action_background_color;
+				border-color: $button_action_border_color;
+				color: $button_action_text_color;
+			}
 
 			&:before,
 			&:after {
@@ -153,21 +170,6 @@
 .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
 }
 
 .dark-mode {

@@ -814,6 +814,40 @@ h2 + .search-form {
 .site-main .post-navigation button,
 .site-main .post-navigation .button {
   display: inline-block;
+  width: auto;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  color: #333333;
+}
+
+.site-main .comment-navigation button:hover, .site-main .comment-navigation button.hover, .site-main .comment-navigation button:focus, .site-main .comment-navigation button.focus,
+.site-main .comment-navigation .button:hover,
+.site-main .comment-navigation .button.hover,
+.site-main .comment-navigation .button:focus,
+.site-main .comment-navigation .button.focus,
+.site-main .posts-navigation button:hover,
+.site-main .posts-navigation button.hover,
+.site-main .posts-navigation button:focus,
+.site-main .posts-navigation button.focus,
+.site-main .posts-navigation .button:hover,
+.site-main .posts-navigation .button.hover,
+.site-main .posts-navigation .button:focus,
+.site-main .posts-navigation .button.focus,
+.site-main .post-navigation button:hover,
+.site-main .post-navigation button.hover,
+.site-main .post-navigation button:focus,
+.site-main .post-navigation button.focus,
+.site-main .post-navigation .button:hover,
+.site-main .post-navigation .button.hover,
+.site-main .post-navigation .button:focus,
+.site-main .post-navigation .button.focus {
+  background-color: #cccccc;
+  border-color: #555555;
+  color: #333333;
 }
 
 .site-main .comment-navigation button:before, .site-main .comment-navigation button:after,
@@ -916,21 +950,6 @@ h2 + .search-form {
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
 }
 
 .dark-mode .main-navigation ul ul {
