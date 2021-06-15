@@ -3,11 +3,11 @@
 Develop site-specific themes for ClassicPress, WordPress, and the antibrand system.
 
 ![PHP tested on version 7.4.8](https://img.shields.io/badge/PHP-7.4.8-8892bf.svg?style=flat-square)
-![WordPress tested on version 5.7.2](https://img.shields.io/badge/WordPress-5.7.2-0073aa.svg?style=flat-square)
 ![ClassicPress tested on version 1.2.0](https://img.shields.io/badge/ClassicPress-1.2.0-03768e.svg?style=flat-square)
+![WordPress tested on version 5.7.2](https://img.shields.io/badge/WordPress-5.7.2-0073aa.svg?style=flat-square)
 ![SASS Ready](https://img.shields.io/badge/SASS-ready-bf4080.svg?style=flat-square)
-![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 ![ACF Pro Ready](https://img.shields.io/badge/ACF-ready-00d3ae.svg?style=flat-square)
+![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 ![No PHP Composer](https://img.shields.io/badge/Composer-nope-f49a36.svg?style=flat-square)
 ![Never AMP](https://img.shields.io/badge/AMP-Hell%20no!-005af0.svg?style=flat-square)
 
