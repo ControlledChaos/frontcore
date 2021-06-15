@@ -1,11 +1,28 @@
 <?php
 /**
- * Advanced Custom Fields compatability
+ * Advanced Custom Fields (ACF) compatibility
  *
  * @package    Front_Core
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
+ *
+ * This frontend framework (theme) is designed
+ * to be used with a companion plugin based on
+ * the Site Core plugin, which has the basic
+ * version of ACF bundled. So most of this class
+ * may be unnecessary to your project.
+ *
+ * However, if the companion plugin is not used
+ * then ACF can be bundled with this product.
+ * Simply add the contents of the ACF plugin
+ * to the `includes/vendor/acf` directory.
+ *
+ * The one method of this class which is used
+ * throughout the template files is `suffix()`.
+ *
+ * @see `includes/classes/vendor/class-plugin.php`
+ * @link https://github.com/ControlledChaos/sitecore
  */
 
 namespace FrontCore\Classes\Vendor;
@@ -97,7 +114,7 @@ class Theme_ACF extends Plugin {
 		}
 
 		// Filter assets URL.
-		if ( ! $this->is_active() ) {
+		if ( ! $this->is_active() && ! FCT_COMPANION ) {
 			add_filter( 'acf/settings/url', [ $this, 'acf_settings_url' ] );
 		}
 
@@ -117,6 +134,8 @@ class Theme_ACF extends Plugin {
 
 		// Override constant.
 		if ( defined( 'FCT_USE_BUNDLED_ACF' ) && false == FCT_USE_BUNDLED_ACF ) {
+			return false;
+		} elseif ( FCT_COMPANION ) {
 			return false;
 		}
 		return true;
