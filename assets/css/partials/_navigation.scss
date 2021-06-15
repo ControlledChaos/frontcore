@@ -116,8 +116,9 @@
 			&:after {
 				content: '';
 				display: inline-block;
-				width: 0.5em;
-				height: 0.75em;
+				width: 1em;
+				height: 1em;
+				vertical-align: middle;
 				background-repeat: no-repeat;
 				background-size: contain;
 				background-position: center center;
