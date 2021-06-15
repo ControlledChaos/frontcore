@@ -14,8 +14,8 @@ namespace FrontCore;
 use FrontCore\Classes\Front     as Front,
 	FrontCore\Classes\Customize as Customize;
 
-// Instantiate the Customizer class.
-$fct_customize = new Customize\Customizer;
+// Get the content display setting from the Customizer.
+$display = Customize\mods()->blog_format( get_theme_mod( 'fct_blog_format' ) );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -23,11 +23,11 @@ $fct_customize = new Customize\Customizer;
 	<header class="entry-header">
 		<?php
 
-		if ( is_singular() ) :
+		if ( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
+		} else {
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		}
 
 		if ( is_single() ) : ?>
 
@@ -50,7 +50,7 @@ $fct_customize = new Customize\Customizer;
 
 		<?php
 
-		if ( 'excerpt' == $fct_customize->blog_format( get_theme_mod( 'fct_blog_format' ) ) ) {
+		if ( 'excerpt' == $display ) {
 			the_excerpt();
 		} else {
 			the_content( sprintf(
