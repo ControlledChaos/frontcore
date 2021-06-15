@@ -154,6 +154,11 @@ class Template_Tags {
 		do_action( 'FrontCore\before_page' );
 	}
 
+	// Fires before `FrontCore\before_header`.
+	public function nav_before_header() {
+		do_action( 'FrontCore\nav_before_header' );
+	}
+
 	// Fires before `FrontCore\header`.
 	public function before_header() {
 		do_action( 'FrontCore\before_header' );
@@ -162,6 +167,11 @@ class Template_Tags {
 	// Fires after `FrontCore\header`.
 	public function after_header() {
 		do_action( 'FrontCore\after_header' );
+	}
+
+	// Fires after `FrontCore\after_header`.
+	public function nav_after_header() {
+		do_action( 'FrontCore\nav_after_header' );
 	}
 
 	// Fires before `FrontCore\sidebar`.
@@ -273,6 +283,17 @@ class Template_Tags {
 
 		// Return the logo markup or null.
 		return $html;
+	}
+
+	/**
+	 * Load main navigation
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function navigation_main() {
+		get_template_part( 'template-parts/navigation/navigation-main' );
 	}
 
 	/**

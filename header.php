@@ -14,7 +14,8 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Classes\Front     as Front,
+	FrontCore\Classes\Customize as Customize;
 
 // Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {
@@ -24,6 +25,9 @@ if ( is_home() && ! is_front_page() ) {
 } else {
     $canonical = get_permalink();
 }
+
+// Get the navigation location setting from the Customizer.
+$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
 
 ?>
 <!doctype html>
@@ -46,7 +50,17 @@ Front\tags()->before_page();
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Front\tags()->site_schema() ); ?>">
 
 	<div class="site-header-wrap">
+
+		<?php
+		if ( 'before' == $nav_location ) {
+			Front\tags()->nav_before_header();
+		} ?>
 		<?php Front\tags()->before_header(); ?>
 		<?php Front\tags()->header(); ?>
 		<?php Front\tags()->after_header(); ?>
+		<?php
+		if ( 'after' == $nav_location ) {
+			Front\tags()->nav_after_header();
+		} ?>
+
 	</div>

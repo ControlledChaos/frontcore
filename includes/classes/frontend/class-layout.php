@@ -15,6 +15,9 @@
 
 namespace FrontCore\Classes\Front;
 
+// Alias namespaces.
+use FrontCore\Classes\Customize as Customize;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -31,8 +34,11 @@ class Layout {
 	 */
 	public function __construct() {
 
-		// Add main navigation before header.
-		add_action( 'FrontCore\before_header', [ $this, 'navigation_main' ] );
+		new Customize\Customizer;
+
+		// Add nav to both actions for customizer refresh.
+		add_action( 'FrontCore\nav_before_header', [ $this, 'navigation_main' ] );
+		add_action( 'FrontCore\nav_after_header', [ $this, 'navigation_main' ] );
 
 		// Add the default header.
 		add_action( 'FrontCore\header', [ $this, 'page_header' ] );
