@@ -8,7 +8,7 @@
  * @since      1.0.0
  */
 
-namespace FrontCore\Includes;
+namespace FrontCore\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
