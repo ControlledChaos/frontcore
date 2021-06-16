@@ -27,7 +27,7 @@ class Admin_Pages {
 	public function __construct() {
 
 		// Theme options page.
-		add_action( 'admin_menu', [ $this, 'theme_options' ] );
+		// add_action( 'admin_menu', [ $this, 'theme_options' ] );
 
 		// Theme info page.
 		add_action( 'admin_menu', [ $this, 'theme_info' ] );
@@ -154,7 +154,8 @@ class Admin_Pages {
 			__( 'Theme Info', 'frontcore' ),
 			'manage_options',
 			'frontcore-info',
-			[ $this, 'theme_info_output' ]
+			[ $this, 'theme_info_output' ],
+			1
 		);
 	}
 

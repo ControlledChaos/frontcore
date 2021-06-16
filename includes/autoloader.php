@@ -77,6 +77,7 @@ define( 'FCT_CLASSES', [
 	FCT_CLASS_NS . '\Front\Layout'        => FCT_CLASS['front'] . 'layout.php',
 
 	// Backend classes.
+	FCT_CLASS_NS . '\Admin\Admin_Menu'   => FCT_CLASS['admin'] . 'admin-menu.php',
 	FCT_CLASS_NS . '\Admin\Admin_Pages'  => FCT_CLASS['admin'] . 'admin-pages.php',
 	FCT_CLASS_NS . '\Admin\Assets'       => FCT_CLASS['admin'] . 'assets.php',
 	FCT_CLASS_NS . '\Admin\Block_Editor' => FCT_CLASS['admin'] . 'block-editor.php',
