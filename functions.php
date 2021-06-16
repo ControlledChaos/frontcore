@@ -192,6 +192,7 @@ if ( ! is_admin() ) {
 	$fct_assets = new Front\Assets;
 	$fct_layout = new Front\Layout;
 	$fct_mods   = new Customize\Customizer;
+	// $fct_sanitize = new Customize\Sanitize;
 }
 
 // Backend classes.
@@ -207,4 +208,5 @@ if ( is_admin() ) {
 // Customizer classes.
 if ( is_customize_preview() ) {
 	$fct_customize = new Customize\Customizer;
+	// $fct_sanitize  = new Customize\Sanitize;
 }
