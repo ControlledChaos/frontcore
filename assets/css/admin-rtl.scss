@@ -3,3 +3,10 @@
 ///
 
 @import 'modules/_colors';
+
+.site-logo {
+	img {
+		margin-right: unset;
+		margin-left: 1em;
+	}
+}

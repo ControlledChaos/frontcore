@@ -6,7 +6,7 @@
 	margin: 0;
 
 	/* Match <p> tag to <h1> tag on front page */
-	font-size: 2em;
+	font-size: 2rem;
 	font-weight: bold;
 
 	& a {
@@ -17,6 +17,7 @@
 
 .site-description {
 	margin: 0;
+	font-size: 1rem;
 }
 
 .site-header-image {

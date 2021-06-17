@@ -10,6 +10,9 @@
 
 namespace FrontCore\Classes\Admin;
 
+// Alias namespaces.
+use FrontCore\Classes\Customize as Customize;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -26,11 +29,47 @@ class Admin_Pages {
 	 */
 	public function __construct() {
 
+		/**
+		 * Add admin header
+		 *
+		 * Not hooked to `in_admin_header` because the screen options
+		 * and contextual help buttons/sections need to load first.
+		 *
+		 * Add early to the relevant hook in attempt to display
+		 * above any admin notices.
+		 */
+		if ( is_network_admin() ) {
+			$hook = 'network_admin_notices';
+		} elseif ( is_user_admin() ) {
+			$hook = 'user_admin_notices';
+		} else {
+			$hook = 'admin_notices';
+		}
+		add_action( $hook, [ $this, 'admin_header' ], 1 );
+
 		// Theme options page.
 		// add_action( 'admin_menu', [ $this, 'theme_options' ] );
 
 		// Theme info page.
 		add_action( 'admin_menu', [ $this, 'theme_info' ] );
+	}
+
+	/**
+	 * Admin header
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function admin_header() {
+
+		// Get Customizer settings.
+		new Customize\Customizer;
+		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
+
+		if ( $use_header ) {
+			get_template_part( 'template-parts/admin/admin-header' );
+		}
 	}
 
 	/**

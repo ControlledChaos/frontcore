@@ -68,6 +68,10 @@ class Assets {
 		// Enqueue admin theme styles if set in the Customizer.
 		if ( $use_theme ) {
 			wp_enqueue_style( 'fct-admin', get_theme_file_uri( '/assets/css/admin' . $this->suffix() . '.css' ), [], FCT_VERSION, 'all' );
+
+			if ( is_rtl() ) {
+				wp_enqueue_style( 'fct-admin-rtl', get_theme_file_uri( '/assets/css/admin-rtl' . $this->suffix() . '.css' ), [], FCT_VERSION, 'all' );
+			}
 		}
 	}
 

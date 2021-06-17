@@ -3,3 +3,9 @@
 ///
 
 @import 'modules/_colors';
+@import 'partials/_header';
+
+.site-branding {
+	max-width: 100%;
+	padding: 1em 0 0;
+}
