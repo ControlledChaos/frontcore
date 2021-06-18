@@ -1,0 +1,566 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Front Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-18 06:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2\n"
+"X-Domain: frontcore"
+
+#: includes/classes/frontend/class-template-tags.php:461
+#, php-format
+msgid " Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:426
+msgid ", "
+msgstr ""
+
+#: includes/classes/core/class-php-version.php:135
+#, php-format
+msgid "<p>The %s website is down for maintenance. Please check back soon!.</p>"
+msgstr ""
+
+#: includes/classes/core/class-php-version.php:120
+#, php-format
+msgid ""
+"<p>The active theme has been disabled because the minimum PHP version of "
+"<strong>%s</strong> has not been met. Go to the <a href=\"%s\">%s</a> to "
+"activate another theme.</p>"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:88
+msgid "Active Theme Information"
+msgstr ""
+
+#: includes/classes/widgets/class-theme-mode.php:34
+msgid "Add a button to toggle light & dark modes."
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:161
+msgid "Admin"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:235
+msgid "Admin Header"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:218
+msgid "Admin Theme"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:181
+msgid "After Header"
+msgstr ""
+
+#: template-parts/footer/footer-default.php:22
+msgid "All rights reserved"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:130
+msgid "Appearance"
+msgstr ""
+
+#: template-parts/aside/sidebar.php:37
+msgid "Archives"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:159
+msgid "Author Credits"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:103
+msgid "Author URI: "
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:102
+msgid "Author: "
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:89
+msgid "Background Display"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:180
+msgid "Before Header"
+msgstr ""
+
+#: includes/classes/core/class-setup.php:106
+msgid "Blue Avocado"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:174
+msgid ""
+"Change this sidebar to give yourself credit for the hard work you did "
+"customizing this theme."
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:145
+msgid "Choose which header elements to display and how to display them."
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: template-parts/aside/sidebar.php:66
+msgid "Comments RSS"
+msgstr ""
+
+#: comments.php:47
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/classes/customizer/class-customizer.php:123
+msgid "Content"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:152
+msgid "Content Display"
+msgstr ""
+
+#: template-parts/content/content-acf.php:60
+#: template-parts/content/content-builder.php:42
+#: template-parts/content/content.php:58
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#. Author of the theme
+msgid "Controlled Chaos Design"
+msgstr ""
+
+#: template-parts/footer/footer-default.php:19
+msgid "Copyright "
+msgstr ""
+
+#: includes/classes/backend/class-admin-menu.php:70
+#: includes/classes/backend/class-admin-menu.php:71
+msgid "Customize"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:543
+msgid "Dark Theme"
+msgstr ""
+
+#: includes/classes/widgets/class-register.php:56
+msgid "Default Sidebar"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:104
+msgid "Description: "
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Develop site-specific themes for ClassicPress, WordPress, and the antibrand "
+"system."
+msgstr ""
+
+#: template-parts/admin/theme-options-page.php:22
+#: includes/classes/backend/class-admin-pages.php:87
+#: includes/classes/backend/class-admin-pages.php:88
+msgid "Display Options"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:177
+msgid ""
+"Display the main navigation menu before or after the header branding and "
+"image."
+msgstr ""
+
+#: includes/classes/widgets/class-register.php:59
+#, php-format
+msgid "Displays to the %s of the main content."
+msgstr ""
+
+#: includes/classes/core/class-php-version.php:131
+msgid "Down for Maintenance"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:219
+msgid "Enqueue styles for a custom admin pages theme."
+msgstr ""
+
+#: template-parts/aside/sidebar.php:65
+msgid "Entries RSS"
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:110
+msgid "Error Red"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:202
+msgid "Excerpt/Summary"
+msgstr ""
+
+#: includes/classes/core/class-setup.php:153
+msgid "Footer Menu"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:170
+msgid "for more details."
+msgstr ""
+
+#. Name of the theme
+msgid "Front Core"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:84
+msgid "Front Page"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:201
+msgid "Full Content"
+msgstr ""
+
+#: includes/classes/core/class-setup.php:101
+msgid "Green Avocado"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:144
+msgid "Header Display"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:136
+msgid "Header Layout"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://github.com/ControlledChaos"
+msgstr ""
+
+#. URI of the theme
+msgid "https://github.com/ControlledChaos/frontcore"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:75
+msgid "Identity"
+msgstr ""
+
+#: 404.php:36
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: template-parts/content/content-none-acf.php:48
+#: template-parts/content/content-none.php:47
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:116
+msgid "Layout"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:445
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: includes/classes/widgets/class-register.php:49
+msgid "left"
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:95
+msgid "Light Gray"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:543
+#: includes/classes/frontend/class-template-tags.php:567
+msgid "Light Theme"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:431
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:236
+msgid "Load a page header on admin pages."
+msgstr ""
+
+#: includes/classes/core/class-setup.php:152
+msgid "Main Menu"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:176
+msgid "Main Navigation Location"
+msgstr ""
+
+#: template-parts/navigation/navigation-main.php:22
+msgid "Menu"
+msgstr ""
+
+#: template-parts/aside/sidebar.php:51
+msgid "Meta"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:128
+msgid "More Information"
+msgstr ""
+
+#: template-parts/partials/help-theme-options-info.php:20
+msgid "More information about this theme"
+msgstr ""
+
+#: 404.php:47
+msgid "Most Used Categories"
+msgstr ""
+
+#. Name of the template
+msgid "No Featured Image"
+msgstr ""
+
+#. Name of the template
+msgid "No Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "No Sidebar, No Featured Image"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:34
+msgid "Not provided in the stylesheet header"
+msgstr ""
+
+#: template-parts/content/content-none-acf.php:22
+#: template-parts/content/content-none.php:21
+msgid "Nothing Found"
+msgstr ""
+
+#: comments.php:41
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. Name of the template
+msgid "Page Builder"
+msgstr ""
+
+#: template-parts/content/content-acf.php:72
+#: template-parts/content/content-builder.php:54
+#: template-parts/content/content-front-page-acf.php:46
+#: template-parts/content/content-front-page.php:46
+#: template-parts/content/content-page-acf.php:42
+#: template-parts/content/content-page.php:39
+#: template-parts/content/content.php:70
+msgid "Pages:"
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:100
+msgid "Pale Gray"
+msgstr ""
+
+#: includes/classes/vendor/class-plugin.php:452
+msgid "plugin to be activated."
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:197
+msgid "Post Archive Content"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:404
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. %s: post date.
+#: includes/classes/frontend/class-template-tags.php:384
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:428
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: template-parts/content/content-none-acf.php:30
+#: template-parts/content/content-none.php:29
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: includes/classes/widgets/class-register.php:51
+msgid "right"
+msgstr ""
+
+#: template-parts/forms/searchform.php:17
+#: template-parts/forms/searchform.php:22
+#: template-parts/forms/searchform.php:25
+msgid "Search"
+msgstr ""
+
+#: template-parts/forms/searchform.php:21
+msgid "Search for:"
+msgstr ""
+
+#: search.php:29
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: includes/classes/customizer/class-customizer.php:198
+msgid ""
+"Should the blog index and archive pages show the full post or an excerpt?"
+msgstr ""
+
+#: template-parts/navigation/navigation-main.php:17
+msgid "Skip to content"
+msgstr ""
+
+#: includes/classes/core/class-setup.php:154
+msgid "Social Menu"
+msgstr ""
+
+#: template-parts/content/content-none-acf.php:42
+#: template-parts/content/content-none.php:41
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/partials/help-theme-options-info.php:22
+msgid "Start your info here."
+msgstr ""
+
+#: template-parts/aside/sidebar.php:63
+msgid "Subscribe"
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:120
+msgid "Success Green"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:434
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:107
+msgid "Tags: "
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:215
+msgid "Template Error"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:99
+msgid "Template: "
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:90
+msgid "Text"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:106
+msgid "Text Domain: "
+msgstr ""
+
+#: 404.php:31
+msgid "That page can't be found."
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:94
+msgid "Theme Details"
+msgstr ""
+
+#: includes/classes/core/class-php-version.php:116
+msgid "Theme Disabled"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:192
+#: includes/classes/backend/class-admin-pages.php:193
+msgid "Theme Info"
+msgstr ""
+
+#: includes/classes/widgets/class-theme-mode.php:41
+msgid "Theme Mode"
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:97
+msgid "Theme Name: "
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:101
+msgid "Theme URI: "
+msgstr ""
+
+#: includes/classes/core/class-php-version.php:123
+msgid "themes page"
+msgstr ""
+
+#: template-parts/admin/theme-options-page.php:28
+msgid "This is a starter/example page. Use it or remove it."
+msgstr ""
+
+#: includes/classes/vendor/class-plugin.php:450
+msgid "This plugin is not allowed by the"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:162
+msgid "This theme was created by"
+msgstr ""
+
+#: includes/classes/widgets/class-theme-mode.php:63
+msgid "Title text will display above the toggle button (optional)."
+msgstr ""
+
+#: includes/classes/widgets/class-theme-mode.php:61
+msgid "Title:"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:566
+msgid "Toggle light/dark theme"
+msgstr ""
+
+#: template-parts/aside/sidebar.php:28
+msgid "Toggle Theme Mode"
+msgstr ""
+
+#: 404.php:65
+msgid "Try looking in the monthly archives."
+msgstr ""
+
+#: template-parts/admin/theme-info-page.php:105
+msgid "Version: "
+msgstr ""
+
+#: includes/classes/core/class-setup.php:111
+msgid "Violet Avocado"
+msgstr ""
+
+#: includes/classes/backend/class-admin-pages.php:167
+msgid "Visit"
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:115
+msgid "Warning Yellow"
+msgstr ""
+
+#: includes/classes/backend/class-block-editor.php:105
+msgid "White"
+msgstr ""
+
+#: template-parts/aside/sidebar.php:56
+msgid "Your Profile"
+msgstr ""
