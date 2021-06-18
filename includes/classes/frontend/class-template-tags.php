@@ -323,6 +323,10 @@ class Template_Tags {
 			if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 				$template = 'content-front-page' . $acf->suffix();
 
+			} elseif ( is_page_template( 'page-templates/page-builder.php' ) ) {
+
+				$template = 'content-builder';
+
 			// Look for `content-{$post-type}.php` template.
 			} else {
 				$template = 'content-' . get_post_type() . $acf->suffix();
@@ -482,6 +486,12 @@ class Template_Tags {
 	public function post_thumbnail() {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		} elseif (
+			is_page_template( 'page-templates/no-featured.php' ) ||
+			is_page_template( 'page-templates/no-sidebar-no-featured.php' ) ||
+			is_page_template( 'page-templates/page-builder.php' )
+		) {
 			return;
 		}
 
