@@ -155,7 +155,8 @@ class Setup {
 		] );
 
 		// Add stylesheet for the content editor.
-		add_editor_style( '/assets/css/editor.min.css', [ 'fct-admin' ], '', 'screen' );
+		$assets = new Assets;
+		add_editor_style( 'assets/css/editor' . $assets->suffix() . '.css', [ 'fct-admin' ], '', 'screen' );
 	}
 
 	/**

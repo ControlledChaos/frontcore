@@ -197,9 +197,10 @@ if ( ! is_admin() ) {
 
 // Backend classes.
 if ( is_admin() ) {
-	$fct_admin_menu   = new Admin\Admin_Menu;
-	$fct_admin_pages  = new Admin\Admin_Pages;
-	$fct_admin_assets = new Admin\Assets;
+	$fct_admin_menu    = new Admin\Admin_Menu;
+	$fct_admin_pages   = new Admin\Admin_Pages;
+	$fct_admin_assets  = new Admin\Assets;
+	$fct_editor_styles = new Admin\Editor_Styles;
 	if ( fct_has_blocks() ) {
 		$fct_blocks = new Admin\Block_Editor;
 	}
