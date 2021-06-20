@@ -79,6 +79,7 @@ define( 'FCT_CLASSES', [
 	// Backend classes.
 	FCT_CLASS_NS . '\Admin\Admin_Menu'    => FCT_CLASS['admin'] . 'admin-menu.php',
 	FCT_CLASS_NS . '\Admin\Admin_Pages'   => FCT_CLASS['admin'] . 'admin-pages.php',
+	FCT_CLASS_NS . '\Admin\Post_Options'  => FCT_CLASS['admin'] . 'post-options.php',
 	FCT_CLASS_NS . '\Admin\Assets'        => FCT_CLASS['admin'] . 'assets.php',
 	FCT_CLASS_NS . '\Admin\Editor_Styles' => FCT_CLASS['admin'] . 'editor-styles.php',
 	FCT_CLASS_NS . '\Admin\Block_Editor'  => FCT_CLASS['admin'] . 'block-editor.php',
