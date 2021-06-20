@@ -37,7 +37,7 @@
  * methods, HTML IDs, CSS classes, etc.
  *
  * Beginners, note that the short array syntax ( `[]` rather than
- * array()` ) is used. Use of the `array()` function is encouraged
+ * `array()` ) is used. Use of the `array()` function is encouraged
  * by some to make the code more easily read by beginners. I argue
  * that beginners will inevitably encounter the short array syntax
  * so they may as well learn to recognize this early. If the code
@@ -51,6 +51,22 @@
  * Greg Sweet, Controlled Chaos Design, former mule packer, cook,
  * landscaper, & janitor who learned PHP by breaking stuff and by
  * reading code comments.
+ */
+
+/**
+ * Author's Note #2
+ *
+ * This is a note to myself as much as to anyone who may read this.
+ * This product is a starter for my project or yours. It may contain
+ * tools ( methods/functions, hooks, scripts ) that can speed up
+ * development a bit but this cannot be flexible in layout and
+ * templates and still remain a starter for a site-specific product.
+ *
+ * There are kitchen-sink options available but they are not the
+ * right choice and they so often need a child theme to get your
+ * preferred template layout. So if I or you are going to write
+ * new templates anyway we may as well start here with our own
+ * parent theme, then create our own child themes for variation.
  */
 
  /**
@@ -181,6 +197,7 @@ $fct_core_setup   = new Core\Setup;
 $fct_core_assets  = new Core\Assets;
 $fct_core_widgets = new Widgets\Register;
 $fct_core_media   = new Media\Images;
+$fct_core_mods    = new Customize\Customizer;
 
 // Vendor (plugin) classes.
 $fct_acf = new Vendor\Theme_ACF;
@@ -191,7 +208,6 @@ if ( ! is_admin() ) {
 	$fct_tags   = new Front\Template_Tags;
 	$fct_assets = new Front\Assets;
 	$fct_layout = new Front\Layout;
-	$fct_mods   = new Customize\Customizer;
 	// $fct_sanitize = new Customize\Sanitize;
 }
 
@@ -199,6 +215,7 @@ if ( ! is_admin() ) {
 if ( is_admin() ) {
 	$fct_admin_menu    = new Admin\Admin_Menu;
 	$fct_admin_pages   = new Admin\Admin_Pages;
+	$fct_post_options  = new Admin\Post_Options;
 	$fct_admin_assets  = new Admin\Assets;
 	$fct_editor_styles = new Admin\Editor_Styles;
 	if ( fct_has_blocks() ) {
@@ -208,6 +225,6 @@ if ( is_admin() ) {
 
 // Customizer classes.
 if ( is_customize_preview() ) {
-	$fct_customize = new Customize\Customizer;
+	// $fct_customize = new Customize\Customizer;
 	// $fct_sanitize  = new Customize\Sanitize;
 }
