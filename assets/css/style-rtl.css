@@ -81,6 +81,16 @@ body {
   margin-left: 1em;
 }
 
+.author-title-wrapper .author-avatar {
+  margin-right: unset;
+  margin-left: 1.5rem;
+}
+
+.author-avatar {
+  margin-right: unset;
+  margin-left: 0.5em;
+}
+
 #secondary ul,
 #secondary ol {
   padding-left: unset;
@@ -115,9 +125,4 @@ figure.alignleft {
 
 .entry-content p img.aligncenter {
   margin: 2em auto;
-}
-
-.author-avatar {
-  margin-right: unset;
-  margin-left: 0.5em;
 }

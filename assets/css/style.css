@@ -266,6 +266,7 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
   background: #ffffff;
   color: #333333;
@@ -420,7 +421,8 @@ legend {
 input,
 textarea,
 select,
-button {
+button,
+.button {
   width: 100%;
   max-width: 640px;
   padding: 1rem;
@@ -432,7 +434,8 @@ button {
 input:focus,
 textarea:focus,
 select:focus,
-button:focus {
+button:focus,
+.button:focus {
   border-color: #005ce7;
 }
 
@@ -461,12 +464,14 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"],
 input[type="image"] {
+  display: inline-block;
   width: auto;
   cursor: pointer;
   font-weight: bold;
   background-color: #ffffff;
   border-color: #cccccc;
   color: #333333;
+  text-decoration: none;
 }
 
 button svg,
@@ -1018,6 +1023,47 @@ h2 + .search-form {
   margin-right: 1em;
 }
 
+.author-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: solid 1px #cccccc;
+}
+
+.author-section .author-link {
+  margin-top: 1rem;
+}
+
+.author-title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.author-title-wrapper .author-avatar {
+  display: block;
+  margin-right: 1.5rem;
+  max-width: 64px;
+}
+
+.author-title-wrapper .author-avatar img {
+  display: block;
+}
+
+.author-title-wrapper h2 {
+  margin: 0;
+}
+
+.author-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 48px;
+  margin-right: 0.5rem;
+}
+
 #secondary ul,
 #secondary ol {
   padding-left: 1em;
@@ -1149,13 +1195,6 @@ article .gallery .gallery-item img {
 
 .avatar {
   border-radius: 50%;
-}
-
-.author-avatar {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 48px;
-  margin-right: 0.5em;
 }
 
 .comment-content a {
