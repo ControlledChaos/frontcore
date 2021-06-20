@@ -313,6 +313,19 @@ ol {
   margin-top: 1em;
 }
 
+h1,
+h2 {
+  font-size: 1.625rem;
+}
+
+h3 {
+  font-size: 1.3125rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
 a {
   color: #0044aa;
 }
@@ -1025,6 +1038,9 @@ h2 + .search-form {
 
 .author-section {
   margin-top: 2rem;
+}
+
+.author-section.single {
   padding: 2rem;
   border: solid 1px #cccccc;
 }
@@ -1053,6 +1069,7 @@ h2 + .search-form {
   display: block;
 }
 
+.author-title-wrapper h1,
 .author-title-wrapper h2 {
   margin: 0;
 }
