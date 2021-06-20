@@ -1040,13 +1040,13 @@ h2 + .search-form {
   margin-top: 2rem;
 }
 
-.author-section.single {
-  padding: 2rem;
-  border: solid 1px #cccccc;
-}
-
 .author-section .author-link {
   margin-top: 1rem;
+}
+
+.single .author-section {
+  padding: 2rem;
+  border: solid 1px #cccccc;
 }
 
 .author-title-wrapper {

@@ -76,9 +76,7 @@ $display = Customize\mods()->blog_format( get_theme_mod( 'fct_blog_format' ) );
 		if ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) && is_single() ) {
 			get_template_part( 'template-parts/content/author-section' );
 		}
-
 		?>
-
 	</div>
 
 	<footer class="entry-footer">

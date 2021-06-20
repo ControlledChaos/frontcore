@@ -38,11 +38,16 @@
 // Author section on single posts.
 .author-section {
 	margin-top: 2rem;
-	padding: 2rem;
-	border: solid 1px $box_border_color;
 
 	.author-link {
 		margin-top: 1rem;
+	}
+}
+
+.single {
+	.author-section {
+		padding: 2rem;
+		border: solid 1px $box_border_color;
 	}
 }
 
@@ -61,6 +66,7 @@
 		}
 	}
 
+	h1,
 	h2 {
 		margin: 0;
 	}

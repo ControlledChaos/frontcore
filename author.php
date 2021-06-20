@@ -26,8 +26,20 @@ get_header();
 		?>
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+				$post  = get_post_type_object( get_post_type() );
+				$name  = ucwords( $post->labels->menu_name );
+
+				if ( is_main_query() && ( is_paged() && 1 == $paged ) || ! is_paged() ) {
+					get_template_part( 'template-parts/content/author-section' );
+				} else {
+					printf(
+						'<h1 class="page-title">%s %s %s</h1>',
+						$name,
+						__( 'Authored By', 'frontcore' ),
+						esc_html( get_the_author() )
+					);
+				}
 				?>
 			</header>
 
