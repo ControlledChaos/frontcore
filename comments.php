@@ -38,13 +38,13 @@ if ( post_password_required() ) {
 
 		if ( '1' === $fct_comment_count ) {
 			printf(
-				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'frontcore' ),
+				esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'frontcore' ),
 				'<span>' . get_the_title() . '</span>'
 			);
 
 		} else {
 			printf(
-				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $fct_comment_count, 'comments title', 'frontcore' ) ),
+				esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $fct_comment_count, 'comments title', 'frontcore' ) ),
 				number_format_i18n( $fct_comment_count ),
 				'<span>' . get_the_title() . '</span>'
 			);
@@ -76,5 +76,37 @@ if ( post_password_required() ) {
 
 	endif; // have_comments().
 	?>
-	<?php comment_form(); ?>
+	<?php
+
+	$before_form = sprintf(
+		'<p>%s</p>',
+		__( 'Your email address will not be published. Required fields are marked *.', 'frontcore' )
+	);
+
+	$moderation = get_option( 'comment_moderation' );
+	if ( $moderation ) {
+
+		$before_form .= sprintf(
+			'<p>%s</p>',
+			__( 'Your comment will be held for moderation before it appears here.', 'frontcore' )
+		);
+		$submit_title_attr = __( 'Submit your comment for approval', 'frontcore' );
+
+	} else {
+		$submit_title_attr = __( 'Submit your comment', 'frontcore' );
+	}
+
+	$args = [
+		'title_reply' => __( 'Submit a Comment', 'frontcore' ),
+		'comment_notes_before' => $before_form,
+		'submit_button' => sprintf(
+			'<input type="submit" name="%1$s" id="%2$s" class="%3$s" value="%4$s" title="%5$s" />',
+			'submit',
+			'submit',
+			'submit',
+			__( 'Submit', 'frontcore' ),
+			$submit_title_attr
+		)
+	];
+	comment_form( $args ); ?>
 </div>
