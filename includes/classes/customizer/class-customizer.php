@@ -204,7 +204,24 @@ class Customizer {
 			]
 		) );
 
-		// Main navigation location.
+		// Author section on single posts.
+		$wp_customize->add_setting( 'fct_author_section', [
+			'default'	        => false,
+			'sanitize_callback' => [ $this, 'author_section' ]
+		] );
+		$wp_customize->add_control( new \WP_Customize_Control(
+			$wp_customize,
+			'fct_author_section',
+			[
+				'section'     => 'fct_content_section',
+				'settings'    => 'fct_author_section',
+				'label'       => __( 'Author Section', 'frontcore' ),
+				'description' => __( 'Display the name, bio, and profile picture of the author on single post pages.', 'frontcore' ),
+				'type'        => 'checkbox'
+			]
+		) );
+
+		// Use admin theme.
 		$wp_customize->add_setting( 'fct_admin_theme', [
 			'default'	        => false,
 			'sanitize_callback' => [ $this, 'admin_theme' ]
@@ -273,6 +290,22 @@ class Customizer {
 			return $input;
 		}
 		return 'content';
+	}
+
+	/**
+	 * Author section
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  $input
+	 * @return string Returns the theme mod.
+	 */
+	public function author_section( $input ) {
+
+		if ( true == $input ) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
