@@ -38,3 +38,25 @@
   max-width: 100%;
   padding: 1em 0 0;
 }
+
+.wrap {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: #ffffff;
+  color: #333333;
+}
+
+.wrap h1 {
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+
+#titlediv #title {
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+
+#poststuff {
+  padding-top: 2rem;
+}
