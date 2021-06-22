@@ -94,7 +94,7 @@ class Setup {
 		 * If no header image is set then the `default-header.jpg`
 		 * image in the `assets/images` directory is used.
 		 */
-		$default_image = register_default_headers( [
+		$default_headers = apply_filters( 'fct_default_headers', [
 			'avocado_green' => [
 				'url'           => '%s/assets/images/avocado-green.jpg',
 				'thumbnail_url' => '%s/assets/images/avocado-green.jpg',
@@ -111,48 +111,46 @@ class Setup {
 				'description'   => __( 'Violet Avocado', 'frontcore' ),
 			]
 		] );
+		$headers = register_default_headers( $default_headers );
 
 		// Add header support.
-		add_theme_support( 'custom-header', apply_filters( 'fct_custom_header_args', [
+		add_theme_support( 'custom-header', apply_filters( 'fct_custom_header', [
 			'width'              => 2048,
 			'height'             => 878,
 			'flex-height'        => true,
-			'default-image'      => $default_image,
+			'default-image'      => $headers,
 			'video'              => false,
 			'wp-head-callback'   => [ $this, 'header_style' ]
 		] ) );
 
-		// Custom logo arguments.
-		$logo_args = [
+		// Add logo support.
+		add_theme_support( 'custom-logo', apply_filters( 'fct_custom_logo', [
 			'width'       => 160,
 			'height'      => 160,
 			'flex-width'  => true,
 			'flex-height' => true
-		];
-
-		// Apply a filter to logo arguments.
-		$logo = apply_filters( 'fct_header_image', $logo_args );
-
-		// Add logo support.
-		add_theme_support( 'custom-logo', $logo );
+		] ) );
 
 		 // Set content width.
-		$fct_content_width = apply_filters( 'fct_content_width', 1280 );
-
 		if ( ! isset( $content_width ) ) {
-			$content_width = $fct_content_width;
+			$content_width = apply_filters( 'fct_content_width', 1280 );
 		}
 
 		// Embed sizes.
-		update_option( 'embed_size_w', 1280 );
-		update_option( 'embed_size_h', 720 );
+		$embed = apply_filters( 'fct_embed_size', [
+			'embed_size_w' => 1280,
+			'embed_size_h' => 720
+		] );
+		update_option( 'embed_size_w', $embed['embed_size_w'] );
+		update_option( 'embed_size_h', $embed['embed_size_h'] );
 
 		// Register theme menus.
-		register_nav_menus( [
+		$menus = apply_filters( 'fct_nav_menus', [
 			'main'   => __( 'Main Menu', 'frontcore' ),
 			'footer' => __( 'Footer Menu', 'frontcore' ),
 			'social' => __( 'Social Menu', 'frontcore' )
 		] );
+		register_nav_menus( $menus );
 
 		// Add stylesheet for the content editor.
 		$assets = new Assets;
