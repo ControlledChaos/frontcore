@@ -35,7 +35,10 @@ get_header();
 				Front\tags()->content_template();
 				endwhile;
 
-				the_posts_navigation();
+				the_posts_navigation( [
+					'prev_text' => __( 'Previous', 'frontcore' ),
+					'next_text' => __( 'Next', 'frontcore' )
+				] );
 
 		else :
 			Front\tags()->content_template();

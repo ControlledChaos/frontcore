@@ -36,7 +36,10 @@ get_header();
 				get_template_part( 'template-parts/content/content', 'search' . $fct_acf->suffix() );
 				endwhile;
 
-				the_posts_navigation();
+				the_posts_navigation( [
+					'prev_text' => __( 'Previous', 'frontcore' ),
+					'next_text' => __( 'Next', 'frontcore' )
+				] );
 
 		else :
 			get_template_part( 'template-parts/content/content', 'none' . $fct_acf->suffix() );

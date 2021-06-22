@@ -61,7 +61,24 @@ class Template_Tags {
 	 * @access public
 	 * @return self
 	 */
-	public function __construct() {}
+	public function __construct() {
+
+		// Add classes to previous posts link.
+		add_filter( 'previous_posts_link_attributes', function() {
+
+			// Need to be opposite of the filter name!?!
+			$attr = 'class="button nav-next"';
+			return $attr;
+		} );
+
+		// Add classes to next posts link.
+		add_filter( 'next_posts_link_attributes', function() {
+
+			// Need to be opposite of the filter name!?!
+			$attr = 'class="button nav-previous"';
+			return $attr;
+		} );
+	}
 
 	/**
 	 * Load the `<head>` section
