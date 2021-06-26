@@ -52,6 +52,11 @@
   font-weight: bold;
 }
 
+.wrap .welcome-panel h2 {
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
 #titlediv #title {
   font-size: 1.625rem;
   font-weight: bold;
