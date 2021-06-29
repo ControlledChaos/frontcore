@@ -1,3 +1,15 @@
 ///
-/// No JavaScript styles
+/// JavaScript styles
 ///
+
+.no-js {
+	.hide-if-no-js {
+		display: none;
+	}
+}
+
+.js {
+	.hide-if-js {
+		display: none;
+	}
+}

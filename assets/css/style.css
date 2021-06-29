@@ -1237,3 +1237,11 @@ article .gallery .gallery-item img {
   font-size: 0.825em;
   text-align: center;
 }
+
+.no-js .hide-if-no-js {
+  display: none;
+}
+
+.js .hide-if-js {
+  display: none;
+}
