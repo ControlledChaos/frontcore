@@ -206,7 +206,7 @@ class Customizer {
 
 		// Author section on single posts.
 		$wp_customize->add_setting( 'fct_author_section', [
-			'default'	        => false,
+			'default'	        => 'never',
 			'sanitize_callback' => [ $this, 'author_section' ]
 		] );
 		$wp_customize->add_control( new \WP_Customize_Control(
@@ -217,7 +217,13 @@ class Customizer {
 				'settings'    => 'fct_author_section',
 				'label'       => __( 'Author Section', 'frontcore' ),
 				'description' => __( 'Display the name, bio, and profile picture of the author on single post pages.', 'frontcore' ),
-				'type'        => 'checkbox'
+				'type'        => 'select',
+				'choices'     => [
+					'never'       => __( 'Never Display', 'frontcore' ),
+					'always'      => __( 'Always Display', 'frontcore' ),
+					'enable_per'  => __( 'Enable Per Post', 'frontcore' ),
+					'disable_per' => __( 'Disable Per Post', 'frontcore' )
+				]
 			]
 		) );
 
@@ -302,10 +308,12 @@ class Customizer {
 	 */
 	public function author_section( $input ) {
 
-		if ( true == $input ) {
-			return true;
+		$valid = [ 'never', 'always', 'enable_per', 'disable_per' ];
+
+		if ( in_array( $input, $valid ) ) {
+			return $input;
 		}
-		return false;
+		return 'never';
 	}
 
 	/**

@@ -76,9 +76,20 @@ class Post_Options {
 	 * @since  1.0.0
 	 * @access public
 	 * @param  object $post The post object.
+	 * @global string $typenow The post type.
 	 * @return void
 	 */
 	public function display_metabox( $post ) {
+
+		// Access post type of edit screen.
+		global $typenow;
+
+		// Get post type display name.
+		$get_post  = get_post_type_object( get_post_type() );
+		$post_name = $get_post->labels->singular_name;
+
+		// Get the author section display setting from the Customizer.
+		$display_author = Customize\mods()->author_section( get_theme_mod( 'fct_author_section' ) );
 
 		wp_nonce_field( "fct_post_{$post->ID}_options_nonce", 'fct_post_options_nonce' );
 
@@ -89,23 +100,35 @@ class Post_Options {
 			$stored_meta = $stored_meta;
 		}
 
+		if ( in_array( 'enable_author', $stored_meta, true ) ) {
+			$enable_author = 'enable_author';
+		} else {
+			$enable_author = false;
+		}
+
 		if ( in_array( 'disable_author', $stored_meta, true ) ) {
 			$disable_author = 'disable_author';
 		} else {
 			$disable_author = false;
 		}
 
-		$get_post  = get_post_type_object( get_post_type() );
-		$post_name = $get_post->labels->singular_name;
-
-		// Get the author section display setting from the Customizer.
-		$display_author = Customize\mods()->author_section( get_theme_mod( 'fct_author_section' ) );
-
 	?>
 		<fieldset>
 			<legend class="screen-reader-text"><?php _e( 'Display Options Form', 'frontcore' ); ?></legend>
 
-			<?php if ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) && (boolean) $display_author ) : ?>
+			<?php if ( post_type_supports( $typenow, 'author' ) && 'enable_per' == $display_author ) :
+			?>
+			<p>
+				<label for="enable_author">
+					<input id="enable_author" type="checkbox" name="fct_post_options[]" value="enable_author" <?php checked( $enable_author, 'enable_author' ); ?> />
+					<?php printf(
+						__( 'Enable the author profile section for this %s.', 'frontcore' ),
+						strtolower( $post_name )
+				); ?>
+				</label>
+			</p>
+			<?php elseif ( post_type_supports( $typenow, 'author' ) && 'disable_per' == $display_author ) :
+			?>
 			<p>
 				<label for="disable_author">
 					<input id="disable_author" type="checkbox" name="fct_post_options[]" value="disable_author" <?php checked( $disable_author, 'disable_author' ); ?> />
@@ -116,7 +139,7 @@ class Post_Options {
 				</label>
 			</p>
 			<?php
-			elseif ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) ) :
+			elseif ( post_type_supports( $typenow, 'author' ) && 'always' != $display_author ) :
 				printf(
 					'<p><a href="%s">%s</a></p>',
 					esc_url( admin_url( 'customize.php?url=' . get_permalink( $post->ID ) . '&autofocus[control]=fct_author_section' ) ),
@@ -158,6 +181,10 @@ class Post_Options {
 		$checked = [];
 
 		if ( isset( $_POST['fct_post_options'] ) ) {
+
+			if ( in_array( 'enable_author', $_POST['fct_post_options'], true ) ) {
+				$checked[] .= 'enable_author';
+			}
 
 			if ( in_array( 'disable_author', $_POST['fct_post_options'], true ) ) {
 				$checked[] .= 'disable_author';

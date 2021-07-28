@@ -17,7 +17,18 @@ use FrontCore\Classes\Front     as Front,
 // Get the author section display setting from the Customizer.
 $display = Customize\mods()->author_section( get_theme_mod( 'fct_author_section' ) );
 
-if ( (boolean) get_the_author_meta( 'description' ) && (boolean) $display ) :
+if ( (boolean) get_the_author_meta( 'description' ) && 'never' != $display ) :
+
+$options = get_post_meta( get_the_ID(), 'fct_post_options', true );
+
+$enable  = $options ? in_array( 'enable_author', $options, true ) : false;
+$disable = $options ? in_array( 'disable_author', $options, true ) : false;
+
+if (
+	'always' == $display ||
+	( 'enable_per'  == $display && true  == $enable ) ||
+	( 'disable_per' == $display && false == $disable )
+) :
 
 ?>
 <section class="author-section">
@@ -51,4 +62,5 @@ if ( (boolean) get_the_author_meta( 'description' ) && (boolean) $display ) :
 </section>
 <?php
 
+endif;
 endif;
