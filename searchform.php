@@ -10,6 +10,11 @@
 
 namespace FrontCore;
 
+// Avoid error on widgets admin screen.
+if ( is_admin() ) {
+	return;
+}
+
 // Alias namespaces.
 use FrontCore\Classes\Front as Front;
 
