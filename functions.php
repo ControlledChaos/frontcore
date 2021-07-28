@@ -225,6 +225,6 @@ if ( is_admin() ) {
 
 // Customizer classes.
 if ( is_customize_preview() ) {
-	// $fct_customize = new Customize\Customizer;
+	$fct_customize = new Customize\Customizer;
 	// $fct_sanitize  = new Customize\Sanitize;
 }
