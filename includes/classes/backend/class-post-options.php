@@ -88,6 +88,9 @@ class Post_Options {
 		$get_post  = get_post_type_object( get_post_type() );
 		$post_name = $get_post->labels->singular_name;
 
+		// Get header display setting from the Customizer.
+		$display_header = Customize\mods()->header_image( get_theme_mod( 'fct_header_image' ) );
+
 		// Get the author section display setting from the Customizer.
 		$display_author = Customize\mods()->author_section( get_theme_mod( 'fct_author_section' ) );
 
@@ -98,6 +101,18 @@ class Post_Options {
 			$stored_meta = [];
 		} else {
 			$stored_meta = $stored_meta;
+		}
+
+		if ( in_array( 'enable_header', $stored_meta, true ) ) {
+			$enable_header = 'enable_header';
+		} else {
+			$enable_header = false;
+		}
+
+		if ( in_array( 'disable_header', $stored_meta, true ) ) {
+			$disable_header = 'disable_header';
+		} else {
+			$disable_header = false;
 		}
 
 		if ( in_array( 'enable_author', $stored_meta, true ) ) {
@@ -115,6 +130,30 @@ class Post_Options {
 	?>
 		<fieldset>
 			<legend class="screen-reader-text"><?php _e( 'Display Options Form', 'frontcore' ); ?></legend>
+
+			<?php if ( 'enable_per' == $display_header ) :
+			?>
+			<p>
+				<label for="enable_header">
+					<input id="enable_header" type="checkbox" name="fct_post_options[]" value="enable_header" <?php checked( $enable_header, 'enable_header' ); ?> />
+					<?php printf(
+						__( 'Enable the header image for this %s.', 'frontcore' ),
+						strtolower( $post_name )
+				); ?>
+				</label>
+			</p>
+			<?php elseif ( 'disable_per' == $display_header ) :
+			?>
+			<p>
+				<label for="disable_header">
+					<input id="disable_header" type="checkbox" name="fct_post_options[]" value="disable_header" <?php checked( $disable_header, 'disable_header' ); ?> />
+					<?php printf(
+						__( 'Disable the header image for this %s.', 'frontcore' ),
+						strtolower( $post_name )
+				); ?>
+				</label>
+			</p>
+			<?php endif; ?>
 
 			<?php if ( post_type_supports( $typenow, 'author' ) && 'enable_per' == $display_author ) :
 			?>
@@ -181,6 +220,14 @@ class Post_Options {
 		$checked = [];
 
 		if ( isset( $_POST['fct_post_options'] ) ) {
+
+			if ( in_array( 'enable_header', $_POST['fct_post_options'], true ) ) {
+				$checked[] .= 'enable_header';
+			}
+
+			if ( in_array( 'disable_header', $_POST['fct_post_options'], true ) ) {
+				$checked[] .= 'disable_header';
+			}
 
 			if ( in_array( 'enable_author', $_POST['fct_post_options'], true ) ) {
 				$checked[] .= 'enable_author';

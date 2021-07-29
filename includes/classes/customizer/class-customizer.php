@@ -92,11 +92,16 @@ class Customizer {
 		// Put header image & color under Header Display section.
 		$wp_customize->get_control( 'header_image' )->section     = 'fct_header_display_section';
 		$wp_customize->get_control( 'header_image' )->priority    = 100;
-		$wp_customize->get_control( 'header_textcolor' )->section = 'fct_header_display_section';
+
+		// Color disabled below.
+		// $wp_customize->get_control( 'header_textcolor' )->section = 'fct_header_display_section';
 
 		// Put CSS section under Appearance panel.
 		$wp_customize->get_section( 'custom_css' )->panel    = 'fct_appearance_panel';
 		$wp_customize->get_section( 'custom_css' )->priority = 100;
+
+		// Remove settings controls.
+		$wp_customize->remove_control( 'header_textcolor' );
 	}
 
 	/**
@@ -161,6 +166,30 @@ class Customizer {
 			'title'       => __( 'Admin', 'frontcore' ),
 			'description' => __( '', 'frontcore' )
 		] );
+
+		// Header image display.
+		$wp_customize->add_setting( 'fct_header_image', [
+			'default'	        => 'always',
+			'sanitize_callback' => [ $this, 'header_image' ]
+		] );
+		$wp_customize->add_control( new \WP_Customize_Control(
+			$wp_customize,
+			'fct_header_image',
+			[
+				'priority'    => 10,
+				'section'     => 'fct_header_display_section',
+				'settings'    => 'fct_header_image',
+				'label'       => __( 'Header Image Display', 'frontcore' ),
+				'description' => __( 'Choose when to display the header image.', 'frontcore' ),
+				'type'        => 'select',
+				'choices'     => [
+					'never'       => __( 'Never Display', 'frontcore' ),
+					'always'      => __( 'Always Display', 'frontcore' ),
+					'enable_per'  => __( 'Enable Per Post/Page', 'frontcore' ),
+					'disable_per' => __( 'Disable Per Post/Page', 'frontcore' )
+				]
+			]
+		) );
 
 		// Main navigation location.
 		$wp_customize->add_setting( 'fct_nav_location', [
@@ -260,6 +289,24 @@ class Customizer {
 				'type'        => 'checkbox'
 			]
 		) );
+	}
+
+	/**
+	 * Header image
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  $input
+	 * @return string Returns the theme mod.
+	 */
+	public function header_image( $input ) {
+
+		$valid = [ 'never', 'always', 'enable_per', 'disable_per' ];
+
+		if ( in_array( $input, $valid ) ) {
+			return $input;
+		}
+		return 'always';
 	}
 
 	/**
