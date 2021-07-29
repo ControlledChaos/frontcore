@@ -284,7 +284,7 @@ class Setup {
 			$scheme = get_user_option( 'admin_color' );
 
 			// Return body classes with `user-color-$scheme`.
-			return array_merge( $classes, array( 'user-color-' . $scheme ) );
+			return array_merge( $classes, [ 'user-color-' . $scheme ] );
 		}
 
 		// Return the unfiltered classes if user is not logged in.
