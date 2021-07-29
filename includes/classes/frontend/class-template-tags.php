@@ -16,7 +16,8 @@
 namespace FrontCore\Classes\Front;
 
 // Alias namespaces.
-use FrontCore\Classes\Vendor as Vendor;
+use FrontCore\Classes\Vendor    as Vendor,
+	FrontCore\Classes\Customize as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -434,6 +435,9 @@ class Template_Tags {
 	 */
 	public function entry_footer() {
 
+		// Get the content display setting from the Customizer.
+		$blog_format = Customize\mods()->blog_format( get_theme_mod( 'fct_blog_format' ) );
+
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
@@ -450,7 +454,7 @@ class Template_Tags {
 
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		if ( ! is_single() && ! post_password_required() && 'content' == $blog_format && ( comments_open() || get_comments_number() ) ) {
 
 			echo '<span class="comments-link">';
 			comments_popup_link(
@@ -468,23 +472,6 @@ class Template_Tags {
 			);
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					__( ' Edit <span class="screen-reader-text">%s</span>', 'frontcore' ),
-					[
-						'span' => [
-							'class' => [],
-						],
-					]
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
-
 	}
 
 	/**
