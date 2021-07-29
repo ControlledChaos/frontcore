@@ -2,6 +2,10 @@
 /// Site layout styles
 ///
 
+// Variables.
+$content_separator: 2em;
+$secondary_min_width: 240px;
+
 .site {
 	background-color: inherit;
 }
@@ -14,7 +18,11 @@
 
 	.content-area {
 		width: 100%;
-		margin-right: 2em;
+		margin-right: $content_separator;
+
+		// Account for sidebar minimum and right margin.
+		max-width: calc( 100% - #{$secondary_min_width} - #{$content_separator} );
+		overflow-x: hidden;
 	}
 }
 
@@ -28,7 +36,7 @@ main article {
 }
 
 #secondary {
-	min-width: 240px;
+	min-width: $secondary_min_width;
 }
 
 @media screen and ( max-width: 768px ) {
@@ -38,6 +46,7 @@ main article {
 
 		.content-area {
 			margin-right: unset;
+			max-width: 100%;
 		}
 	}
 }

@@ -2,10 +2,13 @@
 /// Site layout RTL styles
 ///
 
+// Variables.
+$content_separator: 2em;
+
 .site-content {
 	.content-area {
 		margin-right: unset;
-		margin-left: 2em;
+		margin-left: $content_separator;
 	}
 }
 

@@ -390,6 +390,8 @@ a:hover, a.hover, a:focus, a.focus {
 .site-content .content-area {
   width: 100%;
   margin-right: 2em;
+  max-width: calc( 100% - 240px - 2em);
+  overflow-x: hidden;
 }
 
 main article {
@@ -414,6 +416,7 @@ main article {
   }
   .site-content .content-area {
     margin-right: unset;
+    max-width: 100%;
   }
 }
 
