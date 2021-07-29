@@ -159,9 +159,6 @@ class Template_Tags {
 	 * These are named generically since template part
 	 * of various types may be loaded.
 	 *
-	 * @todo Possibly add more open tags but perhaps not,
-	 *       as this is a starter theme.
-	 *
 	 * @since  1.0.0
 	 * @access public
 	 */
