@@ -184,7 +184,10 @@ class Setup {
 		// Adds a class of no-sidebar when there is no default sidebar present.
 		if (
 			! is_active_sidebar( 'sidebar-default' ) ||
-			is_page_template( [ 'page-templates/no-sidebar.php' ] )
+			is_page_template( [
+				'page-templates/no-sidebar.php',
+				'page-templates/no-sidebar-no-featured.php'
+			] )
 		) {
 			$classes[] .= 'no-sidebar';
 		}

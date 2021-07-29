@@ -394,6 +394,12 @@ a:hover, a.hover, a:focus, a.focus {
   overflow-x: hidden;
 }
 
+.no-sidebar .site-content .content-area {
+  max-width: 100%;
+  margin-right: unset;
+  overflow: unset;
+}
+
 main article {
   clear: both;
 }

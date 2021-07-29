@@ -26,6 +26,18 @@ $secondary_min_width: 240px;
 	}
 }
 
+.no-sidebar {
+
+	.site-content {
+
+		.content-area {
+			max-width: 100%;
+			margin-right: unset;
+			overflow: unset;
+		}
+	}
+}
+
 main article {
 	clear: both;
 }
