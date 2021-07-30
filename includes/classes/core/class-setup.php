@@ -49,6 +49,10 @@ class Setup {
 
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
+
+		// Append blog excerpts.
+		add_filter( 'excerpt_more', [ $this, 'excerpt_more_auto' ] );
+		add_filter( 'get_the_excerpt', [ $this, 'excerpt_more_manual' ] );
 	}
 
 	/**
@@ -289,5 +293,87 @@ class Setup {
 
 		// Return the unfiltered classes if user is not logged in.
 		return $classes;
+	}
+
+	/**
+	 * Append auto excerpt
+	 *
+	 * Adds a "read more" link to auto-generated post excerpts.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string $more
+	 * @return string Returns the markup of the link.
+	 */
+	public function excerpt_more_auto( $more ) {
+
+		if ( has_excerpt( get_the_ID() ) ) {
+			return '';
+		}
+
+		$html = sprintf(
+			'&hellip; <a class="read-more" href="%s">%s</a>',
+			get_permalink( get_the_ID() ),
+			__( 'Read more', 'frontcore' )
+		);
+
+		return apply_filters( 'fct_excerpt_more', $html );
+	}
+
+	/**
+	 * Append manual excerpt
+	 *
+	 * Adds a "read more" link to manual post excerpts.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string $text
+	 * @global object $post
+	 * @return string Returns the markup of the link.
+	 */
+	public function excerpt_more_manual( $text ) {
+
+		// Access global variables.
+		global $post;
+
+		$post_content   = $post->post_content;
+		$excerpt_length = apply_filters( 'fct_excerpt_length', 55 );
+		$more_content   = substr( $post_content, 0, strpos( $post_content, '<!--more-->' ) );
+		$post_excerpt   = wp_trim_words( $post_content, $excerpt_length, '' );
+		$more_excerpt   = wp_trim_words( $more_content, $excerpt_length, '' );
+
+		$post_object = get_post_type_object( get_post_type() );
+		$post_name   = ucwords( $post_object->labels->singular_name );
+
+		// Manual excerpt.
+		if ( has_excerpt() ) {
+
+			$text .= sprintf(
+				'&hellip; <a class="read-more" href="%s">%s</a>',
+				get_permalink( get_the_ID() ),
+			__( 'Read more', 'frontcore' )
+			);
+
+		// Excerpt cut short by the "more" tag (paginated post).
+		} elseif ( strpos( $post_content, '<!--more-->' ) && strlen( $more_excerpt ) < strlen( $post_excerpt ) ) {
+
+			$text .= sprintf(
+				'&hellip; <a class="read-more" href="%s">%s</a>',
+				get_permalink( get_the_ID() ),
+			__( 'Continue reading', 'frontcore' )
+			);
+
+		// CHECKING FOR EXCERPT BEING SHORT BECAUSE OIF SHORT CONTENT
+		} elseif ( strlen( $text ) == strlen( $post_excerpt ) ) {
+
+			$text .= sprintf(
+				'<a class="read-more" href="%s">%s %s</a>',
+				get_permalink( get_the_ID() ),
+			__( 'Go to', 'frontcore' ),
+			$post_name
+			);
+		}
+
+		return $text;
 	}
 }
