@@ -53,3 +53,9 @@
 .has-fct-success-color {
   color: #4b9960;
 }
+
+.no-sidebar .wp-block-cover.alignfull {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc( 50% - 50vw);
+}

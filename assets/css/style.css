@@ -262,6 +262,7 @@ b, strong, optgroup {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
