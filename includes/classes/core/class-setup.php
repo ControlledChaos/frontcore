@@ -162,6 +162,32 @@ class Setup {
 	}
 
 	/**
+	 * Page template check
+	 *
+	 * Return true if page template is being used.
+	 * Works in the back end.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string $page_template The filename of the template to check against.
+	 *                               Example: 'page-templates/abc-123.php'.
+	 * @global object $post
+	 * @return bool Returns true if the page template is being used.
+	 */
+	public function is_page_template( $page_template ) {
+
+		// Access global variables.
+		global $post;
+
+		// False if no post object.
+		if ( ! $post ) {
+			return false;
+		}
+
+		return $page_template === get_post_meta( $post->ID, '_wp_page_template', true );
+	}
+
+	/**
 	 * Body classes
 	 *
 	 * Adds custom classes to the array of body classes.
