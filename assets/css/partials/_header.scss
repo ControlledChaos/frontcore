@@ -24,6 +24,14 @@
 	margin: 1em 0;
 }
 
+.site-branding-wrap {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
 .site-branding {
 	display: flex;
 	width: 100%;

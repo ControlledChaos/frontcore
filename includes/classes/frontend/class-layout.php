@@ -38,6 +38,7 @@ class Layout {
 
 		// Add nav to both actions for customizer refresh.
 		add_action( 'FrontCore\nav_before_header', [ $this, 'navigation_main' ] );
+		add_action( 'FrontCore\nav_aside_branding', [ $this, 'navigation_main' ] );
 		add_action( 'FrontCore\nav_after_header', [ $this, 'navigation_main' ] );
 
 		// Add the default header.

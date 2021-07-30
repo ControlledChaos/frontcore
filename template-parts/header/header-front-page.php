@@ -14,6 +14,9 @@ namespace FrontCore;
 use FrontCore\Classes\Front     as Front,
 	FrontCore\Classes\Customize as Customize;
 
+// Get the navigation location setting from the Customizer.
+$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
+
 // Get the author section display setting from the Customizer.
 $header_image = Customize\mods()->header_image( get_theme_mod( 'fct_header_image' ) );
 
@@ -24,25 +27,30 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 ?>
 <header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
-	<div class="site-branding">
+	<div class="site-branding-wrap">
+		<div class="site-branding">
 
-		<?php echo Front\tags()->site_logo(); ?>
+			<?php echo Front\tags()->site_logo(); ?>
 
-		<div class="site-title-description">
+			<div class="site-title-description">
 
-			<?php if ( is_front_page() ) : ?>
-				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-				<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_attr( esc_url( get_bloginfo( 'url' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif;
+				<?php if ( is_front_page() ) : ?>
+					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<?php else : ?>
+					<p class="site-title"><a href="<?php echo esc_attr( esc_url( get_bloginfo( 'url' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php endif;
 
-			$site_description = get_bloginfo( 'description', 'display' );
-			if ( $site_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $site_description; ?></p>
-			<?php endif; ?>
+				$site_description = get_bloginfo( 'description', 'display' );
+				if ( $site_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $site_description; ?></p>
+				<?php endif; ?>
 
+			</div>
 		</div>
+		<?php if ( 'aside' == $nav_location ) {
+				Front\tags()->nav_aside_branding();
+		} ?>
 	</div>
 
 	<?php if ( 'never' != $header_image ) :

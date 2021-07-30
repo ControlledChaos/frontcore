@@ -193,7 +193,7 @@ class Customizer {
 
 		// Main navigation location.
 		$wp_customize->add_setting( 'fct_nav_location', [
-			'default'	        => 'before',
+			'default'	        => 'aside',
 			'sanitize_callback' => [ $this, 'nav_location' ]
 		] );
 		$wp_customize->add_control( new \WP_Customize_Control(
@@ -206,6 +206,7 @@ class Customizer {
 				'description' => __( 'Display the main navigation menu before or after the header branding and image.', 'frontcore' ),
 				'type'        => 'select',
 				'choices'     => [
+					'aside'  => __( 'Aside Site Branding', 'frontcore' ),
 					'before' => __( 'Before Header', 'frontcore' ),
 					'after'  => __( 'After Header', 'frontcore' )
 				]
@@ -319,12 +320,12 @@ class Customizer {
 	 */
 	public function nav_location( $input ) {
 
-		$valid = [ 'before', 'after' ];
+		$valid = [ 'aside', 'before', 'after' ];
 
 		if ( in_array( $input, $valid ) ) {
 			return $input;
 		}
-		return 'before';
+		return 'aside';
 	}
 
 	/**

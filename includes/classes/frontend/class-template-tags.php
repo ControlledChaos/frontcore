@@ -184,6 +184,11 @@ class Template_Tags {
 		do_action( 'FrontCore\after_header' );
 	}
 
+	// Fires after site branding.
+	public function nav_aside_branding() {
+		do_action( 'FrontCore\nav_aside_branding' );
+	}
+
 	// Fires after `FrontCore\after_header`.
 	public function nav_after_header() {
 		do_action( 'FrontCore\nav_after_header' );
