@@ -31,7 +31,10 @@ get_header();
 		</main>
 	</div>
 	<?php
-	if ( ! is_page_template( 'page-templates/no-sidebar.php' ) ) {
+	if (
+		! is_page_template( 'page-templates/no-sidebar.php' ) &&
+		! is_page_template( 'page-templates/no-sidebar-no-featured.php' )
+	) {
 		get_sidebar();
 	}
 	?>
