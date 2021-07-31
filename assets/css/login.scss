@@ -3,6 +3,7 @@
 ///
 
 @import 'modules/_colors';
+@import 'modules/_layout';
 
 .login {
 	display: flex;
@@ -53,7 +54,7 @@
 
 	#login {
 		width: 100%;
-		max-width: 1280px;
+		max-width: $content_width;
 		margin: 0;
 		padding: 2rem;
 

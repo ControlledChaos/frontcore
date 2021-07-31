@@ -2,6 +2,8 @@
 /// Site layout styles
 ///
 
+@import '../modules/_layout';
+
 // Variables.
 $content_separator: 2em;
 $secondary_min_width: 240px;
@@ -12,7 +14,7 @@ $secondary_min_width: 240px;
 
 .site-content {
 	display: flex;
-	max-width: 1280px;
+	max-width: $content_width;
 	margin: 0 auto;
 	padding: 2em;
 
