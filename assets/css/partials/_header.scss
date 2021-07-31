@@ -2,6 +2,8 @@
 /// Site header styles
 ///
 
+@import '../modules/_layout';
+
 .site-title {
 	margin: 0;
 
@@ -25,29 +27,40 @@
 }
 
 .site-branding-wrap {
-	display: flex;
-	align-items: center;
 	width: 100%;
 	max-width: $content_width;
 	margin: 0 auto;
-}
 
-.site-branding {
-	display: flex;
-	width: 100%;
-	max-width: $content_width;
-	margin: 0 auto;
-	padding: 1em 2em 0;
+	.site-branding {
+		display: flex;
+		width: 100%;
+		max-width: $content_width;
+		margin: 0 auto;
+		padding: 1em 2em 0;
 
-	img {
-		margin-right: 1em;
-		max-height: 80px;
+		img {
+			margin-right: 1em;
+			max-height: 80px;
+		}
+	}
+
+	&.nav-aside-branding {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.site-branding {
+			width: auto;
+			margin: 0;
+		}
 	}
 }
 
 @media screen and ( max-width: 960px ) {
 
 	.site-branding-wrap {
-		flex-direction: column;
+		&.nav-aside-branding {
+			flex-direction: column;
+		}
 	}
 }

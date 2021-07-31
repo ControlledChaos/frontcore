@@ -44,6 +44,9 @@ class Layout {
 		// Add the default header.
 		add_action( 'FrontCore\header', [ $this, 'page_header' ] );
 
+		// Site branding wrap class.
+		add_action( 'FrontCore\site_branding_wrap_class', [ $this, 'site_branding_wrap_class' ] );
+
 		// Add the default sidebar.
 		add_action( 'FrontCore\sidebar', [ $this, 'page_sidebar' ] );
 
@@ -89,6 +92,27 @@ class Layout {
 		} else {
 			get_template_part( 'template-parts/header/header-default' );
 		}
+	}
+
+	/**
+	 * Site branding wrap class
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the class(es) added.
+	 */
+	public function site_branding_wrap_class() {
+
+		// Get the navigation location setting from the Customizer.
+		$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
+
+		$classes = '';
+
+		if ( 'aside' == $nav_location ) {
+			$classes = ' nav-aside-branding';
+		}
+
+		echo $classes;
 	}
 
 	/**

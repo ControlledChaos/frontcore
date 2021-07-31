@@ -27,7 +27,7 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 ?>
 <header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
-	<div class="site-branding-wrap">
+	<div class="site-branding-wrap<?php do_action( 'FrontCore\site_branding_wrap_class' ); ?>">
 		<div class="site-branding">
 
 			<?php echo Front\tags()->site_logo(); ?>
