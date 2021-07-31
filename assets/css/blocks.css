@@ -54,6 +54,12 @@
   color: #4b9960;
 }
 
+.wp-block-cover__inner-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
 .no-sidebar .wp-block-cover.alignfull {
   width: 100vw;
   max-width: 100vw;
