@@ -34,11 +34,9 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 
 			<div class="site-title-description">
 
-				<?php if ( is_front_page() ) : ?>
-					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-					<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_attr( esc_url( get_bloginfo( 'url' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
+				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+
+				<?php
 
 				$site_description = get_bloginfo( 'description', 'display' );
 				if ( $site_description || is_customize_preview() ) :

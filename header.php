@@ -46,7 +46,7 @@ do_action( 'before_html' ); ?>
 Front\tags()->body_open();
 Front\tags()->before_page();
 ?>
-
+<a class="skip-link screen-reader-text" href="#content"><?php esc_attr( esc_html_e( 'Skip to content', 'frontcore' ) ); ?></a>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Front\tags()->site_schema() ); ?>">
 
 	<div class="site-header-wrap">
