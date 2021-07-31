@@ -765,6 +765,15 @@ h2 + .search-form {
   max-height: 80px;
 }
 
+@media screen and (max-width: 960px) {
+  .site-branding-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .main-navigation {
   clear: both;
   display: block;

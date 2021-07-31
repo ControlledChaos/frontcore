@@ -44,3 +44,10 @@
 		max-height: 80px;
 	}
 }
+
+@media screen and ( max-width: 960px ) {
+
+	.site-branding-wrap {
+		flex-direction: column;
+	}
+}
