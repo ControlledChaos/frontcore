@@ -860,6 +860,27 @@ h2 + .search-form {
   margin: 0;
 }
 
+.site-branding-wrap.nav-aside-branding .main-navigation ul ul {
+  left: auto;
+  right: -999em;
+}
+
+.site-branding-wrap.nav-aside-branding .main-navigation ul ul ul {
+  right: -999em;
+  top: 0;
+}
+
+.site-branding-wrap.nav-aside-branding .main-navigation ul ul li:hover > ul,
+.site-branding-wrap.nav-aside-branding .main-navigation ul ul li.focus > ul {
+  right: 100%;
+}
+
+.site-branding-wrap.nav-aside-branding .main-navigation li:hover > ul,
+.site-branding-wrap.nav-aside-branding .main-navigation li:focus > ul,
+.site-branding-wrap.nav-aside-branding .main-navigation li.focus > ul {
+  right: 0;
+}
+
 .site-main .comment-navigation,
 .site-main .posts-navigation .nav-links,
 .site-main .post-navigation {

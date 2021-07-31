@@ -88,6 +88,31 @@
 		.main-navigation {
 			width: auto;
 			margin: 0;
+
+			ul {
+				ul {
+					left: auto;
+					right: -999em;
+
+					ul {
+						right: -999em;
+						top: 0;
+					}
+
+					li:hover > ul,
+					li.focus > ul {
+						right: 100%;
+					}
+				}
+			}
+
+			li {
+				&:hover > ul,
+				&:focus > ul,
+				&.focus > ul {
+					right: 0;
+				}
+			}
 		}
 	}
 }
