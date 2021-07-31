@@ -2,6 +2,23 @@
 /// Main content RTL styles
 ///
 
+.entry-content {
+	blockquote {
+		p {
+			&:first-of-type {
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+		}
+
+		cite {
+			text-align: left;
+		}
+	}
+}
+
 .entry-footer span {
 	margin-right: unset;
 	margin-left: 1em;

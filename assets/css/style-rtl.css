@@ -19,7 +19,7 @@ body {
   margin-left: 0.3em;
 }
 
-.site-branding img {
+.site-branding-wrap .site-branding img {
   margin-right: unset;
   margin-left: 1em;
 }
@@ -74,6 +74,14 @@ body {
     margin-right: unset;
     margin-left: 0;
   }
+}
+
+.entry-content blockquote p:first-of-type:before, .entry-content blockquote p:first-of-type:after {
+  display: none;
+}
+
+.entry-content blockquote cite {
+  text-align: left;
 }
 
 .entry-footer span {

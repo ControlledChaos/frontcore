@@ -3,3 +3,14 @@
 ///
 
 @import 'modules/_colors';
+@import 'modules/_layout';
+
+.no-sidebar {
+
+	.wp-block-cover.alignfull {
+		width: 100vw;
+		max-width: 100vw;
+		margin-left: auto;
+		margin-right: calc( 50% - 50vw );
+	}
+}
