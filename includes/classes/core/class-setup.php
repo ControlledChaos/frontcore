@@ -32,9 +32,6 @@ class Setup {
 		// Theme setup.
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 
-		// Body element classes.
-		add_filter( 'body_class', [ $this, 'body_classes' ] );
-
 		// jQuery UI fallback for HTML5 Contact Form 7 form fields.
 		add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
 
@@ -185,45 +182,6 @@ class Setup {
 		}
 
 		return $page_template === get_post_meta( $post->ID, '_wp_page_template', true );
-	}
-
-	/**
-	 * Body classes
-	 *
-	 * Adds custom classes to the array of body classes.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  array $classes Classes for the body element.
-	 * @return array Returns the array of body classes.
-	 */
-	public function body_classes( $classes ) {
-
-		$classes[] = '';
-
-		// Adds a class of hfeed to non-singular pages.
-		if ( ! is_singular() ) {
-			$classes[] .= 'hfeed';
-		}
-
-		// Add class for the static front page.
-		if ( is_front_page() && 'page' == get_option( 'show_on_front' ) ) {
-			$classes[] .= 'static-front';
-		 }
-
-		// Adds a class of no-sidebar when there is no default sidebar present.
-		if (
-			! is_active_sidebar( 'sidebar-default' ) ||
-			is_page_template( [
-				'page-templates/no-sidebar.php',
-				'page-templates/no-sidebar-no-featured.php'
-			] )
-		) {
-			$classes[] .= 'no-sidebar';
-		}
-
-		// Return the modified array of body classes.
-		return $classes;
 	}
 
 	/**

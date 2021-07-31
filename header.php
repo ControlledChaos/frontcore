@@ -40,7 +40,7 @@ do_action( 'before_html' ); ?>
 
 <?php Front\tags()->head(); ?>
 
-<body <?php body_class(); ?>>
+<body <?php Front\tags()->body_class(); ?>>
 
 <?php
 Front\tags()->body_open();

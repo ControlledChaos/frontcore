@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+namespace FrontCore;
+
+// Alias namespaces.
+use FrontCore\Classes\Front as Front;
+
 if ( ! headers_sent() ) {
 	header( 'X-WP-embed: true' );
 }
@@ -22,4 +27,4 @@ if ( ! headers_sent() ) {
 	<?php do_action( 'embed_head' ); ?>
 	<?php do_action( 'fct_embed_head' ); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php Front\tags()->body_class(); ?>>
