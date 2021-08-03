@@ -95,12 +95,10 @@ class Assets {
 
 		// Block styles.
 		if ( function_exists( 'has_blocks' ) ) {
-			if ( has_blocks() ) {
-				wp_enqueue_style( 'fct-blocks', get_theme_file_uri( '/assets/css/blocks' . $this->suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
+			wp_enqueue_style( 'fct-blocks', get_theme_file_uri( '/assets/css/blocks' . $this->suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
 
-				if ( is_rtl() ) {
-					wp_enqueue_style( 'fct-blocks-rtl', get_theme_file_uri( '/assets/css/blocks-rtl' . $this->suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
-				}
+			if ( is_rtl() ) {
+				wp_enqueue_style( 'fct-blocks-rtl', get_theme_file_uri( '/assets/css/blocks-rtl' . $this->suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
 			}
 		}
 
