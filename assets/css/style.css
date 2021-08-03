@@ -455,11 +455,15 @@ button,
   border: solid 1px #cccccc;
 }
 
-input:focus,
+input:focus, input.focus,
 textarea:focus,
+textarea.focus,
 select:focus,
+select.focus,
 button:focus,
-.button:focus {
+button.focus,
+.button:focus,
+.button.focus {
   border-color: #005ce7;
 }
 

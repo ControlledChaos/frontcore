@@ -2,6 +2,25 @@
 /// Form styles
 ///
 
+@import '../modules/_colors';
+
+// Functions
+@function button_svg_color() {
+	@return '%23' + str-slice( '#{$button_text_color}', 2, -1 );
+}
+
+@function button_svg_action_color() {
+	@return '%23' + str-slice( '#{$button_action_text_color}', 2, -1 );
+}
+
+@function button_svg_color_dark() {
+	@return '%23' + str-slice( '#{$button_text_color_dark}', 2, -1 );
+}
+
+@function button_svg_action_color_dark() {
+	@return '%23' + str-slice( '#{$button_action_text_color_dark}', 2, -1 );
+}
+
 form * + * {
 	margin-top: 1em;
 }
@@ -30,7 +49,8 @@ button,
 	background: $form_background_color;
 	border: solid 1px $form_border_color;
 
-	&:focus {
+	&:focus,
+	&.focus {
 		border-color: $form_action_border_color;
 	}
 }
