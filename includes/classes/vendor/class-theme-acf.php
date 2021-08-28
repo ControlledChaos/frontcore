@@ -217,7 +217,7 @@ class Theme_ACF extends Plugin {
 	public function suffix( $suffix = '' ) {
 
 		// If ACF is active.
-		if ( $this->is_active() ) {
+		if ( $this->is_active() || class_exists( 'acf' ) ) {
 			$suffix = '-acf';
 		}
 
