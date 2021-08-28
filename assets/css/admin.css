@@ -66,7 +66,11 @@
   }
 }
 
-.site-branding {
+.site-branding-wrap {
+  max-width: 100%;
+}
+
+.site-branding-wrap .site-branding {
   max-width: 100%;
   padding: 0;
 }

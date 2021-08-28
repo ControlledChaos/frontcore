@@ -6,9 +6,13 @@
 @import 'partials/_header';
 
 // Custom admin elements.
-.site-branding {
+.site-branding-wrap {
 	max-width: 100%;
-	padding: 0;
+
+	.site-branding {
+		max-width: 100%;
+		padding: 0;
+	}
 }
 
 // Standard admin elements.
