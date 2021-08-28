@@ -16,7 +16,8 @@
 namespace FrontCore\Classes\Front;
 
 // Alias namespaces.
-use FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Customize as Customize,
+	FrontCore\Classes\Vendor    as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -77,6 +78,9 @@ class Layout {
 	 */
 	public function page_header() {
 
+		// Instantiate ACF class to get the suffix.
+		$acf = new Vendor\Theme_ACF;
+
 		/**
 		 * Conditional page header
 		 *
@@ -86,11 +90,11 @@ class Layout {
 		 * that is bigger & bolder than those of subsequent pages.
 		 */
 		if ( is_front_page() ) {
-			get_template_part( 'template-parts/header/header-front-page' );
+			get_template_part( 'template-parts/header/header-front-page' . $acf->suffix() );
 		} elseif ( is_page_template( 'page-templates/page-builder.php' ) ) {
 			get_template_part( 'template-parts/header/header-builder' );
 		} else {
-			get_template_part( 'template-parts/header/header-default' );
+			get_template_part( 'template-parts/header/header-default' . $acf->suffix() );
 		}
 	}
 
