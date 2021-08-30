@@ -96,6 +96,9 @@ class Theme_Mode extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
+		// Instantiate the Template_Tags class.
+		new Front\Template_Tags;
+
 		if ( ! empty( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {

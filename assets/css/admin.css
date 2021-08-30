@@ -98,6 +98,10 @@
   font-weight: bold;
 }
 
+#titlediv #title-prompt-text {
+  line-height: 1;
+}
+
 #poststuff {
   padding-top: 2rem;
 }
