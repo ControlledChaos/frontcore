@@ -23,6 +23,7 @@ $notify: $orange !default;
 $warning: $yellow !default;
 $success: $green !default;
 
+// Theme general colors: light mode.
 $body_bg: $white !default;
 $text_color: $dark_gray !default;
 $link_color: #0044aa !default;
@@ -87,3 +88,45 @@ $button_action_text_color_dark: $text_color !default;
 $button_disabled_background_color_dark: lighten( $color: $body_bg_dark, $amount: 5% ) !default !default;
 $button_disabled_border_color_dark: $button_border_color_dark !default;
 $button_disabled_text_color_dark: lighten( $color: $body_bg_dark, $amount: 25% ) !default;
+
+// Header colors: light mode.
+$header_bg_color: $body_bg !default;
+$header_text_color: $text_color !default;
+$header_link_color: $link_color !default;
+$header_link_action_color: $link_action_color !default;
+
+// Header colors: dark mode.
+$header_bg_color_dark: $body_bg_dark !default;
+$header_text_color_dark: $white !default;
+$header_link_color_dark: $white !default;
+$header_link_action_color_dark: $link_action_color_dark !default;
+
+// Navigation colors: light mode.
+$nav_bg_color: $header_bg_color !default;
+$nav_text_color: $header_text_color !default;
+$nav_link_bg_color: none !default;
+$nav_link_action_bg_color: none !default;
+$nav_link_color: $header_link_color !default;
+$nav_link_action_color: $header_link_action_color !default;
+$subnav_bg_color: darken( $color: $nav_bg_color, $amount: 5% ) !default;
+$subnav_border_color: darken( $color: $box_border_color, $amount: 5% ) !default;
+$subnav_link_bg_color: none !default;
+$subnav_link_action_bg_color: lighten( $color: $nav_bg_color, $amount: 5% ) !default;
+$subnav_text_color: $nav_text_color !default;
+$subnav_link_color: $nav_link_color !default;
+$subnav_link_action_color: $nav_link_action_color !default;
+
+// Navigation colors: dark mode.
+$nav_bg_color_dark: $header_bg_color_dark !default;
+$nav_text_color_dark: $header_text_color_dark !default;
+$nav_link_bg_color_dark: none !default;
+$nav_link_action_bg_color_dark: none !default;
+$nav_link_color_dark: $header_link_color_dark !default;
+$nav_link_action_color_dark: $header_link_action_color_dark !default;
+$subnav_bg_color_dark: lighten( $color: $nav_bg_color_dark, $amount: 12% ) !default;
+$subnav_border_color_dark: darken( $color: $box_border_color_dark, $amount: 5% ) !default;
+$subnav_link_bg_color_dark: none !default;
+$subnav_link_action_bg_color_dark: lighten( $color: $nav_bg_color_dark, $amount: 25% ) !default;
+$subnav_text_color_dark: $nav_text_color_dark !default;
+$subnav_link_color_dark: $nav_link_color_dark !default;
+$subnav_link_action_color_dark: $nav_link_color_dark !default;

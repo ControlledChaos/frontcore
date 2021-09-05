@@ -32,8 +32,8 @@
 			z-index: 99999;
 			width: 100%;
 			min-width: 160px;
-			background-color: $off_white;
-			border: solid 1px $pale_gray;
+			background-color: $subnav_bg_color;
+			border: solid 1px $subnav_border_color;
 			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 
@@ -57,7 +57,7 @@
 
 					&:hover,
 					&:focus {
-						background: $pale_gray;
+						background-color: $subnav_link_action_bg_color;
 					}
 				}
 			}
@@ -214,13 +214,16 @@
 	.main-navigation {
 		ul {
 			ul {
-				background: $dark_gray;
+				background-color: $subnav_bg_color_dark;
 
 				li {
 					a {
+						color: $subnav_link_color_dark;
+
 						&:hover,
 						&:focus {
-							background: $medium_gray;
+							background-color: $subnav_link_action_bg_color_dark;
+							color: $subnav_link_action_color_dark
 						}
 					}
 				}
