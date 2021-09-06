@@ -804,7 +804,7 @@ class Template_Tags {
 		}
 
 		// Check for the large 16:9 video image size.
-		if ( has_image_size( 'image-name' ) ) {
+		if ( has_image_size( 'large-video' ) ) {
 			$size = 'large-video';
 		} else {
 			$size = 'post-thumbnail';
