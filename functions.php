@@ -202,6 +202,11 @@ $fct_core_mods    = new Customize\Customizer;
 // Vendor (plugin) classes.
 $fct_acf = new Vendor\Theme_ACF;
 
+// ACF filters.
+if ( $tmgf_acf->use_bundled() || class_exists( 'acf' ) ) {
+	$tmgf_acf->filters();
+}
+
 // Frontend classes.
 if ( ! is_admin() ) {
 	$fct_head   = new Front\Head;

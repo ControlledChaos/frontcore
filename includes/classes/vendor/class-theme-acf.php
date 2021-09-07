@@ -96,8 +96,17 @@ class Theme_ACF extends Plugin {
 	 * @return self
 	 */
 	public function __construct() {
-
 		parent :: __construct();
+	}
+
+	/**
+	 * Filters
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function filters() {
 
 		/**
 		 * ACF local JSON
@@ -114,7 +123,7 @@ class Theme_ACF extends Plugin {
 		}
 
 		// Filter assets URL.
-		if ( ! $this->is_active() && ! FCT_COMPANION ) {
+		if ( ! $this->is_active() && ! TMGF_COMPANION ) {
 			add_filter( 'acf/settings/url', [ $this, 'acf_settings_url' ] );
 		}
 
