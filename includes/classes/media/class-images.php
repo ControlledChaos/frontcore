@@ -35,6 +35,10 @@ class Images {
 
 	/**
 	 * Add image sizes
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
 	 */
 	public function image_sizes() {
 
@@ -103,7 +107,7 @@ class Images {
 	 * @global array $_wp_additional_image_sizes Gets the array of custom image size names.
 	 * @return array $sizes Returns an array of image size names.
 	 */
-	function insert_image_sizes( $sizes ) {
+	public function insert_image_sizes( $sizes ) {
 
 		// Access global variables.
 		global $_wp_additional_image_sizes;
