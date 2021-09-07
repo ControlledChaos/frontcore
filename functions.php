@@ -203,8 +203,8 @@ $fct_core_mods    = new Customize\Customizer;
 $fct_acf = new Vendor\Theme_ACF;
 
 // ACF filters.
-if ( $tmgf_acf->use_bundled() || class_exists( 'acf' ) ) {
-	$tmgf_acf->filters();
+if ( $fct_acf->use_bundled() || class_exists( 'acf' ) ) {
+	$fct_acf->filters();
 }
 
 // Frontend classes.

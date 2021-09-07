@@ -123,7 +123,7 @@ class Theme_ACF extends Plugin {
 		}
 
 		// Filter assets URL.
-		if ( ! $this->is_active() && ! TMGF_COMPANION ) {
+		if ( ! $this->is_active() && ! FCT_COMPANION ) {
 			add_filter( 'acf/settings/url', [ $this, 'acf_settings_url' ] );
 		}
 
