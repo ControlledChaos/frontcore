@@ -20,7 +20,6 @@ audio, canvas, progress, video {
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100%;
   overflow-y: scroll;
   font-size: 100%;
   -ms-text-size-adjust: 100%;
