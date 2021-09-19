@@ -414,7 +414,7 @@ main article {
   min-width: 240px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .site-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
