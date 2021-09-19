@@ -2,6 +2,8 @@
 /// Site layout RTL styles
 ///
 
+@import '../modules/_layout';
+
 // Variables.
 $content_separator: 2em;
 
@@ -12,7 +14,7 @@ $content_separator: 2em;
 	}
 }
 
-@media screen and ( max-width: 768px ) {
+@media screen and ( max-width: $break_primary_tablet ) {
 
 	.site-content {
 		.content-area {
