@@ -352,14 +352,14 @@ class Template_Tags {
 				$mime_prefix = [ 'application/', 'image/', 'text/', 'audio/', 'video/', 'music/' ];
 				$classes[]   = 'attachmentid-' . $post_id;
 				$classes[]   = 'attachment-' . str_replace( $mime_prefix, '', $mime_type );
+
 			} elseif ( is_page() ) {
+
 				$classes[] = 'page';
-
-				$page_id = $wp_query->get_queried_object_id();
-
-				$post = get_post( $page_id );
-
+				$page_id   = $wp_query->get_queried_object_id();
+				$post      = get_post( $page_id );
 				$classes[] = 'page-id-' . $page_id;
+				$classes[] = 'page-slug-' . get_post_field( 'post_name', get_post() );
 
 				if ( get_pages(
 					[
