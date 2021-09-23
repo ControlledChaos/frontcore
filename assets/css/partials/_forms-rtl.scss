@@ -2,7 +2,14 @@
 /// Form RTL styles
 ///
 
+@import '../modules/_colors';
+
 .search-label {
 	margin-right: unset;
 	margin-left: 0.3em
+}
+
+.search-submit {
+	border-left: solid 1px $form_border_color;
+	border-right: none;
 }
