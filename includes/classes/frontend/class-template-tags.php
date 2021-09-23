@@ -671,6 +671,11 @@ class Template_Tags {
 			$template = 'content' . $acf->suffix();
 		}
 
+		// 494 error page.
+		if ( is_404() ) {
+			$template = '404' . $acf->suffix();
+		}
+
 		// Apply a filter for unforeseen conditions.
 		$template = apply_filters( 'fct_content_template', $template );
 

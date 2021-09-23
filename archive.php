@@ -21,9 +21,7 @@ get_header();
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 		<?php
-		if ( have_posts() ) :
-
-		?>
+		if ( have_posts() ) : ?>
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -31,16 +29,18 @@ get_header();
 				?>
 			</header>
 
-			<?php while ( have_posts() ) : the_post();
+			<div class="content-loop archive-loop <?php echo get_post_type(); ?>-archive-loop">
+				<?php while ( have_posts() ) : the_post(); ?>
+				<?php Front\tags()->content_template(); ?>
+				<?php endwhile; ?>
+			</div>
 
-				Front\tags()->content_template();
-				endwhile;
-
-				the_posts_navigation( [
+			<?php the_posts_navigation( [
 					'prev_text' => __( 'Previous', 'frontcore' ),
 					'next_text' => __( 'Next', 'frontcore' )
-				] );
+				] ); ?>
 
+		<?php
 		else :
 			Front\tags()->content_template();
 		endif;
