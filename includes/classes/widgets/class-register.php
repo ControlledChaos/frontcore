@@ -64,5 +64,15 @@ class Register {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		] );
+
+		register_sidebar( [
+			'name'          => __( '404 Error', 'frontcore' ),
+			'id'            => 'error-404',
+			'description'   => __( 'Displays on the 404, page not found error page.', 'frontcore' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		] );
 	}
 }
