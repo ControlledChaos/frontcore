@@ -4,7 +4,6 @@
  *
  * Template Name: No Sidebar, No Featured Image
  * Template Post Type: post, page
- * Description: Does not load the primary sidebar or the featured image.
  *
  * @package    Front_Core
  * @subpackage Templates

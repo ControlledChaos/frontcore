@@ -4,7 +4,6 @@
  *
  * Template Name: No Sidebar
  * Template Post Type: post, page
- * Description: Does not load the primary sidebar.
  *
  * @package    Front_Core
  * @subpackage Templates
