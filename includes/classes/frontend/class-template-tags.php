@@ -499,6 +499,7 @@ class Template_Tags {
 		if (
 			! is_active_sidebar( 'sidebar-default' ) ||
 			is_page_template( [
+				'page-templates/front-page-content-only.php',
 				'page-templates/no-sidebar.php',
 				'page-templates/no-sidebar-no-featured.php'
 			] )
@@ -801,6 +802,7 @@ class Template_Tags {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		} elseif (
+			is_page_template( 'page-templates/front-page-content-only.php' ) ||
 			is_page_template( 'page-templates/no-featured.php' ) ||
 			is_page_template( 'page-templates/no-sidebar-no-featured.php' ) ||
 			is_page_template( 'page-templates/page-builder.php' )

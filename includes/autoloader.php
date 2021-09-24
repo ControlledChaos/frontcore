@@ -62,6 +62,7 @@ define( 'FCT_CLASSES', [
 	// Core classes.
 	FCT_CLASS_NS . '\Core\Assets' => FCT_CLASS['core'] . 'assets.php',
 	FCT_CLASS_NS . '\Core\Setup'  => FCT_CLASS['core'] . 'setup.php',
+	FCT_CLASS_NS . '\Core\Page_Templates' => FCT_CLASS['core'] . 'page-templates.php',
 
 	// Widgets classes.
 	FCT_CLASS_NS . '\Widgets\Register'   => FCT_CLASS['widgets'] . 'register.php',

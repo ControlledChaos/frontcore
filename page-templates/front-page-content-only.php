@@ -1,10 +1,23 @@
 <?php
 /**
- * Site front page template
+ * Front page content-only template
+ *
+ * Full width, no sidebar, no featured image template.
+ *
+ * The `Template Post Type` header is left blank to
+ * keep this template from being used generally in
+ * the `post` or `page` post types. The template is
+ * made available only to the static front page in
+ * the Page_Templates class.
+ *
+ * @see includes/classes/core/class-page-templates.php.
+ *
+ * Template Name: Front Page Content Only
+ * Template Post Type:
  *
  * @package    Front_Core
  * @subpackage Templates
- * @category   Front Page
+ * @category   Posts
  * @since      1.0.0
  */
 
@@ -30,11 +43,6 @@ get_header();
 
 		</main>
 	</div>
-	<?php
-	if ( ! is_page_template( 'page-templates/front-page-content-only.php' ) ) {
-		get_sidebar();
-	}
-	?>
 </div>
 <?php
 
