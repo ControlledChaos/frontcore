@@ -220,7 +220,12 @@ h2 + .search-form {
 }
 
 .search-submit {
-  border-left: none;
+  -webkit-transform: translateX(-1px);
+          transform: translateX(-1px);
+}
+
+.search-form input[type="search"]:focus {
+  z-index: 1;
 }
 
 .dark-mode input,

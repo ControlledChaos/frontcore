@@ -10,6 +10,5 @@
 }
 
 .search-submit {
-	border-left: solid 1px $form_border_color;
-	border-right: none;
+	transform: translateX( 1px );
 }

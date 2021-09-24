@@ -20,8 +20,8 @@ body {
 }
 
 .search-submit {
-  border-left: solid 1px #cccccc;
-  border-right: none;
+  -webkit-transform: translateX(1px);
+          transform: translateX(1px);
 }
 
 .site-branding-wrap .site-branding img {
