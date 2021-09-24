@@ -22,6 +22,9 @@ class Page_Templates {
 	/**
 	 * Constructor magic method
 	 *
+	 * Theme templates filter is dynamic, using a post type name.
+	 * @example `add_filter( 'theme_{$post_type}_templates', [ $this, 'post_type_templates' ] );`
+	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return self
@@ -64,6 +67,7 @@ class Page_Templates {
 	 * Make select page templates available to the static front page.
 	 *
 	 * @since  1.0.0
+	 * @since  WP 4.7
 	 * @access public
 	 * @param  array $post_templates Array of available templates.
 	 * @return array Returns an array of templates for the front page.
@@ -102,11 +106,17 @@ class Page_Templates {
 	 * with the sample post type in this theme's companion plugin boilerplate.
 	 *
 	 * @since  1.0.0
+	 * @since  WP 4.7
 	 * @access public
 	 * @param  array $post_templates Array of available templates.
 	 * @return array Returns an array of templates for the post type.
 	 */
 	public function sample_templates( $post_templates ) {
+
+		// Stop here if version does not support post type templates.
+		if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+			return;
+		}
 
 		$post_templates['page-templates/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
 		$post_templates['page-templates/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
