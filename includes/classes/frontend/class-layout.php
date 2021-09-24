@@ -127,7 +127,7 @@ class Layout {
 	 * @return void
 	 */
 	public function page_sidebar() {
-		get_template_part( 'template-parts/aside/sidebar' );
+		get_template_part( 'template-parts/widgets/sidebar' );
 	}
 
 	/**
