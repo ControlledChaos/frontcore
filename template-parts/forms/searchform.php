@@ -14,8 +14,6 @@ namespace FrontCore;
 use FrontCore\Classes\Front as Front;
 
 ?>
-<h3><?php _e( 'Search','frontcore' ); ?></h3>
-
 <form class="search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
 	<label for="search" class="screen-reader-text"><?php _e( 'Search for:','frontcore' ); ?></label>
