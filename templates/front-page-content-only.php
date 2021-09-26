@@ -8,9 +8,9 @@
  * keep this template from being used generally in
  * the `post` or `page` post types. The template is
  * made available only to the static front page in
- * the Page_Templates class.
+ * the Templates class.
  *
- * @see includes/classes/core/class-page-templates.php.
+ * @see includes/classes/core/class-templates.php.
  *
  * Template Name: Front Page Content Only
  * Template Post Type:

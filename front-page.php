@@ -31,7 +31,7 @@ get_header();
 		</main>
 	</div>
 	<?php
-	if ( ! is_page_template( 'page-templates/front-page-content-only.php' ) ) {
+	if ( ! is_page_template( 'templates/front-page-content-only.php' ) ) {
 		get_sidebar();
 	}
 	?>
