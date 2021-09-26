@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Page_Templates {
+class Templates {
 
 	/**
 	 * Constructor magic method
@@ -86,12 +86,12 @@ class Page_Templates {
 		if ( 'page' == $front_show && get_the_ID() == $front_page ) {
 
 			// Unset general templates.
-			unset( $post_templates['page-templates/no-sidebar.php'] );
-			unset( $post_templates['page-templates/no-featured.php'] );
-			unset( $post_templates['page-templates/no-sidebar-no-featured.php'] );
+			unset( $post_templates['templates/no-sidebar.php'] );
+			unset( $post_templates['templates/no-featured.php'] );
+			unset( $post_templates['templates/no-sidebar-no-featured.php'] );
 
 			// Set specific front page templates.
-			$post_templates['page-templates/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
+			$post_templates['templates/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
 		}
 
 		return $post_templates;
@@ -118,9 +118,9 @@ class Page_Templates {
 			return;
 		}
 
-		$post_templates['page-templates/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-		$post_templates['page-templates/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-		$post_templates['page-templates/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+		$post_templates['templates/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+		$post_templates['templates/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+		$post_templates['templates/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 		return $post_templates;
 	}

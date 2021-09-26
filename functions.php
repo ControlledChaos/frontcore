@@ -194,7 +194,7 @@ $fct_deactivate = new Classes\Activate\Deactivate;
 
 // Theme setup.
 $fct_core_setup   = new Core\Setup;
-$fct_core_setup   = new Core\Page_Templates;
+$fct_core_setup   = new Core\Templates;
 $fct_core_assets  = new Core\Assets;
 $fct_core_widgets = new Widgets\Register;
 $fct_core_media   = new Media\Images;
