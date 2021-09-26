@@ -31,8 +31,8 @@ use FrontCore\Classes\Front as Front;
 
 	<?php if ( is_singular() ) {
 		if (
-			! is_page_template( 'templates/no-featured.php' ) ||
-			! is_page_template( 'templates/no-sidebar-no-featured.php' )
+			! is_page_template( 'templates/theme/no-featured.php' ) ||
+			! is_page_template( 'templates/theme/no-sidebar-no-featured.php' )
 		) {
 			Front\tags()->post_thumbnail();
 		}

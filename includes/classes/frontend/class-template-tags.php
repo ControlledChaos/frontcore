@@ -499,9 +499,9 @@ class Template_Tags {
 		if (
 			! is_active_sidebar( 'sidebar-default' ) ||
 			is_page_template( [
-				'templates/front-page-content-only.php',
-				'templates/no-sidebar.php',
-				'templates/no-sidebar-no-featured.php'
+				'templates/theme/front-page-content-only.php',
+				'templates/theme/no-sidebar.php',
+				'templates/theme/no-sidebar-no-featured.php'
 			] )
 		) {
 			$classes[] = 'no-sidebar';
@@ -646,7 +646,7 @@ class Template_Tags {
 			if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 				$template = 'content-front-page' . $acf->suffix();
 
-			} elseif ( is_page_template( 'templates/page-builder.php' ) ) {
+			} elseif ( is_page_template( 'templates/theme/page-builder.php' ) ) {
 
 				$template = 'content-builder';
 
@@ -802,10 +802,10 @@ class Template_Tags {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		} elseif (
-			is_page_template( 'templates/front-page-content-only.php' ) ||
-			is_page_template( 'templates/no-featured.php' ) ||
-			is_page_template( 'templates/no-sidebar-no-featured.php' ) ||
-			is_page_template( 'templates/page-builder.php' )
+			is_page_template( 'templates/theme/front-page-content-only.php' ) ||
+			is_page_template( 'templates/theme/no-featured.php' ) ||
+			is_page_template( 'templates/theme/no-sidebar-no-featured.php' ) ||
+			is_page_template( 'templates/theme/page-builder.php' )
 		) {
 			return;
 		}

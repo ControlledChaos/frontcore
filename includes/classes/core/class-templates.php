@@ -35,6 +35,9 @@ class Templates {
 		add_filter( 'default_page_template_title', [ $this, 'front_page_default_template_title' ] );
 		add_filter( 'theme_page_templates', [ $this, 'front_page_templates' ] );
 
+		// Post templates.
+		add_filter( 'theme_post_templates', [ $this, 'post_templates' ] );
+
 		// Sample post type templates.
 		add_filter( 'theme_sample_type_templates', [ $this, 'sample_templates' ] );
 	}
@@ -86,13 +89,38 @@ class Templates {
 		if ( 'page' == $front_show && get_the_ID() == $front_page ) {
 
 			// Unset general templates.
-			unset( $post_templates['templates/no-sidebar.php'] );
-			unset( $post_templates['templates/no-featured.php'] );
-			unset( $post_templates['templates/no-sidebar-no-featured.php'] );
+			unset( $post_templates['templates/theme/no-sidebar.php'] );
+			unset( $post_templates['templates/theme/no-featured.php'] );
+			unset( $post_templates['templates/theme/no-sidebar-no-featured.php'] );
 
 			// Set specific front page templates.
-			$post_templates['templates/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
+			$post_templates['templates/theme/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
 		}
+
+		return $post_templates;
+	}
+
+	/**
+	 * Post templates
+	 *
+	 * Make select page templates available to the `post` post type.
+	 *
+	 * @since  1.0.0
+	 * @since  WP 4.7
+	 * @access public
+	 * @param  array $post_templates Array of available templates.
+	 * @return array Returns an array of templates for the post type.
+	 */
+	public function post_templates( $post_templates ) {
+
+		// Stop here if version does not support post type templates.
+		if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+			return;
+		}
+
+		$post_templates['templates/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+		$post_templates['templates/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+		$post_templates['templates/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 		return $post_templates;
 	}
@@ -118,9 +146,9 @@ class Templates {
 			return;
 		}
 
-		$post_templates['templates/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-		$post_templates['templates/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-		$post_templates['templates/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+		$post_templates['templates/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+		$post_templates['templates/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+		$post_templates['templates/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 		return $post_templates;
 	}
