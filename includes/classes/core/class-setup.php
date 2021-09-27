@@ -347,7 +347,7 @@ class Setup {
 			__( 'Continue reading', 'frontcore' )
 			);
 
-		// CHECKING FOR EXCERPT BEING SHORT BECAUSE OIF SHORT CONTENT
+		// Short excerpt.
 		} elseif ( strlen( $text ) == strlen( $post_excerpt ) ) {
 
 			$text .= sprintf(
