@@ -167,7 +167,7 @@ class Setup {
 	 * @since  1.0.0
 	 * @access public
 	 * @param  string $page_template The filename of the template to check against.
-	 *                               Example: 'templates/theme/abc-123.php'.
+	 *                               Example: FCT_TMPL_DIR . '/theme/abc-123.php'.
 	 * @global object $post
 	 * @return bool Returns true if the page template is being used.
 	 */

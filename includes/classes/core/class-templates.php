@@ -89,12 +89,12 @@ class Templates {
 		if ( 'page' == $front_show && get_the_ID() == $front_page ) {
 
 			// Unset general templates.
-			unset( $post_templates['templates/theme/no-sidebar.php'] );
-			unset( $post_templates['templates/theme/no-featured.php'] );
-			unset( $post_templates['templates/theme/no-sidebar-no-featured.php'] );
+			unset( $post_templates[FCT_TMPL_DIR . '/theme/no-sidebar.php'] );
+			unset( $post_templates[FCT_TMPL_DIR . '/theme/no-featured.php'] );
+			unset( $post_templates[FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'] );
 
 			// Set specific front page templates.
-			$post_templates['templates/theme/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
+			$post_templates[FCT_TMPL_DIR . '/theme/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
 		}
 
 		return $post_templates;
@@ -118,9 +118,9 @@ class Templates {
 			return;
 		}
 
-		$post_templates['templates/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-		$post_templates['templates/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-		$post_templates['templates/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 		return $post_templates;
 	}
@@ -146,9 +146,9 @@ class Templates {
 			return;
 		}
 
-		$post_templates['templates/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-		$post_templates['templates/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-		$post_templates['templates/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 		return $post_templates;
 	}

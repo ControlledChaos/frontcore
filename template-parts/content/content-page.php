@@ -22,8 +22,8 @@ use FrontCore\Classes\Front as Front;
 
 	<?php
 	if (
-		! is_page_template( 'templates/theme/no-featured.php' ) ||
-		! is_page_template( 'templates/theme/no-sidebar-no-featured.php' )
+		! is_page_template( FCT_TMPL_DIR . '/theme/no-featured.php' ) ||
+		! is_page_template( FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php' )
 	) {
 		Front\tags()->post_thumbnail();
 	}
