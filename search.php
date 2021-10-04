@@ -33,7 +33,7 @@ get_header();
 
 			<?php while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content/content', 'search' . $fct_acf->suffix() );
+				get_template_part( FCT_PARTS_DIR . '/content/content', 'search' . $fct_acf->suffix() );
 				endwhile;
 
 				the_posts_navigation( [
@@ -42,7 +42,7 @@ get_header();
 				] );
 
 		else :
-			get_template_part( 'template-parts/content/content', 'none' . $fct_acf->suffix() );
+			get_template_part( FCT_PARTS_DIR . '/content/content', 'none' . $fct_acf->suffix() );
 		endif;
 		?>
 

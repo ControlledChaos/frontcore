@@ -113,6 +113,6 @@ class Head {
 	 * @return void
 	 */
 	public function head() {
-		include get_theme_file_path( '/template-parts/header/head.php' );
+		include get_theme_file_path( FCT_PARTS_DIR . '/header/head.php' );
 	}
 }

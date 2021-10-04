@@ -616,7 +616,7 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function navigation_main() {
-		get_template_part( 'template-parts/navigation/navigation-main' );
+		get_template_part( FCT_PARTS_DIR . '/navigation/navigation-main' );
 	}
 
 	/**
@@ -661,7 +661,7 @@ class Template_Tags {
 		}
 
 		// Look for a specific template as applied above.
-		$locate = locate_template( 'template-parts/content/' . $template . '.php' );
+		$locate = locate_template( FCT_PARTS_DIR . '/content/' . $template . '.php' );
 
 		// Use the specific template if found.
 		if ( $locate ) {
@@ -681,7 +681,7 @@ class Template_Tags {
 		$template = apply_filters( 'fct_content_template', $template );
 
 		// Get the content template part.
-		return get_template_part( 'template-parts/content/' . $template );
+		return get_template_part( FCT_PARTS_DIR . '/content/' . $template );
 	}
 
 	/**

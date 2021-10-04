@@ -18,6 +18,6 @@ namespace FrontCore;
 	</header>
 
 	<div class="page-content">
-		<?php get_template_part( 'template-parts/widgets/404' ); ?>
+		<?php get_template_part( FCT_PARTS_DIR . '/widgets/404' ); ?>
 	</div>
 </section>

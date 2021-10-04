@@ -13,10 +13,10 @@ get_header( 'embed' );
 if ( have_posts() ) :
 	while ( have_posts() ) :
 		the_post();
-		get_template_part( 'template-parts/content/content', 'embed' );
+		get_template_part( FCT_PARTS_DIR . '/content/content', 'embed' );
 	endwhile;
 else :
-	get_template_part( 'template-parts/content/content', 'none-embed' );
+	get_template_part( FCT_PARTS_DIR . '/content/content', 'none-embed' );
 endif;
 
 get_footer( 'embed' );

@@ -103,9 +103,9 @@ final class PHP_Version {
 	public function frontend_message() {
 
 		// Look first for a message template file.
-		$template = get_theme_file_path( 'template-parts/partials/frontend-php-message.php' );
+		$template = get_theme_file_path( FCT_PARTS_DIR . '/partials/frontend-php-message.php' );
 		if ( file_exists( $template ) ) {
-			$html = get_template_part( 'template-parts/partials/frontend-php-message' );
+			$html = get_template_part( FCT_PARTS_DIR . '/partials/frontend-php-message' );
 		}
 
 		// Message if the user is logged in and can switch themes.

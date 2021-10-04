@@ -31,7 +31,7 @@ get_header();
 				$name  = ucwords( $post->labels->menu_name );
 
 				if ( is_main_query() && ( is_paged() && 1 == $paged ) || ! is_paged() ) {
-					get_template_part( 'template-parts/content/author-section' );
+					get_template_part( FCT_PARTS_DIR . '/content/author-section' );
 				} else {
 					printf(
 						'<h1 class="page-title">%s %s %s</h1>',

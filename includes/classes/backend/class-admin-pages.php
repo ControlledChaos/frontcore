@@ -68,7 +68,7 @@ class Admin_Pages {
 		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
 
 		if ( $use_header ) {
-			get_template_part( 'template-parts/admin/admin-header' );
+			get_template_part( FCT_PARTS_DIR . '/admin/admin-header' );
 		}
 	}
 
@@ -104,7 +104,7 @@ class Admin_Pages {
 	 * @return void
      */
     public function theme_options_output() {
-        get_template_part( 'template-parts/admin/theme-options-page' );
+        get_template_part( FCT_PARTS_DIR . '/admin/theme-options-page' );
 	}
 
 	/**
@@ -144,7 +144,7 @@ class Admin_Pages {
 	 * @return void
      */
 	public function help_theme_options_info() {
-		include_once get_theme_file_path( 'template-parts/partials/help-theme-options-info.php' );
+		include_once get_theme_file_path( FCT_PARTS_DIR . '/partials/help-theme-options-info.php' );
     }
 
     /**
@@ -207,7 +207,7 @@ class Admin_Pages {
      */
     public function theme_info_output() {
 
-		$output = get_theme_file_path( '/template-parts/admin/theme-info-page.php' );
+		$output = get_theme_file_path( FCT_PARTS_DIR . '/admin/theme-info-page.php' );
         if ( file_exists( $output ) ) {
 			include $output;
 		} else { ?>
