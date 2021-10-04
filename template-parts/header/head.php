@@ -10,6 +10,15 @@
 
 namespace FrontCore;
 
+// Conditional canonical link.
+if ( is_home() && ! is_front_page() ) {
+    $canonical = get_permalink( get_option( 'page_for_posts' ) );
+} elseif ( is_archive() ) {
+    $canonical = get_permalink( get_option( 'page_for_posts' ) );
+} else {
+    $canonical = get_permalink();
+}
+
 ?>
 <head id="<?php echo esc_attr( get_bloginfo( 'url' ) ); ?>" data-template-set="<?php echo esc_attr( get_template() ); ?>">
 
