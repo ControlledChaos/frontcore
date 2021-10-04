@@ -854,9 +854,9 @@ class Template_Tags {
 	 */
 	public function theme_mode_script() {
 
-	?>
-		<script>jQuery(document).ready(function(e){var t=e('.theme-toggle');localStorage.theme?(e('body').addClass(localStorage.theme),e(t).text(localStorage.text)):(e('body').addClass('light-mode'),e(t).text('<?php esc_html_e( 'Dark Theme', 'frontcore' ); ?>')),e(t).click(function(){e('body').hasClass('light-mode')?(e('body').removeClass('light-mode').addClass('dark-mode'),e(t).text('<?php esc_html_e( 'Light Theme', 'frontcore' ); ?>'),localStorage.theme='dark-mode',localStorage.text='<?php esc_html_e( 'Light Theme', 'frontcore' ); ?>'):(e('body').removeClass('dark-mode').addClass('light-mode'),e(t).text('<?php esc_html_e( 'Dark Theme', 'frontcore' ); ?>'),localStorage.theme='light-mode',localStorage.text='<?php esc_html_e( 'Dark Theme', 'frontcore' ); ?>')})});</script>
-	<?php
+		?>
+		<script>(function($){$(window).load(function(){var button=$('.theme-toggle');if(localStorage.theme_mode ){$('body').addClass(localStorage.theme_mode);$(button).text(localStorage.theme_mode_mode_text);}else{$('body').addClass('light-mode');$(button).text('<?php _e('Dark Theme','totem-front'); ?>');}$(button).click(function(){if($('body').hasClass('light-mode')){$('body').removeClass('light-mode').addClass('dark-mode');$(button).text('<?php _e('Light Theme','totem-front'); ?>');localStorage.theme_mode='dark-mode';localStorage.theme_mode_mode_text='<?php _e('Light Theme','totem-front'); ?>';}else{$('body').removeClass('dark-mode').addClass('light-mode');$(button).text('<?php _e('Dark Theme','totem-front'); ?>');localStorage.theme_mode='light-mode';localStorage.theme_mode_mode_text='<?php _e('Dark Theme','totem-front'); ?>';}});});})(jQuery);</script>
+		<?php
 
 	}
 
@@ -872,8 +872,10 @@ class Template_Tags {
 	 */
 	public function theme_mode() {
 
-		// Add the toggle script to the footer.
-		add_action( 'wp_footer', [ $this, 'theme_mode_script' ] );
+		// Add the toggle script to the footer if the widget is not active.
+		if ( is_active_widget( false, false, 'FrontCore\Widgets\Theme_Mode', true ) ) {
+			add_action( 'wp_head', [ $this, 'theme_mode_script' ], 9 );
+		}
 
 		// Toggle button markup.
 		$button = sprintf(

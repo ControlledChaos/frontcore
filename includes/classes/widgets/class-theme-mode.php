@@ -41,6 +41,32 @@ class Theme_Mode extends \WP_Widget {
 			$name = __( 'Theme Mode', 'frontcore' ),
 			$options
 		);
+
+		// Add the toggle script to the footer if the widget is active.
+		if ( is_active_widget( false, false, $this->id_base, true ) ) {
+			add_action( 'wp_head', [ $this, 'theme_mode_script' ], 9 );
+		}
+	}
+
+	/**
+	 * Theme toggle script
+	 *
+	 * Toggles a body class and toggles the
+	 * text of the toggle button.
+	 *
+	 * NOTE: the script below contains PHP. Translation functions
+	 * are used for the text of the toggle button.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return mixed
+	 */
+	public function theme_mode_script() {
+
+		?>
+		<script>(function($){$(window).load(function(){var button=$('.theme-toggle');if(localStorage.theme_mode ){$('body').addClass(localStorage.theme_mode);$(button).text(localStorage.theme_mode_mode_text);}else{$('body').addClass('light-mode');$(button).text('<?php _e('Dark Theme','totem-front'); ?>');}$(button).click(function(){if($('body').hasClass('light-mode')){$('body').removeClass('light-mode').addClass('dark-mode');$(button).text('<?php _e('Light Theme','totem-front'); ?>');localStorage.theme_mode='dark-mode';localStorage.theme_mode_mode_text='<?php _e('Light Theme','totem-front'); ?>';}else{$('body').removeClass('dark-mode').addClass('light-mode');$(button).text('<?php _e('Dark Theme','totem-front'); ?>');localStorage.theme_mode='light-mode';localStorage.theme_mode_mode_text='<?php _e('Dark Theme','totem-front'); ?>';}});});})(jQuery);</script>
+		<?php
+
 	}
 
 	/**
@@ -96,9 +122,6 @@ class Theme_Mode extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		// Instantiate the Template_Tags class.
-		new Front\Template_Tags;
-
 		if ( ! empty( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
@@ -106,14 +129,21 @@ class Theme_Mode extends \WP_Widget {
 		}
 		$title = apply_filters( 'fct_theme_mode_title', $title, $instance, $this->id_base );
 
+		// Toggle button markup.
+		$button = apply_filters( 'fct_theme_mode_widget_button', sprintf(
+			'<button class="theme-toggle" type="button" name="dark_light" title="%1s">%2s</button>',
+			esc_html__( 'Toggle light/dark theme', 'totem-front' ),
+			esc_html__( 'Light Theme', 'totem-front' )
+		) );
+
 		echo $args['before_widget'];
 		if ( $title ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		echo '<p>';
-		Front\tags()->theme_mode();
-		echo '</p>';
+		echo '<div class="theme-toggle-wrap">';
+		echo $button;
+		echo '</div>';
 
 		echo $args['after_widget'];
 	}
