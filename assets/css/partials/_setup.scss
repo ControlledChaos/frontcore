@@ -8,6 +8,11 @@
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	background-color: $body_bg;
+
+	&.dark-mode {
+		background-color: $body_bg_dark;
+	}
 }
 
 body {
