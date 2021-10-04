@@ -48,6 +48,24 @@ $theme_path = get_template_directory();
 define( 'FCT_PATH', $theme_path . '/' );
 
 /**
+ * Constant: Templates directory
+ *
+ * @since 1.0.0
+ * @var   string File path without trailing slash.
+ */
+$templates_dir = 'templates';
+define( 'FCT_TMPL_DIR', $templates_dir );
+
+/**
+ * Constant: Template partials directory
+ *
+ * @since 1.0.0
+ * @var   string File path without trailing slash.
+ */
+$parts_dir = FCT_TMPL_DIR . '/template-parts';
+define( 'FCT_PARTS_DIR', $parts_dir );
+
+/**
  * Constant: Theme file URL
  *
  * @since 1.0.0
