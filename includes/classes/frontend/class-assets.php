@@ -37,6 +37,9 @@ class Assets {
 
 		// Frontend styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_styles' ] );
+
+		// Print footer scripts.
+		add_action( 'wp_footer', [ $this, 'print_scripts' ] );
 	}
 
 	/**
@@ -104,6 +107,25 @@ class Assets {
 
 		// Print styles.
 		wp_enqueue_style( 'fct-print', get_theme_file_uri( '/assets/css/print' . $this->suffix() . '.css' ), [], FCT_VERSION, 'print' );
+	}
+
+	/**
+	 * Print footer scripts
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function print_scripts() {
+
+		?>
+		<script>
+		// Reveal body element once DOM is loaded.
+		jQuery(document).ready( function ($) {
+			$( 'body' ).css( 'visibility', 'visible' );
+		});
+		</script>
+		<?php
 	}
 
 	/**

@@ -40,7 +40,7 @@ do_action( 'before_html' ); ?>
 
 <?php Front\tags()->head(); ?>
 
-<body <?php Front\tags()->body_class(); ?>>
+<body style="visibility: hidden;" <?php Front\tags()->body_class(); ?>>
 
 <?php
 Front\tags()->body_open();

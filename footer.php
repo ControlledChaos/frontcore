@@ -23,5 +23,6 @@ use FrontCore\Classes\Front as Front;
 <?php Front\tags()->after_page(); ?>
 <?php wp_footer(); ?>
 
+<style>.no-js body { visibility: visible !important; }</style>
 </body>
 </html>
