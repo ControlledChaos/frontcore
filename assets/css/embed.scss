@@ -6,38 +6,38 @@
 @import 'modules/_colors';
 
 .wp-embed {
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-    font-weight: normal;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	font-size: 1rem;
+	font-weight: normal;
 	line-height: 1.5;
-	background: $white;
+	background: $body_bg;
 	color: $text_color;
-    border: 1px solid $pale_gray;
-    box-shadow: none;
-    overflow: auto;
+	border: 1px solid $box_border_color;
+	box-shadow: none;
+	overflow: auto;
 
-    .wp-embed-content {
-        padding: 0 1.5rem 1.5rem;
-    }
+	.wp-embed-content {
+		padding: 0 1.5rem 1.5rem;
+	}
 
-    a,
-    .wp-embed-heading a {
-        color: $medium_gray;
+	a,
+	.wp-embed-heading a {
+		color: $link_color;
 
-        &:visited {
-            color: $medium_gray;
-        }
+		&:visited {
+			color: $link_color;
+		}
 
-        &:hover,
-        &:focus {
-            color: lighten( $color: $medium_gray, $amount: 12% );
-        }
-    }
+		&:hover,
+		&:focus {
+			color: $link_action_color;
+		}
+	}
 
-    .wp-embed-share-dialog-open {
-        .dashicons {
-            top: 4px;
-        }
-    }
+	.wp-embed-share-dialog-open {
+		.dashicons {
+			top: 4px;
+		}
+	}
 }
