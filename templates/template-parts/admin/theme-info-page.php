@@ -42,7 +42,7 @@ if ( $get_theme_desc ) {
 
 // Theme link.
 if ( $get_theme_uri ) {
-	$theme_uri = '<a href="' . $get_theme_uri . '" target="_blank">' . $get_theme_uri . '</a>';
+	$theme_uri = '<a href="' . $get_theme_uri . '" target="_blank" rel="nofollow">' . $get_theme_uri . '</a>';
 } else {
 	$theme_uri = $not_provided;
 }
@@ -56,7 +56,7 @@ if ( $get_author ) {
 
 // Theme author link.
 if ( $get_author_uri ) {
-	$author_uri = '<a href="' . $get_author_uri . '" target="_blank">' . $get_author_uri . '</a>';
+	$author_uri = '<a href="' . $get_author_uri . '" target="_blank" rel="nofollow">' . $get_author_uri . '</a>';
 } else {
 	$author_uri = $not_provided;
 }

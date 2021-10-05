@@ -163,7 +163,7 @@ class Admin_Pages {
             'Your Name'
         );
         $html .= sprintf(
-            '<p>%1s <br /><a href="%2s" target="_blank">%3s</a> <br />%4s</p>',
+            '<p>%1s <br /><a href="%2s" target="_blank" rel="nofollow">%3s</a> <br />%4s</p>',
             __( 'Visit', 'frontcore' ),
             'https://example.com/',
             'Example Site',
