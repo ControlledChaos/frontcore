@@ -24,17 +24,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var   array Defines an array of class file paths.
  */
 define( 'FCT_CLASS', [
-	'core'      => FCT_PATH . 'includes/classes/core/class-',
-	'settings'  => FCT_PATH . 'includes/classes/settings/class-',
-	'tools'     => FCT_PATH . 'includes/classes/tools/class-',
-	'media'     => FCT_PATH . 'includes/classes/media/class-',
-	'users'     => FCT_PATH . 'includes/classes/users/class-',
-	'widgets'   => FCT_PATH . 'includes/classes/widgets/class-',
-	'vendor'    => FCT_PATH . 'includes/classes/vendor/class-',
-	'admin'     => FCT_PATH . 'includes/classes/backend/class-',
-	'front'     => FCT_PATH . 'includes/classes/frontend/class-',
-	'customize' => FCT_PATH . 'includes/classes/customizer/class-',
-	'general'   => FCT_PATH . 'includes/classes/class-',
+	'core'       => FCT_PATH . 'includes/classes/core/class-',
+	'settings'   => FCT_PATH . 'includes/classes/settings/class-',
+	'tools'      => FCT_PATH . 'includes/classes/tools/class-',
+	'media'      => FCT_PATH . 'includes/classes/media/class-',
+	'users'      => FCT_PATH . 'includes/classes/users/class-',
+	'navigation' => FCT_PATH . 'includes/classes/navigation/class-',
+	'widgets'    => FCT_PATH . 'includes/classes/widgets/class-',
+	'vendor'     => FCT_PATH . 'includes/classes/vendor/class-',
+	'admin'      => FCT_PATH . 'includes/classes/backend/class-',
+	'front'      => FCT_PATH . 'includes/classes/frontend/class-',
+	'customize'  => FCT_PATH . 'includes/classes/customizer/class-',
+	'general'    => FCT_PATH . 'includes/classes/class-',
 ] );
 
 /**
@@ -63,6 +64,9 @@ define( 'FCT_CLASSES', [
 	FCT_CLASS_NS . '\Core\Assets' => FCT_CLASS['core'] . 'assets.php',
 	FCT_CLASS_NS . '\Core\Setup'  => FCT_CLASS['core'] . 'setup.php',
 	FCT_CLASS_NS . '\Core\Templates' => FCT_CLASS['core'] . 'templates.php',
+
+	// Navigation classes.
+	FCT_CLASS_NS . '\Navigation\Navigation' => FCT_CLASS['navigation'] . 'navigation.php',
 
 	// Widgets classes.
 	FCT_CLASS_NS . '\Widgets\Register'   => FCT_CLASS['widgets'] . 'register.php',

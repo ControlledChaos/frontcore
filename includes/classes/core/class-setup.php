@@ -145,14 +145,6 @@ class Setup {
 		update_option( 'embed_size_w', $embed['embed_size_w'] );
 		update_option( 'embed_size_h', $embed['embed_size_h'] );
 
-		// Register theme menus.
-		$menus = apply_filters( 'fct_nav_menus', [
-			'main'   => __( 'Main Menu', 'frontcore' ),
-			'footer' => __( 'Footer Menu', 'frontcore' ),
-			'social' => __( 'Social Menu', 'frontcore' )
-		] );
-		register_nav_menus( $menus );
-
 		// Add stylesheet for the content editor.
 		$assets = new Assets;
 		add_editor_style( 'assets/css/editor' . $assets->suffix() . '.css', [ 'fct-admin' ], '', 'screen' );

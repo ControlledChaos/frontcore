@@ -11,7 +11,8 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Classes\Front      as Front,
+	FrontCore\Classes\Navigation as Navigation;
 
 ?>
 <nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -23,6 +24,7 @@ use FrontCore\Classes\Front as Front;
 	wp_nav_menu( [
 		'theme_location' => 'main',
 		'menu_id'        => 'main-menu',
+		'fallback_cb'    => [ 'FrontCore\Classes\Navigation\Navigation', 'main_nav_fallback' ],
 	] );
 	?>
 </nav>

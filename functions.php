@@ -116,15 +116,16 @@ namespace FrontCore;
 
 // Alias namespaces.
 use
-FrontCore\Classes           as General,
-FrontCore\Classes\Activate  as Activate,
-FrontCore\Classes\Core      as Core,
-FrontCore\Classes\Front     as Front,
-FrontCore\Classes\Widgets   as Widgets,
-FrontCore\Classes\Media     as Media,
-FrontCore\Classes\Admin     as Admin,
-FrontCore\Classes\Customize as Customize,
-FrontCore\Classes\Vendor    as Vendor;
+FrontCore\Classes            as General,
+FrontCore\Classes\Activate   as Activate,
+FrontCore\Classes\Core       as Core,
+FrontCore\Classes\Front      as Front,
+FrontCore\Classes\Navigation as Navigation,
+FrontCore\Classes\Widgets    as Widgets,
+FrontCore\Classes\Media      as Media,
+FrontCore\Classes\Admin      as Admin,
+FrontCore\Classes\Customize  as Customize,
+FrontCore\Classes\Vendor     as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -196,6 +197,7 @@ $fct_deactivate = new Classes\Activate\Deactivate;
 $fct_core_setup   = new Core\Setup;
 $fct_core_setup   = new Core\Templates;
 $fct_core_assets  = new Core\Assets;
+$fct_core_nav     = new Navigation\Navigation;
 $fct_core_widgets = new Widgets\Register;
 $fct_core_media   = new Media\Images;
 $fct_core_mods    = new Customize\Customizer;
