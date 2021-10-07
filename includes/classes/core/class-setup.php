@@ -67,6 +67,9 @@ class Setup {
 		// Browser title tag support.
 		add_theme_support( 'title-tag' );
 
+		// Adding support for core block visual styles.
+		add_theme_support( 'wp-block-styles' );
+
 		// Background color & image support.
 		add_theme_support( 'custom-background' );
 
