@@ -634,6 +634,7 @@ class Template_Tags {
 		// Post query arguments to look for published posts.
 		$args = apply_filters( 'fct_content_template_query', [
 			'post_status' => [ 'publish' ],
+			'post_type'   => [ get_post_type( get_the_ID() ) ]
 		] );
 
 		// New query, namespace escaped with backslash.
