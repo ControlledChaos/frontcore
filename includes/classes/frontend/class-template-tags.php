@@ -876,7 +876,7 @@ class Template_Tags {
 	public function theme_mode() {
 
 		// Add the toggle script to the footer if the widget is not active.
-		if ( is_active_widget( false, false, 'FrontCore\Widgets\Theme_Mode', true ) ) {
+		if ( is_active_widget( false, false, 'FrontCore\Classes\Widgets\Theme_Mode', true ) ) {
 			add_action( 'wp_head', [ $this, 'theme_mode_script' ] );
 		}
 
