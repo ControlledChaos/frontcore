@@ -117,7 +117,7 @@ class Theme_Mode extends \WP_Widget {
 	 * @access public
 	 * @param  array $args Display arguments including 'before_title', 'after_title',
 	 *                     'before_widget', and 'after_widget'.
-	 * @param  array $instance Settings for the current Search widget instance.
+	 * @param  array $instance Settings for the current widget instance.
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {
