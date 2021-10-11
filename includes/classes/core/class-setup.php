@@ -249,15 +249,15 @@ class Setup {
 	}
 
 	/**
-     * User color scheme classes
+	 * User color scheme classes
 	 *
 	 * Add a class to the body element according to
 	 * the user's admin color scheme preference.
-     *
-     * @since  1.0.0
+	 *
+	 * @since  1.0.0
 	 * @access public
 	 * @return array Returns a modified array of body classes.
-     */
+	 */
 	public function color_scheme_classes( $classes ) {
 
 		// Add a class if user is logged in and admin bar is showing.
