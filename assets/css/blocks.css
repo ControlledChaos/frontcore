@@ -358,8 +358,9 @@ h2 + .search-form {
 }
 
 .wp-block-quote {
-  border-left: unset;
+  margin: unset;
   padding-left: unset;
+  border-left: unset;
 }
 
 .wp-block-cover__inner-container {
