@@ -357,6 +357,11 @@ h2 + .search-form {
   color: #4b9960;
 }
 
+.wp-block-quote {
+  border-left: unset;
+  padding-left: unset;
+}
+
 .wp-block-cover__inner-container {
   max-width: 1280px;
   margin: 0 auto;
