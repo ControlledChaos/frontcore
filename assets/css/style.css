@@ -417,6 +417,7 @@ main article {
 
 #secondary {
   min-width: 240px;
+  max-width: 320px;
 }
 
 @media screen and (max-width: 800px) {
@@ -428,6 +429,9 @@ main article {
   }
   .site-content .content-area {
     margin-right: unset;
+    max-width: 100%;
+  }
+  #secondary {
     max-width: 100%;
   }
 }

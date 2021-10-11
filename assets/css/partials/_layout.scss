@@ -51,6 +51,7 @@ main article {
 
 #secondary {
 	min-width: $secondary_min_width;
+	max-width: 320px;
 }
 
 @media screen and ( max-width: $break_primary_tablet ) {
@@ -62,5 +63,9 @@ main article {
 			margin-right: unset;
 			max-width: 100%;
 		}
+	}
+
+	#secondary {
+		max-width: 100%;
 	}
 }
