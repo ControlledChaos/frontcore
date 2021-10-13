@@ -67,11 +67,14 @@ class Setup {
 		// Browser title tag support.
 		add_theme_support( 'title-tag' );
 
-		// Adding support for core block visual styles.
+		// Core block visual styles.
 		add_theme_support( 'wp-block-styles' );
 
 		// Background color & image support.
 		add_theme_support( 'custom-background' );
+
+		// Responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
 
 		// RSS feed links support.
 		add_theme_support( 'automatic-feed-links' );
