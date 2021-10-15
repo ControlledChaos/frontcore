@@ -65,7 +65,7 @@ class Theme_Mode extends \WP_Widget {
 
 		?>
 		<script><?php echo file_get_contents( FCT_URL . '/assets/js/cookie.min.js' ); ?></script>
-		<script>(function(e){e(window).load(function(){var t=e(".theme-toggle"),o=e.cookie("fct_theme_mode_class"),m=e.cookie("fct_theme_mode_text");o||(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:true}),e("html, body").removeClass("dark-mode").addClass("light-mode")),m||(e.cookie("fct_theme_mode_text","<?php _e('Dark Theme','frontcore'); ?>",{path:"/",expires:7,secure:true}),e(t).text("<?php _e('Dark Theme','frontcore'); ?>")),o&&e("html, body").addClass(o),m&&e(t).text(m),e(t).click(function(){e("html, body").hasClass("light-mode")?(e.cookie("fct_theme_mode_class","dark-mode",{path:"/",expires:7,secure:true}),e.cookie("fct_theme_mode_text","<?php _e('Light Theme','frontcore'); ?>",{path:"/",expires:7,secure:true}),e("html, body").removeClass("light-mode").addClass("dark-mode"),e(t).text("<?php _e('Light Theme','frontcore'); ?>")):(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:true}),e.cookie("fct_theme_mode_text","<?php _e('Dark Theme','frontcore'); ?>",{path:"/",expires:7,secure:true}),e("html, body").removeClass("dark-mode").addClass("light-mode"),e(t).text("<?php _e('Dark Theme','frontcore'); ?>"))})})})(jQuery);</script>
+		<script>(function(e){e(window).load(function(){var t=e(".theme-toggle"),o=e.cookie("fct_theme_mode_class"),h=e.cookie("fct_theme_mode_text"),m=e.cookie("fct_theme_mode_hover");o||(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("dark-mode").addClass("light-mode")),h||(e.cookie("fct_theme_mode_text","<?php _e( 'Go Dark', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e(t).text("<?php _e( 'Go Dark', 'frontcore' ); ?>")),m||(e.cookie("fct_theme_mode_hover","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e(t).attr("title","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>")),o&&e("html, body").addClass(o),h&&e(t).text(h),e(t).click(function(){e("html, body").hasClass("light-mode")?(e.cookie("fct_theme_mode_class","dark-mode",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_text","<?php _e( 'Go Light', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_hover","<?php _e( 'Switch to light theme', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("light-mode").addClass("dark-mode"),e(t).text("<?php _e( 'Go Light', 'frontcore' ); ?>"),e(t).attr("title","<?php _e( 'Switch to light theme', 'frontcore' ); ?>")):(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_text","<?php _e( 'Go Dark', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_hover","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("dark-mode").addClass("light-mode"),e(t).text("<?php _e( 'Go Dark', 'frontcore' ); ?>"),e(t).attr("title","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>"))})})})(jQuery);</script>
 		<?php
 	}
 
@@ -132,8 +132,8 @@ class Theme_Mode extends \WP_Widget {
 		// Toggle button markup.
 		$button = apply_filters( 'fct_theme_mode_widget_button', sprintf(
 			'<button class="theme-toggle" type="button" name="dark_light" title="%1s">%2s</button>',
-			esc_html__( 'Toggle light/dark theme', 'frontcore' ),
-			esc_html__( 'Dark Theme', 'frontcore' )
+			__( 'Switch to dark theme', 'frontcore' ),
+			__( 'Go Dark', 'frontcore' )
 		) );
 
 		echo $args['before_widget'];
