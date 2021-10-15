@@ -47,6 +47,9 @@ class Admin_Pages {
 		}
 		add_action( $hook, [ $this, 'admin_header' ], 1 );
 
+		// Add body classes.
+		add_filter( 'admin_body_class', [ $this, 'admin_body_class' ] );
+
 		// Theme options page.
 		// add_action( 'admin_menu', [ $this, 'theme_options' ] );
 
@@ -70,6 +73,32 @@ class Admin_Pages {
 		if ( $use_header ) {
 			get_template_part( FCT_PARTS_DIR . '/admin/admin-header' );
 		}
+	}
+
+	/**
+	 * Admin body classes
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array $body_class Array of body classes.
+	 * @return array Return the conditionally modified array of body classes.
+	 */
+	public function admin_body_class( $body_class ) {
+
+		// Get Customizer settings.
+		new Customize\Customizer;
+		$use_theme  = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_theme' ) );
+		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
+
+		if ( $use_theme ) {
+			$body_class .= ' fct-admin-theme';
+		}
+
+		if ( $use_header ) {
+			$body_class .= ' has-admin-header';
+		}
+
+		return $body_class;
 	}
 
 	/**
