@@ -93,6 +93,10 @@
   font-weight: bold;
 }
 
+.site-header {
+  margin-top: 2rem;
+}
+
 #titlediv #title {
   font-size: 1.625rem;
   font-weight: bold;
@@ -104,4 +108,11 @@
 
 #poststuff {
   padding-top: 2rem;
+}
+
+.has-admin-header.privacy-settings #wpcontent,
+.has-admin-header.privacy-settings.auto-fold #wpcontent,
+.has-admin-header.site-health #wpcontent,
+.has-admin-header.site-health.auto-fold #wpcontent {
+  padding-left: 20px;
 }

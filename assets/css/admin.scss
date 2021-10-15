@@ -36,6 +36,10 @@
 	}
 }
 
+.site-header {
+	margin-top: 2rem;
+}
+
 #titlediv {
 
 	#title {
@@ -50,4 +54,19 @@
 
 #poststuff {
 	padding-top: 2rem;
+}
+
+///
+/// Site Health & Privacy
+///
+/// Some corrections made to better display the admin header.
+///
+.has-admin-header {
+
+	&.privacy-settings #wpcontent,
+	&.privacy-settings.auto-fold #wpcontent,
+	&.site-health #wpcontent,
+	&.site-health.auto-fold #wpcontent {
+		padding-left: 20px;
+	}
 }
