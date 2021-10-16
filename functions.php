@@ -82,7 +82,7 @@
  *    change the package name in file headers.
  *
  * 3. Namespace
- *    Find `Front_Core` and replace with something unique to your theme.
+ *    Find `FrontCore` and replace with something unique to your theme.
  *
  * 4. Text domain
  *    Find `frontcore` and replace with the text domain of your theme.
