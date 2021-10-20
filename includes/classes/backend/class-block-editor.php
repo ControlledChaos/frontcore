@@ -83,13 +83,23 @@ class Block_Editor {
 		 * Match the following HEX codes with SASS color variables.
 		 * @see assets/css/modules/_colors.scss
 		 *
+		 * Also coordinate changes here with CSS classes
+		 * in the blocks & block editor stylesheets.
+		 * @see assets/css/blocks.scss
+		 * @see assets/css/editor-blocks.scss
+		 *
 		 * @since 1.0.0
 		 */
 		$color_args = [
 			[
-				'name'  => __( 'Text', 'frontcore' ),
-				'slug'  => 'fct-text',
+				'name'  => __( 'Dark Gray', 'frontcore' ),
+				'slug'  => 'fct-dark-gray',
 				'color' => '#333333',
+			],
+			[
+				'name'  => __( 'Medium Gray', 'frontcore' ),
+				'slug'  => 'fct-medium-gray',
+				'color' => '#555555',
 			],
 			[
 				'name'  => __( 'Light Gray', 'frontcore' ),

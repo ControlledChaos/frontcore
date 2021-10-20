@@ -301,8 +301,12 @@ h2 + .search-form {
   color: #959595;
 }
 
-.has-fct-text-background-color {
+.has-fct-dark-gray-background-color {
   background-color: #333333;
+}
+
+.has-fct-medium-gray-background-color {
+  background-color: #555555;
 }
 
 .has-fct-light-gray-background-color {
@@ -329,8 +333,12 @@ h2 + .search-form {
   background-color: #4b9960;
 }
 
-.has-fct-text-color {
+.has-fct-dark-gray-color {
   color: #333333;
+}
+
+.has-fct-medium-gray-color {
+  color: #555555;
 }
 
 .has-fct-light-gray-color {

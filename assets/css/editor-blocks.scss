@@ -3,3 +3,69 @@
 ///
 
 @import 'modules/_colors';
+
+// Block editor background color classes.
+.has-fct-dark-gray-background-color {
+	background-color: $dark_gray;
+}
+
+.has-fct-medium-gray-background-color {
+	background-color: $medium_gray;
+}
+
+.has-fct-light-gray-background-color {
+	background-color: $light_gray;
+}
+
+.has-fct-pale-gray-background-color {
+	background-color: $pale_gray;
+}
+
+.has-fct-white-background-color {
+	background-color: $white;
+}
+
+.has-fct-error-background-color {
+	background-color: $error;
+}
+
+.has-fct-warning-background-color {
+	background-color: $warning;
+}
+
+.has-fct-success-background-color {
+	background-color: $success;
+}
+
+// Block editor text color classes.
+.has-fct-dark-gray-color {
+	color: $dark_gray;
+}
+
+.has-fct-medium-gray-color {
+	color: $medium_gray;
+}
+
+.has-fct-light-gray-color {
+	color: $light_gray;
+}
+
+.has-fct-pale-gray-color {
+	color: $pale_gray;
+}
+
+.has-fct-white-color {
+	color: $white;
+}
+
+.has-fct-error-color {
+	color: $error;
+}
+
+.has-fct-warning-color {
+	color: $warning;
+}
+
+.has-fct-success-color {
+	color: $success;
+}

@@ -7,8 +7,12 @@
 @import 'partials/_forms';
 
 // Block editor background color classes.
-.has-fct-text-background-color {
-	background-color: $text_color;
+.has-fct-dark-gray-background-color {
+	background-color: $dark_gray;
+}
+
+.has-fct-medium-gray-background-color {
+	background-color: $medium_gray;
 }
 
 .has-fct-light-gray-background-color {
@@ -36,8 +40,12 @@
 }
 
 // Block editor text color classes.
-.has-fct-text-color {
-	color: $text_color;
+.has-fct-dark-gray-color {
+	color: $dark_gray;
+}
+
+.has-fct-medium-gray-color {
+	color: $medium_gray;
 }
 
 .has-fct-light-gray-color {
