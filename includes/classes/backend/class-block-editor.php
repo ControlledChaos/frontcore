@@ -112,6 +112,11 @@ class Block_Editor {
 				'color' => '#dc3232',
 			],
 			[
+				'name'  => __( 'Notify Orange', 'bernays' ),
+				'slug'  => 'ebp-notify',
+				'color' => '#ee6600',
+			],
+			[
 				'name'  => __( 'Warning Yellow', 'frontcore' ),
 				'slug'  => 'fct-warning',
 				'color' => '#ffb900',
