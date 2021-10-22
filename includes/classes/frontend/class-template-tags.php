@@ -443,7 +443,7 @@ class Template_Tags {
 			$classes[] = 'custom-background';
 		}
 
-		if ( has_custom_logo() ) {
+		if ( has_custom_logo( get_current_blog_id() ) ) {
 			$classes[] = 'wp-custom-logo';
 		}
 

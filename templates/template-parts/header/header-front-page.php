@@ -62,7 +62,7 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 	<div class="site-header-image" role="presentation">
 		<figure>
 			<?php
-			if ( has_header_image() ) {
+			if ( has_header_image( get_current_blog_id() ) ) {
 				$attributes = [
 					'alt'  => ''
 				];
