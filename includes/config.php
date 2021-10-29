@@ -71,8 +71,8 @@ define( 'FCT_PARTS_DIR', $parts_dir );
  * @since 1.0.0
  * @var   string
  */
-$theme_path = get_template_directory_uri();
-define( 'FCT_URL', $theme_path );
+$theme_url = get_template_directory_uri();
+define( 'FCT_URL', $theme_url );
 
 /**
  * Constant: Companion plugin active
