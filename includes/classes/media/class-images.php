@@ -26,6 +26,9 @@ class Images {
 	 */
 	public function __construct() {
 
+		// Stop adding inline styles to figure element.
+		add_filter( 'img_caption_shortcode_width', '__return_false' );
+
 		// Add image sizes.
 		add_action( 'after_setup_theme', [ $this, 'image_sizes' ] );
 
