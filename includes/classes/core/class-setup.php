@@ -81,11 +81,13 @@ class Setup {
 
 		// HTML 5 tags support.
 		add_theme_support( 'html5', [
-			'search-form',
-			'comment-form',
 			'comment-list',
-			'gscreenery',
-			'caption'
+			'comment-form',
+			'search-form',
+			'gallery',
+			'caption',
+			'style',
+			'script'
 		 ] );
 
 		 // Refresh widgets.
