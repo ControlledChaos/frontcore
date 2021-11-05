@@ -17,7 +17,7 @@ use FrontCore\Classes\Front as Front;
 $copyright = sprintf(
 	'<p class="copyright-text" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">&copy; <span class="screen-reader-text">%1s</span><span itemprop="copyrightYear">%2s</span> <span itemprop="copyrightHolder">%3s.</span> %4s.</p>',
 	esc_html__( 'Copyright ', 'frontcore' ),
-	get_the_time( 'Y' ),
+	date( 'Y' ),
 	esc_attr( get_bloginfo( 'name' ) ),
 	esc_html__( 'All rights reserved', 'frontcore' )
 );
