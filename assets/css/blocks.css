@@ -64,6 +64,7 @@ input[type="reset"],
 input[type="image"] {
   display: inline-block;
   width: auto;
+  line-height: 1;
   cursor: pointer;
   font-weight: bold;
   background-color: #ffffff;
