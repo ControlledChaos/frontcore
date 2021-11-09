@@ -4,6 +4,7 @@
 
 @import 'modules/_reset';
 @import 'modules/_colors';
+@import 'modules/_typography';
 @import 'modules/_layout';
 
 .login {
@@ -18,7 +19,7 @@
 
 	h1 {
 		font-size: 2rem;
-		font-weight: bold;
+		font-weight: $primary_heading_weight;
 
 		a {
 			width: unset;

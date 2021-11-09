@@ -2,7 +2,7 @@
   margin: 0;
   /* Match <p> tag to <h1> tag on front page */
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .site-title a {
@@ -93,12 +93,12 @@
 
 .wrap h1 {
   font-size: 1.625rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .wrap .welcome-panel h2 {
   font-size: 1.375rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .site-header {
@@ -107,7 +107,7 @@
 
 #titlediv #title {
   font-size: 1.625rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 #titlediv #title-prompt-text {

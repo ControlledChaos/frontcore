@@ -3,6 +3,7 @@
 ///
 
 @import 'modules/_colors';
+@import 'modules/_typography';
 @import 'partials/_header';
 
 // Custom admin elements.
@@ -21,12 +22,12 @@
 	.dashboard-panel-content {
 
 		h2 {
-			font-weight: 700;
+			font-weight: $primary_heading_weight;
 		}
 
 		.dashboard-panel-section-intro {
 			h4 {
-				font-weight: 700;
+				font-weight: $primary_heading_weight;
 			}
 		}
 	}
@@ -42,13 +43,13 @@
 
 	h1 {
 		font-size: 1.625rem;
-		font-weight: bold;
+		font-weight: $primary_heading_weight;
 	}
 
 	.welcome-panel {
 		h2 {
 			font-size: 1.375rem;
-			font-weight: bold;
+			font-weight: $primary_heading_weight;
 		}
 	}
 }
@@ -61,7 +62,7 @@
 
 	#title {
 		font-size: 1.625rem;
-		font-weight: bold;
+		font-weight: $primary_heading_weight;
 	}
 
 	#title-prompt-text {

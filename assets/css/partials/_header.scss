@@ -2,6 +2,8 @@
 /// Site header styles
 ///
 
+@import '../modules/_colors';
+@import '../modules/_typography';
 @import '../modules/_layout';
 
 .site-title {
@@ -9,7 +11,7 @@
 
 	/* Match <p> tag to <h1> tag on front page */
 	font-size: 2rem;
-	font-weight: bold;
+	font-weight: $primary_heading_weight;
 
 	& a {
 		color: inherit;

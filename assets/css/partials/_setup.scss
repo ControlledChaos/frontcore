@@ -5,6 +5,9 @@
 /// Mostly it gets the ball rolling.
 ///
 
+@import '../modules/_colors';
+@import '../modules/_typography';
+
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
@@ -70,14 +73,17 @@ ol {
 h1,
 h2 {
 	font-size: 1.625rem;
+	font-weight: $primary_heading_weight;
 }
 
 h3 {
 	font-size: 1.3125rem;
+	font-weight: $secondary_heading_weight;
 }
 
 h4 {
 	font-size: 1.25rem;
+	font-weight: $secondary_heading_weight;
 }
 
 a {

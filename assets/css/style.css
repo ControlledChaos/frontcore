@@ -322,14 +322,17 @@ ol {
 h1,
 h2 {
   font-size: 1.625rem;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 1.3125rem;
+  font-weight: 700;
 }
 
 h4 {
   font-size: 1.25rem;
+  font-weight: 700;
 }
 
 a {
@@ -745,7 +748,7 @@ h2 + .search-form {
   margin: 0;
   /* Match <p> tag to <h1> tag on front page */
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .site-title a {
