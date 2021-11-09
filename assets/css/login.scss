@@ -2,6 +2,7 @@
 /// Login styles
 ///
 
+@import 'modules/_reset';
 @import 'modules/_colors';
 @import 'modules/_layout';
 
@@ -10,11 +11,22 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background: $body_bg;
+	font-size: 1.125rem;
+	line-height: 1.5;
+	color: $text_color;
 
 	h1 {
+		font-size: 2rem;
+		font-weight: bold;
+
 		a {
 			width: unset;
 			height: unset;
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
 			margin: 0;
 			text-indent: 0px;
 			background: none;
@@ -27,6 +39,19 @@
 			&:focus,
 			&.focus {
 				color: $text_color;
+			}
+
+			.login-title-logo {
+				display: block;
+				max-width: 160px;
+
+				img {
+					display: block;
+				}
+			}
+
+			.login-title-text {
+				line-height: 1;
 			}
 		}
 	}
@@ -52,6 +77,15 @@
 		font-size: 1rem;
 	}
 
+	form {
+		border-color: $box_border_color;
+		border: none;
+
+		.input {
+			border-color: $form_border_color;
+		}
+	}
+
 	#login {
 		width: 100%;
 		max-width: $content_width;
@@ -63,6 +97,77 @@
 		#backtoblog {
 			max-width: 480px;
 			margin: 1em auto 0;
+
+			a {
+				font-weight: 600;
+				color: $link_color;
+
+				&:hover,
+				&:focus {
+					color: $link_action_color;
+				}
+			}
+		}
+	}
+
+	input[type="password"],
+	input[type="text"],
+	input[type="checkbox"],
+	input[type="radio"] {
+		border-color: $form_border_color;
+		border-radius: 0px;
+
+		&:focus {
+			box-shadow: none;
+			border-color: $form_action_border_color;
+		}
+	}
+
+	&.wp-core-ui {
+
+		.button-primary {
+			min-height: unset;
+			line-height: 1;
+			padding: 1rem;
+			background-color: $button_background_color;
+			border-color: $button_border_color;
+			border-radius: 0px;
+			font-size: 1rem;
+			font-weight: bold;
+			color: $button_text_color;
+
+			&:hover {
+				background-color: $button_action_background_color;
+				border-color: $button_action_border_color;
+				color: $button_action_text_color;
+			}
+
+			&:focus {
+				box-shadow: none;
+				background-color: $button_background_color;
+				border-color: $button_border_color;
+				color: $button_text_color;
+
+				&:hover {
+					background-color: $button_action_background_color;
+					border-color: $button_action_border_color;
+					color: $button_action_text_color;
+				}
+			}
+		}
+
+		.button-secondary {
+			border-radius: 0px;
+			color: $text_color;
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+
+		.button.wp-hide-pw:focus {
+			box-shadow: none;
+			border: none;
 		}
 	}
 }

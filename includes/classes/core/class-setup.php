@@ -234,12 +234,33 @@ class Setup {
 	/**
 	 * Login title
 	 *
+	 * Includes the logo if set in the customizer.
+	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @return string Returns the title text.
+	 * @return string Returns the title markup.
 	 */
 	public function login_title() {
-		return get_bloginfo( 'name' );
+
+		// Get the custom logo URL.
+		$logo   = get_theme_mod( 'custom_logo' );
+		$src    = wp_get_attachment_image_src( $logo , 'full' );
+		$output = '';
+
+		// Title markup, inside the h1 > a elements.
+		if ( has_custom_logo( get_current_blog_id() ) ) {
+			$output .= sprintf(
+				'<span class="login-title-logo site-logo"><img src="%s" /></span> ',
+				$src[0]
+			);
+		}
+
+		$output .= sprintf(
+			'<span class="login-title-text site-title">%s</span> ',
+			get_bloginfo( 'name' )
+		);
+
+		return $output;
 	}
 
 	/**
