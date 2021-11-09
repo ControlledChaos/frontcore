@@ -3,6 +3,7 @@
 ///
 
 @import '../modules/_colors';
+@import '../modules/_typography';
 
 // Functions
 @function button_svg_color() {
@@ -46,6 +47,7 @@ button,
 	max-width: 640px;
 	padding: 1rem;
 	font: inherit;
+	font-weight: $form_weight;
 	background: $form_background_color;
 	border: solid 1px $form_border_color;
 
@@ -93,7 +95,7 @@ input[type="image"] {
 	width: auto;
 	line-height: 1;
 	cursor: pointer;
-	font-weight: bold;
+	font-weight: $button_weight;
 	background-color: $button_background_color;
 	border-color: $button_border_color;
 	color: $button_text_color;
@@ -168,27 +170,27 @@ select {
 option {}
 
 *::-webkit-input-placeholder {
-	color: $light_gray;
+	color: $form_placeholder_color;
 }
 
 *::-o-placeholder {
-	color: $light_gray;
+	color: $form_placeholder_color;
 }
 
 *:-moz-placeholder {
-	color: $light_gray;
+	color: $form_placeholder_color;
 }
 
 *::-moz-placeholder {
-	color: $light_gray;
+	color: $form_placeholder_color;
 }
 
 *:-ms-input-placeholder {
-	color: $light_gray;
+	color: $form_placeholder_color;
 }
 
 *::placeholder {
-	color: $light_gray;
+	color: $form_placeholder_color;
 }
 
 /* Search form */

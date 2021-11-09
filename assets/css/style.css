@@ -459,6 +459,7 @@ button,
   max-width: 640px;
   padding: 1rem;
   font: inherit;
+  font-weight: 400;
   background: inherit;
   border: solid 1px #cccccc;
 }
@@ -504,7 +505,7 @@ input[type="image"] {
   width: auto;
   line-height: 1;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   background-color: #ffffff;
   border-color: #cccccc;
   color: #333333;
