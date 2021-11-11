@@ -75,7 +75,7 @@ class Customizer {
 		$wp_customize->get_section( 'title_tagline' )->title = __( 'Identity', 'frontcore' );
 		$wp_customize->get_section( 'title_tagline' )->priority = 5;
 
-		// Put the logo filed below site title & tagline.
+		// Put the logo field below site title & tagline.
 		$wp_customize->get_control( 'custom_logo' )->priority = 11;
 
 		// Rename Homepage options section & put under Layout panel.
