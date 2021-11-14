@@ -544,7 +544,13 @@ class Template_Tags {
 	public function site_schema() {
 
 		// Change page slugs and template names as needed.
-		if ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( 'page-about.php' ) || is_page_template( 'about.php' ) ) {
+		if (
+			is_author() ||
+			( function_exists( 'bp_is_home' ) && bp_is_home() ) ||
+			( function_exists( 'bbp_is_user_home' ) && bbp_is_user_home() )
+		) {
+			$itemtype = esc_attr( 'ProfilePage' );
+		} elseif ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( 'page-about.php' ) || is_page_template( 'about.php' ) ) {
 			$itemtype = esc_attr( 'AboutPage' );
 		} elseif ( is_page( 'contact' ) || is_page( 'contact-us' ) || is_page_template( 'page-contact.php' ) || is_page_template( 'contact.php' ) ) {
 			$itemtype = esc_attr( 'ContactPage' );
@@ -554,8 +560,6 @@ class Template_Tags {
 			$itemtype = esc_attr( 'CheckoutPage' );
 		} elseif ( is_front_page() || is_page() ) {
 			$itemtype = esc_attr( 'WebPage' );
-		} elseif ( is_author() || is_plugin_active( 'buddypress/bp-loader.php' ) && bp_is_home() || is_plugin_active( 'bbpress/bbpress.php' ) && bbp_is_user_home() ) {
-			$itemtype = esc_attr( 'ProfilePage' );
 		} elseif ( is_search() ) {
 			$itemtype = esc_attr( 'SearchResultsPage' );
 		} else {
