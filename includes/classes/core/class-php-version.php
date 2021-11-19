@@ -102,6 +102,28 @@ final class PHP_Version {
 	 */
 	public function frontend_message() {
 
+		/**
+		 * Constant: Templates directory
+		 *
+		 * @since 1.0.0
+		 * @var   string File path without trailing slash.
+		 */
+		$templates_dir = 'templates';
+		if ( ! defined( 'FCT_TMPL_DIR' ) ) {
+			define( 'FCT_TMPL_DIR', $templates_dir );
+		}
+
+		/**
+		 * Constant: Template partials directory
+		 *
+		 * @since 1.0.0
+		 * @var   string File path without trailing slash.
+		 */
+		$parts_dir = FCT_TMPL_DIR . '/template-parts';
+		if ( ! defined( 'FCT_PARTS_DIR' ) ) {
+			define( 'FCT_PARTS_DIR', $parts_dir );
+		}
+
 		// Look first for a message template file.
 		$template = get_theme_file_path( FCT_PARTS_DIR . '/partials/frontend-php-message.php' );
 		if ( file_exists( $template ) ) {
