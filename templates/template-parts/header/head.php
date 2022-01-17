@@ -39,8 +39,8 @@ if ( is_home() && ! is_front_page() ) {
 	<?php if ( is_search() ) { echo '<meta name="robots" content="noindex,nofollow" />'; } ?>
 
 	<link rel="preconnect" href="//fonts.adobe.com" />
-	<link rel="preconnect" href="//fonts.google.com" />
-	<link rel="preconnect" href="//fonts.gstatic.com" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<?php
 	// Hook into the head.
