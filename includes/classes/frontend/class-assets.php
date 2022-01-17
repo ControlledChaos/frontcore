@@ -80,7 +80,7 @@ class Assets {
 	public function frontend_styles() {
 
 		// Google fonts.
-		// wp_enqueue_style( 'fct-google-fonts', 'add-url-here', [], 'FCT_VERSION, 'screen' );
+		// wp_enqueue_style( 'fct-google-fonts', 'add-url-here', [], FCT_VERSION, 'screen' );
 
 		/**
 		 * Theme stylesheet
