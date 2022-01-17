@@ -7,9 +7,7 @@
  * @package    Front_Core
  * @subpackage Functions
  * @since      1.0.0
- *
  * @link       https://github.com/ControlledChaos/frontcore
- * @license    http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 /**
