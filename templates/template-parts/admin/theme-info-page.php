@@ -77,7 +77,7 @@ if ( $get_theme_domain ) {
 
 // Theme tags.
 if ( $get_theme_tags ) {
-	$tags = $get_theme_tags;
+	$tags = implode( ', ', $get_theme_tags );
 } else {
 	$tags = $not_provided;
 }
@@ -104,7 +104,7 @@ if ( $get_theme_tags ) {
 			<li><strong><?php esc_html_e( 'Author URI: ', 'frontcore' ); ?></strong><?php echo $author_uri; ?></li>
 			<li><strong><?php esc_html_e( 'Version: ', 'frontcore' ); ?></strong><?php echo $version; ?></li>
 			<li><strong><?php esc_html_e( 'Text Domain: ', 'frontcore' ); ?></strong><?php echo $domain; ?></li>
-			<li><strong><?php esc_html_e( 'Tags: ', 'frontcore' ); ?></strong><?php echo implode( ', ', $tags ); ?></li>
+			<li><strong><?php esc_html_e( 'Tags: ', 'frontcore' ); ?></strong><?php echo $tags; ?></li>
 		</ul>
 
 		<?php
