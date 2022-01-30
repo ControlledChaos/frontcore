@@ -958,7 +958,7 @@ class Template_Tags {
 	 public function post_navigation() {
 
 		$prev = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-		$next = get_adjacent_post( false, '', false );
+		$next = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', false );
 
 		if ( ! $next && ! $prev ) {
 			return;
