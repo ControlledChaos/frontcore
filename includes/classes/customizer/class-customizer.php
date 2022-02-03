@@ -83,6 +83,9 @@ class Customizer {
 		$wp_customize->get_section( 'static_front_page' )->priority = 3;
 		$wp_customize->get_section( 'static_front_page' )->title    = __( 'Front Page', 'frontcore' );
 
+		// Change label for front page option.
+		$wp_customize->get_control( 'show_on_front' )->label = __( 'Front Page Displays', 'frontcore' );
+
 		// Rename Background section & put under Appearance panel.
 		$wp_customize->get_section( 'background_image' )->panel    = 'fct_appearance_panel';
 		$wp_customize->get_section( 'background_image' )->priority = 5;
