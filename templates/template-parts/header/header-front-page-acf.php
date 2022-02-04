@@ -34,7 +34,11 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 
 			<div class="site-title-description">
 
+			<?php if ( is_paged() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_attr( esc_url( get_bloginfo( 'url' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
 				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<?php endif; ?>
 
 				<?php
 
