@@ -27,7 +27,19 @@ get_header();
 		endwhile;
 
 		?>
-
+		<?php
+		/**
+		 * This posts navigation is provided to avoid confusion.
+		 * If this template is to be used for a static front page,
+		 * as is most often the case, then this ought to be removed.
+		 */
+		if ( is_home() ) {
+			the_posts_navigation( [
+				'prev_text' => __( 'Previous', 'frontcore' ),
+				'next_text' => __( 'Next', 'frontcore' )
+			] );
+		}
+		?>
 		</main>
 	</div>
 	<?php
