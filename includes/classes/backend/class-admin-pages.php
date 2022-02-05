@@ -67,7 +67,7 @@ class Admin_Pages {
 	public function admin_header() {
 
 		// Get Customizer settings.
-		new Customize\Customizer;
+		new Customize\Customize;
 		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
 
 		if ( $use_header ) {
@@ -86,7 +86,7 @@ class Admin_Pages {
 	public function admin_body_class( $body_class ) {
 
 		// Get Customizer settings.
-		new Customize\Customizer;
+		new Customize\Customize;
 		$use_theme  = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_theme' ) );
 		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
 

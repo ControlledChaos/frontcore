@@ -35,7 +35,7 @@ class Layout {
 	 */
 	public function __construct() {
 
-		new Customize\Customizer;
+		new Customize\Customize;
 
 		// Add nav to both actions for customizer refresh.
 		add_action( 'FrontCore\nav_before_header', [ $this, 'navigation_main' ] );

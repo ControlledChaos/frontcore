@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Customizer {
+class Customize {
 
 	/**
 	 * The class object
@@ -408,5 +408,5 @@ class Customizer {
  * @return object Customizer Returns an instance of the class.
  */
 function mods() {
-	return Customizer :: instance();
+	return Customize :: instance();
 }

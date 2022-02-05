@@ -198,7 +198,7 @@ $fct_core_assets  = new Core\Assets;
 $fct_core_nav     = new Navigation\Navigation;
 $fct_core_widgets = new Widgets\Register;
 $fct_core_media   = new Media\Images;
-$fct_core_mods    = new Customize\Customizer;
+$fct_core_mods    = new Customize\Customize;
 
 // Vendor (plugin) classes.
 $fct_acf = new Vendor\Theme_ACF;
@@ -214,7 +214,6 @@ if ( ! is_admin() ) {
 	$fct_tags   = new Front\Template_Tags;
 	$fct_assets = new Front\Assets;
 	$fct_layout = new Front\Layout;
-	// $fct_sanitize = new Customize\Sanitize;
 }
 
 // Backend classes.
@@ -227,9 +226,4 @@ if ( is_admin() ) {
 	if ( fct_has_blocks() ) {
 		$fct_blocks = new Admin\Block_Editor;
 	}
-}
-
-// Customizer classes.
-if ( is_customize_preview() ) {
-	$fct_customize = new Customize\Customizer;
 }

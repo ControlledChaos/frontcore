@@ -90,7 +90,7 @@ define( 'FCT_CLASSES', [
 	FCT_CLASS_NS . '\Admin\Block_Editor'  => FCT_CLASS['admin'] . 'block-editor.php',
 
 	// Customizer classes.
-	FCT_CLASS_NS . '\Customize\Customizer' => FCT_CLASS['customize'] . 'customizer.php',
+	FCT_CLASS_NS . '\Customize\Customize' => FCT_CLASS['customize'] . 'customizer.php',
 
 	// Vendor classes.
 	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',
