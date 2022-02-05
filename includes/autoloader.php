@@ -95,11 +95,6 @@ define( 'FCT_CLASSES', [
 	// Vendor classes.
 	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',
 	FCT_CLASS_NS . '\Vendor\Theme_ACF' => FCT_CLASS['vendor'] . 'theme-acf.php',
-
-	// General/miscellaneous classes.
-	FCT_CLASS_NS . '\Activate\Activate'   => FCT_CLASS['general'] . 'activate.php',
-	FCT_CLASS_NS . '\Activate\Deactivate' => FCT_CLASS['general'] . 'deactivate.php',
-
 ] );
 
 /**

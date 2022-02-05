@@ -115,7 +115,6 @@ namespace FrontCore;
 // Alias namespaces.
 use
 FrontCore\Classes            as General,
-FrontCore\Classes\Activate   as Activate,
 FrontCore\Classes\Core       as Core,
 FrontCore\Classes\Front      as Front,
 FrontCore\Classes\Navigation as Navigation,
@@ -180,16 +179,14 @@ require_once FCT_PATH . 'includes/autoloader.php';
 // Get compatibility functions.
 require FCT_PATH . 'includes/vendor/compatibility.php';
 
-/**
- * Instantiate theme classes
- *
- * @since 1.0.0
- * @see   `includes/autoloader.php`
- */
+// Load required files.
+foreach ( glob( FCT_PATH . 'includes/activate/*.php' ) as $filename ) {
+	require $filename;
+}
 
-// Activation classes.
-$fct_activate   = new Classes\Activate\Activate;
-$fct_deactivate = new Classes\Activate\Deactivate;
+// Theme activation and deactivation.
+Activate\setup();
+Deactivate\setup();
 
 // Theme setup.
 $fct_core_setup   = new Core\Setup;
