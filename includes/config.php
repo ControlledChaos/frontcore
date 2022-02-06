@@ -25,6 +25,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * PHP version
+ *
+ * Defines the required minimum PHP version
+ * required for theme functionality.
+ *
+ * @since 1.0.0
+ * @var   string The required PHP version.
+ */
+define( 'FCT_PHP_VERSION', '7.4' );
+
+/**
  * Constant: Theme version
  *
  * Keeping the version at 1.0.0 as this is a starter theme but

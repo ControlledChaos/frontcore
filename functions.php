@@ -125,8 +125,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Get theme configuration file.
+require get_parent_theme_file_path( '/includes/config.php' );
+
 // Get the PHP version class.
-require_once get_parent_theme_file_path( '/includes/classes/core/class-php-version.php' );
+require_once get_parent_theme_file_path( '/includes/core/php.php' );
 
 /**
  * PHP version check
@@ -137,10 +140,10 @@ require_once get_parent_theme_file_path( '/includes/classes/core/class-php-versi
  * @since  1.0.0
  * @return void
  */
-if ( ! Core\php()->version() && ! is_admin() ) {
+if ( ! PHP\version() && ! is_admin() ) {
 
 	// Get the conditional message.
-	$die = Core\php()->frontend_message();
+	$die = PHP\frontend_message();
 
 	// Print the die message.
 	die( $die );
@@ -165,9 +168,6 @@ $get_plugin = ABSPATH . 'wp-admin/includes/plugin.php';
 if ( file_exists( $get_plugin ) ) {
 	include_once( $get_plugin );
 }
-
-// Get theme configuration file.
-require get_parent_theme_file_path( '/includes/config.php' );
 
 // Autoload class files.
 require_once FCT_PATH . 'includes/autoloader.php';
