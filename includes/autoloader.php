@@ -70,7 +70,6 @@ define( 'FCT_CLASSES', [
 
 	// Frontend classes.
 	FCT_CLASS_NS . '\Front\Assets'        => FCT_CLASS['front'] . 'assets.php',
-	FCT_CLASS_NS . '\Front\Layout'        => FCT_CLASS['front'] . 'layout.php',
 
 	// Backend classes.
 	FCT_CLASS_NS . '\Admin\Admin_Menu'    => FCT_CLASS['admin'] . 'admin-menu.php',

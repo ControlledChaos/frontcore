@@ -220,7 +220,7 @@ if ( ! is_admin() ) {
 	Head\setup();
 	Tags\setup();
 	$fct_assets = new Front\Assets;
-	$fct_layout = new Front\Layout;
+	Layout\setup();
 }
 
 // Backend classes.
