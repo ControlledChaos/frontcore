@@ -181,6 +181,9 @@ require FCT_PATH . 'includes/vendor/compatibility.php';
 foreach ( glob( FCT_PATH . 'includes/activate/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/media/*.php' ) as $filename ) {
+	require $filename;
+}
 foreach ( glob( FCT_PATH . 'includes/navigation/*.php' ) as $filename ) {
 	require $filename;
 }
@@ -198,7 +201,7 @@ $fct_core_setup   = new Core\Templates;
 $fct_core_assets  = new Core\Assets;
 Navigation\setup();
 Widgets\setup();
-$fct_core_media   = new Media\Images;
+Images\setup();
 $fct_core_mods    = new Customize\Customize;
 
 // Vendor (plugin) classes.

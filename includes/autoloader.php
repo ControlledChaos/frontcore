@@ -68,9 +68,6 @@ define( 'FCT_CLASSES', [
 	// Widgets classes.
 	FCT_CLASS_NS . '\Widgets\Theme_Mode' => FCT_CLASS['widgets'] . 'theme-mode.php',
 
-	// Media classes.
-	FCT_CLASS_NS . '\Media\Images' => FCT_CLASS['media'] . 'images.php',
-
 	// Frontend classes.
 	FCT_CLASS_NS . '\Front\Head'          => FCT_CLASS['front'] . 'head.php',
 	FCT_CLASS_NS . '\Front\Template_Tags' => FCT_CLASS['front'] . 'template-tags.php',
