@@ -7,14 +7,11 @@
  *
  * @package    Front_Core
  * @subpackage Includes
- * @category   Frontend
+ * @category   Assets
  * @since      1.0.0
  */
 
 namespace FrontCore\Front_Assets;
-
-// Alias namespaces.
-use  FrontCore\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

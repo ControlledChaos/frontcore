@@ -194,6 +194,9 @@ foreach ( glob( FCT_PATH . 'includes/customize/*.php' ) as $filename ) {
 foreach ( glob( FCT_PATH . 'includes/frontend/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/assets/*.php' ) as $filename ) {
+	require $filename;
+}
 
 // Theme activation and deactivation.
 Activate\setup();
