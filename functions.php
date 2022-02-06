@@ -125,6 +125,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Get plugins path
+ *
+ * Used to check for active plugins with the `is_plugin_active` function.
+ * Namespace escaped in example ( \ ) as it sometimes causes an error.
+ *
+ * @link https://developer.wordpress.org/reference/functions/is_plugin_active/
+ *
+ * @example The following would check for the Advanced Custom Fields plugin:
+ *          ```
+ *          if ( \is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
+ *          	// Execute code.
+ *           }
+ *          ```
+ */
+$get_plugin = ABSPATH . 'wp-admin/includes/plugin.php';
+if ( file_exists( $get_plugin ) ) {
+	include_once( $get_plugin );
+}
+
 // Get theme configuration file.
 require get_parent_theme_file_path( '/includes/config.php' );
 
@@ -147,26 +167,6 @@ if ( ! PHP\version() && ! is_admin() ) {
 
 	// Print the die message.
 	die( $die );
-}
-
-/**
- * Get plugins path
- *
- * Used to check for active plugins with the `is_plugin_active` function.
- * Namespace escaped in example ( \ ) as it sometimes causes an error.
- *
- * @link https://developer.wordpress.org/reference/functions/is_plugin_active/
- *
- * @example The following would check for the Advanced Custom Fields plugin:
- *          ```
- *          if ( \is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
- *          	// Execute code.
- *           }
- *          ```
- */
-$get_plugin = ABSPATH . 'wp-admin/includes/plugin.php';
-if ( file_exists( $get_plugin ) ) {
-	include_once( $get_plugin );
 }
 
 // Autoload class files.
@@ -238,10 +238,7 @@ if ( is_admin() ) {
 	$fct_admin_pages   = new Admin\Admin_Pages;
 	Post_Options\setup();
 	$fct_admin_assets  = new Admin\Assets;
-	$fct_editor_styles = new Admin\Editor_Styles;
-	if ( fct_has_blocks() ) {
-		Block_Editor\setup();
-	}
+	Editors\setup();
 }
 
 Customize\setup();
