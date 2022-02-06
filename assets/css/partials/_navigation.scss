@@ -16,7 +16,19 @@
 	width: 100%;
 	max-width: $content_width;
 	margin: 1em auto 0;
-	padding: 0 2em;
+	padding: 0;
+
+	@media screen and ( max-width: 960px ) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	#main-menu-wrap {
+		width: 100%;
+		padding: 0 2em;
+	}
 
 	ul {
 		display: none;
@@ -88,13 +100,6 @@
 		.main-navigation {
 			width: auto;
 			margin: 0;
-
-			@media screen and ( max-width: 960px ) {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				width: 100%;
-			}
 
 			ul {
 				ul {

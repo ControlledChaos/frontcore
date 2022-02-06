@@ -812,6 +812,27 @@ h2 + .search-form {
   width: 100%;
   max-width: 1280px;
   margin: 1em auto 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .main-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+}
+
+.main-navigation #main-menu-wrap {
+  width: 100%;
   padding: 0 2em;
 }
 
@@ -879,22 +900,6 @@ h2 + .search-form {
 .site-branding-wrap.nav-aside-branding .main-navigation {
   width: auto;
   margin: 0;
-}
-
-@media screen and (max-width: 960px) {
-  .site-branding-wrap.nav-aside-branding .main-navigation {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-  }
 }
 
 .site-branding-wrap.nav-aside-branding .main-navigation ul ul {

@@ -25,6 +25,7 @@ use FrontCore\Classes\Front as Front;
 	<?php
 	wp_nav_menu( [
 		'theme_location' => 'main',
+		'container_id'   => 'main-menu-wrap',
 		'menu_id'        => 'main-menu',
 		'fallback_cb'    => [ 'FrontCore\Classes\Navigation\Navigation', 'main_nav_fallback' ],
 	] );
