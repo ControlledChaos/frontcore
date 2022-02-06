@@ -11,9 +11,9 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Tags as Tags;
 
 ?>
-<?php Front\tags()->before_sidebar(); ?>
-<?php Front\tags()->sidebar(); ?>
-<?php Front\tags()->after_sidebar(); ?>
+<?php Tags\before_sidebar(); ?>
+<?php Tags\sidebar(); ?>
+<?php Tags\after_sidebar(); ?>

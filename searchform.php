@@ -16,9 +16,9 @@ if ( is_admin() ) {
 }
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Tags as Tags;
 
 ?>
-<?php Front\tags()->before_searchform(); ?>
-<?php Front\tags()->searchform(); ?>
-<?php Front\tags()->after_searchform(); ?>
+<?php Tags\before_searchform(); ?>
+<?php Tags\searchform(); ?>
+<?php Tags\after_searchform(); ?>

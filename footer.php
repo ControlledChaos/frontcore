@@ -11,16 +11,16 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Tags as Tags;
 
 ?>
-	<?php Front\tags()->before_footer(); ?>
-	<?php Front\tags()->footer(); ?>
-	<?php Front\tags()->after_footer(); ?>
+	<?php Tags\before_footer(); ?>
+	<?php Tags\footer(); ?>
+	<?php Tags\after_footer(); ?>
 
 </div><!-- #page -->
 
-<?php Front\tags()->after_page(); ?>
+<?php Tags\after_page(); ?>
 <?php wp_footer(); ?>
 
 <style>.no-js body { visibility: visible !important; }</style>

@@ -12,7 +12,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Classes\Tags as Tags;
 
 ?>
 <div class="no-results not-found">

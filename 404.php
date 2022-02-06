@@ -12,8 +12,7 @@
 
 namespace FrontCore;
 
-// Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use function FrontCore\Tags\content_template;
 
 get_header();
 
@@ -21,7 +20,7 @@ get_header();
 <div id="content" class="site-content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
-			<?php Front\tags()->content_template(); ?>
+			<?php content_template(); ?>
 		</main>
 	</div>
 </div>

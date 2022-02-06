@@ -11,14 +11,11 @@
 namespace FrontCore\Admin;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front,
-	FrontCore\Customize     as Customize;
+use FrontCore\Tags      as Tags,
+	FrontCore\Customize as Customize;
 
 // Get the navigation location setting from the Customizer.
 $nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
-
-// Instantiate the Template_Tags class.
-new Front\Template_Tags;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="site-branding-wrap">
 		<div class="site-branding">
 
-			<?php echo Front\tags()->site_logo(); ?>
+			<?php echo Tags\site_logo(); ?>
 
 			<div class="site-title-description">
 
@@ -47,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 		<?php if ( 'aside' == $nav_location ) {
-				Front\tags()->nav_aside_branding();
+				Tags\nav_aside_branding();
 		} ?>
 	</div>
 </header>

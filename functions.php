@@ -191,6 +191,9 @@ foreach ( glob( FCT_PATH . 'includes/widgets/*.php' ) as $filename ) {
 foreach ( glob( FCT_PATH . 'includes/customize/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/frontend/*.php' ) as $filename ) {
+	require $filename;
+}
 
 // Theme activation and deactivation.
 Activate\setup();
@@ -216,7 +219,7 @@ if ( $fct_acf->use_bundled() || class_exists( 'acf' ) ) {
 // Frontend classes.
 if ( ! is_admin() ) {
 	$fct_head   = new Front\Head;
-	$fct_tags   = new Front\Template_Tags;
+	Tags\setup();
 	$fct_assets = new Front\Assets;
 	$fct_layout = new Front\Layout;
 }

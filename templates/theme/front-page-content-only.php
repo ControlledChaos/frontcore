@@ -23,8 +23,7 @@
 
 namespace FrontCore;
 
-// Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use function FrontCore\Tags\content_template;
 
 get_header();
 
@@ -36,7 +35,7 @@ get_header();
 		<?php
 
 		while ( have_posts() ) : the_post();
-			Front\tags()->content_template();
+			content_template();
 		endwhile;
 
 		?>

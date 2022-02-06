@@ -11,7 +11,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Classes\Tags as Tags;
 
 ?>
 <form class="search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">

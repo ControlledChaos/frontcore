@@ -11,8 +11,8 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front,
-	FrontCore\Customize     as Customize;
+use FrontCore\Tags      as Tags,
+	FrontCore\Customize as Customize;
 
 // Get the navigation location setting from the Customizer.
 $nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
@@ -30,7 +30,7 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 	<div class="site-branding-wrap<?php do_action( 'FrontCore\site_branding_wrap_class' ); ?>">
 		<div class="site-branding">
 
-			<?php echo Front\tags()->site_logo(); ?>
+			<?php echo Tags\site_logo(); ?>
 
 			<div class="site-title-description">
 
@@ -47,7 +47,7 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 			</div>
 		</div>
 		<?php if ( 'aside' == $nav_location ) {
-				Front\tags()->nav_aside_branding();
+				Tags\nav_aside_branding();
 		} ?>
 	</div>
 

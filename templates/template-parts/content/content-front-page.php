@@ -11,7 +11,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Front as Front;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -34,7 +34,7 @@ use FrontCore\Classes\Front as Front;
 			! is_page_template( FCT_TMPL_DIR . '/theme/no-featured.php' ) ||
 			! is_page_template( FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php' )
 		) {
-			Front\tags()->post_thumbnail();
+			Front\post_thumbnail();
 		}
 	} ?>
 
@@ -57,7 +57,7 @@ use FrontCore\Classes\Front as Front;
 
 	?>
 	<footer class="entry-footer">
-		<?php  Front\tags()->entry_footer(); ?>
+		<?php  Front\entry_footer(); ?>
 	</footer>
 	<?php
 

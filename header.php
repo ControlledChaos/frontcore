@@ -14,7 +14,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Tags as Tags;
 
 // Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {
@@ -37,29 +37,29 @@ do_action( 'before_html' ); ?>
 
 <html xmlns:og="http://opengraphprotocol.org/schema/" <?php language_attributes(); ?> class="no-js">
 
-<?php Front\tags()->head(); ?>
+<?php Tags\head(); ?>
 
-<body style="visibility: hidden;" <?php Front\tags()->body_class(); ?>>
+<body style="visibility: hidden;" <?php Tags\body_class(); ?>>
 
 <?php
-Front\tags()->body_open();
-Front\tags()->before_page();
+Tags\body_open();
+Tags\before_page();
 ?>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_attr( esc_html_e( 'Skip to content', 'frontcore' ) ); ?></a>
-<div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Front\tags()->site_schema() ); ?>">
+<div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Tags\site_schema() ); ?>">
 
 	<div class="site-header-wrap">
 
 		<?php
 		if ( 'before' == $nav_location ) {
-			Front\tags()->nav_before_header();
+			Tags\nav_before_header();
 		} ?>
-		<?php Front\tags()->before_header(); ?>
-		<?php Front\tags()->header(); ?>
-		<?php Front\tags()->after_header(); ?>
+		<?php Tags\before_header(); ?>
+		<?php Tags\header(); ?>
+		<?php Tags\after_header(); ?>
 		<?php
 		if ( 'after' == $nav_location ) {
-			Front\tags()->nav_after_header();
+			Tags\nav_after_header();
 		} ?>
 
 	</div>

@@ -11,14 +11,14 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Tags as Tags;
 
 ?>
 <header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
 	<div class="site-branding">
 
-		<?php echo Front\tags()->site_logo(); ?>
+		<?php echo Tags\site_logo(); ?>
 
 		<div class="site-title-description">
 

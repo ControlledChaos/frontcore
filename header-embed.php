@@ -10,8 +10,7 @@
 
 namespace FrontCore;
 
-// Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use function FrontCore\Tags\body_class;
 
 if ( ! headers_sent() ) {
 	header( 'X-WP-embed: true' );
@@ -27,4 +26,4 @@ if ( ! headers_sent() ) {
 	<?php do_action( 'embed_head' ); ?>
 	<?php do_action( 'fct_embed_head' ); ?>
 </head>
-<body <?php Front\tags()->body_class(); ?>>
+<body <?php body_class(); ?>>

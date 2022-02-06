@@ -13,8 +13,8 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front,
-	FrontCore\Customize     as Customize;
+use FrontCore\Tags      as Tags,
+	FrontCore\Customize as Customize;
 
 // Get the content display setting from the Customizer.
 $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
@@ -35,8 +35,8 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 
 		<div class="entry-meta">
 			<?php
-				Front\tags()->posted_on();
-				Front\tags()->posted_by();
+				Tags\posted_on();
+				Tags\posted_by();
 			?>
 		</div>
 
@@ -45,7 +45,7 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 	</header>
 
 	<?php if ( is_singular() ) {
-		Front\tags()->post_thumbnail();
+		Tags\post_thumbnail();
 	} ?>
 
 	<div class="entry-content" itemprop="articleBody">
@@ -80,11 +80,11 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 	</div>
 
 	<footer class="entry-footer">
-		<?php  Front\tags()->entry_footer(); ?>
+		<?php  Tags\entry_footer(); ?>
 	</footer>
 
 </article>
 
 <?php if ( is_single() ) {
-	echo Front\tags()->post_navigation();
+	echo Tags\post_navigation();
 } ?>
