@@ -1058,7 +1058,7 @@ h2 + .search-form {
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled-open ul {
   display: block;
   font-size: 1.25em;
 }
