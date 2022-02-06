@@ -70,7 +70,6 @@ define( 'FCT_CLASSES', [
 
 	// Frontend classes.
 	FCT_CLASS_NS . '\Front\Head'          => FCT_CLASS['front'] . 'head.php',
-	FCT_CLASS_NS . '\Front\Template_Tags' => FCT_CLASS['front'] . 'template-tags.php',
 	FCT_CLASS_NS . '\Front\Assets'        => FCT_CLASS['front'] . 'assets.php',
 	FCT_CLASS_NS . '\Front\Layout'        => FCT_CLASS['front'] . 'layout.php',
 
