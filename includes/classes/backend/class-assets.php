@@ -62,7 +62,7 @@ class Assets {
 	public function admin_styles() {
 
 		// Get Customizer settings.
-		$use_theme = Customize\admin_theme( get_theme_mod( 'fct_admin_theme' ) );
+		$use_theme = Customize\use_admin_theme( get_theme_mod( 'fct_admin_theme' ) );
 
 		// Enqueue admin theme styles if set in the Customizer.
 		if ( $use_theme ) {

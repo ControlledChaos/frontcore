@@ -67,7 +67,7 @@ class Admin_Pages {
 	public function admin_header() {
 
 		// Get Customizer settings.
-		$use_header = Customize\admin_theme( get_theme_mod( 'fct_admin_header' ) );
+		$use_header = Customize\use_admin_header( get_theme_mod( 'fct_admin_header' ) );
 
 		if ( $use_header ) {
 			get_template_part( FCT_PARTS_DIR . '/admin/admin-header' );
@@ -85,8 +85,8 @@ class Admin_Pages {
 	public function admin_body_class( $body_class ) {
 
 		// Get Customizer settings.
-		$use_theme  = Customize\admin_theme( get_theme_mod( 'fct_admin_theme' ) );
-		$use_header = Customize\admin_theme( get_theme_mod( 'fct_admin_header' ) );
+		$use_theme  = Customize\use_admin_theme( get_theme_mod( 'fct_admin_theme' ) );
+		$use_header = Customize\use_admin_header( get_theme_mod( 'fct_admin_header' ) );
 
 		if ( $use_theme ) {
 			$body_class .= ' fct-admin-theme';

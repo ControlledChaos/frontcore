@@ -88,6 +88,11 @@ function customize_modify( $wp_customize ) {
  */
 function customize_register( $wp_customize ) {
 
+	// Return namespaced function.
+	$ns = function( $function ) {
+		return __NAMESPACE__ . "\\$function";
+	};
+
 	// Add Layout panel.
 	$wp_customize->add_panel( 'fct_layout_panel' , [
 		'priority'    => 10,
@@ -144,7 +149,7 @@ function customize_register( $wp_customize ) {
 	// Header image display.
 	$wp_customize->add_setting( 'fct_header_image', [
 		'default'	        => 'always',
-		'sanitize_callback' => 'header_image'
+		'sanitize_callback' => $ns( 'header_image' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
 		$wp_customize,
@@ -168,7 +173,7 @@ function customize_register( $wp_customize ) {
 	// Main navigation location.
 	$wp_customize->add_setting( 'fct_nav_location', [
 		'default'	        => 'aside',
-		'sanitize_callback' => 'nav_location'
+		'sanitize_callback' => $ns( 'nav_location' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
 		$wp_customize,
@@ -190,7 +195,7 @@ function customize_register( $wp_customize ) {
 	// Blog/archive content.
 	$wp_customize->add_setting( 'fct_blog_format', [
 		'default'	        => 'content',
-		'sanitize_callback' => 'blog_format'
+		'sanitize_callback' => $ns( 'blog_format' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
 		$wp_customize,
@@ -211,7 +216,7 @@ function customize_register( $wp_customize ) {
 	// Author section on single posts.
 	$wp_customize->add_setting( 'fct_author_section', [
 		'default'	        => 'never',
-		'sanitize_callback' => 'author_section'
+		'sanitize_callback' => $ns( 'author_section' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
 		$wp_customize,
@@ -234,7 +239,8 @@ function customize_register( $wp_customize ) {
 	// Use admin theme.
 	$wp_customize->add_setting( 'fct_admin_theme', [
 		'default'	        => false,
-		'sanitize_callback' => 'admin_theme'
+		'transport'         => 'postMessage',
+		'sanitize_callback' => $ns( 'use_admin_theme' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
 		$wp_customize,
@@ -251,7 +257,8 @@ function customize_register( $wp_customize ) {
 	// Load admin header.
 	$wp_customize->add_setting( 'fct_admin_header', [
 		'default'	        => false,
-		'sanitize_callback' => 'admin_header'
+		'transport'         => 'postMessage',
+		'sanitize_callback' => $ns( 'use_admin_header' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
 		$wp_customize,
@@ -341,7 +348,7 @@ function author_section( $input ) {
  * @param  $input
  * @return string Returns the theme mod.
  */
-function admin_theme( $input ) {
+function use_admin_theme( $input ) {
 
 	if ( true == $input ) {
 		return true;
@@ -356,7 +363,7 @@ function admin_theme( $input ) {
  * @param  $input
  * @return string Returns the theme mod.
  */
-function admin_header( $input ) {
+function use_admin_header( $input ) {
 
 	if ( true == $input ) {
 		return true;

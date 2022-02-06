@@ -114,11 +114,11 @@ namespace FrontCore;
 
 // Alias namespaces.
 use
-FrontCore\Classes            as General,
-FrontCore\Classes\Core       as Core,
-FrontCore\Classes\Front      as Front,
-FrontCore\Classes\Admin      as Admin,
-FrontCore\Classes\Vendor     as Vendor;
+FrontCore\Classes        as General,
+FrontCore\Classes\Core   as Core,
+FrontCore\Classes\Front  as Front,
+FrontCore\Classes\Admin  as Admin,
+FrontCore\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -206,7 +206,6 @@ $fct_core_assets  = new Core\Assets;
 Navigation\setup();
 Widgets\setup();
 Images\setup();
-Customize\setup();
 
 // Vendor (plugin) classes.
 $fct_acf = new Vendor\Theme_ACF;
@@ -235,3 +234,5 @@ if ( is_admin() ) {
 		$fct_blocks = new Admin\Block_Editor;
 	}
 }
+
+Customize\setup();
