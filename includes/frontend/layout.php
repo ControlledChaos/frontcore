@@ -8,7 +8,7 @@
  * rest of this theme's prefixes.
  *
  * @package    Front_Core
- * @subpackage Classes
+ * @subpackage Includes
  * @category   Frontend
  * @since      1.0.0
  */

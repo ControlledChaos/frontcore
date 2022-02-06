@@ -5,7 +5,7 @@
  * Make page templates available to select post types and page types.
  *
  * @package    Front_Core
- * @subpackage Classes
+ * @subpackage Includes
  * @category   Setup
  * @since      1.0.0
  */
