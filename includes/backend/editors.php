@@ -10,7 +10,7 @@
  * @since      1.0.0
  */
 
-namespace FrontCore\Block_Editor;
+namespace FrontCore\Editors;
 
 // Alias namespaces.
 use  FrontCore\Classes\Core as Core;
@@ -38,6 +38,9 @@ function setup() {
 
 	// Disable custom colors.
 	add_action( 'after_setup_theme', $ns( 'disable_custom_colors' ) );
+
+	// Get latest rich-text editor styles.
+	add_filter( 'mce_css', $ns( 'fresh_editor_style' ) );
 }
 
 /**
@@ -184,4 +187,72 @@ function disable_custom_colors() {
 
 	// Add theme support if the current user is NOT allowed custom colors.
 	add_theme_support( 'disable-custom-colors', [] );
+}
+
+/**
+ * Latest editor styles
+ *
+ * Add sa parameter of the last modified time to all editor stylesheets.
+ *
+ * Modified copy of `_WP_Editors::editor_settings()`.
+ *
+ * @since  1.0.0
+ * @param  string $css Comma separated stylesheet URIs
+ * @return string
+ */
+function fresh_editor_style( $css ) {
+
+	global $editor_styles;
+
+	if ( empty ( $css ) or empty ( $editor_styles ) ) {
+		return $css;
+	}
+
+	$mce_css = [];
+
+	// Load parent theme styles first, so the child theme can overwrite it.
+	if ( is_child_theme() )	{
+		editor_styles_version(
+			$mce_css,
+			get_template_directory(),
+			get_template_directory_uri()
+		);
+	}
+
+	editor_styles_version(
+		$mce_css,
+		get_stylesheet_directory(),
+		get_stylesheet_directory_uri()
+	);
+
+	return implode( ',', $mce_css );
+}
+
+/**
+ * Editor styles version
+ *
+ * Adds version parameter to each stylesheet URI.
+ *
+ * @since  1.0.0
+ * @param  array  $mce_css Passed by reference.
+ * @param  string $dir
+ * @param  string $uri
+ * @return void
+ */
+function editor_styles_version( &$mce_css, $dir, $uri ) {
+
+	global $editor_styles;
+
+	foreach ( $editor_styles as $file )	{
+
+		if ( ! $file or ! file_exists( "$dir/$file" ) )	{
+			continue;
+		}
+
+		$mce_css[] = add_query_arg(
+			'version',
+			filemtime( "$dir/$file" ),
+			"$uri/$file"
+		);
+	}
 }

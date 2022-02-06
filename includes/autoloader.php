@@ -67,7 +67,6 @@ define( 'FCT_CLASSES', [
 	FCT_CLASS_NS . '\Admin\Admin_Menu'    => FCT_CLASS['admin'] . 'admin-menu.php',
 	FCT_CLASS_NS . '\Admin\Admin_Pages'   => FCT_CLASS['admin'] . 'admin-pages.php',
 	FCT_CLASS_NS . '\Admin\Assets'        => FCT_CLASS['admin'] . 'assets.php',
-	FCT_CLASS_NS . '\Admin\Editor_Styles' => FCT_CLASS['admin'] . 'editor-styles.php',
 
 	// Vendor classes.
 	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',
