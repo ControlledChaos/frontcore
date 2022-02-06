@@ -219,7 +219,7 @@ if ( $fct_acf->use_bundled() || class_exists( 'acf' ) ) {
 if ( ! is_admin() ) {
 	Head\setup();
 	Tags\setup();
-	$fct_assets = new Front\Assets;
+	Front_Assets\setup();
 	Layout\setup();
 }
 

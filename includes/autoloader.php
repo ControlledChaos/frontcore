@@ -68,9 +68,6 @@ define( 'FCT_CLASSES', [
 	// Widgets classes.
 	FCT_CLASS_NS . '\Widgets\Theme_Mode' => FCT_CLASS['widgets'] . 'theme-mode.php',
 
-	// Frontend classes.
-	FCT_CLASS_NS . '\Front\Assets'        => FCT_CLASS['front'] . 'assets.php',
-
 	// Backend classes.
 	FCT_CLASS_NS . '\Admin\Admin_Menu'    => FCT_CLASS['admin'] . 'admin-menu.php',
 	FCT_CLASS_NS . '\Admin\Admin_Pages'   => FCT_CLASS['admin'] . 'admin-pages.php',
