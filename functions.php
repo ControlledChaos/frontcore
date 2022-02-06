@@ -236,7 +236,7 @@ if ( ! is_admin() ) {
 if ( is_admin() ) {
 	$fct_admin_menu    = new Admin\Admin_Menu;
 	$fct_admin_pages   = new Admin\Admin_Pages;
-	$fct_post_options  = new Admin\Post_Options;
+	Post_Options\setup();
 	$fct_admin_assets  = new Admin\Assets;
 	$fct_editor_styles = new Admin\Editor_Styles;
 	if ( fct_has_blocks() ) {
