@@ -236,7 +236,7 @@ if ( ! is_admin() ) {
 if ( is_admin() ) {
 	Admin\setup();
 	Post_Options\setup();
-	$fct_admin_assets  = new Admin_Class\Assets;
+	Admin_Assets\setup();
 	Editors\setup();
 }
 

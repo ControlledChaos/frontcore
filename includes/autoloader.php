@@ -63,9 +63,6 @@ define( 'FCT_CLASSES', [
 	// Widgets classes.
 	FCT_CLASS_NS . '\Widgets\Theme_Mode' => FCT_CLASS['widgets'] . 'theme-mode.php',
 
-	// Backend classes.
-	FCT_CLASS_NS . '\Admin\Assets'        => FCT_CLASS['admin'] . 'assets.php',
-
 	// Vendor classes.
 	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',
 	FCT_CLASS_NS . '\Vendor\Theme_ACF' => FCT_CLASS['vendor'] . 'theme-acf.php',
