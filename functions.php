@@ -217,7 +217,7 @@ if ( $fct_acf->use_bundled() || class_exists( 'acf' ) ) {
 
 // Frontend classes.
 if ( ! is_admin() ) {
-	$fct_head   = new Front\Head;
+	Head\setup();
 	Tags\setup();
 	$fct_assets = new Front\Assets;
 	$fct_layout = new Front\Layout;
