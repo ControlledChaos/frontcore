@@ -205,6 +205,56 @@
 	font-size: 1.25em;
 }
 
+.menu-toggle {
+	button {
+		background: inherit;
+		border: none;
+		color: inherit;
+
+		&:hover,
+		&.hover,
+		&:focus,
+		&.focus {
+			background: inherit;
+			border: none;
+			color: inherit;
+		}
+
+		svg {
+			position: relative;
+			vertical-align: baseline;
+			fill: currentColor;
+
+			&.menu-open {
+				top: 0.05em;
+				width: 1rem;
+				height: 1rem;
+			}
+
+			&.menu-close {
+				display: none;
+				top: 0.13em;
+				width: 1.1rem;
+				height: 1.1rem;
+			}
+		}
+	}
+}
+
+.main-navigation.toggled-open {
+	button {
+		svg {
+			&.menu-open {
+				display: none;
+			}
+
+			&.menu-close {
+				display: inline;
+			}
+		}
+	}
+}
+
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {

@@ -116,21 +116,6 @@ input[type="image"] {
 		border-color: $button_action_border_color;
 		color: $button_action_text_color;
 	}
-
-	&.menu-toggle {
-		background: none;
-		border: none;
-		color: inherit;
-
-		svg {
-			width: 1rem;
-			height: 1rem;
-			position: relative;
-			top: 0.05em;
-			vertical-align: baseline;
-			fill: currentColor;
-		}
-	}
 }
 
 input[type="number"] {

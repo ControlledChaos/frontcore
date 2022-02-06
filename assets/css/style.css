@@ -558,33 +558,6 @@ input[type="image"].focus {
   color: #333333;
 }
 
-button.menu-toggle,
-.button.menu-toggle,
-button[type="submit"].menu-toggle,
-input[type="submit"].menu-toggle,
-input[type="button"].menu-toggle,
-input[type="reset"].menu-toggle,
-input[type="image"].menu-toggle {
-  background: none;
-  border: none;
-  color: inherit;
-}
-
-button.menu-toggle svg,
-.button.menu-toggle svg,
-button[type="submit"].menu-toggle svg,
-input[type="submit"].menu-toggle svg,
-input[type="button"].menu-toggle svg,
-input[type="reset"].menu-toggle svg,
-input[type="image"].menu-toggle svg {
-  width: 1rem;
-  height: 1rem;
-  position: relative;
-  top: 0.05em;
-  vertical-align: baseline;
-  fill: currentColor;
-}
-
 input[type="number"] {
   width: auto;
   padding: 0.6em 1em;
@@ -1061,6 +1034,45 @@ h2 + .search-form {
 .main-navigation.toggled-open ul {
   display: block;
   font-size: 1.25em;
+}
+
+.menu-toggle button {
+  background: inherit;
+  border: none;
+  color: inherit;
+}
+
+.menu-toggle button:hover, .menu-toggle button.hover, .menu-toggle button:focus, .menu-toggle button.focus {
+  background: inherit;
+  border: none;
+  color: inherit;
+}
+
+.menu-toggle button svg {
+  position: relative;
+  vertical-align: baseline;
+  fill: currentColor;
+}
+
+.menu-toggle button svg.menu-open {
+  top: 0.05em;
+  width: 1rem;
+  height: 1rem;
+}
+
+.menu-toggle button svg.menu-close {
+  display: none;
+  top: 0.13em;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.main-navigation.toggled-open button svg.menu-open {
+  display: none;
+}
+
+.main-navigation.toggled-open button svg.menu-close {
+  display: inline;
 }
 
 .site-main .comment-navigation, .site-main
