@@ -60,10 +60,6 @@ define( 'FCT_CLASS_NS', __NAMESPACE__ . '\Classes' );
  */
 define( 'FCT_CLASSES', [
 
-	// Core classes.
-	FCT_CLASS_NS . '\Core\Setup'     => FCT_CLASS['core'] . 'setup.php',
-	FCT_CLASS_NS . '\Core\Templates' => FCT_CLASS['core'] . 'templates.php',
-
 	// Widgets classes.
 	FCT_CLASS_NS . '\Widgets\Theme_Mode' => FCT_CLASS['widgets'] . 'theme-mode.php',
 
@@ -73,7 +69,6 @@ define( 'FCT_CLASSES', [
 	FCT_CLASS_NS . '\Admin\Post_Options'  => FCT_CLASS['admin'] . 'post-options.php',
 	FCT_CLASS_NS . '\Admin\Assets'        => FCT_CLASS['admin'] . 'assets.php',
 	FCT_CLASS_NS . '\Admin\Editor_Styles' => FCT_CLASS['admin'] . 'editor-styles.php',
-	FCT_CLASS_NS . '\Admin\Block_Editor'  => FCT_CLASS['admin'] . 'block-editor.php',
 
 	// Vendor classes.
 	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',

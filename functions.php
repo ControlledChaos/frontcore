@@ -197,6 +197,9 @@ foreach ( glob( FCT_PATH . 'includes/customize/*.php' ) as $filename ) {
 foreach ( glob( FCT_PATH . 'includes/frontend/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/backend/*.php' ) as $filename ) {
+	require $filename;
+}
 foreach ( glob( FCT_PATH . 'includes/assets/*.php' ) as $filename ) {
 	require $filename;
 }
@@ -206,7 +209,7 @@ Activate\setup();
 Deactivate\setup();
 
 // Theme setup.
-$fct_core_setup   = new Core\Setup;
+Theme\setup();
 Templates\setup();
 Shared_Assets\setup();
 Navigation\setup();
@@ -237,7 +240,7 @@ if ( is_admin() ) {
 	$fct_admin_assets  = new Admin\Assets;
 	$fct_editor_styles = new Admin\Editor_Styles;
 	if ( fct_has_blocks() ) {
-		$fct_blocks = new Admin\Block_Editor;
+		Block_Editor\setup();
 	}
 }
 
