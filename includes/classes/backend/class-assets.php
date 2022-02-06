@@ -15,7 +15,7 @@ namespace FrontCore\Classes\Admin;
 
 // Alias namespaces.
 use FrontCore\Classes\Core as Core,
-	FrontCore\Classes\Customize as Customize;
+	FrontCore\Customize    as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,8 +62,7 @@ class Assets {
 	public function admin_styles() {
 
 		// Get Customizer settings.
-		new Customize\Customize;
-		$use_theme = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_theme' ) );
+		$use_theme = Customize\admin_theme( get_theme_mod( 'fct_admin_theme' ) );
 
 		// Enqueue admin theme styles if set in the Customizer.
 		if ( $use_theme ) {

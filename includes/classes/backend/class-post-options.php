@@ -13,8 +13,8 @@
 namespace FrontCore\Classes\Admin;
 
 // Alias namespaces.
-use FrontCore\Classes\Front     as Front,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Front as Front,
+	FrontCore\Customize     as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -89,10 +89,10 @@ class Post_Options {
 		$post_name = $get_post->labels->singular_name;
 
 		// Get header display setting from the Customizer.
-		$display_header = Customize\mods()->header_image( get_theme_mod( 'fct_header_image' ) );
+		$display_header = Customize\header_image( get_theme_mod( 'fct_header_image' ) );
 
 		// Get the author section display setting from the Customizer.
-		$display_author = Customize\mods()->author_section( get_theme_mod( 'fct_author_section' ) );
+		$display_author = Customize\author_section( get_theme_mod( 'fct_author_section' ) );
 
 		wp_nonce_field( "fct_post_{$post->ID}_options_nonce", 'fct_post_options_nonce' );
 

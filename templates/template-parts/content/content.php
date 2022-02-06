@@ -11,11 +11,11 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front     as Front,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Front as Front,
+	FrontCore\Customize     as Customize;
 
 // Get the content display setting from the Customizer.
-$display = Customize\mods()->blog_format( get_theme_mod( 'fct_blog_format' ) );
+$display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">

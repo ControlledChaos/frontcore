@@ -11,7 +11,7 @@
 namespace FrontCore\Classes\Admin;
 
 // Alias namespaces.
-use FrontCore\Classes\Customize as Customize;
+use FrontCore\Customize as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -67,8 +67,7 @@ class Admin_Pages {
 	public function admin_header() {
 
 		// Get Customizer settings.
-		new Customize\Customize;
-		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
+		$use_header = Customize\admin_theme( get_theme_mod( 'fct_admin_header' ) );
 
 		if ( $use_header ) {
 			get_template_part( FCT_PARTS_DIR . '/admin/admin-header' );
@@ -86,9 +85,8 @@ class Admin_Pages {
 	public function admin_body_class( $body_class ) {
 
 		// Get Customizer settings.
-		new Customize\Customize;
-		$use_theme  = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_theme' ) );
-		$use_header = Customize\mods()->admin_theme( get_theme_mod( 'fct_admin_header' ) );
+		$use_theme  = Customize\admin_theme( get_theme_mod( 'fct_admin_theme' ) );
+		$use_header = Customize\admin_theme( get_theme_mod( 'fct_admin_header' ) );
 
 		if ( $use_theme ) {
 			$body_class .= ' fct-admin-theme';

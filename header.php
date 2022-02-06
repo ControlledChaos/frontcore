@@ -14,8 +14,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front     as Front,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Front as Front;
 
 // Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {
@@ -27,7 +26,7 @@ if ( is_home() && ! is_front_page() ) {
 }
 
 // Get the navigation location setting from the Customizer.
-$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
+$nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
 
 ?>
 <!doctype html>

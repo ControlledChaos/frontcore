@@ -11,11 +11,11 @@
 namespace FrontCore\Admin;
 
 // Alias namespaces.
-use FrontCore\Classes\Front     as Front,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Front as Front,
+	FrontCore\Customize     as Customize;
 
 // Get the navigation location setting from the Customizer.
-$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
+$nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
 
 // Instantiate the Template_Tags class.
 new Front\Template_Tags;

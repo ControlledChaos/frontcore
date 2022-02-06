@@ -117,9 +117,7 @@ use
 FrontCore\Classes            as General,
 FrontCore\Classes\Core       as Core,
 FrontCore\Classes\Front      as Front,
-FrontCore\Classes\Media      as Media,
 FrontCore\Classes\Admin      as Admin,
-FrontCore\Classes\Customize  as Customize,
 FrontCore\Classes\Vendor     as Vendor;
 
 // Restrict direct access.
@@ -190,6 +188,9 @@ foreach ( glob( FCT_PATH . 'includes/navigation/*.php' ) as $filename ) {
 foreach ( glob( FCT_PATH . 'includes/widgets/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/customize/*.php' ) as $filename ) {
+	require $filename;
+}
 
 // Theme activation and deactivation.
 Activate\setup();
@@ -202,7 +203,7 @@ $fct_core_assets  = new Core\Assets;
 Navigation\setup();
 Widgets\setup();
 Images\setup();
-$fct_core_mods    = new Customize\Customize;
+Customize\setup();
 
 // Vendor (plugin) classes.
 $fct_acf = new Vendor\Theme_ACF;

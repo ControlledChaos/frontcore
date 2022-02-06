@@ -16,8 +16,8 @@
 namespace FrontCore\Classes\Front;
 
 // Alias namespaces.
-use FrontCore\Classes\Vendor    as Vendor,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Vendor as Vendor,
+	FrontCore\Customize      as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -754,7 +754,7 @@ class Template_Tags {
 	public function entry_footer() {
 
 		// Get the content display setting from the Customizer.
-		$blog_format = Customize\mods()->blog_format( get_theme_mod( 'fct_blog_format' ) );
+		$blog_format = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {

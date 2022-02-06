@@ -82,9 +82,6 @@ define( 'FCT_CLASSES', [
 	FCT_CLASS_NS . '\Admin\Editor_Styles' => FCT_CLASS['admin'] . 'editor-styles.php',
 	FCT_CLASS_NS . '\Admin\Block_Editor'  => FCT_CLASS['admin'] . 'block-editor.php',
 
-	// Customizer classes.
-	FCT_CLASS_NS . '\Customize\Customize' => FCT_CLASS['customize'] . 'customizer.php',
-
 	// Vendor classes.
 	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',
 	FCT_CLASS_NS . '\Vendor\Theme_ACF' => FCT_CLASS['vendor'] . 'theme-acf.php',

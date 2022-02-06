@@ -11,11 +11,11 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front     as Front,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Front as Front,
+	FrontCore\Customize     as Customize;
 
 // Get the author section display setting from the Customizer.
-$display = Customize\mods()->author_section( get_theme_mod( 'fct_author_section' ) );
+$display = Customize\author_section( get_theme_mod( 'fct_author_section' ) );
 
 if ( (boolean) get_the_author_meta( 'description' ) && 'never' != $display ) :
 

@@ -11,14 +11,14 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front     as Front,
-	FrontCore\Classes\Customize as Customize;
+use FrontCore\Classes\Front as Front,
+	FrontCore\Customize     as Customize;
 
 // Get the navigation location setting from the Customizer.
-$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
+$nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
 
 // Get the author section display setting from the Customizer.
-$header_image = Customize\mods()->header_image( get_theme_mod( 'fct_header_image' ) );
+$header_image = Customize\header_image( get_theme_mod( 'fct_header_image' ) );
 
 $options = get_post_meta( get_the_ID(), 'fct_post_options', true );
 $enable  = $options ? in_array( 'enable_header', $options, true ) : false;

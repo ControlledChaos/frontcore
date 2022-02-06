@@ -16,8 +16,8 @@
 namespace FrontCore\Classes\Front;
 
 // Alias namespaces.
-use FrontCore\Classes\Customize as Customize,
-	FrontCore\Classes\Vendor    as Vendor;
+use FrontCore\Customize      as Customize,
+	FrontCore\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,8 +34,6 @@ class Layout {
 	 * @return self
 	 */
 	public function __construct() {
-
-		new Customize\Customize;
 
 		// Add nav to both actions for customizer refresh.
 		add_action( 'FrontCore\nav_before_header', [ $this, 'navigation_main' ] );
@@ -108,7 +106,7 @@ class Layout {
 	public function site_branding_wrap_class() {
 
 		// Get the navigation location setting from the Customizer.
-		$nav_location = Customize\mods()->nav_location( get_theme_mod( 'fct_nav_location' ) );
+		$nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
 
 		$classes = '';
 
