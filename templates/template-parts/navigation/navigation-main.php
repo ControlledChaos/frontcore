@@ -11,8 +11,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front      as Front,
-	FrontCore\Classes\Navigation as Navigation;
+use FrontCore\Classes\Front as Front;
 
 ?>
 <nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">

@@ -117,8 +117,6 @@ use
 FrontCore\Classes            as General,
 FrontCore\Classes\Core       as Core,
 FrontCore\Classes\Front      as Front,
-FrontCore\Classes\Navigation as Navigation,
-FrontCore\Classes\Widgets    as Widgets,
 FrontCore\Classes\Media      as Media,
 FrontCore\Classes\Admin      as Admin,
 FrontCore\Classes\Customize  as Customize,
@@ -183,6 +181,12 @@ require FCT_PATH . 'includes/vendor/compatibility.php';
 foreach ( glob( FCT_PATH . 'includes/activate/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/navigation/*.php' ) as $filename ) {
+	require $filename;
+}
+foreach ( glob( FCT_PATH . 'includes/widgets/*.php' ) as $filename ) {
+	require $filename;
+}
 
 // Theme activation and deactivation.
 Activate\setup();
@@ -192,8 +196,8 @@ Deactivate\setup();
 $fct_core_setup   = new Core\Setup;
 $fct_core_setup   = new Core\Templates;
 $fct_core_assets  = new Core\Assets;
-$fct_core_nav     = new Navigation\Navigation;
-$fct_core_widgets = new Widgets\Register;
+Navigation\setup();
+Widgets\setup();
 $fct_core_media   = new Media\Images;
 $fct_core_mods    = new Customize\Customize;
 

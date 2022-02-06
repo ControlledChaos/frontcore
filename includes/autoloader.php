@@ -61,15 +61,11 @@ define( 'FCT_CLASS_NS', __NAMESPACE__ . '\Classes' );
 define( 'FCT_CLASSES', [
 
 	// Core classes.
-	FCT_CLASS_NS . '\Core\Assets' => FCT_CLASS['core'] . 'assets.php',
-	FCT_CLASS_NS . '\Core\Setup'  => FCT_CLASS['core'] . 'setup.php',
+	FCT_CLASS_NS . '\Core\Assets'    => FCT_CLASS['core'] . 'assets.php',
+	FCT_CLASS_NS . '\Core\Setup'     => FCT_CLASS['core'] . 'setup.php',
 	FCT_CLASS_NS . '\Core\Templates' => FCT_CLASS['core'] . 'templates.php',
 
-	// Navigation classes.
-	FCT_CLASS_NS . '\Navigation\Navigation' => FCT_CLASS['navigation'] . 'navigation.php',
-
 	// Widgets classes.
-	FCT_CLASS_NS . '\Widgets\Register'   => FCT_CLASS['widgets'] . 'register.php',
 	FCT_CLASS_NS . '\Widgets\Theme_Mode' => FCT_CLASS['widgets'] . 'theme-mode.php',
 
 	// Media classes.

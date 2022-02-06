@@ -11,8 +11,7 @@
 // namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front      as Front,
-	FrontCore\Classes\Navigation as Navigation;
+use FrontCore\Classes\Front as Front;
 
 // Get front page & blog options.
 $show_front = (string) get_option( 'show_on_front' );
