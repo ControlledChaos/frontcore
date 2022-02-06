@@ -129,7 +129,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require get_parent_theme_file_path( '/includes/config.php' );
 
 // Get the PHP version class.
-require_once get_parent_theme_file_path( '/includes/core/php.php' );
+require_once get_parent_theme_file_path( '/includes/php.php' );
 
 /**
  * PHP version check
@@ -179,6 +179,9 @@ require FCT_PATH . 'includes/vendor/compatibility.php';
 foreach ( glob( FCT_PATH . 'includes/activate/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/core/*.php' ) as $filename ) {
+	require $filename;
+}
 foreach ( glob( FCT_PATH . 'includes/media/*.php' ) as $filename ) {
 	require $filename;
 }
@@ -204,7 +207,7 @@ Deactivate\setup();
 
 // Theme setup.
 $fct_core_setup   = new Core\Setup;
-$fct_core_setup   = new Core\Templates;
+Templates\setup();
 Shared_Assets\setup();
 Navigation\setup();
 Widgets\setup();
