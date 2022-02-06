@@ -54,7 +54,7 @@ function register() {
 
 	// Register sidebar widget area.
 	register_sidebar( [
-		'name'          => __( 'Default Sidebar', 'frontcore' ),
+		'name'          => __( 'Sidebar Widgets', 'frontcore' ),
 		'id'            => 'sidebar-default',
 		'description'   => sprintf(
 			__( 'Displays to the %s of the main content.', 'frontcore' ),
