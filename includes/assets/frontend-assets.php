@@ -13,6 +13,8 @@
 
 namespace FrontCore\Front_Assets;
 
+use function FrontCore\Shared_Assets\suffix;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -122,31 +124,4 @@ function print_scripts() {
 	});
 	</script>
 	<?php
-}
-
-/**
- * File suffix
- *
- * Adds the `.min` filename suffix if
- * the system is not in debug mode.
- *
- * @since  1.0.0
- * @param  string $suffix The string returned
- * @return string Returns the `.min` suffix or
- *                an empty string.
- */
-function suffix() {
-
-	// If in one of the debug modes do not minify.
-	if (
-		( defined( 'WP_DEBUG' ) && WP_DEBUG ) ||
-		( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG )
-	) {
-		$suffix = '';
-	} else {
-		$suffix = '.min';
-	}
-
-	// Return the suffix or not.
-	return $suffix;
 }

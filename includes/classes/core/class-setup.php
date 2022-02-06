@@ -10,8 +10,7 @@
 
 namespace FrontCore\Classes\Core;
 
-// Alias namespaces.
-use  FrontCore\Classes\Core as Core;
+use function FrontCore\Shared_Assets\suffix;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -154,8 +153,7 @@ class Setup {
 		update_option( 'embed_size_h', $embed['embed_size_h'] );
 
 		// Add stylesheet for the content editor.
-		$assets = new Assets;
-		add_editor_style( 'assets/css/editor' . $assets->suffix() . '.css', [ 'fct-admin' ], '', 'screen' );
+		add_editor_style( 'assets/css/editor' . suffix() . '.css', [ 'fct-admin' ], '', 'screen' );
 	}
 
 	/**

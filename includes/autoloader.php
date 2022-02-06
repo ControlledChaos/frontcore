@@ -61,7 +61,6 @@ define( 'FCT_CLASS_NS', __NAMESPACE__ . '\Classes' );
 define( 'FCT_CLASSES', [
 
 	// Core classes.
-	FCT_CLASS_NS . '\Core\Assets'    => FCT_CLASS['core'] . 'assets.php',
 	FCT_CLASS_NS . '\Core\Setup'     => FCT_CLASS['core'] . 'setup.php',
 	FCT_CLASS_NS . '\Core\Templates' => FCT_CLASS['core'] . 'templates.php',
 

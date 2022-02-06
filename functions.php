@@ -205,7 +205,7 @@ Deactivate\setup();
 // Theme setup.
 $fct_core_setup   = new Core\Setup;
 $fct_core_setup   = new Core\Templates;
-$fct_core_assets  = new Core\Assets;
+Shared_Assets\setup();
 Navigation\setup();
 Widgets\setup();
 Images\setup();
