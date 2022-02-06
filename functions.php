@@ -117,7 +117,7 @@ use
 FrontCore\Classes        as General,
 FrontCore\Classes\Core   as Core,
 FrontCore\Classes\Front  as Front,
-FrontCore\Classes\Admin  as Admin,
+FrontCore\Classes\Admin  as Admin_Class,
 FrontCore\Classes\Vendor as Vendor;
 
 // Restrict direct access.
@@ -234,10 +234,9 @@ if ( ! is_admin() ) {
 
 // Backend classes.
 if ( is_admin() ) {
-	$fct_admin_menu    = new Admin\Admin_Menu;
-	$fct_admin_pages   = new Admin\Admin_Pages;
+	Admin\setup();
 	Post_Options\setup();
-	$fct_admin_assets  = new Admin\Assets;
+	$fct_admin_assets  = new Admin_Class\Assets;
 	Editors\setup();
 }
 
