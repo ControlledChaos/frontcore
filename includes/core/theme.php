@@ -4,7 +4,7 @@
  *
  * @package    Front_Core
  * @subpackage Includes
- * @category   Setup
+ * @category   Core
  * @since      1.0.0
  */
 
@@ -35,6 +35,9 @@ function setup() {
 
 	// Theme setup.
 	add_action( 'after_setup_theme', $ns( 'setup_theme' ) );
+
+	// Post format templates.
+	add_filter( 'template_include', $ns( 'post_format_templates' ) );
 
 	// jQuery UI fallback for HTML5 Contact Form 7 form fields.
 	add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
@@ -93,8 +96,20 @@ function setup_theme() {
 		'script'
 		] );
 
-		// Refresh widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+	// Post format support.
+	add_theme_support( 'post-formats', [
+		'aside',
+		'image',
+		'video',
+		'audio',
+		'link',
+		'quote',
+		'status',
+		'chat'
+	 ] );
+
+	// Refresh widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Featured image support.
 	add_theme_support( 'post-thumbnails' );
@@ -143,7 +158,7 @@ function setup_theme() {
 		'flex-height' => true
 	] ) );
 
-		// Set content width.
+	// Set content width.
 	if ( ! isset( $content_width ) ) {
 		$content_width = apply_filters( 'fct_content_width', 1280 );
 	}
@@ -232,6 +247,24 @@ function header_style() {
 }
 
 /**
+ * Post format templates
+ *
+ * @since  1.0.0
+ * @param  string $template
+ * @return string Returns the path to the format template.
+ */
+function post_format_templates( $template ) {
+
+	if ( is_single() && has_post_format() ) {
+		$post_format_template = locate_template( 'single-format-' . get_post_format() . '.php' );
+		if ( $post_format_template ) {
+			$template = $post_format_template;
+		}
+	}
+	return $template;
+}
+
+/**
  * Login title
  *
  * Includes the logo if set in the customizer.
@@ -279,6 +312,7 @@ function login_url() {
  * the user's admin color scheme preference.
  *
  * @since  1.0.0
+ * @param  array $classes
  * @return array Returns a modified array of body classes.
  */
 function color_scheme_classes( $classes ) {
