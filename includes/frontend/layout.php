@@ -2,11 +2,6 @@
 /**
  * Frontend template tags
  *
- * Call new instance of this class in header files.
- * Use of the `$fct_tags` variable is recommended
- * to instantiate, where the prefix matches the
- * rest of this theme's prefixes.
- *
  * @package    Front_Core
  * @subpackage Includes
  * @category   Frontend
