@@ -92,7 +92,7 @@ function frontend_styles() {
 
 	// Right-to-left languages.
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'fct-theme-rtl', get_theme_file_uri( 'assets/css/style-rtl' . suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
+		wp_enqueue_style( 'fct-theme-rtl', get_theme_file_uri( '/assets/css/style-rtl' . suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
 	}
 
 	// Block styles.
