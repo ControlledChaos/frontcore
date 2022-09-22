@@ -16,15 +16,6 @@ namespace FrontCore;
 // Alias namespaces.
 use FrontCore\Tags as Tags;
 
-// Conditional canonical link.
-if ( is_home() && ! is_front_page() ) {
-    $canonical = get_permalink( get_option( 'page_for_posts' ) );
-} elseif ( is_archive() ) {
-    $canonical = get_permalink( get_option( 'page_for_posts' ) );
-} else {
-    $canonical = get_permalink();
-}
-
 // Get the navigation location setting from the Customizer.
 $nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
 
@@ -39,7 +30,7 @@ do_action( 'before_html' ); ?>
 
 <?php Tags\head(); ?>
 
-<body style="visibility: hidden;" <?php Tags\body_class(); ?>>
+<body <?php Tags\body_class(); ?>>
 
 <?php
 Tags\body_open();
