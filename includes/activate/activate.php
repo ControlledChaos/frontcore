@@ -61,9 +61,11 @@ function activate() {
 	 */
 	global $pagenow;
 
-	if ( 'themes.php' == $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
+	if ( ! is_customize_preview() ) {
+		if ( 'themes.php' == $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
 
-		// URL returns to Dashboard on closing the Customizer.
-		wp_redirect( admin_url( 'customize.php' ) . '?return=' . admin_url() );
+			// URL returns to Dashboard on closing the Customizer.
+			wp_redirect( admin_url( 'customize.php' ) . '?return=' . admin_url() );
+		}
 	}
 }
