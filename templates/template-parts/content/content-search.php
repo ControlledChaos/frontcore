@@ -11,7 +11,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Front as Front;
+use FrontCore\Tags as Tags;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -28,8 +28,8 @@ use FrontCore\Front as Front;
 		?>
 		<div class="entry-meta">
 			<?php
-			Front\posted_on();
-			Front\posted_by();
+			Tags\posted_on();
+			Tags\posted_by();
 			?>
 		</div>
 
@@ -37,14 +37,14 @@ use FrontCore\Front as Front;
 
 	</header>
 
-	<?php  Front\post_thumbnail(); ?>
+	<?php  Tags\post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
 
 	<footer class="entry-footer">
-		<?php  Front\entry_footer(); ?>
+		<?php  Tags\entry_footer(); ?>
 	</footer>
 
 </article>

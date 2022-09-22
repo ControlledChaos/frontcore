@@ -11,7 +11,7 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Front as Front;
+use FrontCore\Tags as Tags;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -25,7 +25,7 @@ use FrontCore\Front as Front;
 		! is_page_template( FCT_TMPL_DIR . '/theme/no-featured.php' ) ||
 		! is_page_template( FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php' )
 	) {
-		Front\post_thumbnail();
+		Tags\post_thumbnail();
 	}
 	?>
 

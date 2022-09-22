@@ -35,6 +35,7 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 			<?php
 				Tags\posted_on();
 				Tags\posted_by();
+				echo get_the_modified_date();
 			?>
 		</div>
 
