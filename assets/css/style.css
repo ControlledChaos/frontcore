@@ -883,6 +883,7 @@ h2 + .search-form {
 
 .main-navigation li {
   overflow: visible;
+  cursor: default;
 }
 
 .main-navigation li:hover > ul,

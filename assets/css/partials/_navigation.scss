@@ -78,6 +78,7 @@
 
 	li {
 		overflow: visible;
+		cursor: default;
 
 		&:hover > ul,
 		&:focus > ul,
