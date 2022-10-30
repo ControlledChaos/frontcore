@@ -459,9 +459,9 @@ function get_body_class( $class = '' ) {
 	if (
 		! is_active_sidebar( 'sidebar-default' ) ||
 		is_page_template( [
-			FCT_TMPL_DIR . '/theme/front-page-content-only.php',
-			FCT_TMPL_DIR . '/theme/no-sidebar.php',
-			FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'
+			FCT_TMPL_DIR . '/front-page-content-only.php',
+			FCT_TMPL_DIR . '/no-sidebar.php',
+			FCT_TMPL_DIR . '/no-sidebar-no-featured.php'
 		] )
 	) {
 		$classes[] = 'no-sidebar';
@@ -509,13 +509,13 @@ function site_schema() {
 		( function_exists( 'bbp_is_user_home' ) && bbp_is_user_home() )
 	) {
 		$itemtype = esc_attr( 'ProfilePage' );
-	} elseif ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( [ FCT_TMPL_DIR . '/theme/page-about.php', FCT_TMPL_DIR . '/theme/about.php' ] ) ) {
+	} elseif ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( [ FCT_TMPL_DIR . '/page-about.php', FCT_TMPL_DIR . '/about.php' ] ) ) {
 		$itemtype = esc_attr( 'AboutPage' );
-	} elseif ( is_page( 'contact' ) || is_page( 'contact-us' ) || is_page_template( [ FCT_TMPL_DIR . '/theme/page-contact.php', FCT_TMPL_DIR . '/theme/contact.php' ] ) ) {
+	} elseif ( is_page( 'contact' ) || is_page( 'contact-us' ) || is_page_template( [ FCT_TMPL_DIR . '/page-contact.php', FCT_TMPL_DIR . '/contact.php' ] ) ) {
 		$itemtype = esc_attr( 'ContactPage' );
-	} elseif ( is_page( 'faq' ) || is_page( 'faqs' ) || is_page_template( [ FCT_TMPL_DIR . '/theme/page-faq.php', FCT_TMPL_DIR . '/theme/faq.php' ] ) ) {
+	} elseif ( is_page( 'faq' ) || is_page( 'faqs' ) || is_page_template( [ FCT_TMPL_DIR . '/page-faq.php', FCT_TMPL_DIR . '/faq.php' ] ) ) {
 		$itemtype = esc_attr( 'QAPage' );
-	} elseif ( is_page( 'cart' ) || is_page( 'shopping-cart' ) || is_page( 'checkout' ) || is_page_template( [ FCT_TMPL_DIR . '/theme/cart.php', FCT_TMPL_DIR . '/theme/checkout.php' ] ) ) {
+	} elseif ( is_page( 'cart' ) || is_page( 'shopping-cart' ) || is_page( 'checkout' ) || is_page_template( [ FCT_TMPL_DIR . '/cart.php', FCT_TMPL_DIR . '/checkout.php' ] ) ) {
 		$itemtype = esc_attr( 'CheckoutPage' );
 	} elseif ( is_front_page() || is_page() ) {
 		$itemtype = esc_attr( 'WebPage' );
@@ -611,7 +611,7 @@ function content_template() {
 		if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 			$template = 'content-front-page' . $acf->suffix();
 
-		} elseif ( is_page_template( FCT_TMPL_DIR . '/theme/page-builder.php' ) ) {
+		} elseif ( is_page_template( FCT_TMPL_DIR . '/page-builder.php' ) ) {
 
 			$template = 'content-builder';
 
@@ -763,10 +763,10 @@ function post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	} elseif (
-		is_page_template( FCT_TMPL_DIR . '/theme/front-page-content-only.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/theme/no-featured.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/theme/page-builder.php' )
+		is_page_template( FCT_TMPL_DIR . '/front-page-content-only.php' ) ||
+		is_page_template( FCT_TMPL_DIR . '/no-featured.php' ) ||
+		is_page_template( FCT_TMPL_DIR . '/no-sidebar-no-featured.php' ) ||
+		is_page_template( FCT_TMPL_DIR . '/page-builder.php' )
 	) {
 		return;
 	}

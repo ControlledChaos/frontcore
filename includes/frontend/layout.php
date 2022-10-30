@@ -84,7 +84,7 @@ function page_header() {
 	 */
 	if ( is_front_page() ) {
 		get_template_part( FCT_PARTS_DIR . '/header/header-front-page' . $acf->suffix() );
-	} elseif ( is_page_template( FCT_TMPL_DIR . '/theme/page-builder.php' ) ) {
+	} elseif ( is_page_template( FCT_TMPL_DIR . '/page-builder.php' ) ) {
 		get_template_part( FCT_PARTS_DIR . '/header/header-builder' );
 	} else {
 		get_template_part( FCT_PARTS_DIR . '/header/header-default' . $acf->suffix() );

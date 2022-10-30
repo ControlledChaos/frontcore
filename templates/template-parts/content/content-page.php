@@ -22,8 +22,8 @@ use FrontCore\Tags as Tags;
 
 	<?php
 	if (
-		! is_page_template( FCT_TMPL_DIR . '/theme/no-featured.php' ) ||
-		! is_page_template( FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php' )
+		! is_page_template( FCT_TMPL_DIR . '/no-featured.php' ) ||
+		! is_page_template( FCT_TMPL_DIR . '/no-sidebar-no-featured.php' )
 	) {
 		Tags\post_thumbnail();
 	}

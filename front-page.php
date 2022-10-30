@@ -42,7 +42,7 @@ get_header();
 		</main>
 	</div>
 	<?php
-	if ( ! is_page_template( FCT_TMPL_DIR . '/theme/front-page-content-only.php' ) ) {
+	if ( ! is_page_template( FCT_TMPL_DIR . '/front-page-content-only.php' ) ) {
 		get_sidebar();
 	}
 	?>

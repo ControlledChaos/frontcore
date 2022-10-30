@@ -183,7 +183,7 @@ function setup_theme() {
  *
  * @since  1.0.0
  * @param  string $page_template The filename of the template to check against.
- *                               Example: FCT_TMPL_DIR . '/theme/abc-123.php'.
+ *                               Example: FCT_TMPL_DIR . '/abc-123.php'.
  * @global object $post
  * @return bool Returns true if the page template is being used.
  */

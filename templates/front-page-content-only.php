@@ -13,7 +13,7 @@
  * @see includes/classes/core/class-templates.php.
  *
  * Template Name: Front Page Content Only
- * Template Post Type:
+ * Template Post Type: page
  *
  * @package    Front_Core
  * @subpackage Templates

@@ -55,11 +55,13 @@ function setup() {
  */
 function front_page_default_template_title( $default_title ) {
 
+	global $typenow;
+
 	// Get the front page option.
 	$front_show = (string) get_option( 'show_on_front' );
 	$front_page = (int) get_option( 'page_on_front' );
 
-	if ( 'page' == $front_show && get_the_ID() == $front_page ) {
+	if ( 'page' == $typenow && 'page' == $front_show && get_the_ID() == $front_page ) {
 		$default_title = __( 'Front Page Default', 'frontcore' );
 	}
 	return $default_title;
@@ -81,19 +83,21 @@ function front_page_templates( $post_templates ) {
 		return;
 	}
 
+	global $typenow;
+
 	// Get the front page option.
 	$front_show = get_option( 'show_on_front' );
 	$front_page = get_option( 'page_on_front' );
 
-	if ( 'page' == $front_show && get_the_ID() == $front_page ) {
+	if ( 'page' == $typenow && 'page' == $front_show && get_the_ID() == $front_page ) {
 
 		// Unset general templates.
-		unset( $post_templates[FCT_TMPL_DIR . '/theme/no-sidebar.php'] );
-		unset( $post_templates[FCT_TMPL_DIR . '/theme/no-featured.php'] );
-		unset( $post_templates[FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'] );
+		unset( $post_templates[FCT_TMPL_DIR . '/no-sidebar.php'] );
+		unset( $post_templates[FCT_TMPL_DIR . '/no-featured.php'] );
+		unset( $post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] );
 
 		// Set specific front page templates.
-		$post_templates[FCT_TMPL_DIR . '/theme/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
+		$post_templates[FCT_TMPL_DIR . '/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
 	}
 
 	return $post_templates;
@@ -115,9 +119,9 @@ function post_templates( $post_templates ) {
 		return;
 	}
 
-	$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+	$post_templates[FCT_TMPL_DIR . '/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+	$post_templates[FCT_TMPL_DIR . '/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+	$post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 	return $post_templates;
 }
@@ -141,9 +145,9 @@ function sample_templates( $post_templates ) {
 		return;
 	}
 
-	$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/theme/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/theme/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+	$post_templates[FCT_TMPL_DIR . '/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
+	$post_templates[FCT_TMPL_DIR . '/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
+	$post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
 
 	return $post_templates;
 }
