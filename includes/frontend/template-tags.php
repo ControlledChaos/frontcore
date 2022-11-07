@@ -729,7 +729,7 @@ function entry_footer() {
 
 	}
 
-	if ( ! is_single() && ! post_password_required() && 'content' == $blog_format && ( comments_open() || get_comments_number() ) ) {
+	if ( ! is_single() && ! post_password_required() && 'content' == $blog_format && ( ( post_type_supports( get_post_type( get_the_ID() ), 'comments' ) && comments_open() ) || get_comments_number() ) ) {
 
 		echo '<span class="comments-link">';
 		comments_popup_link(

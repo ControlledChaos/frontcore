@@ -24,7 +24,7 @@ get_header();
 		while ( have_posts() ) : the_post();
 			content_template();
 
-			if ( comments_open() || get_comments_number() ) :
+			if ( post_type_supports( get_post_type( get_the_ID() ), 'comments' ) && comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
 		endwhile;
