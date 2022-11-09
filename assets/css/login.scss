@@ -4,6 +4,7 @@
 
 @import 'modules/_reset';
 @import 'modules/_colors';
+@import 'modules/_root';
 @import 'modules/_typography';
 @import 'modules/_layout';
 
@@ -12,7 +13,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: $body_bg;
+	background: var( --fct-bg-color );
 	font-size: 1.125rem;
 	line-height: 1.5;
 	color: $text_color;
@@ -89,7 +90,7 @@
 
 	#login {
 		width: 100%;
-		max-width: $content_width;
+		max-width: var( --fct-content-width );
 		margin: 0;
 		padding: 2rem;
 

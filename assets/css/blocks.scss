@@ -85,7 +85,7 @@
 /// Layout
 ///
 .wp-block-cover__inner-container {
-	max-width: $content_width;
+	max-width: var( --fct-content-width );
 	margin: 0 auto;
 	padding: 2em;
 }

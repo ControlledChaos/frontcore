@@ -1,46 +1,18 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #ffffff;
-}
-
-html.dark-mode {
-  background-color: #222222;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-size: 1rem;
-  line-height: 1.5;
-  background: #ffffff;
-  color: #333333;
-}
-
-body.dark-mode {
-  background: #222222;
-  color: #eeeeee;
-}
-
-body.dark-mode a {
-  color: #eeeeee;
-}
-
-body.dark-mode a:hover, body.dark-mode a.hover, body.dark-mode a:focus, body.dark-mode a.focus {
-  color: #d0d0d0;
-}
-
-body.dark-mode #wpadminbar,
-body.dark-mode #wpadminbar .ab-top-menu > li.hover > .ab-item,
-body.dark-mode #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
-body.dark-mode #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
-body.dark-mode #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
-body.dark-mode #wpadminbar .menupop .ab-sub-wrapper,
-body.dark-mode #wpadminbar .shortlink-input {
-  background: #333333;
+  font-family: var(--fct-font-stack, var(--fct-sans-stack));
+  font-size: var(--fct-font-size, 1rem);
+  line-height: var(--fct-line-height, 1.5);
+  background: var(--fct-bg-color);
+  color: var(--fct-text-color);
 }
 
 .serif {
-  font-family: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: var(--fct-serif-stack);
 }
 
 .entry-content,
@@ -59,26 +31,49 @@ ol {
 
 h1,
 h2 {
-  font-size: 1.625rem;
-  font-weight: 700;
+  font-size: var(--fct-primary-heading-size, 1.625rem);
+  font-weight: var(--fct-primary-heading-weight, 700);
 }
 
 h3 {
-  font-size: 1.3125rem;
-  font-weight: 700;
+  font-size: var(--fct-h3-heading-size, 1.3125rem);
+  font-weight: var(--fct-secondary-heading-weight, 700);
 }
 
 h4 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--fct-h4-heading-weight, 700);
 }
 
 a {
-  color: #0044aa;
+  color: var(--fct-link-color);
 }
 
 a:hover, a.hover, a:focus, a.focus {
-  color: #005ce7;
+  color: var(--fct-link-action-color);
+}
+
+.dark-mode {
+  background: var(--fct-bg-color-dark);
+  color: var(--fct-text-color-dark);
+}
+
+.dark-mode a {
+  color: var(--fct-link-color-dark);
+}
+
+.dark-mode a:hover, .dark-mode a.hover, .dark-mode a:focus, .dark-mode a.focus {
+  color: var(--fct-link-action-color-dark);
+}
+
+#wpadminbar,
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
+#wpadminbar .menupop .ab-sub-wrapper,
+#wpadminbar .shortlink-input {
+  background: var(--fct-adminbar-bg-color, var(--fct-frontend-adminbar-bg-color, #333333));
 }
 
 /* Text meant only for screen readers. */
@@ -98,16 +93,14 @@ a:hover, a.hover, a:focus, a.focus {
 }
 
 .screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
+  background-color: var(--fct-bg-color);
   -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   -webkit-clip-path: none;
   clip-path: none;
-  color: #21759b;
+  color: var(--fct-text-color);
   display: block;
-  font-size: 14px;
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;

@@ -10,6 +10,7 @@
 $white: #ffffff !default;
 $off_white: #eeeeee !default;
 $black: #000000 !default;
+$near_black: #1e1e1e !default;
 $dark_gray: #333333 !default;
 $medium_gray: #555555 !default;
 $light_gray: #888888 !default;
@@ -18,6 +19,8 @@ $red: #dd0000 !default;
 $orange: #ee6600 !default;
 $yellow: #f8ce30 !default;
 $green: #4b9960 !default;
+$blue: #0000ff !default;
+$violet:  #551a8b !default;
 $error: $red !default;
 $notify: $orange !default;
 $warning: $yellow !default;
@@ -30,7 +33,7 @@ $link_color: #0044aa !default;
 $link_action_color: lighten( $color: $link_color, $amount: 12% ) !default;
 
 // Theme general colors: dark mode.
-$body_bg_dark: #222222 !default;
+$body_bg_dark: $near_black !default;
 $text_color_dark: darken( $color: $white, $amount: 6.5% ) !default;
 $link_color_dark: $text_color_dark !default;
 $link_action_color_dark: darken( $color: $link_color_dark, $amount: 12% ) !default;

@@ -14,7 +14,7 @@
 	clear: both;
 	display: block;
 	width: 100%;
-	max-width: $content_width;
+	max-width: var( --fct-content-width );
 	margin: 1em auto 0;
 	padding: 0;
 

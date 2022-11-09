@@ -5,55 +5,21 @@
 /// Mostly it gets the ball rolling.
 ///
 
-@import '../modules/_colors';
-@import '../modules/_typography';
-
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
-	background-color: $body_bg;
-
-	&.dark-mode {
-		background-color: $body_bg_dark;
-	}
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	font-size: 1rem;
-	line-height: 1.5;
-	background: $body_bg;
-	color: $text_color;
-
-	&.dark-mode {
-		background: $body_bg_dark;
-		color: $text_color_dark;
-
-		a {
-			color: $link_color_dark;
-
-			&:hover,
-			&.hover,
-			&:focus,
-			&.focus {
-				color: $link_action_color_dark;
-			}
-		}
-
-		#wpadminbar,
-		#wpadminbar .ab-top-menu > li.hover > .ab-item,
-		#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
-		#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
-		#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
-		#wpadminbar .menupop .ab-sub-wrapper,
-		#wpadminbar .shortlink-input {
-			background: $dark_gray;
-		}
-	}
+	font-family: var( --fct-font-stack, var( --fct-sans-stack ) );
+	font-size: var( --fct-font-size, 1rem );
+	line-height: var( --fct-line-height, 1.5 );
+	background: var( --fct-bg-color );
+	color: var( --fct-text-color );
 }
 
 .serif {
-	font-family: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	font-family: var( --fct-serif-stack );
 }
 
 .entry-content,
@@ -72,35 +38,61 @@ ol {
 
 h1,
 h2 {
-	font-size: 1.625rem;
-	font-weight: $primary_heading_weight;
+	font-size: var( --fct-primary-heading-size, 1.625rem );
+	font-weight: var( --fct-primary-heading-weight, 700 );
 }
 
 h3 {
-	font-size: 1.3125rem;
-	font-weight: $secondary_heading_weight;
+	font-size: var( --fct-h3-heading-size, 1.3125rem );
+	font-weight: var( --fct-secondary-heading-weight, 700 );
 }
 
 h4 {
 	font-size: 1.25rem;
-	font-weight: $secondary_heading_weight;
+	font-weight: var( --fct-h4-heading-weight, 700 );
 }
 
 a {
-	color: $link_color;
+	color: var( --fct-link-color );
 
 	&:hover,
 	&.hover,
 	&:focus,
 	&.focus {
-		color: $link_action_color;
+		color: var( --fct-link-action-color );
 	}
+}
+
+.dark-mode {
+	background: var( --fct-bg-color-dark );
+	color: var( --fct-text-color-dark );
+
+	a {
+		color: var( --fct-link-color-dark );
+
+		&:hover,
+		&.hover,
+		&:focus,
+		&.focus {
+			color: var( --fct-link-action-color-dark );
+		}
+	}
+}
+
+#wpadminbar,
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
+#wpadminbar .menupop .ab-sub-wrapper,
+#wpadminbar .shortlink-input {
+	background: var( --fct-adminbar-bg-color, var( --fct-frontend-adminbar-bg-color, #{$dark_gray} ) );
 }
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
+	clip: rect( 1px, 1px, 1px, 1px );
 	-webkit-clip-path: inset(50%);
 	        clip-path: inset(50%);
 	height: 1px;
@@ -113,16 +105,14 @@ a {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	background-color: var( --fct-bg-color );
+	-webkit-box-shadow: 0 0 2px 2px rgba( $color: black, $alpha: 0.6 );
+	        box-shadow: 0 0 2px 2px rgba( $color: black, $alpha: 0.6 );
 	clip: auto !important;
 	-webkit-clip-path: none;
 	        clip-path: none;
-	color: #21759b;
+	color: var( --fct-text-color );
 	display: block;
-	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;

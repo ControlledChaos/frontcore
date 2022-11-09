@@ -2,15 +2,10 @@
 /// Site layout RTL styles
 ///
 
-@import '../modules/_layout';
-
-// Variables.
-$content_separator: 2em;
-
 .site-content {
 	.content-area {
 		margin-right: unset;
-		margin-left: $content_separator;
+		margin-left: var( --fct-content-separator );
 	}
 }
 

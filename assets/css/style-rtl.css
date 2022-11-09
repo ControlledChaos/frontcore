@@ -5,7 +5,7 @@ body {
 
 .site-content .content-area {
   margin-right: unset;
-  margin-left: 2em;
+  margin-left: var(--fct-content-separator);
 }
 
 @media screen and (max-width: 800px) {

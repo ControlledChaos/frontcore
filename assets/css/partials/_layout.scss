@@ -2,36 +2,28 @@
 /// Site layout styles
 ///
 
-@import '../modules/_layout';
-
-// Variables.
-$content_separator: 2em;
-$secondary_min_width: 240px;
-
 .site {
 	background-color: inherit;
 }
 
 .site-content {
 	display: flex;
-	max-width: $content_width;
+	max-width: var( --fct-content-width );
 	margin: 0 auto;
 	padding: 2em;
 
 	.content-area {
 		width: 100%;
-		margin-right: $content_separator;
+		margin-right: var( --fct-content-separator );
 
 		// Account for sidebar minimum and right margin.
-		max-width: calc( 100% - #{$secondary_min_width} - #{$content_separator} );
+		max-width: calc( 100% - var( --fct-secondary-min-width ) - var( --fct-content-separator ) );
 		overflow-x: hidden;
 	}
 }
 
 .no-sidebar {
-
 	.site-content {
-
 		.content-area {
 			max-width: 100%;
 			margin-right: unset;
@@ -50,8 +42,8 @@ main article {
 }
 
 #secondary {
-	min-width: $secondary_min_width;
-	max-width: 320px;
+	min-width: var( --fct-secondary-min-width );
+	max-width: var( --fct-secondary-max-width );
 }
 
 @media screen and ( max-width: $break_primary_tablet ) {
