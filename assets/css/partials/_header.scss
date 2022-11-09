@@ -5,6 +5,10 @@
 @import '../modules/_colors';
 @import '../modules/_typography';
 
+.site-header {
+	padding: 0 2em;
+}
+
 .site-title {
 	margin: 0;
 
@@ -37,7 +41,7 @@
 		width: 100%;
 		max-width: var( --fct-content-width );
 		margin: 0 auto;
-		padding: 1em 2em 0;
+		padding: 1em 0 0;
 
 		@media screen and ( max-width: var( --fct-break-primary-phone ) ) {
 			flex-direction: column;

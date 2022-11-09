@@ -16,6 +16,10 @@
   --fct-copyright-text: 0.825em;
 }
 
+.site-header {
+  padding: 0 2em;
+}
+
 .site-title {
   margin: 0;
   /* Match <p> tag to <h1> tag on front page */
@@ -50,7 +54,7 @@
   width: 100%;
   max-width: var(--fct-content-width);
   margin: 0 auto;
-  padding: 1em 2em 0;
+  padding: 1em 0 0;
 }
 
 @media screen and (max-width: var(--fct-break-primary-phone)) {
