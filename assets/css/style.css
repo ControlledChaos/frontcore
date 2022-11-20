@@ -830,7 +830,7 @@ h2 + .search-form {
   padding: 0;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 800px) {
   .main-navigation {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -869,6 +869,15 @@ h2 + .search-form {
   border: solid 1px #bfbfbf;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 800px) {
+  .main-navigation ul ul {
+    position: unset;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 
 .main-navigation ul ul ul {
@@ -1090,7 +1099,7 @@ h2 + .search-form {
 .menu-toggle,
 .main-navigation.toggled-open ul {
   display: block;
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 .menu-toggle button {
@@ -1152,7 +1161,7 @@ h2 + .search-form {
   color: #ffffff;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 800px) {
   .menu-toggle {
     display: none;
   }

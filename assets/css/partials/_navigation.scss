@@ -18,7 +18,7 @@
 	margin: 1em auto 0;
 	padding: 0;
 
-	@media screen and ( max-width: 960px ) {
+	@media screen and ( max-width: $break_primary_tablet ) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -47,6 +47,12 @@
 			border: solid 1px $subnav_border_color;
 			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+			@media screen and ( max-width: $break_primary_tablet ) {
+				position: unset;
+				border: none;
+				box-shadow: none;
+			}
 
 			ul {
 				left: -999em;
@@ -214,7 +220,7 @@
 .menu-toggle,
 .main-navigation.toggled-open ul {
 	display: block;
-	font-size: 1.25em;
+	font-size: 1.25rem;
 }
 
 .menu-toggle {
@@ -297,7 +303,7 @@
 }
 
 // Non-mobile menu.
-@media screen and ( min-width: 37.5em ) {
+@media screen and ( min-width: $break_primary_tablet ) {
 
 	.menu-toggle {
 		display: none;
