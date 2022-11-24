@@ -97,7 +97,7 @@ input[type="image"] {
 	&.focus {
 		background-color: var( --fct-button-action-bg-color );
 		border-color: var( --fct-button-action-border-color );
-		color: $button_action_text_color;
+		color: var( --fct-button-action-text-color );
 	}
 }
 

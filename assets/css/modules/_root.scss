@@ -25,11 +25,14 @@
 	// Forms & buttons.
 	--fct-form-bg-color: var( --fct-bg-color, inherit );
 	--fct-form-border-color: var( --fct-box-border-color );
-	--fct-form-action-border-color: var( --fct-link-color );
+	--fct-button-border-color: var( --fct-form-border-color );
+	--fct-form-action-border-color: var( --fct-form-border-color );
+	--fct-button-text-color: var( --fct-text-color );
 	--fct-form-font-weight: 400;
 	--fct-button-bg-color: var( --fct-bg-color, inherit );
 	--fct-button-action-bg-color: #{$pale_gray};
 	--fct-button-action-border-color: var( --fct-form-action-border-color );
+	--fct-button-action-text-color: var( --fct-form-text-color );
 	--fct-button-font-weight: 700;
 	--fct-form-placeholder-color: #{$light_gray};
 	--fct-form-placeholder-color-dark: #{$dark_gray};

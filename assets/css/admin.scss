@@ -41,7 +41,7 @@
 	font-size: 1rem;
 	line-height: 1.5;
 	background: var( --fct-bg-color );
-	color: $text_color;
+	color: var( --fct-text-color );
 
 	h1 {
 		font-size: 1.625rem;

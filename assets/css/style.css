@@ -274,11 +274,14 @@ b, strong, optgroup {
   --fct-box-border-color: #cccccc;
   --fct-form-bg-color: var( --fct-bg-color, inherit );
   --fct-form-border-color: var( --fct-box-border-color );
-  --fct-form-action-border-color: var( --fct-link-color );
+  --fct-button-border-color: var( --fct-form-border-color );
+  --fct-form-action-border-color: var( --fct-form-border-color );
+  --fct-button-text-color: var( --fct-text-color );
   --fct-form-font-weight: 400;
   --fct-button-bg-color: var( --fct-bg-color, inherit );
   --fct-button-action-bg-color: #cccccc;
   --fct-button-action-border-color: var( --fct-form-action-border-color );
+  --fct-button-action-text-color: var( --fct-form-text-color );
   --fct-button-font-weight: 700;
   --fct-form-placeholder-color: #888888;
   --fct-form-placeholder-color-dark: #333333;
@@ -553,7 +556,7 @@ input[type="image"]:focus,
 input[type="image"].focus {
   background-color: var(--fct-button-action-bg-color);
   border-color: var(--fct-button-action-border-color);
-  color: #333333;
+  color: var(--fct-button-action-text-color);
 }
 
 input[type="number"] {

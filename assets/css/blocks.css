@@ -114,7 +114,7 @@ input[type="image"]:focus,
 input[type="image"].focus {
   background-color: var(--fct-button-action-bg-color);
   border-color: var(--fct-button-action-border-color);
-  color: #333333;
+  color: var(--fct-button-action-text-color);
 }
 
 input[type="number"] {
