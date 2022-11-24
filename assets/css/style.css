@@ -271,10 +271,21 @@ b, strong, optgroup {
   --fct-link-action-color-dark: #eeeeee;
   --fct-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --fct-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --fct-box-border-color: #cccccc;
+  --fct-form-bg-color: var( --fct-bg-color, inherit );
+  --fct-form-border-color: var( --fct-box-border-color );
+  --fct-form-action-border-color: var( --fct-link-color );
+  --fct-form-font-weight: 400;
+  --fct-button-bg-color: var( --fct-bg-color, inherit );
+  --fct-button-action-bg-color: #cccccc;
+  --fct-button-action-border-color: var( --fct-form-action-border-color );
+  --fct-button-font-weight: 700;
+  --fct-form-placeholder-color: #888888;
+  --fct-form-placeholder-color-dark: #333333;
   --fct-content-width: 1280px;
   --fct-secondary-min-width: 240px;
   --fct-secondary-max-width: 320px;
-  --fct-content-separator: 2em;
+  --fct-content-separator: 2rem;
   --fct-copyright-text: 0.825em;
 }
 
@@ -356,7 +367,6 @@ a:hover, a.hover, a:focus, a.focus {
   background: var(--fct-adminbar-bg-color, var(--fct-frontend-adminbar-bg-color, #333333));
 }
 
-/* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -369,29 +379,6 @@ a:hover, a.hover, a:focus, a.focus {
   position: absolute !important;
   width: 1px;
   word-wrap: normal !important;
-  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-}
-
-.screen-reader-text:focus {
-  background-color: var(--fct-bg-color);
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  -webkit-clip-path: none;
-  clip-path: none;
-  color: var(--fct-text-color);
-  display: block;
-  font-size: 0.875rem;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
 }
 
 .site {
@@ -457,7 +444,7 @@ form * + * {
 fieldset {
   margin-top: 1em;
   padding: 1em 1.5em;
-  border: solid 1px #cccccc;
+  border: solid 1px var(--fct-form-border-color);
 }
 
 legend {
@@ -473,9 +460,9 @@ button,
   max-width: 640px;
   padding: 1rem;
   font: inherit;
-  font-weight: 400;
-  background: inherit;
-  border: solid 1px #cccccc;
+  font-weight: var(--fct-form-font-weight, 400);
+  background: var(--fct-form-bg-color);
+  border: solid 1px var(--fct-form-border-color);
 }
 
 input:focus, input.focus,
@@ -487,7 +474,7 @@ button:focus,
 button.focus,
 .button:focus,
 .button.focus {
-  border-color: #005ce7;
+  border-color: var(--fct-form-action-border-color);
 }
 
 label + input:not([type="checkbox"]):not([type="radio"]),
@@ -519,10 +506,10 @@ input[type="image"] {
   width: auto;
   line-height: 1;
   cursor: pointer;
-  font-weight: 700;
-  background-color: #ffffff;
-  border-color: #cccccc;
-  color: #333333;
+  font-weight: var(--fct-button-font-weight, 700);
+  background-color: var(--fct-button-bg-color);
+  border-color: var(--fct-button-border-color, var(--fct-form-border-color));
+  color: var(--fct-button-text-color, var(--fct-text-color));
   text-decoration: none;
 }
 
@@ -564,8 +551,8 @@ input[type="image"]:hover,
 input[type="image"].hover,
 input[type="image"]:focus,
 input[type="image"].focus {
-  background-color: #cccccc;
-  border-color: #555555;
+  background-color: var(--fct-button-action-bg-color);
+  border-color: var(--fct-button-action-border-color);
   color: #333333;
 }
 
@@ -602,23 +589,23 @@ select {
 }
 
 *::-webkit-input-placeholder {
-  color: #888888;
+  color: var(--fct-form-placeholder-color);
 }
 
 *::-o-placeholder {
-  color: #888888;
+  color: var(--fct-form-placeholder-color);
 }
 
 *:-ms-input-placeholder {
-  color: #888888;
+  color: var(--fct-form-placeholder-color);
 }
 
 *::-ms-input-placeholder {
-  color: #888888;
+  color: var(--fct-form-placeholder-color);
 }
 
 *::placeholder {
-  color: #888888;
+  color: var(--fct-form-placeholder-color);
 }
 
 /* Search form */
@@ -709,23 +696,23 @@ h2 + .search-form {
 }
 
 .dark-mode *::-webkit-input-placeholder {
-  color: #919191;
+  color: var(--fct-form-placeholder-color-dark);
 }
 
 .dark-mode *::-o-placeholder {
-  color: #919191;
+  color: var(--fct-form-placeholder-color-dark);
 }
 
 .dark-mode *:-ms-input-placeholder {
-  color: #919191;
+  color: var(--fct-form-placeholder-color-dark);
 }
 
 .dark-mode *::-ms-input-placeholder {
-  color: #919191;
+  color: var(--fct-form-placeholder-color-dark);
 }
 
 .dark-mode *::placeholder {
-  color: #919191;
+  color: var(--fct-form-placeholder-color-dark);
 }
 
 .site-header {

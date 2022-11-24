@@ -270,10 +270,21 @@ b, strong, optgroup {
   --fct-link-action-color-dark: #eeeeee;
   --fct-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --fct-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --fct-box-border-color: #cccccc;
+  --fct-form-bg-color: var( --fct-bg-color, inherit );
+  --fct-form-border-color: var( --fct-box-border-color );
+  --fct-form-action-border-color: var( --fct-link-color );
+  --fct-form-font-weight: 400;
+  --fct-button-bg-color: var( --fct-bg-color, inherit );
+  --fct-button-action-bg-color: #cccccc;
+  --fct-button-action-border-color: var( --fct-form-action-border-color );
+  --fct-button-font-weight: 700;
+  --fct-form-placeholder-color: #888888;
+  --fct-form-placeholder-color-dark: #333333;
   --fct-content-width: 1280px;
   --fct-secondary-min-width: 240px;
   --fct-secondary-max-width: 320px;
-  --fct-content-separator: 2em;
+  --fct-content-separator: 2rem;
   --fct-copyright-text: 0.825em;
 }
 

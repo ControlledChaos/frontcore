@@ -5,23 +5,6 @@
 @import '../modules/_colors';
 @import '../modules/_typography';
 
-// Functions
-@function button_svg_color() {
-	@return '%23' + str-slice( '#{$button_text_color}', 2, -1 );
-}
-
-@function button_svg_action_color() {
-	@return '%23' + str-slice( '#{$button_action_text_color}', 2, -1 );
-}
-
-@function button_svg_color_dark() {
-	@return '%23' + str-slice( '#{$button_text_color_dark}', 2, -1 );
-}
-
-@function button_svg_action_color_dark() {
-	@return '%23' + str-slice( '#{$button_action_text_color_dark}', 2, -1 );
-}
-
 form * + * {
 	margin-top: 1em;
 }
@@ -29,7 +12,7 @@ form * + * {
 fieldset {
 	margin-top: 1em;
 	padding: 1em 1.5em;
-	border: solid 1px $form_border_color;
+	border: solid 1px var( --fct-form-border-color );
 }
 
 legend {
@@ -47,13 +30,13 @@ button,
 	max-width: 640px;
 	padding: 1rem;
 	font: inherit;
-	font-weight: $form_weight;
-	background: $form_background_color;
-	border: solid 1px $form_border_color;
+	font-weight: var( --fct-form-font-weight, 400 );
+	background: var( --fct-form-bg-color );
+	border: solid 1px var( --fct-form-border-color );
 
 	&:focus,
 	&.focus {
-		border-color: $form_action_border_color;
+		border-color: var( --fct-form-action-border-color );
 	}
 }
 
@@ -95,10 +78,10 @@ input[type="image"] {
 	width: auto;
 	line-height: 1;
 	cursor: pointer;
-	font-weight: $button_weight;
-	background-color: $button_background_color;
-	border-color: $button_border_color;
-	color: $button_text_color;
+	font-weight: var( --fct-button-font-weight, 700 );
+	background-color: var( --fct-button-bg-color );
+	border-color: var( --fct-button-border-color, var( --fct-form-border-color ) );
+	color: var( --fct-button-text-color, var( --fct-text-color ) );
 	text-decoration: none;
 
 	svg {
@@ -112,8 +95,8 @@ input[type="image"] {
 	&.hover,
 	&:focus,
 	&.focus {
-		background-color: $button_action_background_color;
-		border-color: $button_action_border_color;
+		background-color: var( --fct-button-action-bg-color );
+		border-color: var( --fct-button-action-border-color );
 		color: $button_action_text_color;
 	}
 }
@@ -155,27 +138,27 @@ select {
 option {}
 
 *::-webkit-input-placeholder {
-	color: $form_placeholder_color;
+	color: var( --fct-form-placeholder-color );
 }
 
 *::-o-placeholder {
-	color: $form_placeholder_color;
+	color: var( --fct-form-placeholder-color );
 }
 
 *:-moz-placeholder {
-	color: $form_placeholder_color;
+	color: var( --fct-form-placeholder-color );
 }
 
 *::-moz-placeholder {
-	color: $form_placeholder_color;
+	color: var( --fct-form-placeholder-color );
 }
 
 *:-ms-input-placeholder {
-	color: $form_placeholder_color;
+	color: var( --fct-form-placeholder-color );
 }
 
 *::placeholder {
-	color: $form_placeholder_color;
+	color: var( --fct-form-placeholder-color );
 }
 
 /* Search form */
@@ -252,26 +235,26 @@ h2 + .search-form {
 	}
 
 	*::-webkit-input-placeholder {
-		color: $form_placeholder_color_dark;
+		color: var( --fct-form-placeholder-color-dark );
 	}
 
 	*::-o-placeholder {
-		color: $form_placeholder_color_dark;
+		color: var( --fct-form-placeholder-color-dark );
 	}
 
 	*:-moz-placeholder {
-		color: $form_placeholder_color_dark;
+		color: var( --fct-form-placeholder-color-dark );
 	}
 
 	*::-moz-placeholder {
-		color: $form_placeholder_color_dark;
+		color: var( --fct-form-placeholder-color-dark );
 	}
 
 	*:-ms-input-placeholder {
-		color: $form_placeholder_color_dark;
+		color: var( --fct-form-placeholder-color-dark );
 	}
 
 	*::placeholder {
-		color: $form_placeholder_color_dark;
+		color: var( --fct-form-placeholder-color-dark );
 	}
 }

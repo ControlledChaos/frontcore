@@ -133,3 +133,19 @@ $subnav_link_action_bg_color_dark: lighten( $color: $nav_bg_color_dark, $amount:
 $subnav_text_color_dark: $nav_text_color_dark !default;
 $subnav_link_color_dark: $nav_link_color_dark !default;
 $subnav_link_action_color_dark: $nav_link_color_dark !default;
+
+@function button_svg_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+
+@function button_svg_action_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+
+@function button_svg_color_dark() {
+	@return '%23' + str-slice( '#{$off_white}', 2, -1 );
+}
+
+@function button_svg_action_color_dark() {
+	@return '%23' + str-slice( '#{$off_white}', 2, -1 );
+}
