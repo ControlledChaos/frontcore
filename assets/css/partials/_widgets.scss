@@ -22,7 +22,7 @@
 .calendar_wrap td {
 	display: table-cell;
 	padding: 3.25% 0.5rem 3%;
-	font-size: 1em;
+	font-size: var( --fct-widget--calendar--font-size, 1em );
 	line-height: 1;
 	text-align: center;
 	border: solid 1px var( --fct-box-border-color );

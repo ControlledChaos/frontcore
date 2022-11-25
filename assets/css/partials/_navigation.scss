@@ -26,7 +26,8 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background-color: inherit;
+		background-color: var( --fct-nav-bg-color, inherit );
+		color: var( --fct-nav-text-color, inherit );
 
 		ul {
 			position: absolute;
@@ -35,10 +36,11 @@
 			z-index: 99999;
 			width: 100%;
 			min-width: 160px;
-			background-color: $subnav_bg_color;
-			border: solid 1px $subnav_border_color;
+			background-color: var( --fct-subnav-bg-color );
+			border: solid 1px var( --fct-subnav-border-color, var( --fct-box-border-color ) );
 			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			color: var( --fct-subnav-text-color, inherit );
 
 			@media screen and ( max-width: $break_primary_tablet ) {
 				position: unset;
@@ -63,10 +65,13 @@
 				a {
 					width: 100%;
 					padding: 0.5em 0.75em;
+					background-color: var( --fct-subnav-link-bg-color );
+					color: var( --fct-subnav-link-text-color, var( --fct-link-color ) );
 
 					&:hover,
 					&:focus {
-						background-color: $subnav_link_action_bg_color;
+						background-color: var( --fct-subnav-link-action-bg-color );
+						color: var( --fct-subnav-link-action-text-color, var( --fct-link-action-color ) );
 					}
 				}
 			}
@@ -87,7 +92,15 @@
 	a {
 		display: inline-block;
 		padding: 0.5em 0;
+		color: var( --fct-nav-link-text-color, var( --fct-link-color ) );
 		text-decoration: none;
+
+		&:hover,
+		&.hover,
+		&:focus,
+		&.focus {
+			color: var( --fct-nav-link-action-text-color, var( --fct-link-action-color ) );
+		}
 	}
 }
 
@@ -273,25 +286,8 @@
 }
 
 .dark-mode {
-	.main-navigation {
-		ul {
-			ul {
-				background-color: $subnav_bg_color_dark;
 
-				li {
-					a {
-						color: $subnav_link_color_dark;
-
-						&:hover,
-						&:focus {
-							background-color: $subnav_link_action_bg_color_dark;
-							color: $subnav_link_action_color_dark
-						}
-					}
-				}
-			}
-		}
-	}
+	--fct-subnav-link-action-bg-color: #{$medium_gray};
 
 	.site-main {
 		.comment-navigation,
@@ -335,24 +331,8 @@
 
 @media ( prefers-color-scheme: dark ) {
 
-	.main-navigation {
-		ul {
-			ul {
-				background-color: $subnav_bg_color_dark;
-
-				li {
-					a {
-						color: $subnav_link_color_dark;
-
-						&:hover,
-						&:focus {
-							background-color: $subnav_link_action_bg_color_dark;
-							color: $subnav_link_action_color_dark
-						}
-					}
-				}
-			}
-		}
+	:root {
+		--fct-subnav-link-action-bg-color: #{$medium_gray};
 	}
 
 	.site-main {

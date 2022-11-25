@@ -283,7 +283,9 @@ b, strong, optgroup {
   --fct-secondary-min-width: 240px;
   --fct-secondary-max-width: 320px;
   --fct-content-separator: 2rem;
-  --fct-copyright-text: 0.825em;
+  --fct-nav-bg-color: var( --fct-bg-color, inherit );
+  --fct-subnav-bg-color: var( --fct-nav-bg-color );
+  --fct-copyright-font-size: 0.825em;
 }
 
 .wp-embed {

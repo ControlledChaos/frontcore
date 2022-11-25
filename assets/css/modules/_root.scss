@@ -41,11 +41,13 @@
 	// Header.
 
 	// Navigation.
+	--fct-nav-bg-color: var( --fct-bg-color, inherit );
+	--fct-subnav-bg-color: var( --fct-nav-bg-color );
 
 	// Main content.
 
 	// Widgets.
 
 	// Footer
-	--fct-copyright-text: 0.825em;
+	--fct-copyright-font-size: 0.825em;
 }
