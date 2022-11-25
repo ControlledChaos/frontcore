@@ -268,24 +268,23 @@ b, strong, optgroup {
   --fct-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --fct-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --fct-box-border-color: #cccccc;
-  --fct-form-font-weight: 400;
-  --fct-form-bg-color: var( --fct-bg-color, inherit );
-  --fct-form-border-color: var( --fct-box-border-color );
-  --fct-form-action-border-color: var( --fct-form-border-color );
-  --fct-form-placeholder-color: #888888;
-  --fct-button-font-weight: 700;
-  --fct-button-bg-color: var( --fct-bg-color, inherit );
-  --fct-button-action-bg-color: #cccccc;
-  --fct-button-border-color: var( --fct-form-border-color );
-  --fct-button-action-border-color: var( --fct-form-action-border-color );
-  --fct-button-text-color: var( --fct-form-text-color );
-  --fct-button-action-text-color: var( --fct-form-text-color );
+  --fct-form--font-weight: 400;
+  --fct-form--bg-color: var( --fct-bg-color, inherit );
+  --fct-form--border-color: var( --fct-box-border-color );
+  --fct-form--action-border-color: #0000ff;
+  --fct-form--placeholder-color: #888888;
+  --fct-button--font-weight: 700;
+  --fct-button--bg-color: var( --fct-bg-color, inherit );
+  --fct-button--action-bg-color: #cccccc;
+  --fct-button--border-color: var( --fct-form--border-color );
+  --fct-button--text-color: var( --fct-form--text-color );
+  --fct-button--action-text-color: var( --fct-form--text-color );
   --fct-content-width: 1280px;
   --fct-secondary-min-width: 240px;
   --fct-secondary-max-width: 320px;
   --fct-content-separator: 2rem;
-  --fct-nav-bg-color: var( --fct-bg-color, inherit );
-  --fct-subnav-bg-color: var( --fct-nav-bg-color );
+  --fct-nav--bg-color: var( --fct-bg-color, inherit );
+  --fct-subnav---bg-color: var( --fct-nav--bg-color );
   --fct-copyright-font-size: 0.825em;
 }
 
@@ -449,7 +448,7 @@ form * + * {
 fieldset {
   margin-top: 1em;
   padding: 1em 1.5em;
-  border: solid 1px var(--fct-form-border-color);
+  border: solid 1px var(--fct-form--border-color);
 }
 
 legend {
@@ -465,9 +464,9 @@ button,
   max-width: 640px;
   padding: 1rem;
   font: inherit;
-  font-weight: var(--fct-form-font-weight, 400);
-  background-color: var(--fct-form-bg-color);
-  border: solid 1px var(--fct-form-border-color);
+  font-weight: var(--fct-form--font-weight, 400);
+  background-color: var(--fct-form--bg-color);
+  border: solid 1px var(--fct-form--border-color);
   color: var(--fct-text-color);
 }
 
@@ -480,7 +479,7 @@ button:focus,
 button.focus,
 .button:focus,
 .button.focus {
-  border-color: var(--fct-form-action-border-color);
+  border-color: var(--fct-form--action-border-color);
 }
 
 label + input:not([type="checkbox"]):not([type="radio"]),
@@ -512,10 +511,10 @@ input[type="image"] {
   width: auto;
   line-height: 1;
   cursor: pointer;
-  font-weight: var(--fct-button-font-weight, 700);
-  background-color: var(--fct-button-bg-color);
-  border-color: var(--fct-button-border-color, var(--fct-form-border-color));
-  color: var(--fct-button-text-color, var(--fct-text-color));
+  font-weight: var(--fct-button--font-weight, 700);
+  background-color: var(--fct-button--bg-color);
+  border-color: var(--fct-button--border-color, var(--fct-form--border-color));
+  color: var(--fct-button--text-color, var(--fct-text-color));
   text-decoration: none;
 }
 
@@ -557,9 +556,9 @@ input[type="image"]:hover,
 input[type="image"].hover,
 input[type="image"]:focus,
 input[type="image"].focus {
-  background-color: var(--fct-button-action-bg-color);
-  border-color: var(--fct-button-action-border-color);
-  color: var(--fct-button-action-text-color);
+  background-color: var(--fct-button--action-bg-color);
+  border-color: var(--fct-button--action-border-color);
+  color: var(--fct-button--action-text-color);
 }
 
 input[type="number"] {
@@ -601,23 +600,23 @@ option {
 }
 
 *::-webkit-input-placeholder {
-  color: var(--fct-form-placeholder-color);
+  color: var(--fct-form--placeholder-color);
 }
 
 *::-o-placeholder {
-  color: var(--fct-form-placeholder-color);
+  color: var(--fct-form--placeholder-color);
 }
 
 *:-ms-input-placeholder {
-  color: var(--fct-form-placeholder-color);
+  color: var(--fct-form--placeholder-color);
 }
 
 *::-ms-input-placeholder {
-  color: var(--fct-form-placeholder-color);
+  color: var(--fct-form--placeholder-color);
 }
 
 *::placeholder {
-  color: var(--fct-form-placeholder-color);
+  color: var(--fct-form--placeholder-color);
 }
 
 .search-form {
@@ -654,18 +653,19 @@ h2 + .search-form {
 }
 
 .dark-mode {
-  --fct-form-bg-color: var( --fct-bg-color, inherit );
-  --fct-form-border-color: #555555;
-  --fct-button-action-bg-color: #555555;
-  --fct-form-placeholder-color: #888888;
+  --fct-form--bg-color: var( --fct-bg-color, inherit );
+  --fct-form--border-color: #555555;
+  --fct-form--action-border-color: #ffffff;
+  --fct-button--action-bg-color: #555555;
+  --fct-form--placeholder-color: #888888;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fct-form-bg-color: var( --fct-bg-color, inherit );
-    --fct-form-border-color: #555555;
-    --fct-button-action-bg-color: #555555;
-    --fct-form-placeholder-color: #888888;
+    --fct-form--bg-color: var( --fct-bg-color, inherit );
+    --fct-form--border-color: #555555;
+    --fct-button--action-bg-color: #555555;
+    --fct-form--placeholder-color: #888888;
   }
 }
 
@@ -797,8 +797,8 @@ h2 + .search-form {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: var(--fct-nav-bg-color, inherit);
-  color: var(--fct-nav-text-color, inherit);
+  background-color: var(--fct-nav--bg-color, inherit);
+  color: var(--fct-nav--text-color, inherit);
 }
 
 .main-navigation ul ul {
@@ -808,11 +808,11 @@ h2 + .search-form {
   z-index: 99999;
   width: 100%;
   min-width: 160px;
-  background-color: var(--fct-subnav-bg-color);
-  border: solid 1px var(--fct-subnav-border-color, var(--fct-box-border-color));
+  background-color: var(--fct-subnav--bg-color);
+  border: solid 1px var(--fct-subnav--border-color, var(--fct-box-border-color));
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  color: var(--fct-subnav-text-color, inherit);
+  color: var(--fct-subnav--text-color, inherit);
 }
 
 @media screen and (max-width: 800px) {
@@ -842,13 +842,13 @@ h2 + .search-form {
 .main-navigation ul ul li a {
   width: 100%;
   padding: 0.5em 0.75em;
-  background-color: var(--fct-subnav-link-bg-color);
-  color: var(--fct-subnav-link-text-color, var(--fct-link-color));
+  background-color: var(--fct-subnav--link-bg-color);
+  color: var(--fct-subnav--link-text-color, var(--fct-link-color));
 }
 
 .main-navigation ul ul li a:hover, .main-navigation ul ul li a:focus {
-  background-color: var(--fct-subnav-link-action-bg-color);
-  color: var(--fct-subnav-link-action-text-color, var(--fct-link-action-color));
+  background-color: var(--fct-subnav--link-action-bg-color);
+  color: var(--fct-subnav--link-action-text-color, var(--fct-link-action-color));
 }
 
 .main-navigation li {
@@ -865,12 +865,12 @@ h2 + .search-form {
 .main-navigation a {
   display: inline-block;
   padding: 0.5em 0;
-  color: var(--fct-nav-link-text-color, var(--fct-link-color));
+  color: var(--fct-nav--link-text-color, var(--fct-link-color));
   text-decoration: none;
 }
 
 .main-navigation a:hover, .main-navigation a.hover, .main-navigation a:focus, .main-navigation a.focus {
-  color: var(--fct-nav-link-action-text-color, var(--fct-link-action-color));
+  color: var(--fct-nav--link-action-text-color, var(--fct-link-action-color));
 }
 
 .site-branding-wrap.nav-aside-branding .main-navigation {
@@ -925,9 +925,9 @@ h2 + .search-form {
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
-  background-color: var(--fct-button-bg-color);
-  border: solid 1px var(--fct-button-border-color, var(--fct-form-border-color));
-  color: var(--fct-button-text-color, var(--fct-text-color));
+  background-color: var(--fct-button--bg-color);
+  border: solid 1px var(--fct-button--border-color, var(--fct-form--border-color));
+  color: var(--fct-button--text-color, var(--fct-text-color));
 }
 
 .site-main .comment-navigation button:hover, .site-main .comment-navigation button.hover, .site-main .comment-navigation button:focus, .site-main .comment-navigation button.focus,
@@ -951,9 +951,9 @@ h2 + .search-form {
 .site-main .post-navigation .button.hover,
 .site-main .post-navigation .button:focus,
 .site-main .post-navigation .button.focus {
-  background-color: var(--fct-button-action-bg-color);
-  border-color: var(--fct-button-action-border-color);
-  color: var(--fct-button-action-text-color);
+  background-color: var(--fct-button--action-bg-color);
+  border-color: var(--fct-button--action-border-color);
+  color: var(--fct-button--action-text-color);
 }
 
 .site-main .comment-navigation button:before, .site-main .comment-navigation button:after,
@@ -1101,7 +1101,7 @@ h2 + .search-form {
 }
 
 .dark-mode {
-  --fct-subnav-link-action-bg-color: #555555;
+  --fct-subnav--link-action-bg-color: #555555;
 }
 
 .dark-mode .site-main .comment-navigation button.nav-previous:before,
@@ -1172,7 +1172,7 @@ h2 + .search-form {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fct-subnav-link-action-bg-color: #555555;
+    --fct-subnav--link-action-bg-color: #555555;
   }
   .site-main .comment-navigation button.nav-previous:before,
   .site-main .comment-navigation .button.nav-previous:before,

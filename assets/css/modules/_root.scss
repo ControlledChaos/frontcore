@@ -18,19 +18,18 @@
 	--fct-box-border-color: #{$pale_gray};
 
 	// Forms & buttons.
-	--fct-form-font-weight: 400;
-	--fct-form-bg-color: var( --fct-bg-color, inherit );
-	--fct-form-border-color: var( --fct-box-border-color );
-	--fct-form-action-border-color: var( --fct-form-border-color );
-	--fct-form-placeholder-color: #{$light_gray};
+	--fct-form--font-weight: 400;
+	--fct-form--bg-color: var( --fct-bg-color, inherit );
+	--fct-form--border-color: var( --fct-box-border-color );
+	--fct-form--action-border-color: #{$blue};
+	--fct-form--placeholder-color: #{$light_gray};
 
-	--fct-button-font-weight: 700;
-	--fct-button-bg-color: var( --fct-bg-color, inherit );
-	--fct-button-action-bg-color: #{$pale_gray};
-	--fct-button-border-color: var( --fct-form-border-color );
-	--fct-button-action-border-color: var( --fct-form-action-border-color );
-	--fct-button-text-color: var( --fct-form-text-color );
-	--fct-button-action-text-color: var( --fct-form-text-color );
+	--fct-button--font-weight: 700;
+	--fct-button--bg-color: var( --fct-bg-color, inherit );
+	--fct-button--action-bg-color: #{$pale_gray};
+	--fct-button--border-color: var( --fct-form--border-color );
+	--fct-button--text-color: var( --fct-form--text-color );
+	--fct-button--action-text-color: var( --fct-form--text-color );
 
 	// Layout.
 	--fct-content-width: 1280px; // @see includes/classes/core/class-setup.php for media content width.
@@ -41,8 +40,8 @@
 	// Header.
 
 	// Navigation.
-	--fct-nav-bg-color: var( --fct-bg-color, inherit );
-	--fct-subnav-bg-color: var( --fct-nav-bg-color );
+	--fct-nav--bg-color: var( --fct-bg-color, inherit );
+	--fct-subnav---bg-color: var( --fct-nav--bg-color );
 
 	// Main content.
 

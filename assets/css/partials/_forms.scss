@@ -9,7 +9,7 @@ form * + * {
 fieldset {
 	margin-top: 1em;
 	padding: 1em 1.5em;
-	border: solid 1px var( --fct-form-border-color );
+	border: solid 1px var( --fct-form--border-color );
 }
 
 legend {
@@ -27,14 +27,14 @@ button,
 	max-width: 640px;
 	padding: 1rem;
 	font: inherit;
-	font-weight: var( --fct-form-font-weight, 400 );
-	background-color: var( --fct-form-bg-color );
-	border: solid 1px var( --fct-form-border-color );
+	font-weight: var( --fct-form--font-weight, 400 );
+	background-color: var( --fct-form--bg-color );
+	border: solid 1px var( --fct-form--border-color );
 	color: var( --fct-text-color );
 
 	&:focus,
 	&.focus {
-		border-color: var( --fct-form-action-border-color );
+		border-color: var( --fct-form--action-border-color );
 	}
 }
 
@@ -76,10 +76,10 @@ input[type="image"] {
 	width: auto;
 	line-height: 1;
 	cursor: pointer;
-	font-weight: var( --fct-button-font-weight, 700 );
-	background-color: var( --fct-button-bg-color );
-	border-color: var( --fct-button-border-color, var( --fct-form-border-color ) );
-	color: var( --fct-button-text-color, var( --fct-text-color ) );
+	font-weight: var( --fct-button--font-weight, 700 );
+	background-color: var( --fct-button--bg-color );
+	border-color: var( --fct-button--border-color, var( --fct-form--border-color ) );
+	color: var( --fct-button--text-color, var( --fct-text-color ) );
 	text-decoration: none;
 
 	svg {
@@ -93,9 +93,9 @@ input[type="image"] {
 	&.hover,
 	&:focus,
 	&.focus {
-		background-color: var( --fct-button-action-bg-color );
-		border-color: var( --fct-button-action-border-color );
-		color: var( --fct-button-action-text-color );
+		background-color: var( --fct-button--action-bg-color );
+		border-color: var( --fct-button--action-border-color );
+		color: var( --fct-button--action-text-color );
 	}
 }
 
@@ -138,27 +138,27 @@ option {
 }
 
 *::-webkit-input-placeholder {
-	color: var( --fct-form-placeholder-color );
+	color: var( --fct-form--placeholder-color );
 }
 
 *::-o-placeholder {
-	color: var( --fct-form-placeholder-color );
+	color: var( --fct-form--placeholder-color );
 }
 
 *:-moz-placeholder {
-	color: var( --fct-form-placeholder-color );
+	color: var( --fct-form--placeholder-color );
 }
 
 *::-moz-placeholder {
-	color: var( --fct-form-placeholder-color );
+	color: var( --fct-form--placeholder-color );
 }
 
 *:-ms-input-placeholder {
-	color: var( --fct-form-placeholder-color );
+	color: var( --fct-form--placeholder-color );
 }
 
 *::placeholder {
-	color: var( --fct-form-placeholder-color );
+	color: var( --fct-form--placeholder-color );
 }
 
 // Search form.
@@ -200,17 +200,18 @@ h2 + .search-form {
 }
 
 .dark-mode {
-	--fct-form-bg-color: var( --fct-bg-color, inherit );
-	--fct-form-border-color: #{$medium_gray};
-	--fct-button-action-bg-color: #{$medium_gray};
-	--fct-form-placeholder-color: #{$light_gray};
+	--fct-form--bg-color: var( --fct-bg-color, inherit );
+	--fct-form--border-color: #{$medium_gray};
+	--fct-form--action-border-color: #{$white};
+	--fct-button--action-bg-color: #{$medium_gray};
+	--fct-form--placeholder-color: #{$light_gray};
 }
 
 @media ( prefers-color-scheme: dark ) {
 	:root {
-		--fct-form-bg-color: var( --fct-bg-color, inherit );
-		--fct-form-border-color: #{$medium_gray};
-		--fct-button-action-bg-color: #{$medium_gray};
-		--fct-form-placeholder-color: #{$light_gray};
+		--fct-form--bg-color: var( --fct-bg-color, inherit );
+		--fct-form--border-color: #{$medium_gray};
+		--fct-button--action-bg-color: #{$medium_gray};
+		--fct-form--placeholder-color: #{$light_gray};
 	}
 }
