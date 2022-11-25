@@ -5,6 +5,22 @@
 /// Mostly it gets the ball rolling.
 ///
 
+// Standard functions.
+@function svg_icon_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+@function svg_icon_action_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+
+// Dark mode functions.
+@function svg_icon_color_dark() {
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
+}
+@function svg_icon_action_color_dark() {
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
+}
+
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
@@ -64,18 +80,20 @@ a {
 }
 
 .dark-mode {
-	background: var( --fct-bg-color-dark );
-	color: var( --fct-text-color-dark );
+	--fct-bg-color: #{$near_black};
+	--fct-text-color: #{$white};
+	--fct-link-color: #{$white};
+	--fct-link-action-color: #{$off_white};
+	--fct-box-border-color: #{$medium_gray};
+}
 
-	a {
-		color: var( --fct-link-color-dark );
-
-		&:hover,
-		&.hover,
-		&:focus,
-		&.focus {
-			color: var( --fct-link-action-color-dark );
-		}
+@media ( prefers-color-scheme: dark ) {
+	:root {
+		--fct-bg-color: #{$near_black};
+		--fct-text-color: #{$white};
+		--fct-link-color: #{$white};
+		--fct-link-action-color: #{$off_white};
+		--fct-box-border-color: #{$medium_gray};
 	}
 }
 

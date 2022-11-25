@@ -22,8 +22,9 @@ button,
   padding: 1rem;
   font: inherit;
   font-weight: var(--fct-form-font-weight, 400);
-  background: var(--fct-form-bg-color);
+  background-color: var(--fct-form-bg-color);
   border: solid 1px var(--fct-form-border-color);
+  color: var(--fct-text-color);
 }
 
 input:focus, input.focus,
@@ -149,6 +150,12 @@ select {
   font: inherit;
 }
 
+option {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 *::-webkit-input-placeholder {
   color: var(--fct-form-placeholder-color);
 }
@@ -169,7 +176,6 @@ select {
   color: var(--fct-form-placeholder-color);
 }
 
-/* Search form */
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -203,77 +209,20 @@ h2 + .search-form {
   z-index: 1;
 }
 
-.dark-mode input,
-.dark-mode textarea,
-.dark-mode select,
-.dark-mode button {
-  background: #2b2b2b;
-  border-color: #5e5e5e;
-  color: #eeeeee;
+.dark-mode {
+  --fct-form-bg-color: var( --fct-bg-color, inherit );
+  --fct-form-border-color: #555555;
+  --fct-button-action-bg-color: #555555;
+  --fct-form-placeholder-color: #888888;
 }
 
-.dark-mode input:focus,
-.dark-mode textarea:focus,
-.dark-mode select:focus,
-.dark-mode button:focus {
-  border-color: #eeeeee;
-}
-
-.dark-mode button,
-.dark-mode button[type="submit"],
-.dark-mode input[type="submit"],
-.dark-mode input[type="button"],
-.dark-mode input[type="reset"],
-.dark-mode input[type="image"] {
-  background-color: #2b2b2b;
-  border-color: #5e5e5e;
-  color: #eeeeee;
-}
-
-.dark-mode button:hover, .dark-mode button.hover, .dark-mode button:focus, .dark-mode button.focus,
-.dark-mode button[type="submit"]:hover,
-.dark-mode button[type="submit"].hover,
-.dark-mode button[type="submit"]:focus,
-.dark-mode button[type="submit"].focus,
-.dark-mode input[type="submit"]:hover,
-.dark-mode input[type="submit"].hover,
-.dark-mode input[type="submit"]:focus,
-.dark-mode input[type="submit"].focus,
-.dark-mode input[type="button"]:hover,
-.dark-mode input[type="button"].hover,
-.dark-mode input[type="button"]:focus,
-.dark-mode input[type="button"].focus,
-.dark-mode input[type="reset"]:hover,
-.dark-mode input[type="reset"].hover,
-.dark-mode input[type="reset"]:focus,
-.dark-mode input[type="reset"].focus,
-.dark-mode input[type="image"]:hover,
-.dark-mode input[type="image"].hover,
-.dark-mode input[type="image"]:focus,
-.dark-mode input[type="image"].focus {
-  background-color: #d0d0d0;
-  border-color: #5e5e5e;
-  color: #333333;
-}
-
-.dark-mode *::-webkit-input-placeholder {
-  color: var(--fct-form-placeholder-color-dark);
-}
-
-.dark-mode *::-o-placeholder {
-  color: var(--fct-form-placeholder-color-dark);
-}
-
-.dark-mode *:-ms-input-placeholder {
-  color: var(--fct-form-placeholder-color-dark);
-}
-
-.dark-mode *::-ms-input-placeholder {
-  color: var(--fct-form-placeholder-color-dark);
-}
-
-.dark-mode *::placeholder {
-  color: var(--fct-form-placeholder-color-dark);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fct-form-bg-color: var( --fct-bg-color, inherit );
+    --fct-form-border-color: #555555;
+    --fct-button-action-bg-color: #555555;
+    --fct-form-placeholder-color: #888888;
+  }
 }
 
 .has-fct-dark-gray-background-color {

@@ -54,16 +54,21 @@ a:hover, a.hover, a:focus, a.focus {
 }
 
 .dark-mode {
-  background: var(--fct-bg-color-dark);
-  color: var(--fct-text-color-dark);
+  --fct-bg-color: #1e1e1e;
+  --fct-text-color: #ffffff;
+  --fct-link-color: #ffffff;
+  --fct-link-action-color: #eeeeee;
+  --fct-box-border-color: #555555;
 }
 
-.dark-mode a {
-  color: var(--fct-link-color-dark);
-}
-
-.dark-mode a:hover, .dark-mode a.hover, .dark-mode a:focus, .dark-mode a.focus {
-  color: var(--fct-link-action-color-dark);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fct-bg-color: #1e1e1e;
+    --fct-text-color: #ffffff;
+    --fct-link-color: #ffffff;
+    --fct-link-action-color: #eeeeee;
+    --fct-box-border-color: #555555;
+  }
 }
 
 #wpadminbar,

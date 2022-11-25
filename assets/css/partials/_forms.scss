@@ -2,9 +2,6 @@
 /// Form styles
 ///
 
-@import '../modules/_colors';
-@import '../modules/_typography';
-
 form * + * {
 	margin-top: 1em;
 }
@@ -31,8 +28,9 @@ button,
 	padding: 1rem;
 	font: inherit;
 	font-weight: var( --fct-form-font-weight, 400 );
-	background: var( --fct-form-bg-color );
+	background-color: var( --fct-form-bg-color );
 	border: solid 1px var( --fct-form-border-color );
+	color: var( --fct-text-color );
 
 	&:focus,
 	&.focus {
@@ -135,7 +133,9 @@ select {
 	font: inherit;
 }
 
-option {}
+option {
+	appearance: none;
+}
 
 *::-webkit-input-placeholder {
 	color: var( --fct-form-placeholder-color );
@@ -161,7 +161,7 @@ option {}
 	color: var( --fct-form-placeholder-color );
 }
 
-/* Search form */
+// Search form.
 .search-form {
 	display: -webkit-box;
 	display: -moz-box;
@@ -200,61 +200,17 @@ h2 + .search-form {
 }
 
 .dark-mode {
+	--fct-form-bg-color: var( --fct-bg-color, inherit );
+	--fct-form-border-color: #{$medium_gray};
+	--fct-button-action-bg-color: #{$medium_gray};
+	--fct-form-placeholder-color: #{$light_gray};
+}
 
-	input,
-	textarea,
-	select,
-	button {
-		background: $form_background_color_dark;
-		border-color: $form_border_color_dark;
-		color: $form_text_color_dark;
-
-		&:focus {
-			border-color: $form_action_text_color_dark;
-		}
-	}
-
-	button,
-	button[type="submit"],
-	input[type="submit"],
-	input[type="button"],
-	input[type="reset"],
-	input[type="image"] {
-		background-color: $button_background_color_dark;
-		border-color: $button_border_color_dark;
-		color: $button_text_color_dark;
-
-		&:hover,
-		&.hover,
-		&:focus,
-		&.focus {
-			background-color: $button_action_background_color_dark;
-			border-color: $button_action_border_color_dark;
-			color: $button_action_text_color_dark;
-		}
-	}
-
-	*::-webkit-input-placeholder {
-		color: var( --fct-form-placeholder-color-dark );
-	}
-
-	*::-o-placeholder {
-		color: var( --fct-form-placeholder-color-dark );
-	}
-
-	*:-moz-placeholder {
-		color: var( --fct-form-placeholder-color-dark );
-	}
-
-	*::-moz-placeholder {
-		color: var( --fct-form-placeholder-color-dark );
-	}
-
-	*:-ms-input-placeholder {
-		color: var( --fct-form-placeholder-color-dark );
-	}
-
-	*::placeholder {
-		color: var( --fct-form-placeholder-color-dark );
+@media ( prefers-color-scheme: dark ) {
+	:root {
+		--fct-form-bg-color: var( --fct-bg-color, inherit );
+		--fct-form-border-color: #{$medium_gray};
+		--fct-button-action-bg-color: #{$medium_gray};
+		--fct-form-placeholder-color: #{$light_gray};
 	}
 }
