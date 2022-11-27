@@ -27,6 +27,9 @@ get_header( 'builder' );
 
 		while ( have_posts() ) : the_post();
 			content_template();
+			if ( ! is_page() ) {
+				comments_template();
+			}
 		endwhile;
 
 		?>
