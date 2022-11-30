@@ -200,6 +200,9 @@ foreach ( glob( FCT_PATH . 'includes/frontend/*.php' ) as $filename ) {
 foreach ( glob( FCT_PATH . 'includes/backend/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( FCT_PATH . 'includes/users/*.php' ) as $filename ) {
+	require $filename;
+}
 foreach ( glob( FCT_PATH . 'includes/assets/*.php' ) as $filename ) {
 	require $filename;
 }
