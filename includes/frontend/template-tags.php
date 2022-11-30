@@ -617,7 +617,7 @@ function content_template() {
 
 		// Look for `content-{$post-type}.php` template.
 		} else {
-			$template = 'content-' . get_post_type() . $acf->suffix();
+			$template = 'content-' . get_post_type( get_the_ID() ) . $acf->suffix();
 		}
 
 	// If the query has no posts.
@@ -907,7 +907,7 @@ function get_header_image_alt() {
  * @since  1.0.0
  * @return void
  */
-	function post_navigation() {
+function post_navigation() {
 
 	$prev = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', false );
@@ -951,4 +951,296 @@ function get_header_image_alt() {
 		<?php endif; ?>
 	</nav>
 	<?php
+}
+
+/**
+ * Get comments title
+ *
+ * Heading for the comments list.
+ *
+ * @since  1.0.0
+ * @return string Returns the title text.
+ */
+function get_comments_title() {
+
+	$fct_comment_count = get_comments_number();
+
+	if ( '1' === $fct_comment_count ) {
+		$title = sprintf(
+			esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'frontcore' ),
+			'<span>' . get_the_title() . '</span>'
+		);
+
+	} else {
+		$title = sprintf(
+			esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $fct_comment_count, 'comments title', 'frontcore' ) ),
+			number_format_i18n( $fct_comment_count ),
+			'<span>' . get_the_title() . '</span>'
+		);
+	}
+
+	return apply_filters( 'fct_get_comments_title', $title );
+}
+
+/**
+ * Comments title
+ *
+ * Prints the comments title text.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function comments_title() {
+	echo get_comments_title();
+}
+
+/**
+ * Comment form arguments
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function comment_form_args() {
+
+	$before_form = sprintf(
+		'<p>%s</p>',
+		__( 'Your email address will not be published. Required fields are marked *.', 'frontcore' )
+	);
+
+	$moderation = get_option( 'comment_moderation' );
+	if ( $moderation ) {
+
+		$before_form .= sprintf(
+			'<p>%s</p>',
+			__( 'Your comment will be held for moderation before it appears here.', 'frontcore' )
+		);
+		$submit_title_attr = __( 'Submit your comment for approval', 'frontcore' );
+
+	} else {
+		$submit_title_attr = __( 'Submit your comment', 'frontcore' );
+	}
+
+	$args = [
+		'title_reply' => __( 'Submit a Comment', 'frontcore' ),
+		'comment_notes_before' => $before_form,
+		'submit_button' => sprintf(
+			'<input type="submit" name="%1$s" id="%2$s" class="%3$s" value="%4$s" title="%5$s" />',
+			'submit',
+			'submit',
+			'submit',
+			__( 'Submit', 'frontcore' ),
+			$submit_title_attr
+		)
+	];
+
+	return apply_filters( 'fct_comment_form_args', $args );
+}
+
+/**
+ * Comment form
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function comment_form() {
+	$args = comment_form_args();
+	return \comment_form( $args );
+}
+
+/**
+ * Get comments closed message.
+ *
+ * @since  1.0.0
+ * @return mixed Returns the text of the message or null.
+ */
+function get_comments_closed() {
+
+	$post_type = get_post_type_object( get_post_type( get_the_ID() ) );
+
+	if ( ! comments_open() ) {
+		return apply_filters(
+			'fct_get_comments_closed',
+			sprintf(
+				'%s %s %s',
+				__( 'Comments for this', 'frontcore' ),
+				strtolower( $post_type->labels->singular_name ),
+				__( 'are closed.', 'frontcore' )
+			)
+		);
+	}
+	return null;
+}
+
+/**
+ * Comments closed message.
+ *
+ * @since  1.0.0
+ * @return mixed
+ */
+function comments_closed() {
+
+	$closed = get_comments_closed();
+
+	if ( $closed ) {
+		$html = sprintf(
+			'<p class="no-comments">%s</p>',
+			$closed
+		);
+	} else {
+		$html = '';
+	}
+
+	echo apply_filters( 'fct_comments_closed', $html );
+}
+
+/**
+ * Get comments list
+ *
+ * @since  1.0.0
+ * @return string Returns the list markup.
+ */
+function get_list_comments() {
+
+	$args = [
+		'style'      => 'ol',
+		'short_ping' => true
+	];
+
+	$html = sprintf(
+		'<ol class="comment-list">%s</ol>',
+		\wp_list_comments( $args )
+	);
+
+	$comments = get_comments( array( 'post_id' => get_the_ID(), 'orderby' => 'date', 'order' => 'ASC' ) );
+	$html = '';
+foreach ( $comments as $comment ) :
+	$html .= $comment->comment_content;
+endforeach;
+
+	return apply_filters( 'fct_get_list_comments', $html );
+}
+
+/**
+ * Comments list
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function list_comments() {
+	echo get_list_comments();
+}
+
+function get_previous_comments_link( $label = '' ) {
+
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	$page = get_query_var( 'cpage' );
+	if ( (int) $page <= 1 ) {
+		return;
+	}
+	$prevpage = (int) $page - 1;
+
+	if ( empty( $label ) ) {
+		$label = __( 'Older Comments', 'frontcore' );
+	}
+
+	$html = sprintf(
+		'<a class="button nav-previous" href="%s" %s>%s</a>',
+		esc_url( get_comments_pagenum_link( $prevpage ) ),
+		apply_filters( 'previous_comments_link_attributes', '' ),
+		preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label )
+	);
+
+	return apply_filters( 'fct_get_previous_comments_link', $html );
+}
+
+function get_next_comments_link( $label = '', $max_page = 0 ) {
+
+	global $wp_query;
+
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	$page = get_query_var( 'cpage' );
+	if ( ! $page ) {
+		$page = 1;
+	}
+
+	$nextpage = (int) $page + 1;
+	if ( empty( $max_page ) ) {
+		$max_page = $wp_query->max_num_comment_pages;
+	}
+
+	if ( empty( $max_page ) ) {
+		$max_page = get_comment_pages_count();
+	}
+
+	if ( $nextpage > $max_page ) {
+		return;
+	}
+
+	if ( empty( $label ) ) {
+		$label = __( 'Newer Comments', 'frontcore' );
+	}
+
+	$html = sprintf(
+		'<a class="button nav-next" href="%s" %s>%s</a>',
+		esc_url( get_comments_pagenum_link( $nextpage, $max_page ) ),
+		apply_filters( 'next_comments_link_attributes', '' ),
+		preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label )
+	);
+
+	return apply_filters( 'fct_get_next_comments_link', $html );
+}
+
+
+/**
+ * Get comments navigation
+ */
+function get_comments_navigation( $args = [] ) {
+
+	$navigation = '';
+
+	if ( get_comment_pages_count() > 1 ) {
+
+		if ( ! empty( $args['screen_reader_text'] ) && empty( $args['aria_label'] ) ) {
+			$args['aria_label'] = $args['screen_reader_text'];
+		}
+
+		$args = wp_parse_args(
+			$args,
+			[
+				'prev_text'          => __( 'Older comments', 'frontcore' ),
+				'next_text'          => __( 'Newer comments', 'frontcore' ),
+				'screen_reader_text' => __( 'Comments Navigation', 'frontcore' ),
+				'aria_label'         => __( 'Comments', 'frontcore' ),
+				'class'              => 'comment-navigation',
+			]
+		);
+
+		$prev_link = get_previous_comments_link( $args['prev_text'] );
+		$next_link = get_next_comments_link( $args['next_text'] );
+
+		if ( $prev_link ) {
+			$navigation .= '<div class="comments-nav-previous">' . $prev_link . '</div>';
+		}
+
+		if ( $next_link ) {
+			$navigation .= '<div class="comments-nav-next">' . $next_link . '</div>';
+		}
+
+		$navigation = _navigation_markup( $navigation, $args['class'], $args['screen_reader_text'], $args['aria_label'] );
+	}
+
+	return $navigation;
+}
+
+/**
+ * Comments navigation
+ */
+function comments_navigation() {
+	echo get_comments_navigation();
 }

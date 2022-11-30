@@ -230,6 +230,7 @@ if ( ! is_admin() ) {
 	Tags\setup();
 	Front_Assets\setup();
 	Layout\setup();
+	Comments\setup();
 }
 
 // Backend classes.
