@@ -1094,42 +1094,12 @@ function comments_closed() {
 }
 
 /**
- * Get comments list
+ * Previous comments link
  *
  * @since  1.0.0
- * @return string Returns the list markup.
+ * @param  string $label
+ * @return string
  */
-function get_list_comments() {
-
-	$args = [
-		'style'      => 'ol',
-		'short_ping' => true
-	];
-
-	$html = sprintf(
-		'<ol class="comment-list">%s</ol>',
-		\wp_list_comments( $args )
-	);
-
-	$comments = get_comments( array( 'post_id' => get_the_ID(), 'orderby' => 'date', 'order' => 'ASC' ) );
-	$html = '';
-foreach ( $comments as $comment ) :
-	$html .= $comment->comment_content;
-endforeach;
-
-	return apply_filters( 'fct_get_list_comments', $html );
-}
-
-/**
- * Comments list
- *
- * @since  1.0.0
- * @return void
- */
-function list_comments() {
-	echo get_list_comments();
-}
-
 function get_previous_comments_link( $label = '' ) {
 
 	if ( ! is_singular() ) {
@@ -1156,6 +1126,13 @@ function get_previous_comments_link( $label = '' ) {
 	return apply_filters( 'fct_get_previous_comments_link', $html );
 }
 
+/**
+ * Next comments link
+ *
+ * @since  1.0.0
+ * @param  string $label
+ * @return string
+ */
 function get_next_comments_link( $label = '', $max_page = 0 ) {
 
 	global $wp_query;
@@ -1196,9 +1173,11 @@ function get_next_comments_link( $label = '', $max_page = 0 ) {
 	return apply_filters( 'fct_get_next_comments_link', $html );
 }
 
-
 /**
  * Get comments navigation
+ *
+ * @since  1.0.0
+ * @return string
  */
 function get_comments_navigation( $args = [] ) {
 
@@ -1240,7 +1219,41 @@ function get_comments_navigation( $args = [] ) {
 
 /**
  * Comments navigation
+ *
+ * @since  1.0.0
+ * @return void
  */
 function comments_navigation() {
 	echo get_comments_navigation();
+}
+
+/**
+ * Comments list
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function get_comments_list() {
+
+	$comments = wp_list_comments( [
+		'type'  => 'comment',
+		'style' => 'ol',
+		'echo'  => false
+	] );
+
+	$list = sprintf(
+		'<ol class="comments-list">%s</ol>',
+		$comments
+	);
+	return $list;
+}
+
+/**
+ * Comments list
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function comments_list() {
+	echo get_comments_list();
 }

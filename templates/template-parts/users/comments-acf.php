@@ -35,25 +35,11 @@ if ( post_password_required() ) {
 	<h2><?php Tags\comments_title() ?></h2>
 
 	<?php Tags\comments_navigation(); ?>
-
-	<?php
-	wp_list_comments( [
-		'type'  => 'comment',
-		'style' => 'ol'
-	] );
-	?>
-
-	<?php
-	Tags\comments_navigation();
-
-	if ( ! comments_open() ) :
-
-	?>
-	<?php Tags\comments_closed(); ?>
-	<?php
-
-	endif; // comments_open().
-	endif; // have_comments().
-	?>
+	<?php Tags\comments_list(); ?>
+	<?php Tags\comments_navigation(); ?>
+	<?php if ( ! comments_open() ) {
+		Tags\comments_closed();
+	} ?>
+	<?php endif; // have_comments(). ?>
 	<?php Tags\comment_form(); ?>
 </div>
