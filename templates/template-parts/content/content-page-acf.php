@@ -24,10 +24,10 @@ use FrontCore\Tags as Tags;
 	</header>
 
 	<?php
-	if (
-		! is_page_template( FCT_TMPL_DIR . '/no-featured.php' ) ||
-		! is_page_template( FCT_TMPL_DIR . '/no-sidebar-no-featured.php' )
-	) {
+	if ( ! is_page_template( [
+		FCT_TMPL_DIR . '/no-featured.php',
+		FCT_TMPL_DIR . '/no-sidebar-no-featured.php'
+	] ) ) {
 		Tags\post_thumbnail();
 	}
 	?>

@@ -762,12 +762,12 @@ function post_thumbnail() {
 
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
-	} elseif (
-		is_page_template( FCT_TMPL_DIR . '/front-page-content-only.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/no-featured.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/no-sidebar-no-featured.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/page-builder.php' )
-	) {
+	} elseif ( is_page_template( [
+			FCT_TMPL_DIR . '/front-page-content-only.php',
+			FCT_TMPL_DIR . '/no-featured.php',
+			FCT_TMPL_DIR . '/no-sidebar-no-featured.php',
+			FCT_TMPL_DIR . '/page-builder.php'
+		] ) ) {
 		return;
 	}
 
