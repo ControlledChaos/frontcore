@@ -537,14 +537,29 @@ function site_schema() {
  */
 function site_logo( $html = null ) {
 
-	// Get the custom logo URL.
-	$logo = get_theme_mod( 'custom_logo' );
-	$src  = wp_get_attachment_image_src( $logo , 'full' );
+	// Get the custom logo data.
+	$logo    = get_theme_mod( 'custom_logo' );
+	$caption = wp_get_attachment_caption( $logo );
+	$alt     = get_post_meta( $logo, '_wp_attachment_image_alt', true );
+	$src     = wp_get_attachment_image_src( $logo , 'full' );
+
+	// Image caption.
+	if ( $caption ) {
+		$caption = $caption;
+	} elseif ( $alt ) {
+		$caption = $alt;
+	} else {
+		$caption = sprintf(
+			'%s %s',
+			get_bloginfo( 'name' ),
+			__( 'logo', 'frontcore' )
+		);
+	}
 
 	// Markup if a logo has been set.
 	if ( has_custom_logo( get_current_blog_id() ) ) {
 
-		$html = '<div class="site-logo">';
+		$html = '<figure class="site-logo">';
 
 		// Do not link if on the front page.
 		if ( is_front_page() ) {
@@ -563,11 +578,15 @@ function site_logo( $html = null ) {
 				esc_attr( esc_url( $src[0] ) )
 			);
 		}
-		$html .= '</div>';
+		$html .= sprintf(
+			'<figcaption class="screen-reader-text">%s</figcaption>',
+			esc_attr( apply_filters( 'fct_site_logo_caption', $caption ) )
+		);
+		$html .= '</figure>';
 	}
 
 	// Return the logo markup or null.
-	return $html;
+	return apply_filters( 'fct_site_logo', $html );
 }
 
 /**

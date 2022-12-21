@@ -46,12 +46,17 @@
 			align-items: center;
 		}
 
-		img {
+		.site-logo {
 			margin-right: 1em;
-			max-height: 80px;
 
 			@media screen and ( max-width: $break_primary_phone ) {
 				margin: 0;
+			}
+
+			img {
+				display: block;
+				max-width: var( --fct-logo-max-width, 80px );
+				border-radius: var( --fct-logo-radius );
 			}
 		}
 	}

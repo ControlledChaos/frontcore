@@ -723,15 +723,20 @@ h2 + .search-form {
   }
 }
 
-.site-branding-wrap .site-branding img {
+.site-branding-wrap .site-branding .site-logo {
   margin-right: 1em;
-  max-height: 80px;
 }
 
 @media screen and (max-width: 600px) {
-  .site-branding-wrap .site-branding img {
+  .site-branding-wrap .site-branding .site-logo {
     margin: 0;
   }
+}
+
+.site-branding-wrap .site-branding .site-logo img {
+  display: block;
+  max-width: var(--fct-logo-max-width, 80px);
+  border-radius: var(--fct-logo-radius);
 }
 
 .site-branding-wrap.nav-aside-branding {
