@@ -227,7 +227,7 @@ if ( $fct_acf->use_bundled() || class_exists( 'acf' ) ) {
 	$fct_acf->filters();
 }
 
-// Frontend classes.
+// Frontend functions.
 if ( ! is_admin() ) {
 	Head\setup();
 	Tags\setup();
@@ -236,12 +236,15 @@ if ( ! is_admin() ) {
 	Comments\setup();
 }
 
-// Backend classes.
+// Backend functions.
 if ( is_admin() ) {
 	Admin\setup();
 	Post_Options\setup();
 	Admin_Assets\setup();
 	Editors\setup();
 }
+
+// Login functions.
+Login\setup();
 
 Customize\setup();

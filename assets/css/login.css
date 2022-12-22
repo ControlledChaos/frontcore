@@ -381,9 +381,10 @@ b, strong, optgroup {
 
 .login #login {
   width: 100%;
-  max-width: var(--fct-content-width);
+  max-width: 480px;
   margin: 0;
   padding: 2rem;
+  background-color: var(--fct-login-form--background-color, #ffffff);
 }
 
 .login #login #loginform,

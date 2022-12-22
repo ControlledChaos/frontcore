@@ -271,6 +271,24 @@ function customize_register( $wp_customize ) {
 			'type'        => 'checkbox'
 		]
 	) );
+
+	// Use login background styles.
+	$wp_customize->add_setting( 'fct_login_bg_styles', [
+		'default'	        => false,
+		'transport'         => 'postMessage',
+		'sanitize_callback' => $ns( 'use_login_bg_styles' )
+	] );
+	$wp_customize->add_control( new \WP_Customize_Control(
+		$wp_customize,
+		'fct_login_bg_styles',
+		[
+			'section'     => 'background_image',
+			'settings'    => 'fct_login_bg_styles',
+			'label'       => __( 'Apply to Login', 'frontcore' ),
+			'description' => __( 'Use background styles on the login screen.', 'frontcore' ),
+			'type'        => 'checkbox'
+		]
+	) );
 }
 
 /**
@@ -364,6 +382,21 @@ function use_admin_theme( $input ) {
  * @return string Returns the theme mod.
  */
 function use_admin_header( $input ) {
+
+	if ( true == $input ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Login styles
+ *
+ * @since  1.0.0
+ * @param  $input
+ * @return string Returns the theme mod.
+ */
+function use_login_bg_styles( $input ) {
 
 	if ( true == $input ) {
 		return true;
