@@ -1276,11 +1276,6 @@ h2 + .search-form {
   display: block;
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
   display: none;
 }
@@ -1593,7 +1588,7 @@ article .gallery .gallery-item img {
   width: 100%;
   max-width: var(--fct-content-width);
   margin: 0 auto;
-  padding: 0 2em;
+  padding: 2rem;
 }
 
 .copyright-text {
