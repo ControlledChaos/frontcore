@@ -2,15 +2,12 @@
 /// Site layout styles
 ///
 
-.site {
-	background-color: inherit;
-}
-
 .site-content {
 	display: flex;
 	max-width: var( --fct-content-width );
 	margin: 0 auto;
 	padding: 2em;
+	background-color: var( --fct-bg-color );
 
 	.content-area {
 		width: 100%;

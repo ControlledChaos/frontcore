@@ -385,10 +385,6 @@ a:hover, a.hover, a:focus, a.focus {
   word-wrap: normal !important;
 }
 
-.site {
-  background-color: inherit;
-}
-
 .site-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,6 +392,7 @@ a:hover, a.hover, a:focus, a.focus {
   max-width: var(--fct-content-width);
   margin: 0 auto;
   padding: 2em;
+  background-color: var(--fct-bg-color);
 }
 
 .site-content .content-area {
