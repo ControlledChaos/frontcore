@@ -57,7 +57,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-button,
+button:not(.fancybox-button),
 .button,
 button[type="submit"],
 input[type="submit"],
@@ -75,7 +75,7 @@ input[type="image"] {
   text-decoration: none;
 }
 
-button svg,
+button:not(.fancybox-button) svg,
 .button svg,
 button[type="submit"] svg,
 input[type="submit"] svg,
@@ -88,7 +88,7 @@ input[type="image"] svg {
   fill: currentColor;
 }
 
-button:hover, button.hover, button:focus, button.focus,
+button:not(.fancybox-button):hover, button:not(.fancybox-button).hover, button:not(.fancybox-button):focus, button:not(.fancybox-button).focus,
 .button:hover,
 .button.hover,
 .button:focus,
