@@ -76,6 +76,9 @@ function setup_theme() {
 	// Core block visual styles.
 	add_theme_support( 'wp-block-styles' );
 
+	// Block templates.
+	add_theme_support( 'block-template-parts' );
+
 	// Background color & image support.
 	add_theme_support( 'custom-background' );
 
