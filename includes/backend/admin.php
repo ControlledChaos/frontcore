@@ -115,13 +115,26 @@ function appearance_menu() {
 	// Access global variables.
 	global $menu, $submenu;
 
+	// Customizer link position.
+	if ( function_exists( 'wp_is_block_theme' ) ) {
+		if ( wp_is_block_theme() || ( ! wp_is_block_theme() || has_action( 'customize_register' ) ) ) {
+			if ( wp_is_block_theme() || current_theme_supports( 'block-template-parts' ) ) {
+				$customize_position = 7;
+			} else {
+				$customize_position = 6;
+			}
+		}
+	} elseif ( has_action( 'customize_register' ) ) {
+		$customize_position = 6;
+	}
+
 	if ( isset( $submenu['themes.php'] ) ) {
 
 		// Look for menu items under Appearances.
 		foreach ( $submenu['themes.php'] as $key => $item ) {
 
 			if ( current_user_can( 'customize' ) ) {
-				unset( $submenu['themes.php'][6] );
+				unset( $submenu['themes.php'][ $customize_position ] );
 			}
 
 			if ( current_theme_supports( 'custom-header' ) && current_user_can( 'customize' ) ) {
@@ -134,7 +147,16 @@ function appearance_menu() {
 		}
 	}
 
-	$customize_url = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
+	$customize_url = add_query_arg(
+		'return',
+		urlencode(
+			remove_query_arg(
+				wp_removable_query_args(),
+				wp_unslash( $_SERVER['REQUEST_URI'] )
+			)
+		),
+		'customize.php'
+	);
 
 	add_submenu_page(
 		'themes.php',
