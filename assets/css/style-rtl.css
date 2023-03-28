@@ -24,7 +24,7 @@ body {
           transform: translateX(1px);
 }
 
-.site-branding-wrap .site-branding img {
+.site-branding-wrap .site-branding .site-logo {
   margin-right: unset;
   margin-left: 1em;
 }

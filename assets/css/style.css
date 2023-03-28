@@ -721,6 +721,7 @@ h2 + .search-form {
 }
 
 .site-branding-wrap .site-branding .site-logo {
+  margin: 0;
   margin-right: 1em;
 }
 
