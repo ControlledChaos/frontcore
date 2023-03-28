@@ -60,6 +60,9 @@ function setup() {
 
 	// Theme info page.
 	add_action( 'admin_menu', $ns( 'theme_info' ) );
+
+	// Custom admin color schemes.
+	add_action( 'admin_init' , $ns( 'admin_color_schemes' ), 1 );
 }
 
 /**
@@ -306,4 +309,25 @@ function theme_info_output() {
 			<p class="description"><?php _e( 'The template file for this page was not located.' ); ?></p>
 		</div>
 	<?php }
+}
+
+/**
+ * Custom admin color schemes
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function admin_color_schemes() {
+
+	if ( is_rtl() ) {
+		$suffix = '-rtl';
+	} else {
+		$suffix = '';
+	}
+
+	wp_admin_css_color( 'fct_avocado', __( 'Avocado', 'frontcore' ),
+		get_theme_file_uri( "/assets/css/admin-color-schemes/avocado/colors$suffix.min.css" ),
+		[ '#2d4200', '#557d00', '#94ba0b', '#61371a' ],
+		[ 'base' => '#333333', 'focus' => '#666666', 'current' => '#999999' ]
+	);
 }
