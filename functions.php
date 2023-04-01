@@ -169,8 +169,9 @@ if ( ! PHP\version() && ! is_admin() ) {
 	die( $die );
 }
 
-// Autoload class files.
-require_once FCT_PATH . 'includes/autoloader.php';
+// Autoload classes.
+require_once FCT_PATH . 'includes/classes/autoload.php';
+Autoload\classes();
 
 // Get compatibility functions.
 require FCT_PATH . 'includes/vendor/compatibility.php';
@@ -247,4 +248,5 @@ if ( is_admin() ) {
 // Login functions.
 Login\setup();
 
+// Customizer functions.
 Customize\setup();
