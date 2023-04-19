@@ -291,8 +291,9 @@ function login_title() {
 	}
 
 	$output .= sprintf(
-		'<span class="login-title-text site-title">%s</span> ',
-		get_bloginfo( 'name' )
+		'<span class="login-title-text site-title">%s %s</span> ',
+		get_bloginfo( 'name' ),
+		__( 'Login', 'sitecore' )
 	);
 
 	return $output;

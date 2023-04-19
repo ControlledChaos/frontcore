@@ -36,7 +36,7 @@ function setup() {
 	add_action( 'admin_enqueue_scripts', $ns( 'toolbar_styles' ), 99 );
 
 	// Login styles.
-	add_action( 'login_enqueue_scripts', $ns( 'login_styles' ) );
+	add_action( 'login_head', $ns( 'login_styles' ), 20 );
 
 	// Embedded content styles.
 	add_action( 'fct_embed_head', $ns( 'embed_styles' ) );
