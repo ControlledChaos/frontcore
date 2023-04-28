@@ -157,6 +157,22 @@
   padding: 0;
 }
 
+#adminmenu .wp-submenu-head,
+#adminmenu a.menu-top {
+  font-weight: 600;
+}
+
+#adminmenu .wp-not-current-submenu .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu {
+  border-left: none;
+}
+
+#adminmenu a:hover,
+.folded #adminmenu .wp-submenu-head:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 #dashboard-widgets .dashboard-panel-content h2 {
   font-weight: 700;
 }

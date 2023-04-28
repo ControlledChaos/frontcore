@@ -327,7 +327,7 @@ function admin_color_schemes() {
 
 	wp_admin_css_color( 'fct_avocado', __( 'Avocado', 'frontcore' ),
 		get_theme_file_uri( "/assets/css/admin-color-schemes/avocado/colors$suffix.min.css" ),
-		[ '#2d4200', '#557d00', '#94ba0b', '#61371a' ],
-		[ 'base' => '#333333', 'focus' => '#666666', 'current' => '#999999' ]
+		[ '#2d4200', '#557d00', '#94ba0b', '#7d4722' ],
+		[ 'base' => '#3c3c3c', 'focus' => '#666666', 'current' => '#999999' ]
 	);
 }

@@ -46,6 +46,22 @@
 	}
 }
 
+// Admin menu.
+#adminmenu .wp-submenu-head,
+#adminmenu a.menu-top {
+	font-weight: 600;
+}
+
+#adminmenu .wp-not-current-submenu .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu {
+	border-left: none;
+}
+
+#adminmenu a:hover,
+.folded #adminmenu .wp-submenu-head:hover {
+	box-shadow: none;
+}
+
 // Companion plugin elements.
 #dashboard-widgets {
 
