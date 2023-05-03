@@ -129,7 +129,15 @@ article .gallery {
 		}
 	}
 
+	& + .gallery {
+		margin-top: 0.5em;
+	}
+
 	.gallery-caption {}
+}
+
+.wp-block-gallery + .wp-block-gallery {
+	margin-top: 0.5em;
 }
 
 .avatar {

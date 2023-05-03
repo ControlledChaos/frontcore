@@ -1566,6 +1566,14 @@ article .gallery .gallery-item img {
   border-color: transparent !important;
 }
 
+article .gallery + .gallery {
+  margin-top: 0.5em;
+}
+
+.wp-block-gallery + .wp-block-gallery {
+  margin-top: 0.5em;
+}
+
 .avatar {
   border-radius: 50%;
 }
