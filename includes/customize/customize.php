@@ -225,7 +225,7 @@ function customize_register( $wp_customize ) {
 			'section'     => 'fct_content_section',
 			'settings'    => 'fct_author_section',
 			'label'       => __( 'Author Section', 'frontcore' ),
-			'description' => __( 'Display the name, bio, and profile picture of the author on single post pages.', 'frontcore' ),
+			'description' => __( 'Display the name, bio, and profile picture of the author on single post pages. Requires the author to have entered text into the "Biographical Info" section of the profile screen.', 'frontcore' ),
 			'type'        => 'select',
 			'choices'     => [
 				'never'       => __( 'Never Display', 'frontcore' ),
