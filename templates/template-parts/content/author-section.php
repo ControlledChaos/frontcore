@@ -54,9 +54,11 @@ if (
 		<?php echo wp_kses_post( wpautop( get_the_author_meta( 'description' ) ) ); ?>
 
 		<?php if ( is_single() ) : ?>
-		<a class="author-link button" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-			<?php _e( 'View Archive', 'frontcore' ); ?>
-		</a>
+		<p>
+			<a class="author-link button" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+				<?php _e( 'View Archive', 'frontcore' ); ?>
+			</a>
+		</p>
 		<?php endif; ?>
 	</div>
 </section>
