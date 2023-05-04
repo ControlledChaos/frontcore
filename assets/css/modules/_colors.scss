@@ -149,3 +149,7 @@ $subnav_link_action_color_dark: $nav_link_color_dark !default;
 @function button_svg_action_color_dark() {
 	@return '%23' + str-slice( '#{$off_white}', 2, -1 );
 }
+
+@function svg_blockquote_icon_color() {
+	@return '%23'+str-slice( '#{$light_gray}', 2, -1 );
+}

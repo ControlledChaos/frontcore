@@ -2,37 +2,11 @@
 /// Images & media RTL styles
 ///
 
-img,
-figure {
-
-	&.alignright {
-		margin: 1em 1em 0 0;
-	}
-
-	&.alignleft {
-		margin: 1em 0 0 1em;
-	}
-}
-
-.alignleft {
-	float: right;
-}
-
-.alignright {
-	float: left;
-}
-
-.entry-content p img {
-
-	&.alignleft {
-		margin: 0 1em 1em 0;
-	}
-
-	&.alignright {
-		margin: 0 0 1em 1em;
-	}
-
-	&.aligncenter {
-		margin: 2em auto;
-	}
+:root {
+	--fct-media-alignleft--margin: 1em 0 0 1em;
+	--fct-media-alignright--margin: 1em 1em 0 0;
+	--fct-p-media-alignleft--margin: 0 1em 1em 0;
+	--fct-p-media-alignright--margin: 0 0 1em 1em;
+	--fct-media-alignleft--float: right;
+	--fct-media-alignright--float: left;
 }

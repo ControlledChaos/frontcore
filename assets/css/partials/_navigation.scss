@@ -4,17 +4,16 @@
 
 .main-navigation {
 	clear: both;
-	display: block;
-	width: 100%;
-	max-width: var( --fct-content-width );
-	margin: 1em auto 0;
-	padding: 0;
+	display: var( --fct-main-nav--display, block );
+	width: var( --fct-main-nav--width, 100% );
+	max-width: var( --fct-main-nav--max-width, var( --fct-content-width ) );
+	margin: var( --fct-main-nav--margin );
+	padding: var( --fct-main-nav--padding );
 
 	@media screen and ( max-width: $break_primary_tablet ) {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
+		display: var( --fct-main-nav--display, flex );
+		flex-direction: var( --fct-main-nav--flex-direction, column );
+		align-items: var( --fct-main-nav--align-items, center );
 	}
 
 	#main-menu-wrap {
@@ -25,9 +24,9 @@
 		display: none;
 		list-style: none;
 		margin: 0;
-		padding-left: 0;
-		background-color: var( --fct-nav--bg-color, inherit );
-		color: var( --fct-nav--text-color, inherit );
+		padding: 0;
+		background-color: var( --fct-main-nav--bg-color, inherit );
+		color: var( --fct-main-nav--text-color, inherit );
 
 		ul {
 			position: absolute;
@@ -36,11 +35,11 @@
 			z-index: 99999;
 			width: 100%;
 			min-width: 160px;
-			background-color: var( --fct-subnav--bg-color );
-			border: solid 1px var( --fct-subnav--border-color, var( --fct-box-border-color ) );
+			background-color: var( --fct-main-subnav--bg-color );
+			border: solid 1px var( --fct-main-subnav--border-color, var( --fct-box-border-color ) );
 			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			color: var( --fct-subnav--text-color, inherit );
+			color: var( --fct-main-subnav--text-color, inherit );
 
 			@media screen and ( max-width: $break_primary_tablet ) {
 				position: unset;
@@ -65,13 +64,13 @@
 				a {
 					width: 100%;
 					padding: 0.5em 0.75em;
-					background-color: var( --fct-subnav--link-bg-color );
-					color: var( --fct-subnav--link-text-color, var( --fct-link-color ) );
+					background-color: var( --fct-main-subnav--link-bg-color );
+					color: var( --fct-main-subnav--link-text-color, var( --fct-link-color ) );
 
 					&:hover,
 					&:focus {
-						background-color: var( --fct-subnav--link-action-bg-color );
-						color: var( --fct-subnav--link-action-text-color, var( --fct-link-action-color ) );
+						background-color: var( --fct-main-subnav--link-action-bg-color );
+						color: var( --fct-main-subnav--link-action-text-color, var( --fct-link-action-color ) );
 					}
 				}
 			}
@@ -92,14 +91,14 @@
 	a {
 		display: inline-block;
 		padding: 0.5em 0;
-		color: var( --fct-nav--link-text-color, var( --fct-link-color ) );
+		color: var( --fct-main-nav--link-text-color, var( --fct-link-color ) );
 		text-decoration: none;
 
 		&:hover,
 		&.hover,
 		&:focus,
 		&.focus {
-			color: var( --fct-nav--link-action-text-color, var( --fct-link-action-color ) );
+			color: var( --fct-main-nav--link-action-text-color, var( --fct-link-action-color ) );
 		}
 	}
 }
@@ -148,7 +147,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		margin: 0 0 1.5em;
+		margin: 1.5em 0;
 		overflow: hidden;
 
 		button,
@@ -232,38 +231,27 @@
 	font-size: 1.25rem;
 }
 
-.menu-toggle {
-	button {
-		background: inherit;
-		border: none;
-		color: inherit;
+.menu-toggle-button {
+	padding: 1rem;
+	font-weight: 700;
+	background-color: inherit;
+	border: none;
+	color: inherit;
 
-		&:hover,
-		&.hover,
-		&:focus,
-		&.focus {
-			background: inherit;
-			border: none;
-			color: inherit;
+	svg {
+		position: relative;
+		width: var(--fct-button--svg-icon--width);
+		height: var(--fct-button--svg-icon--height);
+		vertical-align: baseline;
+		fill: currentColor;
+
+		&.menu-open {
+			top: 0.05em;
 		}
 
-		svg {
-			position: relative;
-			vertical-align: baseline;
-			fill: currentColor;
-
-			&.menu-open {
-				top: 0.05em;
-				width: 1rem;
-				height: 1rem;
-			}
-
-			&.menu-close {
-				display: none;
-				top: 0.13em;
-				width: 1.1rem;
-				height: 1.1rem;
-			}
+		&.menu-close {
+			display: none;
+			top: 0.13em;
 		}
 	}
 }
@@ -282,16 +270,9 @@
 	}
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
 .dark-mode {
 
-	--fct-subnav--link-action-bg-color: #{$medium_gray};
+	--fct-main-subnav--link-action-bg-color: #{$medium_gray};
 
 	.site-main {
 		.comment-navigation,
@@ -336,7 +317,7 @@
 @media ( prefers-color-scheme: dark ) {
 
 	:root {
-		--fct-subnav--link-action-bg-color: #{$medium_gray};
+		--fct-main-subnav--link-action-bg-color: #{$medium_gray};
 	}
 
 	.site-main {

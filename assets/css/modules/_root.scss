@@ -18,11 +18,27 @@
 	--fct-box-border-color: #{$pale_gray};
 
 	// Forms & buttons.
+	--fct-fieldset--margin: 1em 0 0;
+	--fct-fieldset--padding: 1em 1.5em;
+	--fct-fieldset--border: solid 1px var( --fct-form--border-color );
+	--fct-legend--padding: 0 0.5em;
+	--fct-legend-font-size: 1em;
+	--fct-legend-font-weight: 700;
+
+	--fct-form-element--padding: 1em;
+	--fct-form-element--border: solid 1px var(--fct-form--border-color);
+	--fct-label-field--margin: 0;
 	--fct-form--font-weight: 400;
 	--fct-form--bg-color: var( --fct-bg-color, inherit );
 	--fct-form--border-color: var( --fct-box-border-color );
 	--fct-form--action-border-color: #{$blue};
 	--fct-form--placeholder-color: #{$light_gray};
+
+	--fct-textarea--min-height: 200px;
+	--fct-textarea--margin: 1em 0 0;
+	--fct-textarea--padding: 1em;
+	--fct-select--margin: 1em 0 0;
+	--fct-select--padding: 0.5em 1em;
 
 	--fct-button--font-weight: 700;
 	--fct-button--bg-color: var( --fct-bg-color, inherit );
@@ -30,23 +46,85 @@
 	--fct-button--border-color: var( --fct-form--border-color );
 	--fct-button--text-color: var( --fct-form--text-color );
 	--fct-button--action-text-color: var( --fct-form--text-color );
+	--fct-button--svg-icon--width: 1em;
+	--fct-button--svg-icon--height: 1em;
 
 	// Layout.
 	--fct-content-width: 1280px; // @see includes/classes/core/class-setup.php for media content width.
 	--fct-secondary-min-width: 240px;
 	--fct-secondary-max-width: 320px;
 	--fct-content-separator: 2rem;
+	--fct-content-area--margin: 0 var( --fct-content-separator ) 0 0;
 
 	// Header.
+	--fct-site-header--padding: 0 2em;
+	--fct-site-title--margin: 0;
+	--fct-site-description--margin: 0;
+	--fct-site-logo--margin: 0 1em 0 0;
+	--fct-site-logo--mobile--margin: 0;
 
 	// Navigation.
-	--fct-nav--bg-color: var( --fct-bg-color, inherit );
-	--fct-subnav---bg-color: var( --fct-nav--bg-color );
+	--fct-main-nav--margin: 1em auto 0;
+	--fct-main-nav--padding: 0;
+	--fct-main-nav--bg-color: var( --fct-bg-color, inherit );
+	--fct-main-subnav--bg-color: var( --fct-main-nav--bg-color );
 
 	// Main content.
+	--fct-entry-content--margin: 1.5em 0 0;
+	--fct-blockquote--font-size: 1.3125rem;
+	--fct-blockquote--line-height: 1.4;
+	--fct-blockquote--icon--width: 1.5rem;
+	--fct-blockquote--icon--height: 1.35rem;
+	--fct-blockquote--icon--margin--before: 0 0.5em 0 0;
+	--fct-blockquote--icon--margin--after: 0 0 0 0.5em;
+	--fct-blockquote-cite--margin: 0.5em 0;
+	--fct-blockquote-cite--text-align: right;
+	--fct-blockquote-cite--font-size: 1.1875rem;
+	--fct-blockquote-cite--font-style: italic;
+	--fct-blockquote-cite--font-weight: 600;
+
+	--fct-author-section--margin: 2rem 0 0;
+	--fct-author-section--padding: 2rem;
+	--fct-author-section--border: solid 1px var( --fct-box-border-color );
+
+	// Media.
+	--fct-media-alignleft--margin: 1em 1em 0 0;
+	--fct-media-alignright--margin: 1em 0 0 1em;
+	--fct-media-aligncenter--margin: 1em auto;
+	--fct-media-alignfull--margin: 1em 0 0;
+	--fct-p-media-alignleft--margin: 0 1em 1em 0;
+	--fct-p-media-alignright--margin: 0 0 1em 1em;
+	--fct-p-media-aligncenter--margin: 2em auto;
+	--fct-media-alignnone--margin: 0;
+	--fct-media-alignleft--float: left;
+	--fct-media-alignright--float: right;
+
+	--fct-media-caption--margin: 0.5em 0 0;
+	--fct-media-caption--font-size: 0.9em;
+	--fct-media-caption--font-weight: 700;
+	--fct-media-caption--text-align: center;
+
+	--fct-media-gallery--article--display: flex;
+	--fct-media-gallery--article--flex-wrap: wrap;
 
 	// Widgets.
+	--fct-sidebar--list--padding: 0 0 0 1em;
+	--fct-widget--calendar--cell--display: table-cell;
+	--fct-widget--calendar--cell--padding: 3.25% 0.5rem 3%;
+	--fct-widget--calendar--cell--font-size: 1em;
+	--fct-widget--calendar--cell--line-height: 1;
+	--fct-widget--calendar--accent--font-weight: 700;
+	--fct-widget--calendar--cell--border: solid 1px var( --fct-box-border-color );
+	--fct-widget--calendar--cell--text-align: center;
 
 	// Footer
-	--fct-copyright-font-size: 0.825em;
+	--fct-footer-content--padding: 2rem;
+	--fct-copyright--font-size: 0.825em;
+	--fct-copyright--text-align: center;
+	--fct-media-gallery--article--gap: 0.5em;
+	--wp--style--gallery-gap-default: 0.5em;
+	--fct-media-gallery--article--margin: 1em 0 0;
+	--fct-media-gallery-plus--article--margin: var( --fct-media-gallery--article--gap, 0.5em ) 0 0;
+
+	--fct-avatar-general--border-radius: 50%;
 }

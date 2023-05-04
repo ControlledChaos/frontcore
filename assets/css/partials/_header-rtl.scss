@@ -2,11 +2,6 @@
 /// Site header RTL styles
 ///
 
-.site-branding-wrap {
-	.site-branding {
-		.site-logo {
-			margin-right: unset;
-			margin-left: 1em;
-		}
-	}
+:root {
+	--fct-site-logo--margin: 0 0 0 1em;
 }

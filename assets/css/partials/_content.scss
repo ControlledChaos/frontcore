@@ -2,9 +2,7 @@
 /// Main content styles
 ///
 
-@function svg_blockquote_icon_color() {
-	@return '%23' + str-slice( '#{$light_gray}', 2, -1 );
-}
+@import '../modules/_icons';
 
 .sticky {
 	display: block;
@@ -17,53 +15,56 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: var( --fct-entry-content--margin );
 }
 
 .entry-content {
 
 	blockquote {
-		font-size: 1.3125rem;
-		line-height: 1.4;
+		font-size: var( --fct-blockquote--font-size );
+		line-height: var( --fct-blockquote--line-height );
 
 		p {
 			&:first-of-type {
+				&:before {
+					content: '';
+					display: inline-block;
+					width: var( --fct-blockquote--icon--width );
+					height: var( --fct-blockquote--icon--height );
+					background-size: contain;
+					background-repeat: no-repeat;
+					margin: var( --fct-blockquote--icon--margin--before );
+					background-position: var( --fct-blockquote--icon--background-position--before, left center );
+					background-image: var( --fct-blockquote--icon-image--before, url( $blockquote_icon_image_before ) );
+				}
+			}
 
-				&:before,
+			&:last-of-type {
 				&:after {
 					content: '';
 					display: inline-block;
-					width: 1.5rem;
-					height: 1.35rem;
+					width: var( --fct-blockquote--icon--width );
+					height: var( --fct-blockquote--icon--height );
 					background-size: contain;
 					background-repeat: no-repeat;
-				}
-
-				&:before {
-					margin-right: 0.5em;
-					background-position: left center;
-					background-image: url( "data:image/svg+xml;utf8,<svg viewBox='0 0 64 55' xmlns='http://www.w3.org/2000/svg'><path fill='#{ svg_blockquote_icon_color() }' d='M51.186,54.996C57.894,54.996 63.336,49.4 63.336,42.496C63.336,35.596 57.894,29.996 51.186,29.996C39.04,29.996 47.136,5.833 63.336,5.833L63.336,0C34.423,-0.004 23.094,54.996 51.186,54.996ZM16.186,54.996C22.89,54.996 28.332,49.4 28.332,42.496C28.332,35.596 22.89,29.996 16.186,29.996C4.036,29.996 12.132,5.833 28.332,5.833L28.332,0C-0.577,-0.004 -11.906,54.996 16.186,54.996Z' /></svg>" );
-				}
-
-				&:after {
-					margin-left: 0.5em;
-					background-position: right center;
-					background-image: url( "data:image/svg+xml;utf8,<svg viewBox='0 0 16 14' xmlns='http://www.w3.org/2000/svg'><path fill='#{ svg_blockquote_icon_color() }' d='M2.916,0C1.306,0 0,1.343 0,3C0,4.656 1.306,6 2.916,6C5.831,6 3.888,11.799 0,11.799L0,13.199C6.939,13.2 9.658,0 2.916,0ZM11.316,0C9.707,0 8.401,1.343 8.401,3C8.401,4.656 9.707,6 11.316,6C14.232,6 12.289,11.799 8.401,11.799L8.401,13.199C15.339,13.2 18.058,0 11.316,0Z'/></svg>" );
+					margin: var( --fct-blockquote--icon--margin--after );
+					background-position: var( --fct-blockquote--icon--background-position--after, right center );
+					background-image: var( --fct-blockquote--icon-image--after, url( $blockquote_icon_image_after ) );
 				}
 			}
 		}
 
 		cite {
 			display: block;
-			margin-top: 0.5em;
-			text-align: right;
-			font-size: 1.1875rem;
-			font-style: italic;
-			font-weight: bold;
-			font-weight: 600;
+			margin: var( --fct-blockquote-cite--margin );
+			text-align: var( --fct-blockquote-cite--text-align );
+			font-size: var( --fct-blockquote-cite--font-size );
+			font-style: var( --fct-blockquote-cite--font-style );
+			font-weight: var( --fct-blockquote-cite--font-weight, bold );
 
 			&:before {
-				content: '— ';
+				// Emdash(—) plus space.
+				content: '\002014\0020';
 			}
 		}
 	}
@@ -71,12 +72,12 @@
 
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: var( --fct-page-links--margin, 0 0 1.5em );
 }
 
 .entry-meta,
 .entry-footer {
-	margin-top: 1em;
+	margin: var( --fct-entry-details--margin, 1em 0 0 );
 }
 
 .entry-footer span {
@@ -85,18 +86,9 @@
 
 // Author section on single posts.
 .author-section {
-	margin-top: 2rem;
-
-	.author-link {
-		margin-top: 1rem;
-	}
-}
-
-.single {
-	.author-section {
-		padding: 2rem;
-		border: solid 1px var( --fct-box-border-color );
-	}
+	margin: var( --fct-author-section--margin );
+	padding: var( --fct-author-section--padding );
+	border: var( --fct-author-section--border );
 }
 
 .author-title-wrapper {
@@ -106,17 +98,16 @@
 
 	.author-avatar {
 		display: block;
-		margin-right: 1.5rem;
-		max-width: 64px;
+		margin: var( --fct-author-section--avatar--margin, 0 1.5rem 0 0 );
+		max-width: var( --fct-author-section--avatar--max-width, 64px );
 
 		img {
 			display: block;
 		}
 	}
 
-	h1,
-	h2 {
-		margin: 0;
+	.author-title {
+		margin: var( --fct-author-section--author-title--margin, 0 );
 	}
 }
 
@@ -124,6 +115,6 @@
 .author-avatar {
 	display: inline-block;
 	vertical-align: middle;
-	max-width: 48px;
-	margin-right: 0.5rem;
+	margin: var( --fct-author-avatar--margin, 0 0.5rem 0 0 );
+	max-width: var( --fct-author-avatar--max-width, 48px );
 }

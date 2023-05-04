@@ -11,7 +11,7 @@
 
 	.content-area {
 		width: 100%;
-		margin-right: var( --fct-content-separator );
+		margin: var( --fct-content-area--margin );
 
 		// Account for sidebar minimum and right margin.
 		max-width: calc( 100% - var( --fct-secondary-min-width ) - var( --fct-content-separator ) );
@@ -23,7 +23,7 @@
 	.site-content {
 		.content-area {
 			max-width: 100%;
-			margin-right: unset;
+			margin-right: 0;
 			overflow: unset;
 		}
 	}
@@ -46,10 +46,10 @@ main article {
 @media screen and ( max-width: $break_primary_tablet ) {
 
 	.site-content {
-		flex-direction: column;
+		flex-direction: var( --fct-site-content--tablet--flex-direction, column );
 
 		.content-area {
-			margin-right: unset;
+			margin-right: 0;
 			max-width: 100%;
 		}
 	}

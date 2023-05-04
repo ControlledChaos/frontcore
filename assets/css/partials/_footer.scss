@@ -6,10 +6,10 @@
 	width: 100%;
 	max-width: var( --fct-content-width );
 	margin: 0 auto;
-	padding: 2rem;
+	padding: var( --fct-footer-content--padding );
 }
 
 .copyright-text {
-	font-size: var( --fct-copyright-font-size );
-	text-align: center;
+	font-size: var( --fct-copyright--font-size );
+	text-align: var( --fct-copyright--text-align );
 }

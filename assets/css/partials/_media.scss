@@ -3,31 +3,31 @@
 ///
 
 img {
-	font-size: 75%; // For alt text.
+	font-size: var( --fct-image--font-size, 75% ); // For alt text.
 }
 
 img,
 figure {
 
 	&.alignright {
-		margin: 1em 0 0 1em;
+		margin: var( --fct-media-alignright--margin );
 	}
 
 	&.alignleft {
-		margin: 1em 1em 0 0;
+		margin: var( --fct-media-alignleft--margin );
 	}
 
 	&.aligncenter {
 		display: block;
-		margin: 1em auto;
+		margin: var( --fct-media-aligncenter--margin );
 	}
 
 	&.alignfull {
-		margin: 1em 0 0;
+		margin: var( --fct-media-alignfull--margin );
 	}
 
 	&.alignnone {
-		margin: 0;
+		margin: var( --fct-media-alignnone--margin );
 	}
 }
 
@@ -58,20 +58,20 @@ body.no-sidebar {
 }
 
 .alignleft {
-	float: left;
+	float: var( --fct-media-alignleft--float );
 }
 
 .alignright {
-	float: right;
+	float: var( --fct-media-alignright--float );
 }
 
 .aligncenter {
 	display: block;
-	margin: 1em auto;
+	margin: var( --fct-media-aligncenter--margin );
 }
 
 .post-thumbnail {
-	margin-top: 1em;
+	margin: var( --fct-post-thumbnail--margin, 1em 0 0 );
 }
 
 .post-thumbnail img {
@@ -86,15 +86,15 @@ body.no-sidebar {
 .entry-content p img {
 
 	&.alignleft {
-		margin: 0 1em 1em 0;
+		margin: var( --fct-p-media-alignleft--margin );
 	}
 
 	&.alignright {
-		margin: 0 0 1em 1em;
+		margin: var( --fct-p-media-alignright--margin );
 	}
 
 	&.aligncenter {
-		margin: 2em auto;
+		margin: var( --fct-p-media-aligncenter--margin );
 	}
 }
 
@@ -105,41 +105,37 @@ body.no-sidebar {
 	}
 
 	.wp-caption-text {
-		margin-top: 0.5em;
-		font-size: 0.9em;
-		font-weight: 700;
-		text-align: center;
+		margin: var( --fct-media-caption--margin );
+		font-size: var( --fct-media-caption--font-size );
+		font-weight: var( --fct-media-caption--font-weight );
+		text-align: var( --fct-media-caption--text-align );
 	}
 }
 
 article .gallery {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-	margin-top: 1em;
+	display: var( --fct-media-gallery--article--display );
+	flex-wrap: var( --fct-media-gallery--article--flex-wrap );
+	gap: var( --fct-media-gallery--article--gap );
+	margin: var( --fct-media-gallery--article--margin );
 	list-style: none; /* for galleries as list elements */
 
 	.gallery-item {
-
 		img {
 			border-color: transparent !important;
 		}
 	}
 
 	& + .gallery {
-		margin-top: 0.5em;
+		margin: var( --fct-media-gallery-plus--article--margin );
 	}
 
 	.gallery-caption {}
 }
 
 .wp-block-gallery + .wp-block-gallery {
-	margin-top: 0.5em;
+	margin: var( --fct-media-gallery-plus--article--margin );
 }
 
 .avatar {
-	border-radius: 50%;
+	border-radius: var( --fct-avatar-general--border-radius );
 }

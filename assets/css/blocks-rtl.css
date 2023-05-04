@@ -1,6 +1,5 @@
-.search-label {
-  margin-right: unset;
-  margin-left: 0.3em;
+:root {
+  --fct-searchform--label--margin: 0 0 0 0.3em;
 }
 
 .search-submit {

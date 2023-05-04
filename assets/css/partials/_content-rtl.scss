@@ -2,38 +2,15 @@
 /// Main content RTL styles
 ///
 
-.entry-content {
-	blockquote {
-		p {
-			&:first-of-type {
-				&:before,
-				&:after {
-					display: none;
-				}
-			}
-		}
-
-		cite {
-			text-align: left;
-		}
-	}
+:root {
+	--fct-blockquote--icon-image--before: '';
+	--fct-blockquote--icon-image--after: '';
+	--fct-blockquote-cite--text-align: left;
+	--fct-author-section--avatar--margin: 0 0 0 1.5rem;
+	--fct-author-avatar--margin: 0 0 0 0.5rem;
 }
 
 .entry-footer span {
 	margin-right: unset;
 	margin-left: 1em;
-}
-
-// Author section on single posts.
-.author-title-wrapper {
-
-	.author-avatar {
-		margin-right: unset;
-		margin-left: 1.5rem;
-	}
-}
-
-.author-avatar {
-	margin-right: unset;
-	margin-left: 0.5em;
 }

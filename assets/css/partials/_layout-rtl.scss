@@ -2,10 +2,15 @@
 /// Site layout RTL styles
 ///
 
-.site-content {
-	.content-area {
-		margin-right: unset;
-		margin-left: var( --fct-content-separator );
+:root {
+	--fct-content-area--margin: 0 0 0 var( --fct-content-separator );
+}
+
+.no-sidebar {
+	.site-content {
+		.content-area {
+			margin-left: 0;
+		}
 	}
 }
 
@@ -13,7 +18,7 @@
 
 	.site-content {
 		.content-area {
-			margin-left: unset;
+			margin-left: 0;
 		}
 	}
 }

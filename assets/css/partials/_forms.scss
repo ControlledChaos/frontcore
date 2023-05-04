@@ -3,17 +3,19 @@
 ///
 
 form * + * {
-	margin-top: 1em;
+	margin: var( --fct-form--adjacent--margin, 1em 0 0 );
 }
 
 fieldset {
-	margin-top: 1em;
-	padding: 1em 1.5em;
-	border: solid 1px var( --fct-form--border-color );
+	margin: var( --fct-fieldset--margin );
+	padding: var( --fct-fieldset--padding );
+	border: var( --fct-fieldset--border );
 }
 
 legend {
-	padding: 0 0.5em;
+	padding: var( --fct-legend--padding );
+	font-size: var( --fct-legend-font-size );
+	font-weight: var( --fct-legend-font-weight );
 }
 
 label {}
@@ -25,11 +27,11 @@ button,
 .button {
 	width: 100%;
 	max-width: 640px;
-	padding: 1rem;
+	padding: var( --fct-form-element--padding );
 	font: inherit;
-	font-weight: var( --fct-form--font-weight, 400 );
+	font-weight: var( --fct-form--font-weight );
 	background-color: var( --fct-form--bg-color );
-	border: solid 1px var( --fct-form--border-color );
+	border: var( --fct-form-element--border );
 	color: var( --fct-text-color );
 
 	&:focus,
@@ -46,7 +48,7 @@ label + textarea,
 label ~ textarea,
 label + select,
 label ~ select {
-	margin-top: 0;
+	margin: var( --fct-label-field--margin );
 	display: block;
 }
 
@@ -65,7 +67,7 @@ input[type="checkbox"] {
 	cursor: pointer;
 }
 
-button:not( .fancybox-button ),
+.site-content button,
 .button,
 button[type="submit"],
 input[type="submit"],
@@ -74,18 +76,19 @@ input[type="reset"],
 input[type="image"] {
 	display: inline-block;
 	width: auto;
-	line-height: 1;
+	padding: var( --fct-button--padding, var( --fct-form-element--padding, 1em ) );
+	line-height: var( --fct-button--line-height, 1 );
 	cursor: pointer;
-	font-weight: var( --fct-button--font-weight, 700 );
+	font-weight: var( --fct-button--font-weight, bold );
 	background-color: var( --fct-button--bg-color );
 	border-color: var( --fct-button--border-color, var( --fct-form--border-color ) );
 	color: var( --fct-button--text-color, var( --fct-text-color ) );
 	text-decoration: none;
 
 	svg {
-		width: 24px;
-		height: 24px;
-		vertical-align: middle;
+		width: var( --fct-button--svg-icon--width );
+		height: var( --fct-button--svg-icon--height );
+		vertical-align: baseline;
 		fill: currentColor;
 	}
 
@@ -101,11 +104,11 @@ input[type="image"] {
 
 input[type="number"] {
 	width: auto;
-	padding: 0.6em 1em;
+	padding: var( --fct-input--type-number--padding, 0.6em 1em );
 }
 
 input[type="range"] {
-	padding: 1.3em 1em;
+	padding: var( --fct-input--type-range--padding, 1.3em 1em );
 	cursor: pointer;
 }
 
@@ -115,21 +118,21 @@ button:disabled,
 button[disabled],
 input:disabled,
 input[disabled] {
-	opacity: 0.5;
+	opacity: var( --fct-button--disabled--opacity, 0.5 );
 	cursor: not-allowed !important;
 }
 
 textarea {
-	min-height: 200px;
-	margin-top: 1em;
-	padding: 1em;
+	min-height: var( --fct-textarea--min-height );
+	margin: var( --fct-textarea--margin );
+	padding: var( --fct-textarea--padding );
 	font: inherit;
-	font-size: 85%;
+	font-size: var( --fct-textarea--font-size );
 }
 
 select {
-	margin-top: 1em;
-	padding: 0.5em 1em;
+	margin: var( --fct-select--margin );
+	padding: var( --fct-select--padding );
 	font: inherit;
 }
 
@@ -166,25 +169,26 @@ option {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
-	display: flex;
+	display: var( --fct-searchform--wrapper--display, flex );
 	-ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
-	margin-top: 1em;
+	flex-wrap: var( --fct-searchform--wrapper--flex-wrap, nowrap );
+	margin: var( --fct-searchform--wrapper--margin, 1em );
 }
 
-h2 + .search-form {
-	margin-top: 0.5em;
+h2 + .search-form,
+h3 + .search-form {
+	margin: var( --fct-heading-searchform--margin, 0.5em 0 0 );
 }
 
-.search-label,
 .search-form input[type="search"],
 .search-form input[type="submit"] {
 	display: inline-block;
-	margin-top: 0;
+	margin: var( --fct-searchform--input--margin, 0 );
 }
 
 .search-label {
-	margin-right: 0.3em
+	display: inline-block;
+	margin: var( --fct-searchform--label--margin, 0 0.3em 0 0 );
 }
 
 .search-submit {

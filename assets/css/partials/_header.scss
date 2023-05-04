@@ -3,11 +3,11 @@
 ///
 
 .site-header {
-	padding: 0 2em;
+	padding: var( --fct-site-header--padding );
 }
 
 .site-title {
-	margin: 0;
+	margin: var( --fct-site-title--margin );
 
 	/* Match <p> tag to <h1> tag on front page */
 	font-size: var( --fct-site-title-size, var( --fct-primary-heading-size, 2rem ) );
@@ -21,12 +21,12 @@
 }
 
 .site-description {
-	margin: 0;
+	margin: var( --fct-site-description--margin );
 	font-size: var( --fct-site-description-size, inherit );
 }
 
 .site-header-image {
-	margin: 1em 0;
+	margin: var( --fct-site-header--image, 1em 0 );
 }
 
 .site-branding-wrap {
@@ -35,48 +35,47 @@
 	margin: 0 auto;
 
 	.site-branding {
-		display: flex;
+		display: var( --fct-site-branding--display, flex );
 		width: 100%;
 		max-width: var( --fct-content-width );
-		margin: 0 auto;
-		padding: 1em 0 0;
+		margin: var( --fct-site-branding--margin, 0 auto );
+		padding: var( --fct-site-branding--padding, 1em 0 0 );
 
 		@media screen and ( max-width: $break_primary_phone ) {
-			flex-direction: column;
-			align-items: center;
+			flex-direction: var( --fct-site-branding--mobile--flex-direction, column );
+			align-items: var( --fct-site-branding--mobile--align-items, center );
 		}
 
 		.site-logo {
-			margin: 0;
-			margin-right: 1em;
+			margin: var( --fct-site-logo--margin );
 
 			@media screen and ( max-width: $break_primary_phone ) {
-				margin: 0;
+				margin: var( --fct-site-logo--mobile--margin );
 			}
 
 			img {
 				display: block;
-				max-width: var( --fct-logo-max-width, 80px );
-				border-radius: var( --fct-logo-radius );
+				max-width: var( --fct-site-logo--max-width, 80px );
+				border-radius: var( --fct-site-logo--border-radius );
 			}
 		}
 	}
 
 	&.nav-aside-branding {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		display: var( --fct-nav-aside-branding--display, flex );
+		align-items: var( --fct-nav-aside-branding--align-items, center );
+		justify-content: var( --fct-nav-aside-branding--justify-content, space-between );
 
 		.site-branding {
-			width: auto;
-			margin: 0;
+			width: var( --fct-nav-aside--site-branding--width, auto );
+			margin: var( --fct-nav-aside--site-branding--margin, 0 );
 		}
 
 		@media screen and ( max-width: $break_nav_aside_branding ) {
-			flex-direction: column;
+			flex-direction: var( --fct-nav-aside-branding--mobile--flex-direction, column );
 
 			.site-title-description {
-				text-align: center;
+				text-align: var( --fct-nav-aside--site-title-description--text-align, center );
 			}
 		}
 	}

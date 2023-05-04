@@ -2,8 +2,6 @@
 /// Sidebar & widget RTL styles
 ///
 
-#secondary ul,
-#secondary ol {
-	padding-left: unset;
-	padding-right: 1em;
+:root {
+	--fct-sidebar--list--padding: 0 1em 0 0;
 }
