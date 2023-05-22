@@ -32,6 +32,9 @@ function setup() {
 
 	// Register new panels, sections, & fields.
 	add_action( 'customize_register', $ns( 'customize_register' ) );
+
+	// Add customizer styles to the head.
+	add_action( 'wp_head', $ns( 'customize_css' ), 20 );
 }
 
 /**
@@ -58,11 +61,18 @@ function customize_modify( $wp_customize ) {
 	// Change label for front page option.
 	$wp_customize->get_control( 'show_on_front' )->label = __( 'Front Page Displays', 'frontcore' );
 
+	// Rename Colors section & put under Appearance panel.
+	$wp_customize->get_section( 'colors' )->panel    = 'fct_appearance_panel';
+	$wp_customize->get_section( 'colors' )->priority = 4;
+	$wp_customize->get_section( 'colors' )->title    = __( 'Theme Colors', 'frontcore' );
+
+	// Put Background Color control under Appearance panel.
+	$wp_customize->get_control( 'background_color' )->section  = 'colors';
+	$wp_customize->get_control( 'background_color' )->priority = 1;
+
 	// Rename Background section & put under Appearance panel.
 	$wp_customize->get_section( 'background_image' )->panel    = 'fct_appearance_panel';
 	$wp_customize->get_section( 'background_image' )->priority = 5;
-	$wp_customize->get_section( 'background_image' )->title    = __( 'Background Display', 'frontcore' );
-	$wp_customize->get_control( 'background_color' )->section  = 'background_image';
 
 	// Put header image & color under Header Display section.
 	$wp_customize->get_control( 'header_image' )->section     = 'fct_header_display_section';
@@ -145,6 +155,72 @@ function customize_register( $wp_customize ) {
 		'title'       => __( 'Admin', 'frontcore' ),
 		'description' => __( '', 'frontcore' )
 	] );
+
+	// General text color
+	$wp_customize->add_setting(
+		'text_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'text_color',
+			array(
+				'label'    => esc_html__( 'Text', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'text_color',
+				'priority' => 2,
+			)
+		)
+	);
+
+	// General links color
+	$wp_customize->add_setting(
+		'links_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'links_color',
+			array(
+				'label'    => esc_html__( 'Links', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'links_color',
+				'priority' => 3,
+			)
+		)
+	);
+
+	// General links action color
+	$wp_customize->add_setting(
+		'links_action_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'links_action_color',
+			array(
+				'label'    => esc_html__( 'Links Action', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'links_action_color',
+				'priority' => 4,
+			)
+		)
+	);
 
 	// Header image display.
 	$wp_customize->add_setting( 'fct_header_image', [
@@ -402,4 +478,46 @@ function use_login_bg_styles( $input ) {
 		return true;
 	}
 	return false;
+}
+
+/**
+ * Customizer colors to head
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function customize_css() {
+
+	// Get theme mods.
+	$mods = [
+		'text_color'         => get_theme_mod( 'text_color' ),
+		'links_color'        => get_theme_mod( 'links_color' ),
+		'links_action_color' => get_theme_mod( 'links_action_color' )
+	];
+
+	// Filter array of mods to check for key values.
+	$filter_mods = array_filter( $mods );
+
+	// Print the style block if at least one mod is set.
+	if ( ! empty( $filter_mods ) ) :
+
+	ob_start();
+	?>
+	<style>
+		:root {
+			<?php if ( ! empty( $mods['text_color'] ) ) : ?>
+			--fct-text-color: <?php echo $mods['text_color']; ?>;
+			<?php endif; ?>
+			<?php if ( ! empty( $mods['links_color'] ) ) : ?>
+			--fct-link-color: <?php echo $mods['links_color']; ?>;
+			<?php endif; ?>
+			<?php if (! empty( $mods['links_action_color'] ) ) : ?>
+			--fct-link-action-color: <?php echo $mods['links_action_color']; ?>;
+			<?php endif; ?>
+		}
+	</style>
+	<?php
+
+	echo ob_get_clean();
+	endif;
 }
