@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function classes() {
 	core();
+	customize();
 	vendor();
 	widgets();
 }
@@ -71,6 +72,26 @@ function core() {
 
 	$classes = [];
 
+	spl_autoload_register(
+		function ( string $class ) use ( $classes ) {
+			if ( isset( $classes[ $class ] ) ) {
+				require $classes[ $class ];
+			}
+		}
+	);
+}
+
+/**
+ * Customizer classes
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function customize() {
+
+	$classes = [
+		ns( 'Customizer', 'Title_Control' )    => f( 'customizer', 'title-control.php' )
+	];
 	spl_autoload_register(
 		function ( string $class ) use ( $classes ) {
 			if ( isset( $classes[ $class ] ) ) {
