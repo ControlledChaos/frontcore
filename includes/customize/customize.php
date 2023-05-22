@@ -9,6 +9,10 @@
 
 namespace FrontCore\Customize;
 
+use FrontCore\Classes\Customizer as Customizer_Class;
+
+use function FrontCore\Shared_Assets\suffix;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -27,6 +31,12 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
+	// Register control types.
+	add_action( 'customize_register', $ns( 'register_control_types' ) );
+
+	// Enqueue customizer assets.
+	add_action( 'customize_controls_enqueue_scripts', $ns( 'customize_assets' ) );
+
 	// Modify existing Customizer elements.
 	add_action( 'customize_register', $ns( 'customize_modify' ) );
 
@@ -35,6 +45,28 @@ function setup() {
 
 	// Add customizer styles to the head.
 	add_action( 'wp_head', $ns( 'customize_css' ), 20 );
+}
+
+/**
+ * Register our custom control types.
+ *
+ * @since  1.0.0
+ * @param \WP_Customize_Manager $wp_customize The customizer object.
+ * @return void
+ */
+function register_control_types( \WP_Customize_Manager $wp_customize ) {
+	$wp_customize->register_control_type( Customizer_Class\Title_Control :: class );
+}
+
+/**
+ * Enqueue controls assets
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function customize_assets() {
+
+	wp_enqueue_style( 'fct-customizer', get_theme_file_uri( '/assets/css/customizer' . suffix() . '.css' ), [], FCT_VERSION );
 }
 
 /**
@@ -68,7 +100,7 @@ function customize_modify( $wp_customize ) {
 
 	// Put Background Color control under Appearance panel.
 	$wp_customize->get_control( 'background_color' )->section  = 'colors';
-	$wp_customize->get_control( 'background_color' )->priority = 1;
+	$wp_customize->get_control( 'background_color' )->priority = 2;
 
 	// Rename Background section & put under Appearance panel.
 	$wp_customize->get_section( 'background_image' )->panel    = 'fct_appearance_panel';
@@ -156,7 +188,49 @@ function customize_register( $wp_customize ) {
 		'description' => __( '', 'frontcore' )
 	] );
 
-	// General text color
+	// Page elements colors group.
+	$wp_customize->add_setting(
+		'page_colors',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+	$wp_customize->add_control(
+		new Customizer_Class\Title_Control(
+			$wp_customize,
+			'page_colors',
+			array(
+				'type'        => 'group_title',
+				'label'       => __( 'Page Elements', 'frontcore' ),
+				'description' => __( 'Customize page element colors.', 'frontcore' ),
+				'section'     => 'colors',
+				'priority'    => 1,
+			)
+		)
+	);
+
+	// General Text colors group.
+	$wp_customize->add_setting(
+		'text_colors',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+	$wp_customize->add_control(
+		new Customizer_Class\Title_Control(
+			$wp_customize,
+			'text_colors',
+			array(
+				'type'        => 'group_title',
+				'label'       => __( 'General Text', 'frontcore' ),
+				'description' => __( 'Customize general text colors.', 'frontcore' ),
+				'section'     => 'colors',
+				'priority'    => 10,
+			)
+		)
+	);
+
+	// General text color.
 	$wp_customize->add_setting(
 		'text_color',
 		array(
@@ -170,15 +244,15 @@ function customize_register( $wp_customize ) {
 			$wp_customize,
 			'text_color',
 			array(
-				'label'    => esc_html__( 'Text', 'frontcore' ),
+				'label'    => __( 'Text', 'frontcore' ),
 				'section'  => 'colors',
 				'settings' => 'text_color',
-				'priority' => 2,
+				'priority' => 11,
 			)
 		)
 	);
 
-	// General links color
+	// General links color.
 	$wp_customize->add_setting(
 		'links_color',
 		array(
@@ -192,15 +266,15 @@ function customize_register( $wp_customize ) {
 			$wp_customize,
 			'links_color',
 			array(
-				'label'    => esc_html__( 'Links', 'frontcore' ),
+				'label'    => __( 'Links', 'frontcore' ),
 				'section'  => 'colors',
 				'settings' => 'links_color',
-				'priority' => 3,
+				'priority' => 12,
 			)
 		)
 	);
 
-	// General links action color
+	// General links action color.
 	$wp_customize->add_setting(
 		'links_action_color',
 		array(
@@ -214,10 +288,162 @@ function customize_register( $wp_customize ) {
 			$wp_customize,
 			'links_action_color',
 			array(
-				'label'    => esc_html__( 'Links Action', 'frontcore' ),
+				'label'    => __( 'Links Action', 'frontcore' ),
 				'section'  => 'colors',
 				'settings' => 'links_action_color',
-				'priority' => 4,
+				'priority' => 13,
+			)
+		)
+	);
+
+	// General heading color.
+	$wp_customize->add_setting(
+		'headings_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'headings_color',
+			array(
+				'label'    => __( 'Headings', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'headings_color',
+				'priority' => 14,
+			)
+		)
+	);
+
+	// Page header colors group.
+	$wp_customize->add_setting(
+		'header_colors',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+	$wp_customize->add_control(
+		new Customizer_Class\Title_Control(
+			$wp_customize,
+			'header_colors',
+			array(
+				'type'        => 'group_title',
+				'label'       => __( 'Page Header', 'frontcore' ),
+				'description' => __( 'Customize page header colors.', 'frontcore' ),
+				'section'     => 'colors',
+				'priority'    => 20,
+			)
+		)
+	);
+
+	// Header background color.
+	$wp_customize->add_setting(
+		'header_background_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'header_background_color',
+			array(
+				'label'    => __( 'Header Background', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'header_background_color',
+				'priority' => 20,
+			)
+		)
+	);
+
+	// Header text color.
+	$wp_customize->add_setting(
+		'header_text_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'header_text_color',
+			array(
+				'label'    => __( 'Header Text', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'header_text_color',
+				'priority' => 20,
+			)
+		)
+	);
+
+	// Page footer colors group.
+	$wp_customize->add_setting(
+		'footer_colors',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+	$wp_customize->add_control(
+		new Customizer_Class\Title_Control(
+			$wp_customize,
+			'footer_colors',
+			array(
+				'type'        => 'group_title',
+				'label'       => __( 'Page Footer', 'frontcore' ),
+				'description' => __( 'Customize page footer colors.', 'frontcore' ),
+				'section'     => 'colors',
+				'priority'    => 100,
+			)
+		)
+	);
+
+	// Footer background color.
+	$wp_customize->add_setting(
+		'footer_background_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_background_color',
+			array(
+				'label'    => __( 'Footer Background', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'footer_background_color',
+				'priority' => 100,
+			)
+		)
+	);
+
+	// Footer text color.
+	$wp_customize->add_setting(
+		'footer_text_color',
+		array(
+			'transport'         => 'refresh',
+			'default'           => null,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_text_color',
+			array(
+				'label'    => __( 'Footer Text', 'frontcore' ),
+				'section'  => 'colors',
+				'settings' => 'footer_text_color',
+				'priority' => 100,
 			)
 		)
 	);
@@ -492,7 +718,12 @@ function customize_css() {
 	$mods = [
 		'text_color'         => get_theme_mod( 'text_color' ),
 		'links_color'        => get_theme_mod( 'links_color' ),
-		'links_action_color' => get_theme_mod( 'links_action_color' )
+		'links_action_color' => get_theme_mod( 'links_action_color' ),
+		'headings_color'     => get_theme_mod( 'headings_color' ),
+		'header_background_color' => get_theme_mod( 'header_background_color' ),
+		'header_text_color'       => get_theme_mod( 'header_text_color' ),
+		'footer_background_color' => get_theme_mod( 'footer_background_color' ),
+		'footer_text_color'       => get_theme_mod( 'footer_text_color' )
 	];
 
 	// Filter array of mods to check for key values.
@@ -511,8 +742,31 @@ function customize_css() {
 			<?php if ( ! empty( $mods['links_color'] ) ) : ?>
 			--fct-link-color: <?php echo $mods['links_color']; ?>;
 			<?php endif; ?>
-			<?php if (! empty( $mods['links_action_color'] ) ) : ?>
+			<?php if ( ! empty( $mods['links_action_color'] ) ) : ?>
 			--fct-link-action-color: <?php echo $mods['links_action_color']; ?>;
+			<?php endif; ?>
+			<?php if ( ! empty( $mods['headings_color'] ) ) : ?>
+			--fct-primary-heading--color: <?php echo $mods['headings_color']; ?>;
+			--fct-secondary-heading--color: <?php echo $mods['headings_color']; ?>;
+			--fct-heading--color: <?php echo $mods['headings_color']; ?>;
+			<?php endif; ?>
+
+			<?php if ( ! empty( $mods['header_background_color'] ) ) : ?>
+				--fct-header--background-color: <?php echo $mods['header_background_color']; ?>;
+			<?php endif; ?>
+			<?php if ( ! empty( $mods['header_text_color'] ) ) : ?>
+				--fct-site-title-color: <?php echo $mods['header_text_color']; ?>;
+				--fct-site-description-color: <?php echo $mods['header_text_color']; ?>;
+				--fct-main-nav--link-text-color: <?php echo $mods['header_text_color']; ?>;
+				--fct-main-nav--link-action-text-color: <?php echo $mods['header_text_color']; ?>;
+			<?php endif; ?>
+
+			<?php if ( ! empty( $mods['footer_background_color'] ) ) : ?>
+				--fct-footer--background-color: <?php echo $mods['footer_background_color']; ?>;
+			<?php endif; ?>
+			<?php if ( ! empty( $mods['footer_text_color'] ) ) : ?>
+				--fct-footer--color: <?php echo $mods['footer_text_color']; ?>;
+				--fct-footer--link--color: <?php echo $mods['footer_text_color']; ?>;
 			<?php endif; ?>
 		}
 	</style>

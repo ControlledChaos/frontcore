@@ -4,6 +4,7 @@
 
 .site-header {
 	padding: var( --fct-site-header--padding );
+	background-color: var( --fct-header--background-color );
 }
 
 .site-title {
@@ -23,13 +24,14 @@
 .site-description {
 	margin: var( --fct-site-description--margin );
 	font-size: var( --fct-site-description-size, inherit );
+	color: var( --fct-site-description-color, inherit );
 }
 
 .site-header-image {
+	padding: var( --fct-site-header-image--padding, 2rem 0 );
 
 	img {
 		display: block;
-		margin: var( --fct-site-header--image, 1em auto );
 	}
 }
 

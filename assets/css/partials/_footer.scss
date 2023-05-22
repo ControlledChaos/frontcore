@@ -2,11 +2,20 @@
 /// Footer styles
 ///
 
+.site-footer {
+	background-color: var( --fct-footer--background-color );
+}
+
 .footer-content {
 	width: 100%;
 	max-width: var( --fct-content-width );
 	margin: 0 auto;
 	padding: var( --fct-footer-content--padding );
+	color: var( --fct-footer--color );
+
+	a {
+		color: var( --fct-footer--link--color, var( --fct-footer--color ) );
+	}
 }
 
 .copyright-text {

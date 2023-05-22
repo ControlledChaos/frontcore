@@ -33,16 +33,19 @@ h1,
 h2 {
   font-size: var(--fct-primary-heading-size, 1.625rem);
   font-weight: var(--fct-primary-heading-weight, 700);
+  color: var(--fct-primary-heading--color, var(--fct-heading--color, var(--fct-text-color)));
 }
 
 h3 {
   font-size: var(--fct-h3-heading-size, 1.3125rem);
   font-weight: var(--fct-secondary-heading-weight, 700);
+  color: var(--fct-secondary-heading--color, var(--fct-heading--color, var(--fct-text-color)));
 }
 
 h4 {
   font-size: 1.25rem;
   font-weight: var(--fct-h4-heading-weight, 700);
+  color: var(--fct-heading--color, var(--fct-text-color));
 }
 
 a {
