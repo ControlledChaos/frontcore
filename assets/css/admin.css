@@ -118,8 +118,9 @@
   font-size: var(--fct-site-description-size, inherit);
 }
 
-.site-header-image {
-  margin: var(--fct-site-header--image, 1em 0);
+.site-header-image img {
+  display: block;
+  margin: var(--fct-site-header--image, 1em auto);
 }
 
 .site-branding-wrap {
