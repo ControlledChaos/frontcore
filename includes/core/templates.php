@@ -93,7 +93,6 @@ function front_page_templates( $post_templates ) {
 
 		// Unset general templates.
 		unset( $post_templates[FCT_TMPL_DIR . '/no-sidebar.php'] );
-		unset( $post_templates[FCT_TMPL_DIR . '/no-featured.php'] );
 		unset( $post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] );
 
 		// Set specific front page templates.
