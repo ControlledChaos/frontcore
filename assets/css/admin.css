@@ -78,6 +78,14 @@
   --fct-media-caption--text-align: center;
   --fct-media-gallery--article--display: flex;
   --fct-media-gallery--article--flex-wrap: wrap;
+  --fct-sidebar--list--padding: 0 0 0 1em;
+  --fct-widget--calendar--cell--display: table-cell;
+  --fct-widget--calendar--cell--padding: 3.25% 0.5rem 3%;
+  --fct-widget--calendar--cell--font-size: 1em;
+  --fct-widget--calendar--cell--line-height: 1;
+  --fct-widget--calendar--accent--font-weight: 700;
+  --fct-widget--calendar--cell--border: solid 1px var( --fct-box-border-color );
+  --fct-widget--calendar--cell--text-align: center;
   --fct-footer-content--padding: 2rem;
   --fct-copyright--font-size: 0.825em;
   --fct-copyright--text-align: center;

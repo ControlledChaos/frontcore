@@ -339,6 +339,14 @@ b, strong, optgroup {
   --fct-media-caption--text-align: center;
   --fct-media-gallery--article--display: flex;
   --fct-media-gallery--article--flex-wrap: wrap;
+  --fct-sidebar--list--padding: 0 0 0 1em;
+  --fct-widget--calendar--cell--display: table-cell;
+  --fct-widget--calendar--cell--padding: 3.25% 0.5rem 3%;
+  --fct-widget--calendar--cell--font-size: 1em;
+  --fct-widget--calendar--cell--line-height: 1;
+  --fct-widget--calendar--accent--font-weight: 700;
+  --fct-widget--calendar--cell--border: solid 1px var( --fct-box-border-color );
+  --fct-widget--calendar--cell--text-align: center;
   --fct-footer-content--padding: 2rem;
   --fct-copyright--font-size: 0.825em;
   --fct-copyright--text-align: center;
@@ -461,7 +469,6 @@ a:hover, a.hover, a:focus, a.focus {
   max-width: var(--fct-content-width);
   margin: 0 auto;
   padding: 2em;
-  background-color: var(--fct-bg-color);
 }
 
 .site-content .content-area {
@@ -848,12 +855,11 @@ h3 + .search-form {
     display: var(--fct-main-nav--display, flex);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
+        -ms-flex-direction: var(--fct-main-nav--flex-direction, column);
+            flex-direction: var(--fct-main-nav--flex-direction, column);
+    -webkit-box-align: var(--fct-main-nav--align-items, center);
+        -ms-flex-align: var(--fct-main-nav--align-items, center);
+            align-items: var(--fct-main-nav--align-items, center);
   }
 }
 
@@ -866,7 +872,6 @@ h3 + .search-form {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: var(--fct-main-nav--bg-color, inherit);
   color: var(--fct-main-nav--text-color, inherit);
 }
 
@@ -1432,11 +1437,11 @@ h3 + .search-form {
 
 #secondary ul,
 #secondary ol {
-  padding-left: 1em;
+  padding: var(--fct-sidebar--list--padding);
 }
 
 .widget {
-  margin: 0 0 1.5em;
+  margin: var(--fct-sidebar--widget--margin, 0 0 1.5em);
 }
 
 .widget select {
@@ -1447,17 +1452,17 @@ h3 + .search-form {
 .wp-block-calendar tbody td,
 .calendar_wrap th,
 .calendar_wrap td {
-  display: table-cell;
-  padding: 3.25% 0.5rem 3%;
-  font-size: var(--fct-widget--calendar--font-size, 1em);
-  line-height: 1;
-  text-align: center;
-  border: solid 1px var(--fct-box-border-color);
+  display: var(--fct-widget--calendar--cell--display);
+  padding: var(--fct-widget--calendar--cell--padding);
+  font-size: var(--fct-widget--calendar--cell--font-size);
+  line-height: var(--fct-widget--calendar--cell--line-height);
+  text-align: var(--fct-widget--calendar--cell--text-align);
+  border: var(--fct-widget--calendar--cell--border);
 }
 
 .calendar_wrap table {
   width: 100%;
-  max-width: 320px;
+  max-width: var(--fct-secondary-max-width);
 }
 
 .calendar_wrap table caption {
@@ -1476,17 +1481,17 @@ h3 + .search-form {
 }
 
 .wp-block-calendar table th {
-  font-weight: 700;
+  font-weight: var(--fct-widget--calendar--accent--font-weight);
 }
 
 .wp-block-calendar td a {
-  font-weight: 700;
+  font-weight: var(--fct-widget--calendar--accent--font-weight);
   text-decoration: none;
 }
 
 .wp-block-calendar tbody td,
 .wp-block-calendar th {
-  border: solid 1px var(--fct-box-border-color);
+  border: var(--fct-widget--calendar--cell--border);
 }
 
 .wp-calendar-table {

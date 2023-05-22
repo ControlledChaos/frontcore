@@ -90,10 +90,8 @@ body {
   margin-left: 1em;
 }
 
-#secondary ul,
-#secondary ol {
-  padding-left: unset;
-  padding-right: 1em;
+:root {
+  --fct-sidebar--list--padding: 0 1em 0 0;
 }
 
 :root {
