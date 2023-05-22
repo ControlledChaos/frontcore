@@ -1,0 +1,27 @@
+///
+/// Customizer styles
+///
+
+@import 'modules/_colors';
+
+.customize-control-group_title {
+	border-top: 1px solid $pale_gray;
+	margin-top: 12px;
+	padding-top: 20px;
+
+	.customize-control-title {
+		line-height: 1.75;
+		margin-bottom: 4px;
+	}
+}
+
+li.section-meta + li.customize-control-group_title {
+	border: none;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.customize-control-color .customize-control-title {
+	font-size: 13px;
+	font-weight: 500;
+}
