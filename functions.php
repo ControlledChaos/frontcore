@@ -98,16 +98,22 @@
  *    Replace the default image file `default-header.jpg`.
  *    @see assets/images/
  *
- * 8. Activation and deactivation
+ * 8. Companion plugin
+ *    This boilerplate theme was developed along with a boilerplate plugin.
+ *    Replace the directory and core filename of your companion plugin in
+ *    the `includes/config.php` file.
+ *    @link https://github.com/ControlledChaos/sitecore
+ *
+ * 9. Activation and deactivation
  *    Check the activation and deactivation classes for sample methods.
  *    Remove or modify the samples as needed.
  *    @see includes/class-activate
  *    @see includes/class-deactivate
  *
- * 9. README file
- *    Whether or not your theme will be kept in a version control repository,
- *    edit the content of the README file in the theme's root directory or
- *    delete it if it is not necessary.
+ * 10. README file
+ *     Whether or not your theme will be kept in a version control repository,
+ *     edit the content of the README file in the theme's root directory or
+ *     delete it if it is not necessary.
  */
 
 namespace FrontCore;
