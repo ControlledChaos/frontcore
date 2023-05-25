@@ -56,7 +56,7 @@ function setup() {
 	add_action( 'admin_menu', $ns( 'appearance_menu' ) );
 
 	// Theme options page.
-	// add_action( 'admin_menu', $ns( 'theme_options' ) );
+	add_action( 'admin_menu', $ns( 'theme_options' ) );
 
 	// Theme info page.
 	add_action( 'admin_menu', $ns( 'theme_info' ) );
@@ -181,18 +181,18 @@ function appearance_menu() {
 function theme_options() {
 
 	// Add a submenu page under Themes.
-	$this->help_theme_options = add_submenu_page(
+	$help_theme_options = add_submenu_page(
 		'themes.php',
 		__( 'Display Options', 'frontcore' ),
 		__( 'Display Options', 'frontcore' ),
 		'manage_options',
 		'frontend-display-options',
 		__NAMESPACE__ . '\\theme_options_output',
-		-1
+		1
 	);
 
 	// Add sample help tab.
-	add_action( 'load-' . $this->help_theme_options, __NAMESPACE__ . '\\help_theme_options' );
+	add_action( "load-{$help_theme_options}", __NAMESPACE__ . '\\help_theme_options' );
 }
 
 /**
@@ -215,9 +215,6 @@ function help_theme_options() {
 
 	// Add to the about page.
 	$screen = get_current_screen();
-	if ( $screen->id != $this->help_theme_options ) {
-		return;
-	}
 
 	// More information tab.
 	$screen->add_help_tab( [
@@ -288,7 +285,7 @@ function theme_info() {
 		'manage_options',
 		'frontcore-info',
 		__NAMESPACE__ . '\\theme_info_output',
-		1
+		2
 	);
 }
 
