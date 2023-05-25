@@ -64,8 +64,14 @@ function activate() {
 	if ( ! is_customize_preview() ) {
 		if ( 'themes.php' == $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
 
+			if ( wp_is_block_theme() ) {
+				$redirect = 'site-editor.php';
+			} else {
+				$redirect = 'customize.php';
+			}
+
 			// URL returns to Dashboard on closing the Customizer.
-			wp_redirect( admin_url( 'customize.php' ) . '?return=' . admin_url() );
+			wp_redirect( admin_url( $redirect ) . '?return=' . admin_url() );
 		}
 	}
 }
