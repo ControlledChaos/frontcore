@@ -20,7 +20,7 @@ if ( $object->labels->singular_name ) {
 }
 
 printf(
-	__( '<p>Filtered content for archived %s #%s</p>', 'sitecore' ),
+	__( '<p>Filtered ACF content for archived %s #%s</p>', 'sitecore' ),
 	$name,
 	get_the_ID()
 );
