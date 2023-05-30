@@ -24,3 +24,8 @@ printf(
 	$name,
 	get_the_ID()
 );
+
+printf(
+	__( '<p>The template for this notice is in the %s theme.</p>', 'sitecore' ),
+	wp_get_theme()
+);

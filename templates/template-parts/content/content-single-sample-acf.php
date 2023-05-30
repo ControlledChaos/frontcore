@@ -28,3 +28,8 @@ printf(
 printf(
 	__( '<p>This template is being displayed because the sample content filter class in the companion plugin has been instantiated. This template is also being displayed because the Advanced Custom Fields plugin is active or the bundled Applied Content Fields files in the companion plugin are included.</p>', 'sitecore' )
 );
+
+printf(
+	__( '<p>The template for this notice is in the %s theme.</p>', 'sitecore' ),
+	wp_get_theme()
+);
