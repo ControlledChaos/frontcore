@@ -733,22 +733,25 @@ function entry_footer() {
 	$blog_format = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 
 	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
+	if ( has_category( [], get_the_ID() ) ) {
 
 		$categories_list = get_the_category_list( esc_html__( ', ', 'frontcore' ) );
+
 		if ( $categories_list ) {
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'frontcore' ) . '</span>', $categories_list );
 		}
+	}
+
+	if ( has_tag( [], get_the_ID() ) ) {
 
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'frontcore' ) );
 
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'frontcore' ) . '</span>', $tags_list );
 		}
-
 	}
 
-	if ( ! is_single() && ! post_password_required() && 'content' == $blog_format && ( ( post_type_supports( get_post_type( get_the_ID() ), 'comments' ) && comments_open() ) || get_comments_number() ) ) {
+	if ( ! is_singular() && ! post_password_required() && 'content' == $blog_format && ( ( post_type_supports( get_post_type( get_the_ID() ), 'comments' ) && comments_open() ) || get_comments_number() ) ) {
 
 		echo '<span class="comments-link">';
 		comments_popup_link(
