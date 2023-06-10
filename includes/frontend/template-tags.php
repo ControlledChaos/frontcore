@@ -457,7 +457,6 @@ function get_body_class( $class = '' ) {
 
 	// Adds a class of no-sidebar when there is no default sidebar present.
 	if (
-		! is_active_sidebar( 'sidebar-default' ) ||
 		is_page_template( [
 			FCT_TMPL_DIR . '/front-page-content-only.php',
 			FCT_TMPL_DIR . '/no-sidebar.php',
@@ -465,6 +464,10 @@ function get_body_class( $class = '' ) {
 		] )
 	) {
 		$classes[] = 'no-sidebar';
+	}
+
+	if ( ! is_active_sidebar( 'sidebar-default' ) ) {
+		$classes[] = 'fallback-sidebar';
 	}
 
 	// End class conditions.
