@@ -172,7 +172,7 @@ option {
 	display: var( --fct-searchform--wrapper--display, flex );
 	-ms-flex-wrap: nowrap;
 	flex-wrap: var( --fct-searchform--wrapper--flex-wrap, nowrap );
-	margin: var( --fct-searchform--wrapper--margin, 1em );
+	margin: var( --fct-searchform--wrapper--margin, 1em 0 );
 }
 
 h2 + .search-form,
