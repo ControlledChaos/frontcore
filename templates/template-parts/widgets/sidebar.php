@@ -11,7 +11,8 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use FrontCore\Classes\Front   as Front,
+	FrontCore\Classes\Widgets as Widgets;
 
 ?>
 <aside id="secondary" class="widget-area">
@@ -23,7 +24,11 @@ use FrontCore\Classes\Front as Front;
 
 	else : ?>
 
-	<?php the_widget(
+	<?php
+	$widget = new Widgets\Theme_Mode;
+	echo $widget->theme_mode_script();
+
+	the_widget(
 		'FrontCore\Classes\Widgets\Theme_Mode',
 		[ 'title' => __( 'Toggle Theme Mode', 'frontcore' ) ],
 		[
