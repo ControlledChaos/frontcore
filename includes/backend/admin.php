@@ -13,6 +13,8 @@ namespace FrontCore\Admin;
 // Alias namespaces.
 use FrontCore\Customize as Customize;
 
+use function FrontCore\Layout\navigation_main;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -47,6 +49,15 @@ function setup() {
 	} else {
 		$hook = 'admin_notices';
 	}
+
+	// Register admin navigation menu and add to theme location.
+	if ( use_admin_header() ) {
+		add_action( 'FrontCore\site_branding_wrap_class', $ns( 'site_branding_wrap_class' ) );
+		add_action( 'after_setup_theme', 'FrontCore\Navigation\register_admin' );
+		add_action( 'after_setup_theme', $ns( 'admin_menu_location' ) );
+	}
+
+	// Add the admin page header, if option set.
 	add_action( $hook, $ns( 'admin_header' ), 1 );
 
 	// Add body classes.
@@ -66,17 +77,92 @@ function setup() {
 }
 
 /**
+ * Use admin header
+ *
+ * Whether to use the admin page header.
+ *
+ * @since  1.0.0
+ * @return boolean Returns true if the customizer option
+ *                 to use the admin page header is true.
+ */
+function use_admin_header() {
+
+	$header = Customize\use_admin_header( get_theme_mod( 'fct_admin_header' ) );
+	$use    = false;
+
+	if ( $header ) {
+		$use = true;
+	}
+	return $use;
+}
+
+/**
+ * Admin menu location
+ *
+ * Adds the admin nav menu to a theme location.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function admin_menu_location() {
+
+	// Get the navigation location setting from the Customizer.
+	$location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
+
+	// Conditional location hook.
+	if ( 'before' == $location ) {
+		$action = 'FrontCore\nav_before_header';
+	} elseif ( 'after' == $location ) {
+		$action = 'FrontCore\nav_after_header';
+	} else {
+		$action = 'FrontCore\nav_aside_branding';
+	}
+
+	// Add the menu to the hook.
+	add_action( $action, __NAMESPACE__ . '\get_admin_menu' );
+}
+
+/**
+ * Site branding wrap class
+ *
+ * @since  1.0.0
+ * @return string Returns the class(es) added.
+ */
+function site_branding_wrap_class() {
+
+	// Get the navigation location setting from the Customizer.
+	$location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
+	$classes  = '';
+
+	if ( 'aside' == $location ) {
+		$classes = ' nav-aside-branding';
+	}
+	echo $classes;
+}
+
+/**
+ * Get admin menu
+ *
+ * Gets the admin navigation template part.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function get_admin_menu() {
+	get_template_part( FCT_PARTS_DIR . '/navigation/navigation-admin' );
+}
+
+/**
  * Admin header
+ *
+ * Gets the admin header template part.
  *
  * @since  1.0.0
  * @return void
  */
 function admin_header() {
 
-	// Get Customizer settings.
-	$use_header = Customize\use_admin_header( get_theme_mod( 'fct_admin_header' ) );
-
-	if ( $use_header ) {
+	if ( use_admin_header() ) {
 		get_template_part( FCT_PARTS_DIR . '/admin/admin-header' );
 	}
 }

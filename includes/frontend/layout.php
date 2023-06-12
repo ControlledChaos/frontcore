@@ -107,8 +107,7 @@ function site_branding_wrap_class() {
 	if ( 'aside' == $nav_location ) {
 		$classes = ' nav-aside-branding';
 	}
-
-	echo $classes;
+	echo apply_filters( 'fct_site_branding_wrap_class', $classes );
 }
 
 /**

@@ -17,15 +17,14 @@ use FrontCore\Tags      as Tags,
 // Get the navigation location setting from the Customizer.
 $nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
 
-// Restrict direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 ?>
+<?php
+if ( 'before' == $nav_location ) {
+	Tags\nav_before_header();
+} ?>
 <header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
-	<div class="site-branding-wrap">
+	<div class="site-branding-wrap<?php do_action( 'FrontCore\site_branding_wrap_class' ); ?>">
 		<div class="site-branding">
 
 			<?php echo Tags\site_logo(); ?>
@@ -48,3 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		} ?>
 	</div>
 </header>
+<?php
+if ( 'after' == $nav_location ) {
+	Tags\nav_after_header();
+} ?>

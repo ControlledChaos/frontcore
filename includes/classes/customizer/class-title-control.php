@@ -1,6 +1,6 @@
 <?php
 /**
- * Title Customizer Control.
+ * Title Customizer Control
  *
  * @package    Front_Core
  * @subpackage Classes

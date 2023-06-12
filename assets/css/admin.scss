@@ -7,6 +7,7 @@
 @import 'modules/_layout';
 @import 'modules/_root';
 @import 'partials/_header';
+@import 'partials/_navigation';
 
 // Standard admin elements.
 .wp-admin {
@@ -17,7 +18,7 @@
 	color: var(--fct-text-color);
 
 	.site-header {
-		padding: 0;
+		padding: 0 20px 0 0;
 	}
 }
 

@@ -48,7 +48,7 @@ function setup() {
 }
 
 /**
- * Register our custom control types.
+ * Register control types
  *
  * @since  1.0.0
  * @param \WP_Customize_Manager $wp_customize The customizer object.
@@ -79,11 +79,14 @@ function customize_assets() {
 function customize_modify( $wp_customize ) {
 
 	// Change Site Identity section title.
-	$wp_customize->get_section( 'title_tagline' )->title = __( 'Identity', 'frontcore' );
+	$wp_customize->get_section( 'title_tagline' )->title    = __( 'Identity', 'frontcore' );
 	$wp_customize->get_section( 'title_tagline' )->priority = 5;
 
-	// Put the logo field below site title & tagline.
-	$wp_customize->get_control( 'custom_logo' )->priority = 11;
+	// Site title & tagline, logo order.
+	$wp_customize->get_control( 'blogname' )->priority            = 1;
+	$wp_customize->get_control( 'blogdescription' )->priority     = 2;
+	$wp_customize->get_control( 'display_header_text' )->priority = 3;
+	$wp_customize->get_control( 'custom_logo' )->priority         = 11;
 
 	// Rename Homepage options section & put under Layout panel.
 	$wp_customize->get_section( 'static_front_page' )->panel    = 'fct_layout_panel';
@@ -187,6 +190,48 @@ function customize_register( $wp_customize ) {
 		'title'       => __( 'Admin', 'frontcore' ),
 		'description' => __( '', 'frontcore' )
 	] );
+
+	// Site logo type.
+	$wp_customize->add_setting(
+		'site_logo_type',
+		[
+			'default'           => 'upload',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\site_logo_type',
+		]
+	);
+	$wp_customize->add_control(
+		'site_logo_type',
+		[
+			'type'     => 'radio',
+			'label'    => __( 'Logo Type', 'frontcore' ),
+			'choices'  => [
+				'upload' => __( 'Image Upload', 'frontcore' ),
+				'svg'    => __( 'Inline SVG', 'frontcore' )
+			],
+			'section'  => 'title_tagline',
+			'priority' => 5,
+		]
+	);
+
+	// Site logo SVG code.
+	$wp_customize->add_setting(
+		'site_logo_svg',
+		[
+			'default'           => '',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'site_logo_svg',
+		]
+	);
+	$wp_customize->add_control(
+		'site_logo_svg',
+		[
+			'type'     => 'textarea',
+			'label'    => __( 'Logo SVG Code', 'frontcore' ),
+			'section'  => 'title_tagline',
+			'priority' => 5,
+		]
+	);
 
 	// Page elements colors group.
 	$wp_customize->add_setting(
@@ -591,6 +636,23 @@ function customize_register( $wp_customize ) {
 			'type'        => 'checkbox'
 		]
 	) );
+}
+
+/**
+ * Logo type
+ *
+ * @since  1.0.0
+ * @param string $input Logo type.
+ * @return string Returns the theme mod.
+ */
+function site_logo_type( $input ) {
+
+	$valid = [ 'upload', 'svg' ];
+
+	if ( in_array( $input, $valid, true ) ) {
+		return $input;
+	}
+	return 'upload';
 }
 
 /**

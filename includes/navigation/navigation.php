@@ -53,6 +53,21 @@ function register() {
 }
 
 /**
+ * Register admin navigation menus
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function register_admin() {
+
+	// Register backend theme menus.
+	$menus = apply_filters( 'fct_admin_nav_menus', [
+		'admin' => __( 'Admin Menu', 'frontcore' )
+	] );
+	register_nav_menus( $menus );
+}
+
+/**
  * Add navigation menu items
  *
  * Adds items to the main navigation menu.
