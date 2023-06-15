@@ -11,22 +11,20 @@
 namespace FrontCore;
 
 // Alias namespaces.
-use FrontCore\Tags as Tags;
+use FrontCore\Tags      as Tags,
+	FrontCore\Customize as Customize;
+
+if ( Customize\hide_front_heading( get_theme_mod( 'fct_hide_front_heading' ) ) ) {
+	$heading_class = 'entry-title screen-reader-text';
+} else {
+	$heading_class = 'entry-title';
+}
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 	<header class="entry-header">
-		<?php
-
-		if ( is_front_page() ) :
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		elseif ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		?>
+		<?php the_title( "<h2 class='{$heading_class}'>", '</h2>' ); ?>
 	</header>
 
 	<?php if ( is_singular() ) {

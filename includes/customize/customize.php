@@ -191,6 +191,25 @@ function customize_register( $wp_customize ) {
 		'description' => __( '', 'frontcore' )
 	] );
 
+	// Hide front page heading.
+	$wp_customize->add_setting( 'fct_hide_front_heading', [
+		'default'	        => false,
+		'transport'         => 'postMessage',
+		'sanitize_callback' => $ns( 'hide_front_heading' )
+	] );
+	$wp_customize->add_control( new \WP_Customize_Control(
+		$wp_customize,
+		'fct_hide_front_heading',
+		[
+			'section'     => 'title_tagline',
+			'settings'    => 'fct_hide_front_heading',
+			'label'       => __( 'Front Page Heading', 'frontcore' ),
+			'description' => __( 'Hide the static front page heading. Still available to screen readers.', 'frontcore' ),
+			'type'        => 'checkbox',
+			'priority'    => 5,
+		]
+	) );
+
 	// Site logo type.
 	$wp_customize->add_setting(
 		'site_logo_type',
@@ -636,6 +655,21 @@ function customize_register( $wp_customize ) {
 			'type'        => 'checkbox'
 		]
 	) );
+}
+
+/**
+ * Hide front page heading
+ *
+ * @since  1.0.0
+ * @param  $input
+ * @return string Returns the theme mod.
+ */
+function hide_front_heading( $input ) {
+
+	if ( true == $input ) {
+		return true;
+	}
+	return false;
 }
 
 /**
