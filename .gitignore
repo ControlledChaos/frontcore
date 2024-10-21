@@ -11,6 +11,8 @@ wp-content/*
 # Ignore these plugins
 wp-content/plugins/hello.php
 
+includes/settings/acf-json/
+
 # Ignore specific themes
 wp-content/themes/twenty*/
 
