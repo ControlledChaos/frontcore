@@ -71,6 +71,7 @@
 		display: var( --fct-nav-aside-branding--display, flex );
 		align-items: var( --fct-nav-aside-branding--align-items, center );
 		justify-content: var( --fct-nav-aside-branding--justify-content, space-between );
+		gap: var( --fct-nav-aside-branding--gap, 0 var( --fct-content-separator, 2rem ) );
 
 		.site-branding {
 			width: var( --fct-nav-aside--site-branding--width, auto );

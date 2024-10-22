@@ -18,6 +18,7 @@ audio, canvas, progress, video {
 
 html {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow-y: scroll;
   font-size: 100%;
@@ -31,6 +32,7 @@ html {
 
 body {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-size: inherit;
   line-height: 1;
@@ -38,6 +40,7 @@ body {
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -60,6 +63,7 @@ img {
 hr {
   display: block;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
   border: 0;
@@ -93,22 +97,22 @@ input, textarea, select, button {
   border: solid 1px #ccc;
 }
 
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type="search"] {
+input[type=search] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type=radio], input[type=checkbox] {
   vertical-align: baseline;
 }
 
@@ -122,6 +126,11 @@ input::-webkit-inner-spin-button {
 }
 
 *:-ms-input-placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
   color: #888;
   opacity: 1;
 }
@@ -150,7 +159,7 @@ button {
   overflow: visible;
 }
 
-button, html input[type="button"], input[type="reset"], input[type="submit"], input[type="image"] {
+button, html input[type=button], input[type=reset], input[type=submit], input[type=image] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -244,7 +253,7 @@ pre {
 }
 
 pre, code, kbd, samp {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 b, strong, optgroup {
@@ -264,8 +273,8 @@ b, strong, optgroup {
   --fct-text-color: #333333;
   --fct-link-color: #0000ff;
   --fct-link-action-color: #551a8b;
-  --fct-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --fct-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --fct-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fct-serif-stack: "Hoefler Text", "Baskerville Old Face", Garamond, Times, "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fct-box-border-color: #cccccc;
   --fct-fieldset--margin: 1em 0 0;
   --fct-fieldset--padding: 1em 1.5em;
@@ -363,25 +372,16 @@ b, strong, optgroup {
   line-height: 1.5;
   color: #333333;
 }
-
 .login h1 {
   font-size: 2rem;
   font-weight: 700;
 }
-
 .login h1 a {
   width: unset;
   height: unset;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
   margin: 0;
   text-indent: 0px;
@@ -390,48 +390,38 @@ b, strong, optgroup {
   font-weight: inherit;
   color: #333333;
 }
-
 .login h1 a:hover, .login h1 a.hover, .login h1 a:focus, .login h1 a.focus {
   color: #333333;
 }
-
 .login h1 a .login-title-logo {
   display: block;
   max-width: 160px;
 }
-
 .login h1 a .login-title-logo img {
   display: block;
 }
-
 .login a {
   color: #0044aa;
   text-decoration: none;
-  transition: all .15s;
-  -webkit-transition: all .15s;
-  -moz-transition: all .15s;
-  -ms-transition: all .15s;
-  -o-transition: all .15s;
+  transition: all 0.15s;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  -o-transition: all 0.15s;
 }
-
 .login a:hover, .login a.hover, .login a:focus, .login a.focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 .login label {
   font-size: 1rem;
 }
-
 .login form {
   border-color: #cccccc;
   border: none;
 }
-
 .login form .input {
   border-color: #cccccc;
 }
-
 .login #login {
   width: 100%;
   max-width: 480px;
@@ -439,21 +429,18 @@ b, strong, optgroup {
   padding: 2rem;
   background-color: var(--fct-login-form--background-color, #ffffff);
 }
-
 .login #login #loginform,
 .login #login #nav,
 .login #login #backtoblog {
   max-width: 480px;
   margin: 1em auto 0;
 }
-
 .login #login #loginform a,
 .login #login #nav a,
 .login #login #backtoblog a {
   font-weight: 600;
   color: #0044aa;
 }
-
 .login #login #loginform a:hover, .login #login #loginform a:focus,
 .login #login #nav a:hover,
 .login #login #nav a:focus,
@@ -461,24 +448,20 @@ b, strong, optgroup {
 .login #login #backtoblog a:focus {
   color: #005ce7;
 }
-
-.login input[type="password"],
-.login input[type="text"],
-.login input[type="checkbox"],
-.login input[type="radio"] {
+.login input[type=password],
+.login input[type=text],
+.login input[type=checkbox],
+.login input[type=radio] {
   border-color: #cccccc;
   border-radius: 0px;
 }
-
-.login input[type="password"]:focus,
-.login input[type="text"]:focus,
-.login input[type="checkbox"]:focus,
-.login input[type="radio"]:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.login input[type=password]:focus,
+.login input[type=text]:focus,
+.login input[type=checkbox]:focus,
+.login input[type=radio]:focus {
+  box-shadow: none;
   border-color: #005ce7;
 }
-
 .login.wp-core-ui .button-primary {
   min-height: unset;
   line-height: 1;
@@ -490,39 +473,30 @@ b, strong, optgroup {
   font-weight: bold;
   color: #333333;
 }
-
 .login.wp-core-ui .button-primary:hover {
   background-color: #cccccc;
   border-color: #555555;
   color: #333333;
 }
-
 .login.wp-core-ui .button-primary:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   background-color: #ffffff;
   border-color: #cccccc;
   color: #333333;
 }
-
 .login.wp-core-ui .button-primary:focus:hover {
   background-color: #cccccc;
   border-color: #555555;
   color: #333333;
 }
-
 .login.wp-core-ui .button-secondary {
   border-radius: 0px;
   color: #333333;
 }
-
 .login.wp-core-ui .button-secondary:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 .login.wp-core-ui .button.wp-hide-pw:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: none;
 }

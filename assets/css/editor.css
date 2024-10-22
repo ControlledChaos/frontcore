@@ -51,7 +51,6 @@ h4 {
 a {
   color: var(--fct-link-color);
 }
-
 a:hover, a.hover, a:focus, a.focus {
   color: var(--fct-link-action-color);
 }
@@ -73,7 +72,6 @@ a:hover, a.hover, a:focus, a.focus {
     --fct-box-border-color: #555555;
   }
 }
-
 #wpadminbar,
 #wpadminbar .ab-top-menu > li.hover > .ab-item,
 #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
@@ -114,23 +112,19 @@ img.alignright,
 figure.alignright {
   margin: var(--fct-media-alignright--margin);
 }
-
 img.alignleft,
 figure.alignleft {
   margin: var(--fct-media-alignleft--margin);
 }
-
 img.aligncenter,
 figure.aligncenter {
   display: block;
   margin: var(--fct-media-aligncenter--margin);
 }
-
 img.alignfull,
 figure.alignfull {
   margin: var(--fct-media-alignfull--margin);
 }
-
 img.alignnone,
 figure.alignnone {
   margin: var(--fct-media-alignnone--margin);
@@ -186,11 +180,9 @@ body.no-sidebar figure.alignfull {
 .entry-content p img.alignleft {
   margin: var(--fct-p-media-alignleft--margin);
 }
-
 .entry-content p img.alignright {
   margin: var(--fct-p-media-alignright--margin);
 }
-
 .entry-content p img.aligncenter {
   margin: var(--fct-p-media-aligncenter--margin);
 }
@@ -198,7 +190,6 @@ body.no-sidebar figure.alignfull {
 .wp-caption img {
   display: block;
 }
-
 .wp-caption .wp-caption-text {
   margin: var(--fct-media-caption--margin);
   font-size: var(--fct-media-caption--font-size);
@@ -208,22 +199,17 @@ body.no-sidebar figure.alignfull {
 
 article .gallery {
   display: var(--fct-media-gallery--article--display);
-  -ms-flex-wrap: var(--fct-media-gallery--article--flex-wrap);
-      flex-wrap: var(--fct-media-gallery--article--flex-wrap);
+  flex-wrap: var(--fct-media-gallery--article--flex-wrap);
   gap: var(--fct-media-gallery--article--gap);
   margin: var(--fct-media-gallery--article--margin);
-  list-style: none;
-  /* for galleries as list elements */
+  list-style: none; /* for galleries as list elements */
 }
-
 article .gallery .gallery-item img {
   border-color: transparent !important;
 }
-
 article .gallery + .gallery {
   margin: var(--fct-media-gallery-plus--article--margin);
 }
-
 .wp-block-gallery + .wp-block-gallery {
   margin: var(--fct-media-gallery-plus--article--margin);
 }

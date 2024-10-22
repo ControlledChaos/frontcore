@@ -3,13 +3,12 @@
 }
 
 .search-submit {
-  -webkit-transform: translateX(1px);
-          transform: translateX(1px);
+  transform: translateX(1px);
 }
 
 .no-sidebar .wp-block-cover.alignfull {
   width: 100vw;
   max-width: 100vw;
   margin-left: auto;
-  margin-right: calc( 50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
