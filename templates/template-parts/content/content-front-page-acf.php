@@ -14,6 +14,7 @@ namespace FrontCore;
 use FrontCore\Tags      as Tags,
 	FrontCore\Customize as Customize;
 
+// Hide the title if option is selected.
 if ( Customize\hide_front_heading( get_theme_mod( 'fct_hide_front_heading' ) ) ) {
 	$heading_class = 'entry-title screen-reader-text';
 } else {
