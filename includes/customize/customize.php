@@ -194,7 +194,7 @@ function customize_register( $wp_customize ) {
 	// Hide front page heading.
 	$wp_customize->add_setting( 'fct_hide_front_heading', [
 		'default'	        => false,
-		'transport'         => 'postMessage',
+		'transport'         => 'refresh',
 		'sanitize_callback' => $ns( 'hide_front_heading' )
 	] );
 	$wp_customize->add_control( new \WP_Customize_Control(
