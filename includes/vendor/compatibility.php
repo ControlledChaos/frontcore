@@ -256,3 +256,32 @@ function acfe_ready() {
 	// Otherwise return false.
 	return false;
 }
+
+/**
+ * ACF field groups
+ *
+ * Includes ACF fields registered via PHP.
+ *
+ * @since  1.0.0
+ * @return boolean Returns true if one or more files,
+ *                 excluding the security file, are
+ *                 found in the fields directory.
+ */
+function acf_fields() {
+
+	$count = 0;
+	if ( function_exists( 'acf_add_local_field_group' ) ) {
+		foreach ( glob( FCT_PATH . 'includes/vendor/acf/fields/*.php' ) as $fields_file ) {
+			if ( is_file( $fields_file ) && is_readable( $fields_file ) ) {
+				$count++;
+				include $fields_file;
+			}
+		}
+	}
+
+	if ( $count >= 2 ) {
+		return true;
+	}
+	return false;
+}
+add_action( 'acf/init', __NAMESPACE__ . '\\acf_fields' );
