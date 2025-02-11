@@ -51,7 +51,7 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 
 		<?php
 
-		if ( ! is_singular() && 'excerpt' == $display ) {
+		if ( is_home() && 'excerpt' == $display ) {
 			the_excerpt();
 		} else {
 			the_content( sprintf(
