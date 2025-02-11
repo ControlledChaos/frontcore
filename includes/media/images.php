@@ -94,9 +94,9 @@ function image_sizes() {
 	add_image_size( 'small-video', 640, 360, $center );
 
 	// 21:9 Cinemascope.
-	add_image_size( 'large-banner', 1280, 549, $center );
-	add_image_size( 'medium-banner', 960, 411, $center );
-	add_image_size( 'small-banner', 640, 274, $center );
+	add_image_size( 'large-banner', 1920, 824, $center );
+	add_image_size( 'medium-banner', 1280, 549, $center );
+	add_image_size( 'small-banner', 960, 411, $center );
 }
 
 /**
