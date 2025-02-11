@@ -35,8 +35,8 @@ get_header();
 			</div>
 
 			<?php the_posts_navigation( [
-					'prev_text' => __( 'Previous', 'totem-front' ),
-					'next_text' => __( 'Next', 'totem-front' )
+					'prev_text' => __( 'Previous', 'front-core' ),
+					'next_text' => __( 'Next', 'front-core' )
 			] ); ?>
 
 		<?php
