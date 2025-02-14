@@ -89,6 +89,7 @@ function image_sizes() {
 	add_image_size( 'x-large-thumbnail', 320, 320, $center );
 
 	// 16:9 HD Video.
+	add_image_size( 'full-video', 1920, 1080, $center );
 	add_image_size( 'large-video', 1280, 720, $center );
 	add_image_size( 'medium-video', 960, 540, $center );
 	add_image_size( 'small-video', 640, 360, $center );
