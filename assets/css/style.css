@@ -22,7 +22,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow-y: scroll;
-  font: clamp(1rem, 1rem + 0.5vw, 2rem)/1.4 system-ui, sans-serif;
+  font: 1rem system-ui, sans-serif;
   tab-size: 4;
   hanging-punctuation: first allow-end last;
   word-break: break-word;
