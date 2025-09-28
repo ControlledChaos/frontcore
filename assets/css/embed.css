@@ -1,4 +1,4 @@
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, button, input, select, textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, button, input, select, textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, search, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -21,13 +21,17 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow-y: scroll;
-  font-size: 100%;
+  font: clamp(1rem, 1rem + 0.5vw, 2rem)/1.4 system-ui, sans-serif;
+  tab-size: 4;
+  hanging-punctuation: first allow-end last;
+  word-break: break-word;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  interpolate-size: allow-keywords;
 }
 
 body {
@@ -62,6 +66,7 @@ img {
 
 hr {
   display: block;
+  width: 100%;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -91,6 +96,9 @@ ol ol {
 
 input {
   line-height: normal;
+}
+input :not(:where([type=submit], [type=checkbox], [type=radio], [type=button], [type=reset])) {
+  inline-size: 100%;
 }
 
 input, textarea, select, button {
@@ -147,6 +155,10 @@ input::-webkit-inner-spin-button {
 
 textarea {
   overflow: auto;
+  field-sizing: content;
+  min-block-size: 5lh;
+  inline-size: 100%;
+  max-inline-size: 100%;
 }
 
 button, input, optgroup, select, textarea {
@@ -221,12 +233,15 @@ audio:not([controls]) {
   height: 0;
 }
 
-svg:not(:root) {
+svg {
+  fill: currentColor;
+}
+svg :not(:root) {
   overflow: hidden;
 }
 
-[hidden], template {
-  display: none;
+[hidden] {
+  display: none !important;
 }
 
 sub, sup {
@@ -266,6 +281,25 @@ b, strong, optgroup {
   height: 0;
   overflow: hidden;
   zoom: 1;
+}
+
+[role=region][aria-labelledby][tabindex] {
+  overflow: auto;
+}
+
+:target {
+  scroll-margin: 3rlh;
+}
+
+[aria-disabled=true i], [disabled] {
+  cursor: not-allowed;
+}
+
+[disabled], label:has(input[disabled]) {
+  opacity: 0.5;
+}
+[disabled] [disabled], label:has(input[disabled]) [disabled] {
+  opacity: 1;
 }
 
 :root {
@@ -314,8 +348,11 @@ b, strong, optgroup {
   --fct-content-separator: 2rem;
   --fct-content-area--margin: 0 var( --fct-content-separator ) 0 0;
   --fct-site-header--padding: 0 2em;
+  --fct-site-branding--padding: 0.5rem 2rem;
   --fct-site-title--margin: 0;
+  --fct-site-title--line-height: 1;
   --fct-site-description--margin: 0;
+  --fct-site-description--line-height: 1;
   --fct-site-logo--margin: 0 1em 0 0;
   --fct-site-logo--mobile--margin: 0;
   --fct-main-nav--margin: 1em auto 0;
@@ -397,7 +434,7 @@ b, strong, optgroup {
 .wp-embed a:hover, .wp-embed a:focus,
 .wp-embed .wp-embed-heading a:hover,
 .wp-embed .wp-embed-heading a:focus {
-  color: #005ce7;
+  color: rgb(0, 92.48, 231.2);
 }
 .wp-embed .wp-embed-share-dialog-open .dashicons {
   top: 4px;

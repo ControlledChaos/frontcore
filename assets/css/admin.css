@@ -44,8 +44,11 @@
   --fct-content-separator: 2rem;
   --fct-content-area--margin: 0 var( --fct-content-separator ) 0 0;
   --fct-site-header--padding: 0 2em;
+  --fct-site-branding--padding: 0.5rem 2rem;
   --fct-site-title--margin: 0;
+  --fct-site-title--line-height: 1;
   --fct-site-description--margin: 0;
+  --fct-site-description--line-height: 1;
   --fct-site-logo--margin: 0 1em 0 0;
   --fct-site-logo--mobile--margin: 0;
   --fct-main-nav--margin: 1em auto 0;
@@ -101,11 +104,6 @@
   --fct-avatar-general--border-radius: 50%;
 }
 
-.site-header {
-  padding: var(--fct-site-header--padding);
-  background-color: var(--fct-header--background-color);
-}
-
 .site-title {
   margin: var(--fct-site-title--margin);
   /* Match <p> tag to <h1> tag on front page */
@@ -125,23 +123,39 @@
 }
 
 .site-header-image {
-  padding: var(--fct-site-header-image--padding, 2rem 0);
+  overflow: hidden;
 }
-.site-header-image img {
+.site-header-image figure {
+  height: 100%;
+}
+.site-header-image figure img {
   display: block;
+  width: 100%;
+  height: 100%;
+  max-height: calc(288px + var(--fct-spacing--vert, 2rem));
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
 }
 
 .site-branding-wrap {
   width: 100%;
-  max-width: var(--fct-content-width);
   margin: 0 auto;
+  padding: var(--fct-site-branding--padding);
+  background-color: var(--fct-site-header--bg-color);
+  color: var(--fct-site-header--text-color);
+}
+.site-branding-wrap .inner-wrap {
+  width: 100%;
+  max-width: var(--fct-content-width);
 }
 .site-branding-wrap .site-branding {
   display: var(--fct-site-branding--display, flex);
   width: 100%;
   max-width: var(--fct-content-width);
   margin: var(--fct-site-branding--margin, 0 auto);
-  padding: var(--fct-site-branding--padding, 1em 0 0);
+  align-items: var(--fct-site-branding--align-items, center);
 }
 @media screen and (max-width: 600px) {
   .site-branding-wrap .site-branding {
@@ -168,6 +182,12 @@
   justify-content: var(--fct-nav-aside-branding--justify-content, space-between);
   gap: var(--fct-nav-aside-branding--gap, 0 var(--fct-content-separator, 2rem));
 }
+.site-branding-wrap.nav-aside-branding .inner-wrap {
+  display: var(--fct-nav-aside-branding--display, flex);
+  align-items: var(--fct-nav-aside-branding--align-items, center);
+  justify-content: var(--fct-nav-aside-branding--justify-content, space-between);
+  gap: var(--fct-nav-aside-branding--gap, 0 var(--fct-content-separator, 2rem));
+}
 .site-branding-wrap.nav-aside-branding .site-branding {
   width: var(--fct-nav-aside--site-branding--width, auto);
   margin: var(--fct-nav-aside--site-branding--margin, 0);
@@ -179,6 +199,60 @@
   .site-branding-wrap.nav-aside-branding .site-title-description {
     text-align: var(--fct-nav-aside--site-title-description--text-align, center);
   }
+}
+
+.page-cover-title.page-cover-wide {
+  position: relative;
+  z-index: 250;
+  overflow: hidden;
+}
+.page-cover-title.page-cover-wide:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 17, 14, 0.625);
+}
+.page-cover-title.page-cover-wide figure {
+  height: 100%;
+}
+.page-cover-title.page-cover-wide figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: calc(288px + var(--fct-spacing--vert, 2rem));
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+}
+.page-cover-title.page-cover-wide figure figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--fct-spacing--vert, 2rem) var(--fct-spacing--horz, 2rem);
+  z-index: 100;
+  text-align: center;
+  pointer-events: none;
+}
+.page-cover-title.page-cover-wide figure figcaption * {
+  color: #ffffff;
+  text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.625);
+}
+.page-cover-title.page-cover-wide figure figcaption h1 {
+  margin: var(--fct-cover--title--margin, 0);
+  font-size: var(--fct-cover--title--font-size, clamp(2rem, 2.5vw + 1rem, 3.25vw));
+  font-weight: 550;
+  line-height: 1.2;
 }
 
 .wp-admin {

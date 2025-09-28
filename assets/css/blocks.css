@@ -312,7 +312,7 @@ h3 + .search-form {
   border-color: #cccccc;
 }
 .wp-block-search .wp-block-search__input:focus, .wp-block-search .wp-block-search__input.focus {
-  border-color: #005ce7;
+  border-color: rgb(0, 92.48, 231.2);
 }
 .wp-block-search .wp-block-search__button {
   margin: 0;
@@ -336,21 +336,21 @@ h3 + .search-form {
 }
 
 .dark-mode .wp-block-search .wp-block-search__input {
-  border-color: #5e5e5e;
+  border-color: rgb(93.75, 93.75, 93.75);
 }
 .dark-mode .wp-block-search .wp-block-search__input:focus, .dark-mode .wp-block-search .wp-block-search__input.focus {
-  border-color: #d0d0d0;
+  border-color: rgb(207.825, 207.825, 207.825);
 }
 .dark-mode .wp-block-search .wp-block-search__button {
-  background-color: #2b2b2b;
+  background-color: rgb(42.75, 42.75, 42.75);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' aria-hidden='true' role='img'><path fill='%23eeeeee' d='M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z' /></svg>");
-  border-color: #5e5e5e;
-  color: #eeeeee;
+  border-color: rgb(93.75, 93.75, 93.75);
+  color: rgb(238.425, 238.425, 238.425);
 }
 .dark-mode .wp-block-search .wp-block-search__button:hover, .dark-mode .wp-block-search .wp-block-search__button.hover, .dark-mode .wp-block-search .wp-block-search__button:focus, .dark-mode .wp-block-search .wp-block-search__button.focus {
-  background-color: #d0d0d0;
+  background-color: rgb(207.825, 207.825, 207.825);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' aria-hidden='true' role='img'><path fill='%23eeeeee' d='M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z' /></svg>");
-  border-color: #5e5e5e;
+  border-color: rgb(93.75, 93.75, 93.75);
   color: #333333;
 }
 

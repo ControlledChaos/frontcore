@@ -44,8 +44,11 @@
   --fct-content-separator: 2rem;
   --fct-content-area--margin: 0 var( --fct-content-separator ) 0 0;
   --fct-site-header--padding: 0 2em;
+  --fct-site-branding--padding: 0.5rem 2rem;
   --fct-site-title--margin: 0;
+  --fct-site-title--line-height: 1;
   --fct-site-description--margin: 0;
+  --fct-site-description--line-height: 1;
   --fct-site-logo--margin: 0 1em 0 0;
   --fct-site-logo--mobile--margin: 0;
   --fct-main-nav--margin: 1em auto 0;
