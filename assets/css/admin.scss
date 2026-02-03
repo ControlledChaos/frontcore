@@ -7,6 +7,7 @@
 @import 'modules/_layout';
 @import 'modules/_root';
 @import 'partials/_header';
+@import 'partials/_navigation';
 @import 'partials/_cascade-admin';
 
 // Standard admin elements.
@@ -16,10 +17,6 @@
 	line-height: 1.5;
 	background: var(--fct-bg-color);
 	color: var(--fct-text-color);
-
-	.site-header {
-		padding: 0 20px 0 0;
-	}
 }
 
 .wrap {
@@ -39,6 +36,7 @@
 
 // Custom admin elements.
 .site-branding-wrap {
+	box-sizing: border-box;
 	max-width: 100%;
 
 	.site-branding {

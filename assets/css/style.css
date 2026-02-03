@@ -790,6 +790,10 @@ h3 + .search-form {
     --fct-form--placeholder-color: #888888;
   }
 }
+.site-header {
+  max-width: 100%;
+}
+
 .site-title {
   margin: var(--fct-site-title--margin);
   /* Match <p> tag to <h1> tag on front page */

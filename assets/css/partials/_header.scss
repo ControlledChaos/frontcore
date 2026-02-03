@@ -2,7 +2,9 @@
 /// Site header styles
 ///
 
-.site-header {}
+.site-header {
+	max-width: 100%;
+}
 
 .site-title {
 	margin: var( --fct-site-title--margin );
